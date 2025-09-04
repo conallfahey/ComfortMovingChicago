@@ -1,236 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <head>
         <meta charset="UTF-8">
-        <title>The Moving Company</title>
+        <title>Comfort Moving Chicago</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="icon" href="./box-seam.svg">
-
-
-         <style>
+        <link rel="icon" href="./Images/CMCLogoTransparent.webp">
+        <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <!-- Google Reviews Script -->
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <style>
+          .service-area-column {
+            min-width: 180px;
+            padding: 10px;
+          }
+          .service-area-column ul li {
+            margin-bottom: 6px;
+            color: #666;
+          }
           .feature-icon {
             width: 4rem;
             height: 4rem;
             border-radius: 0.75rem;
-        }
+          }
+          h1, h2, h3, h4, h5, nav, .navbar-brand {
+            font-family: "noka", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+          }
+          @media (max-width: 768px) {
+            .container, .container-fluid {
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+              margin-left: auto !important;
+              margin-right: auto !important;
+              width: 100% !important;
+            }
+            .row {
+              margin-left: 0 !important;
+              margin-right: 0 !important;
+            }
+            .hero-section {
+              min-height: 40vh !important;
+              padding: 40px 0 !important;
+            }
+            .hero-container {
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+              margin-left: 15px !important;
+              margin-right: 15px !important;
+            }
+            .hero-btn {
+              width: 130px !important;
+              font-size: 1rem !important;
+              padding: 8px 12px !important;
+            }
+            .hero-buttons-container {
+              justify-content: center !important;
+            }
+          }
+          html {
+            scroll-padding-top: 120px; /* Increased from 80px to 120px for better scrolling position */
+          }
+          
+          /* iOS Mobile Quote Form Scroll Improvements */
+          .quote-form-scroll {
+            scrollbar-width: thin;
+          }
+          
+          .quote-form-scroll::-webkit-scrollbar {
+            width: 8px;
+          }
+          
+          .quote-form-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+          }
+          
+          .quote-form-scroll::-webkit-scrollbar-thumb {
+            background: #FF9B50;
+            border-radius: 4px;
+          }
+          
+          .quote-form-scroll::-webkit-scrollbar-thumb:hover {
+            background: #e8894a;
+          }
+          
+          /* Add scroll indicator for mobile */
+          .quote-form-scroll::before {
+            content: '↓ Scroll to see more fields ↓';
+            position: sticky;
+            top: 0;
+            background: linear-gradient(to bottom, #FF9B50, #e8894a);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 6px 6px 0 0;
+            margin: -6px -5px 10px -5px;
+            z-index: 10;
+            display: none;
+          }
+          
+          @media (max-width: 768px) {
+            .quote-form-scroll {
+              max-height: 500px !important;
+            }
+            
+            .quote-form-scroll::before {
+              display: block;
+            }
+            
+            /* Improve form field spacing on mobile */
+            .quote-form-scroll .mb-3 {
+              margin-bottom: 1.5rem !important;
+            }
+            
+            /* Make form controls more touch-friendly */
+            .quote-form-scroll .form-control,
+            .quote-form-scroll .form-select {
+              min-height: 48px;
+              font-size: 16px; /* Prevents zoom on iOS */
+            }
+          }
          </style>
     </head>
-
-
-
     <body>
+        <!-- Google Reviews Script -->
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+            <div class="container-fluid px-5">
               <a class="navbar-brand" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
-                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-              </svg> The Moving Company</a>
+                <img src="./Images/CMCLogoTransparent.webp" alt="Logo" width="55px" height="55px">
+              </svg> Comfort Moving Chicago</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Parcel and Couriers</a></li>
-                      <li><a class="dropdown-item" href="#">Relocate</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">More</a></li>
+                      <li><a class="dropdown-item" href="#services">Residential Moving</a></li>
+                      <li><a class="dropdown-item" href="#services">Furniture Assembly</a></li>
+                      <li><a class="dropdown-item" href="#services">Packing Services</a></li>
                     </ul>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Moving Tips</a>
+                  </li>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="postalcode" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Check</button>
-                </form>
+                <div class="d-flex">
+                  <a href="tel:+17732361724" class="btn me-2" style="background-color: #FF9B50; color: white;">Call Now</a>
+                  <a href="mailto:info@comfortmovingchicago.com" class="btn btn-outline-primary">Email Us</a>
+                </div>
               </div>
             </div>
           </nav>
 
-
-
-
-          <div class="px-4 pt-5 my-5 text-center border-bottom">
-            <h1 class="display-4 fw-bold text-body-emphasis">Move with Joy</h1>
-            <div class="col-lg-6 mx-auto">
-              <p class="lead mb-4">Welcome to our website, we are on a mission to provide exceptional moving services to customers in the India. As a startup, we believe that moving dosen't have to be stresssful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get a Quote</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
-              </div>
-            </div>
-            <div class="overflow-hidden" style="max-height: 30vh;">
-              <div class="container px-5">
-                <img src="moving van.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="440" height="500" loading="lazy">
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <div class="container px-4 py-5" id="featured-3">
-            <h2 class="pb-2 border-bottom">Why Move With Us?</h2>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-              <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                  </svg>
+          <!-- Hero section  -->
+          <div class="px-4 pt-5 text-center border-bottom hero-section" style="position: relative; min-height: 50vh; padding: 78px 0;">
+            <div style="background-image: url('Images/Chicago_Moving_Company_1280-2.webp'); background-size: 100% auto; background-position: center; background-repeat: no-repeat; position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: -1;"></div>
+            <div class="hero-container" style="background: rgba(255, 255, 255, 0.365); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 0px solid rgba(255, 255, 255, 0.175); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); padding: 30px; border-radius: 16px; max-width: 800px; margin: 0 auto; position: relative;">
+              <h1 class="display-4 fw-bold text-body-emphasis mb-3" style="margin-top: -10px;">Move with<br>   COMFORT</h1>
+              <h2 class="h4 text-muted mb-4">Call Us Now for Immediate and Reliable Help.</h2>
+              <div class="col-lg-6 mx-auto">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3 hero-buttons-container">
+                  <a href="#quoteForm" class="btn btn-primary px-3 py-2 hero-btn" style="font-size: 1.1rem;">Get a Quote</a>
+                  <a href="tel:+17732361724" class="btn px-3 py-2 hero-btn" style="background-color: #FF9B50; color: white; font-size: 1.1rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone me-1" viewBox="0 0 16 16">
+                      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    Call Now
+                  </a>
                 </div>
-                <h3 class="fs-2 text-body-emphasis">Professional</h3>
-                <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more than just objects - they are a reflection of your life, memories, and experiences. That's why we take extra care to ensure that everything is packed and transported with the utmost care and attention.
-                  Get a quote</p>
-                <a href="#" class="icon-link">
-                  Get a Quote
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                </a>
-              </div>
-              <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bus-front-fill" viewBox="0 0 16 16">
-                    <path d="M16 7a1 1 0 0 1-1 1v3.5c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2V8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1V2.64C1 1.452 1.845.408 3.064.268A43.608 43.608 0 0 1 8 0c2.1 0 3.792.136 4.936.268C14.155.408 15 1.452 15 2.64V4a1 1 0 0 1 1 1v2ZM3.552 3.22A43.306 43.306 0 0 1 8 3c1.837 0 3.353.107 4.448.22a.5.5 0 0 0 .104-.994A44.304 44.304 0 0 0 8 2c-1.876 0-3.426.109-4.552.226a.5.5 0 1 0 .104.994ZM8 4c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9c1.876 0 3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44.304 44.304 0 0 0 8 4Zm-3 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-7 0a1 1 0 0 0 1 1h2a1 1 0 1 0 0-2H7a1 1 0 0 0-1 1Z"/>
-                  </svg>
-                </div>
-                <h3 class="fs-2 text-body-emphasis">Countrywide</h3>
-                <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, you can trust that you're getting a fair and competitive rate for our services.
-                  Get a quote</p>
-                <a href="#" class="icon-link">
-                  Get a Quote
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                </a>
-              </div>
-              <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
-                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z"/>
-                    <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-                  </svg>
-                </div>
-                <h3 class="fs-2 text-body-emphasis">Personal Touch</h3>
-                <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services in the US, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers. Contact us today to learn more about how we can help you with your next move.
-                  Get a quote</p>
-                <a href="#" class="icon-link">
-                  Get a Quote
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
 
+          <!-- Reviews and Contact Section - add background here -->
+          <!-- Reviews and Contact Section -->
+          <div style="position: relative; min-height: 800px; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+            <div class="container py-5">
+              <div class="row position-relative">
+                    <div class="col-md-6 mb-4">
+                      <!-- Mock Reviews Section -->
+                      <div class="card bg-white mb-4 mb-md-0 h-100">
+                        <div class="card-body">
+                          <h2 class="card-title mb-4">Customer Reviews</h2>
+                          <div class="d-flex align-items-center mb-3">
+                            <div class="me-2">
+                              <span style="color: #FF9B50; font-size: 24px;">★★★★★</span>
+                            </div>
+                            <div>
+                              <span class="h4 mb-0">5.0</span>
+                              <span class="text-muted">/5 based on 106 reviews</span>
+                            </div>
+                          </div>
+                          
+                          <div class="border-bottom pb-3 mb-3">
+                            <div class="d-flex justify-content-between">
+                              <strong>Amber K</strong>
+                              <span style="color: #FF9B50;">★★★★★</span>
+                            </div>
+                            <p class="mb-1">High quality service with an affordable price. Henry and Mateo were excellent - kind, quick, and careful. I’d definitely recommend Comfort Moving!!
+                            </p>
+                            <small class="text-muted">2 days ago</small>
+                          </div>
 
+                          <div class="border-bottom pb-3 mb-3">
+                            <div class="d-flex justify-content-between">
+                              <strong>Connie K</strong>
+                              <span style="color: #FF9B50;">★★★★★</span>
+                            </div>
+                            <p class="mb-1">These guys are phenomenal, I called at last minute and they were here in no time. These movers were on top of their game. No nicked walls, no damage furniture.
+                              Very professional and courtesy. 100% would call them again if needed. Very affordable. Thank you so much.</p>
+                            <small class="text-muted">1 week ago</small>
+                          </div>
+
+                          <div class="pb-3">
+                            <div class="d-flex justify-content-between">
+                              <strong>Lamar B</strong>
+                              <span style="color: #FF9B50;">★★★★★</span>
+                            </div>
+                            <p class="mb-1">I was really worried about moving because I have a lot of glass artwork, but these guys made sure it all stayed together! Very professional and serious movers with my items in mind. Couldn’t ask for better
+                            </p>
+                            <small class="text-muted">2 weeks ago</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="card bg-white h-100">
+                        <div class="card-body">
+                          <h2 class="card-title mb-4" id="quoteForm">Free Quote Form</h2>
+                          <form action="https://formsubmit.co/comfortmovingchicago@gmail.com" method="POST">
+                            <div class="quote-form-scroll" style="max-height: 400px; overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;">
+                              <div class="mb-3">
+                                <input type="text" class="form-control bg-white" placeholder="Your Name" name="yourName" required>
+                              </div>
+                              <div class="mb-3">
+                                <input type="email" class="form-control bg-white" placeholder="Email Address" name="email" required>
+                              </div>
+                              <div class="mb-3">
+                                <input type="tel" class="form-control bg-white" placeholder="Phone Number" name="Phone">
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Move Date*</label>
+                                <input type="date" class="form-control bg-white" name="Date" required>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Move Time*</label>
+                                <div class="d-flex gap-2">
+                                  <input type="time" class="form-control bg-white" name="Time" required>
+                                  <select class="form-select bg-white" style="width: 100px;" name="AM_PM">
+                                    <option>AM</option>
+                                    <option>PM</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Type Of Move*</label>
+                                <select class="form-select bg-white" name="Type" required>
+                                  <option value="">Select move type...</option>
+                                  <option>Apartment Move (with truck)</option>
+                                  <option>House Move (with truck)</option>
+                                  <option>Office Move (with truck)</option>
+                                  <option>Labor Only (NO truck provided)</option>
+                                </select>
+                              </div>
+                              
+                              <!-- New fields start here -->
+                              <div class="mb-3">
+                                <label class="form-label">Services Requested*</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="Moving" id="moving" name="Services">
+                                  <label class="form-check-label" for="moving">Moving</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="Packing" id="packing">
+                                  <label class="form-check-label" for="packing">Packing</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="Hoisting" id="hoisting">
+                                  <label class="form-check-label" for="hoisting">Hoisting (for oversized items)</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="Oversized" id="oversized">
+                                  <label class="form-check-label" for="oversized">Oversized items</label>
+                                </div>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Move Size*</label>
+                                <select class="form-select bg-white" name="Size" required>
+                                  <option value="">Select size...</option>
+                                  <option>Studio</option>
+                                  <option>1 Bedroom</option>
+                                  <option>2 Bedroom</option>
+                                  <option>3 Bedroom</option>
+                                  <option>4 Bedroom</option>
+                                  <option>5 Bedroom+</option>
+                                  <option>Other</option>
+                                </select>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Starting Address*</label>
+                                <input type="text" class="form-control bg-white" name="Starting" required>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Additional Stops</label>
+                                <input type="text" class="form-control bg-white" name="AdditionalStops">
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Ending Address*</label>
+                                <input type="text" class="form-control bg-white" name="Ending" required>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Flights Of Stairs (starting location)*</label>
+                                <select class="form-select bg-white"name="stairsStart" required>
+                                  <option value="">Select option...</option>
+                                  <option>No Stairs/No Elevator/Garden Unit</option>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4+</option>
+                                  <option>Elevator</option>
+                                </select>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Flights Of Stairs (ending location)*</label>
+                                <select class="form-select bg-white" name="stairsEnd" required>
+                                  <option value="">Select option...</option>
+                                  <option>No Stairs/No Elevator/Garden Unit</option>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4+</option>
+                                  <option>Elevator</option>
+                                  <option>N/A (only one location)</option>
+                                </select>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Any other Details?</label>
+                                <textarea class="form-control bg-white" rows="3" name="other"></textarea>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">Detailed Inventory List (Optional)</label>
+                                <small class="form-text text-muted d-block mb-2">For a more accurate quote, please list all items you're moving (furniture, appliances, boxes, etc.). Include quantities and any special items that require extra care.</small>
+                                <textarea class="form-control bg-white" rows="5" name="inventory" placeholder="Example: Living room: 1 sofa, 2 chairs, 1 coffee table, 1 55in TV"), 1 entertainment center\n- Kitchen: 1 refrigerator, 1 stove, 1 microwave, 1 dining table with 4 chairs\n- Bedroom: 1 queen bed, 2 nightstands, 1 dresser\n- Boxes: Approximately 20 medium boxes, 10 large boxes\n- Special items: 1 piano, artwork, fragile items"></textarea>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label class="form-label">How did you hear about us?</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="referralSource" id="flyers" value="Flyers">
+                                  <label class="form-check-label" for="flyers">Flyers</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="referralSource" id="facebook" value="Facebook">
+                                  <label class="form-check-label" for="facebook">Facebook</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="referralSource" id="referral" value="Referral">
+                                  <label class="form-check-label" for="referral">Referral</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="referralSource" id="other" value="Other">
+                                  <label class="form-check-label" for="other">Other</label>
+                                  <input type="text" class="form-control bg-white mt-1" placeholder="Please specify">
+                                </div>
+                              </div>
+                              <!-- New fields end here -->
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-3 pageclip-form__submit" >
+                                <span>Send Message</span>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                    <div class="container py-5">
+                      <div class="bg-light rounded p-4" style="background-color: #00000000 !important;">
+                        <!-- Services Section -->
+                                    <div style="position: relative; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+                                      <div style="background-image: url('Images/IMG_0859.webp'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.8; z-index: 0;"></div>
+                                      <div class="container py-5" style="position: relative; z-index: 1; padding-top: 5rem !important; padding-bottom: 5rem !important;">
+                                        <div class="rounded p-4" style="background: rgba(255, 255, 255, 0.626); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 0px solid rgba(255, 255, 255, 0.175); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);">
+                                          <h2 class="text-center mb-3">Our Service Areas</h2>
+                                          <h3 class="text-center mb-3">(Not Limited To)</h3>
+                                          <div class="row justify-content-center">
+                                            <div class="col-12">
+                                              <div class="d-flex flex-wrap justify-content-center gap-2">
+                                                <div class="service-area-column">
+                                                  <h5>Chicago</h5>
+                                                  <ul class="list-unstyled mb-0">
+                                                    <li>Downtown Chicago</li>
+                                                    <li>North Side</li>
+                                                    <li>South Side</li>
+                                                    <li>West Side</li>
+                                                    <li>Loop</li>
+                                                    <li>Gold Coast</li>
+                                                  </ul>
+                                                </div>
+                                                <div class="service-area-column">
+                                                  <h5>North Suburbs</h5>
+                                                  <ul class="list-unstyled mb-0">
+                                                    <li>Evanston</li>
+                                                    <li>Skokie</li>
+                                                    <li>Wilmette</li>
+                                                    <li>Winnetka</li>
+                                                    <li>Highland Park</li>
+                                                    <li>Northbrook</li>
+                                                  </ul>
+                                                </div>
+                                                <div class="service-area-column">
+                                                  <h5>West Suburbs</h5>
+                                                  <ul class="list-unstyled mb-0">
+                                                    <li>Oak Park</li>
+                                                    <li>Forest Park</li>
+                                                    <li>River Forest</li>
+                                                    <li>Elmhurst</li>
+                                                    <li>Hinsdale</li>
+                                                    <li>Naperville</li>
+                                                  </ul>
+                                                </div>
+                                                <div class="service-area-column">
+                                                  <h5>South Suburbs</h5>
+                                                  <ul class="list-unstyled mb-0">
+                                                    <li>Oak Lawn</li>
+                                                    <li>Orland Park</li>
+                                                    <li>Tinley Park</li>
+                                                    <li>Homewood</li>
+                                                    <li>Flossmoor</li>
+                                                    <li>Park Forest</li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                      </div>
+                    </div>
 
 
         <div class="container">
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <div class="row justify-content-center">
+            <div class="col-md-6 my-5">
+              <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./Images/Chicago_Moving_Company_1280-2.webp" class="d-block w-100" alt="family">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_0760.webp" class="d-block w-100" alt="moving team">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_0859.webp" class="d-block w-100" alt="moving service">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_5815.webp" class="d-block w-100" alt="moving equipment">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_9070-2.webp" class="d-block w-100" alt="professional movers">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_5819.webp" class="d-block w-100" alt="moving services">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="Images/IMG_5820.webp" class="d-block w-100" alt="moving team">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./moving family.jpg" class="d-block w-100" alt="family">
-              </div>
-              <div class="carousel-item">
-                <img src="./dog in a box.jpg" class="d-block w-100" alt="dog in a box">
-              </div>
-              <div class="carousel-item">
-                <img src="./moving couple.jpg" class="d-block w-100" alt="couple">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
         </div>
 
-
-
-
-
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-          <div class="col mb-3">
-            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
-              <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
-            </svg>
-            <p class="text-body-secondary"> © 2023</p>
+        <!-- About Section -->
+        <div class="container py-5" id="about">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <h2 class="mb-4">About Comfort Moving Chicago</h2>
+              <p class="lead">Your trusted partner for stress-free moving experiences.</p>
+              <p>Started by three close high school friends, Comfort Moving Company was born out of a passion for providing top-notch moving services to our community. We specialize in last-minute moves and pride ourselves on being reliable, friendly, and dedicated to making your moving experience as smooth as possible.</p>
+              <p>Our team is composed of experienced professionals who are committed to ensuring that your belongings are moved safely and securely. We understand the importance of punctuality, and we strive to meet your move deadlines with precision.</p>
+            </div>
+            <div class="col-lg-6">
+              <div class="rounded p-4" style="background: rgba(255, 255, 255, 0.626); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 0px solid rgba(255, 255, 255, 0.175); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);">
+                <h3 class="mb-4">Why Choose Us?</h3>
+                <div class="d-flex mb-4">
+                  <div class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF9B50" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5>Last Minute Movers in Chicago</h5>
+                    <p>Need movers in a pinch? We've got you covered with same-day services.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-4">
+                  <div class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF9B50" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5>Reliable Moving Services</h5>
+                    <p> Trust us to handle your belongings with care and professionalism, ensuring a smooth move.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-2">
+                  <div class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF9B50" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5>Budget Friendly, Competitive Pricing</h5>
+                    <p>Get top-notch moving services without breaking the bank. Our rates are designed to fit your budget.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      
-          <div class="col mb-3">
-      
+        </div>
+
+        <!-- Services Section -->
+        <div id="services" style="position: relative; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+          <div style="background-color: #f8f9fa; padding: 80px 0;">
+            <div class="container">
+              <h2 class="text-center mb-5">Our Services</h2>
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                      <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#FF9B50" class="bi bi-truck" viewBox="0 0 16 16">
+                          <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 1 1 1.732 1.732A2 2 0 0 1 12 10z"/>
+                        </svg>
+                      </div>
+                      <h4 class="mb-3">Residential Moving</h4>
+                      <p>We make moving day simple. Whether you’re heading across the street or across the city, our team handles your belongings with care, speed, and professionalism. From high-rises to walk-ups, we’ve moved it all — and we’re ready to get you home.</p>
+                      <a href="#quoteForm" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                      <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#FF9B50" class="bi bi-building" viewBox="0 0 16 16">
+                          <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                          <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
+                        </svg>
+                      </div>
+                      <h4 class="mb-3">Furniture Disassembly<br>& Reassembly </h4>
+                      <p>Big furniture? Tight corners? No problem. We’ll take apart your beds, tables, and more — then put them back together exactly how you had them. Save yourself the stress (and the stripped screws).</p>
+                      <a href="#quoteForm" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                      <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#FF9B50" viewBox="0 0 24 24">
+                          <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zm14 0v-6.7l-6 3.37v6.71l6-3.38z"/>
+                      </div>
+                      <h4 class="mb-3">Packing & Box Up<br>Services</h4>
+                      <p>Let us do the boxing up. We provide all the materials and know-how to pack your things safely and efficiently. Fragile dishes, overflowing closets, last-minute chaos — we've got you covered. <br>  </p>
+                      <a href="#quoteForm" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      
-          <div class="col mb-3">
-            <h5>Company</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-          </div>
-      
-          <div class="col mb-3">
-            <h5>Connect with Us</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Twitter</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Youtube</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact us</a></li>
-            </ul>
-          </div>
-      
-          <div class="col mb-3">
-            <h5>Locations</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Delhi</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hyderabad</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Bombay</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Chennai</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Kolkata</a></li>
-            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-5 my-5 border-top">
+          <div class="container">
+            <div class="row justify-content-center" style="max-width: 800px; margin: 0 auto;">
+              <div class="col-md-3 mb-3">
+                <h5>Company</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Free Quote</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                  <li class="nav-item mb-2"><a href="blog.html" class="nav-link p-0 text-body-secondary">Moving Tips</a></li>
+                </ul>
+              </div>
+          
+              <div class="col-md-3 mb-3">
+                <h5>Info</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Comfort Moving Chicago LLC</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">ICC License no.<br>236923 MC</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Chicago IL</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">60622</a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <h5>Connect with Us</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </footer>
-
-
-
-
-
-
-
-
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     </body>
-
 </html>
