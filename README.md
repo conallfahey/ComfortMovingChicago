@@ -1,3 +1,3 @@
 # Bootstrap
 
-The moving company Project is a static Website created solely using Bootstrap 5.
+The moving company Project

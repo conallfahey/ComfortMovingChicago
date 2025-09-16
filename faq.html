@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Moving FAQ - Chicago Apartment Moving Questions | Comfort Moving Chicago</title>
+    <meta name="description" content="Get answers to common Chicago apartment moving questions. Learn about permits, elevator reservations, pricing, and moving tips for Northside Chicago neighborhoods.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="icon" href="./Images/CMCLogoTransparent.webp">
+    <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+    <style>
+      .faq-item {
+        border-bottom: 1px solid #e9ecef;
+        padding: 1.5rem 0;
+      }
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+      .faq-question {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-answer {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      .faq-icon.rotated {
+        transform: rotate(180deg);
+      }
+      h1, h2, h3, h4, h5, nav, .navbar-brand {
+        font-family: "noka", sans-serif;
+        font-weight: 800;
+      }
+      body {
+        font-family: "proxima-nova", sans-serif;
+      }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid px-5">
+          <a class="navbar-brand" href="index.html">
+            <img src="./Images/CMCLogoTransparent.webp" alt="Logo" width="55px" height="55px">
+          </svg> Comfort Moving Chicago</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="index.html#services">Residential Moving</a></li>
+                  <li><a class="dropdown-item" href="index.html#services">Furniture Assembly</a></li>
+                  <li><a class="dropdown-item" href="index.html#services">Packing Services</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Moving Tips</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <a href="tel:+17732361724" class="btn me-2" style="background-color: #FF9B50; color: white;">Call Now</a>
+              <a href="mailto:info@comfortmovingchicago.com" class="btn btn-outline-primary">Email Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Frequently Asked Questions</h1>
+                    <p class="lead">Everything you need to know about moving in Chicago. Got a question we haven't covered? Give us a call!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do I need a moving permit in Chicago?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>It depends on your specific situation. If you're moving from/to a building that requires blocking street parking or using a loading zone, you'll likely need a permit from the City of Chicago. We can help you figure out if you need one and even assist with the application process. Most residential moves in neighborhoods like Lincoln Park, Lakeview, and Wicker Park don't require permits unless you're blocking traffic.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How much does an apartment move cost in Chicago?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Apartment moves in Chicago typically range from $300-800 for local moves, depending on the size of your place and how much stuff you have. A studio or 1BR usually runs $300-500, while a 2-3BR can be $500-800. Factors that affect price include: number of stairs, elevator availability, distance between locations, and how much packing help you need. We always provide free, no-obligation quotes so you know exactly what to expect.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you handle elevator reservations?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Absolutely! We know how important elevator reservations are, especially in high-rise buildings throughout Northside Chicago. We can coordinate with your building management to reserve service elevators and ensure we have the access we need on moving day. Just let us know your building details when you book, and we'll handle the rest.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What's the best time of year to move in Chicago?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Spring and fall are ideal - you'll avoid the brutal Chicago winters and sweltering summers. That said, we move people year-round! Winter moves can actually be cheaper since it's our slower season. Summer is our busiest time (especially around college move-in/out dates), so book early if you're planning a summer move. Weather-wise, we're prepared for anything Chicago throws at us.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can you move me on short notice?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>We offer same-day and next-day moving services when possible! Chicago apartment hunting can be unpredictable - we get it. If you just found your dream place in Lincoln Park or need to move out of your Lakeview apartment ASAP, give us a call. We'll do our best to accommodate rush moves, though availability depends on our schedule and crew availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you provide packing materials?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes! We bring basic packing materials like blankets, shrink wrap, and tape. If you need boxes, packing paper, or bubble wrap, we can provide those for an additional fee. Many of our customers prefer to pack their personal items themselves and let us handle the furniture and heavy lifting - whatever works best for you!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What about parking in Chicago neighborhoods?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Parking can be tricky in neighborhoods like Wicker Park, Bucktown, and the Gold Coast. We're familiar with the parking restrictions and meter situations throughout the city. If needed, we can help you secure temporary parking permits or work around street cleaning schedules. Our team knows the ins and outs of Chicago parking - it's part of what makes us local experts!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are you insured and licensed?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Absolutely. We're fully licensed and insured for your peace of mind. Our team is trained, background-checked, and experienced with Chicago apartment moves. We carry liability insurance and can provide proof of insurance if your building requires it. Your belongings and property are protected when you choose Comfort Moving Chicago.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if something gets damaged during the move?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>While we take every precaution to protect your belongings, accidents can happen. We're fully insured and will work with you to resolve any damage claims quickly and fairly. We use professional moving equipment, blankets, and techniques to minimize risk. Most of our moves are completed without any issues, but we stand behind our work 100%.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you move during Chicago winters?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, we're tough enough to handle Chicago winters! We move year-round and have the equipment and experience to deal with snow, ice, and cold temperatures. We take extra precautions during winter moves - using floor protection, being extra careful on icy steps, and making sure your belongings stay dry. Plus, winter moves often cost less since it's our slower season.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How far in advance should I book my move?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>For the best availability and rates, we recommend booking 1-2 weeks in advance. During busy seasons (summer months, end/beginning of month), booking 2-3 weeks ahead is ideal. That said, we understand Chicago apartment hunting doesn't always allow for advance planning - we'll do our best to accommodate last-minute requests whenever possible.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What areas of Chicago do you serve?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>We specialize in Northside Chicago neighborhoods including Lincoln Park, Lakeview, Wicker Park, Bucktown, Logan Square, and Gold Coast. We also serve the greater Chicago area and suburbs. If you're not sure if we cover your area, just give us a call - we're pretty flexible and love helping Chicagoans with their moves!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Still Have Questions?</h2>
+                    <p class="lead mb-4">We're here to help! Give us a call or send us an email - we love talking about moving (seriously, we're kind of nerdy about it).</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="tel:+17732361724" class="btn btn-lg" style="background-color: #FF9B50; color: white;">
+                            📞 (773) 236-1724
+                        </a>
+                        <a href="index.html#quoteForm" class="btn btn-outline-primary btn-lg">
+                            💰 Get Free Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 my-5 border-top">
+      <div class="container">
+        <div class="row justify-content-center" style="max-width: 800px; margin: 0 auto;">
+          <div class="col-md-3 mb-3">
+            <h5>Company</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="index.html#quoteForm" class="nav-link p-0 text-body-secondary">Free Quote</a></li>
+              <li class="nav-item mb-2"><a href="index.html#services" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
+              <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="index.html#about" class="nav-link p-0 text-body-secondary">About</a></li>
+              <li class="nav-item mb-2"><a href="blog.html" class="nav-link p-0 text-body-secondary">Moving Tips</a></li>
+            </ul>
+          </div>
+      
+          <div class="col-md-3 mb-3">
+            <h5>Info</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Comfort Moving Chicago LLC</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">ICC License no.<br>236923 MC</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Chicago IL</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">60622</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <h5>Connect with Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                icon.classList.add('rotated');
+            } else {
+                answer.style.display = 'none';
+                icon.classList.remove('rotated');
+            }
+        }
+    </script>
+</body>
+</html>
