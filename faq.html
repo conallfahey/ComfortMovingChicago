@@ -37,6 +37,29 @@
       .faq-icon.rotated {
         transform: rotate(180deg);
       }
+      /* Navy Blue Color Overrides */
+      :root {
+        --bs-primary: #1a237e;
+        --bs-primary-rgb: 26, 35, 126;
+      }
+      .btn-primary {
+        background-color: #1a237e !important;
+        border-color: #1a237e !important;
+      }
+      .btn-primary:hover {
+        background-color: #0d47a1 !important;
+        border-color: #0d47a1 !important;
+      }
+      .btn-outline-primary {
+        color: #1a237e !important;
+        border-color: #1a237e !important;
+      }
+      .btn-outline-primary:hover {
+        background-color: #1a237e !important;
+        border-color: #1a237e !important;
+        color: white !important;
+      }
+      
       h1, h2, h3, h4, h5, nav, .navbar-brand {
         font-family: "noka", sans-serif;
         font-weight: 800;
@@ -108,16 +131,6 @@
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Do I need a moving permit in Chicago?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>It depends on your specific situation. If you're moving from/to a building that requires blocking street parking or using a loading zone, you'll likely need a permit from the City of Chicago. We can help you figure out if you need one and even assist with the application process. Most residential moves in neighborhoods like Lincoln Park, Lakeview, and Wicker Park don't require permits unless you're blocking traffic.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
                         <span>How much does an apartment move cost in Chicago?</span>
                         <span class="faq-icon">▼</span>
                     </div>
@@ -125,17 +138,7 @@
                         <p>Apartment moves in Chicago typically range from $300-800 for local moves, depending on the size of your place and how much stuff you have. A studio or 1BR usually runs $300-500, while a 2-3BR can be $500-800. Factors that affect price include: number of stairs, elevator availability, distance between locations, and how much packing help you need. We always provide free, no-obligation quotes so you know exactly what to expect.</p>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Do you handle elevator reservations?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Absolutely! We know how important elevator reservations are, especially in high-rise buildings throughout Northside Chicago. We can coordinate with your building management to reserve service elevators and ensure we have the access we need on moving day. Just let us know your building details when you book, and we'll handle the rest.</p>
-                    </div>
-                </div>
-
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <span>What's the best time of year to move in Chicago?</span>
@@ -152,7 +155,7 @@
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer" style="display: none;">
-                        <p>We offer same-day and next-day moving services when possible! Chicago apartment hunting can be unpredictable - we get it. If you just found your dream place in Lincoln Park or need to move out of your Lakeview apartment ASAP, give us a call. We'll do our best to accommodate rush moves, though availability depends on our schedule and crew availability.</p>
+                        <p>We offer last minute and next-day moving services when possible! Chicago apartment hunting can be unpredictable - we get it, though availability depends on our schedule and crew availability.</p>
                     </div>
                 </div>
 
@@ -165,17 +168,7 @@
                         <p>Yes! We bring basic packing materials like blankets, shrink wrap, and tape. If you need boxes, packing paper, or bubble wrap, we can provide those for an additional fee. Many of our customers prefer to pack their personal items themselves and let us handle the furniture and heavy lifting - whatever works best for you!</p>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What about parking in Chicago neighborhoods?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Parking can be tricky in neighborhoods like Wicker Park, Bucktown, and the Gold Coast. We're familiar with the parking restrictions and meter situations throughout the city. If needed, we can help you secure temporary parking permits or work around street cleaning schedules. Our team knows the ins and outs of Chicago parking - it's part of what makes us local experts!</p>
-                    </div>
-                </div>
-
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <span>Are you insured and licensed?</span>
@@ -236,13 +229,13 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="mb-4">Still Have Questions?</h2>
-                    <p class="lead mb-4">We're here to help! Give us a call or send us an email - we love talking about moving (seriously, we're kind of nerdy about it).</p>
+                    <p class="lead mb-4">We're here to help! Give us a call or send us an email.</p>
                     <div class="d-flex justify-content-center gap-3">
                         <a href="tel:+17732361724" class="btn btn-lg" style="background-color: #FF9B50; color: white;">
                             📞 (773) 236-1724
                         </a>
                         <a href="index.html#quoteForm" class="btn btn-outline-primary btn-lg">
-                            💰 Get Free Quote
+                            Get Free Quote
                         </a>
                     </div>
                 </div>
