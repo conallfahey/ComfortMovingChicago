@@ -29,9 +29,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="apple-mobile-web-app-title" content="Comfort Moving Chicago">
 
-        <!-- Google Reviews Script -->
-        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-
         
         <!-- Structured Data for SEO -->
         <script type="application/ld+json">
@@ -483,14 +480,12 @@
         </style>
 </head>
     <body>
-        <!-- Google Reviews Script -->
-        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
               <a class="navbar-brand" href="#">
-                <img src="./Images/CMCLogoTransparent.webp" alt="Logo" width="55px" height="55px">
-              </svg> <span class="d-none d-sm-inline">Comfort Moving Chicago</span><span class="d-inline d-sm-none">CMC</span></a>
+                <img src="./Images/CMC_logo.png" alt="CMC Logo" height="55px">
+              </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -527,7 +522,7 @@
             </div>
           </nav>
 
-          <!-- Hero section  -->
+          <!-- Hero section with slideshow -->
           <div class="hero-section" style="background: url('Images/ChicagoMovingMap.jpg') center/cover; min-height: 40vh; padding: 40px 0; position: relative; overflow: hidden;">
             <!-- Map Opacity Overlay -->
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.7);"></div>
@@ -585,7 +580,44 @@
                 </div>
                 
                 <div class="col-lg-6 text-center">
-                  <img src="Images/Chicago_Moving_Company_1280-2.webp" alt="Professional Chicago Movers" class="img-fluid rounded-3 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px !important;">
+                  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="Images/IMG_0760.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Expert apartment moving team Lincoln Park Chicago" style="border-radius: 20px !important;">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="Images/IMG_0859.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Apartment moving services Lakeview Chicago" style="border-radius: 20px !important;">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="Images/IMG_5815.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Professional moving equipment for apartment moves Chicago" style="border-radius: 20px !important;">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="Images/IMG_9070-2.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Licensed apartment movers Wicker Park Chicago" style="border-radius: 20px !important;">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="Images/IMG_5819.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Reliable apartment moving services Chicago" style="border-radius: 20px !important;">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="Images/IMG_5820.webp" class="d-block w-100 rounded-3 shadow-lg" alt="Studio apartment moving specialists Chicago" style="border-radius: 20px !important;">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -602,10 +634,120 @@
                        <h2 class="card-title mb-4">Customer Reviews</h2>
                        
                        <div class="reviews-scroll" style="max-height: 400px; overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;" data-desktop-height="800px">
-                         <!-- Google Reviews Widget - Replace with your actual Google Business Profile ID -->
-                         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                          <script src="https://elfsightcdn.com/platform.js" async></script>
-                          <div class="elfsight-app-1ba1bbb7-7531-46bc-8f50-ecb1c92b1185" data-elfsight-app-lazy></div>
+                         <!-- Google Reviews -->
+                         <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #4CAF50; color: white; font-weight: bold; font-size: 18px;">
+                               C
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Cindy Western</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">a month ago</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"Henry and Matteo helped us out with a last minute move. The prices were reasonable and the quality of the move was excellent. In addition, they are personable, accommodating, and easy to work with. I highly recommend them!"</p>
+                         </div>
+                         
+                         <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #FF9800; color: white; font-weight: bold; font-size: 18px;">
+                               A
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Anna Kolleng</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">8 months ago</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"We used comfort moving on a pretty large move into a single family home based off of a flyer in our neighborhood.<br>Mateo, Henry and Junior were a delight to work with and absolutely amazing movers and an extremely fair price.<br>We would recommend them to anyone in Chicago looking to support a local business and looking for lovely, hard working and insured movers. We truly couldn't have asked for a more seamless move."</p>
+                         </div>
+                         
+                         <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #2196F3; color: white; font-weight: bold; font-size: 18px;">
+                               M
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Mancer1980</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">3 months ago</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"Mateo and Henry did an exceptional job of moving me across the country. Moving is stressful enough even when it's local but these guys did an amazing job from start to finish at an extremely affordable price. I will definitely be recommending them to friends and family!"</p>
+                         </div>
+                         
+                         <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #9C27B0; color: white; font-weight: bold; font-size: 18px;">
+                               J
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Josephine Ho</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">September 10, 2025</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"Quick and efficient. Best price in the city"</p>
+                         </div>
+                         
+                         <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #F44336; color: white; font-weight: bold; font-size: 18px;">
+                               J
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Jenna Dobbs</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">September 17, 2025</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"If I could, I'd give them wayyy more stars! Henery, Nate and Mateo did an absolutely phenomenal job with this big move! Done in a very timely manner. Very polite and friendly. Great sense of humor. Made this move a lot less stressful. Such a blessing to help us out in the situation we were in!"</p>
+                         </div>
+                         
+                         <div class="review-item mb-3 p-3">
+                           <div class="d-flex align-items-start mb-2">
+                             <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                  style="width: 40px; height: 40px; background-color: #607D8B; color: white; font-weight: bold; font-size: 18px;">
+                               M
+                             </div>
+                             <div class="flex-grow-1">
+                               <div class="d-flex align-items-center mb-1">
+                                 <strong class="text-dark me-2">Marco Sepulveda</strong>
+                                 <div class="text-warning">
+                                   ★★★★★
+                                 </div>
+                               </div>
+                               <small class="text-muted">September 10, 2025</small>
+                             </div>
+                           </div>
+                           <p class="mb-0 ms-5">"Friendly guys, showed up on time and took great care of my appliances. Fully Recommended!"</p>
+                         </div>
                        </div>
                        <!-- Alternative: Direct link to Google Reviews -->
                          <div class="text-center mt-3">
@@ -778,55 +920,6 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-md-6 my-5">
-                      <div id="carouselExampleIndicators" class="carousel slide">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                        </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="./Images/Chicago_Moving_Company_1280-2.webp" class="d-block w-100" alt="Professional apartment movers in Chicago - Comfort Moving Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_0760.webp" class="d-block w-100" alt="Expert apartment moving team Lincoln Park Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_0859.webp" class="d-block w-100" alt="Apartment moving services Lakeview Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_5815.webp" class="d-block w-100" alt="Professional moving equipment for apartment moves Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_9070-2.webp" class="d-block w-100" alt="Licensed apartment movers Wicker Park Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_5819.webp" class="d-block w-100" alt="Reliable apartment moving services Chicago">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="Images/IMG_5820.webp" class="d-block w-100" alt="Studio apartment moving specialists Chicago">
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
         <!-- About Section -->
         <div class="container py-5" id="about">
