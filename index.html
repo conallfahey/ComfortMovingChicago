@@ -164,6 +164,11 @@
             color: white !important;
           }
           
+          /* Star Color Consistency */
+          .text-warning {
+            color: #D4A574 !important;
+          }
+          
           .service-area-column {
             min-width: 180px;
             padding: 10px;
@@ -204,8 +209,8 @@
               font-size: 1.1rem !important;
             }
             .navbar-brand img {
-              width: 40px !important;
-              height: 40px !important;
+              width: auto !important;
+              height: 55px !important;
             }
             .navbar-nav .nav-link {
               padding: 0.75rem 1rem !important;
@@ -401,7 +406,13 @@
             
             /* Mobile Reviews Section */
             .reviews-scroll {
-              max-height: 300px !important;
+              max-height: 405px !important; /* Increased by 35% from 300px */
+              border-radius: 12px !important;
+            }
+            
+            /* Mobile Quote Form Section */
+            .quote-form-scroll {
+              max-height: 405px !important; /* Increased by 35% from 300px */
               border-radius: 12px !important;
             }
             
@@ -417,9 +428,17 @@
             }
             
             /* Mobile Image Optimizations */
-            img {
+            img:not(.logo-img) {
               max-width: 100% !important;
               height: auto !important;
+            }
+            
+            /* Mobile Logo Improvements */
+            .logo-img {
+              height: 45px !important;
+              width: auto !important;
+              max-width: none !important;
+              object-fit: contain !important;
             }
             
             /* Mobile Footer Improvements */
@@ -476,6 +495,51 @@
             .quote-form-scroll {
               max-height: 800px !important;
             }
+            
+            /* Desktop Logo Improvements */
+            .logo-img {
+              height: 65px !important;
+              width: auto !important;
+              max-width: none !important;
+              object-fit: contain !important;
+            }
+            
+            /* Desktop Reviews and Contact Section Vertical Alignment */
+            .reviews-contact-section .row {
+              display: flex !important;
+              align-items: stretch !important;
+            }
+            
+            .reviews-contact-section .col-md-6 {
+              display: flex !important;
+            }
+            
+            .reviews-contact-section .card {
+              display: flex !important;
+              flex-direction: column !important;
+              height: 100% !important;
+            }
+            
+            .reviews-contact-section .card-body {
+              display: flex !important;
+              flex-direction: column !important;
+              flex: 1 !important;
+            }
+            
+            /* Desktop Button Alignment - Push buttons to bottom */
+            .reviews-contact-section .card-body .text-center {
+              margin-top: auto !important;
+            }
+            
+            .reviews-contact-section .card-body form {
+              display: flex !important;
+              flex-direction: column !important;
+              flex: 1 !important;
+            }
+            
+            .reviews-contact-section .card-body form .btn {
+              margin-top: auto !important;
+            }
           }
         </style>
 </head>
@@ -484,7 +548,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
               <a class="navbar-brand" href="#">
-                <img src="./Images/CMC_logo.png" alt="CMC Logo" height="55px">
+                <img src="./Images/CMC_logo.png" alt="CMC Logo" class="logo-img" style="height: 55px; width: auto;">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -624,14 +688,20 @@
           </div>
 
           <!-- Reviews and Contact Section -->
-           <div style="position: relative; min-height: 800px; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+           <div class="reviews-contact-section" style="position: relative; min-height: 800px; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
              <div class="container py-5">
                <div class="row position-relative">
                  <div class="col-md-6 mb-4">
                    <!-- Google Business Profile Reviews -->
                    <div class="card bg-white mb-4 mb-md-0 h-100">
                      <div class="card-body">
-                       <h2 class="card-title mb-4">Customer Reviews</h2>
+                       <h2 class="card-title mb-2">Customer Reviews</h2>
+                       <div class="d-flex align-items-center mb-4">
+                         <div class="me-2">
+                           <span style="color: #D4A574; font-size: 1.2rem;">★★★★★</span>
+                         </div>
+                         <span class="text-muted" style="font-size: 1rem; font-weight: 500;">5 stars on Google</span>
+                       </div>
                        
                        <div class="reviews-scroll" style="max-height: 400px; overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;" data-desktop-height="800px">
                          <!-- Google Reviews -->
