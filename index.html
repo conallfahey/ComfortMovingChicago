@@ -12,23 +12,21 @@
 
           gtag('config', 'AW-10973490773');
         </script>
-
-
+        
         <meta charset="UTF-8">
         <title>Comfort Moving Chicago</title>
         <link rel="canonical" href="https://comfortmovingchicago.com/">
         <meta name="robots" content="index, follow">
-        <meta name="description" content="Professional apartment and residential moving services in Chicago. Serving Lincoln Park, Lakeview, Wicker Park & beyond. Licensed, insured movers. Free quotes. Call (773) 236-1724">
+        <meta name="description" content="Trusted and Affordable Chicago apartment movers. Free quotes: (773) 236-1724">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="icon" href="./Images/CMCLogoTransparent.webp">
+        <link rel="icon" type="image/png" href="./Images/CMC_logo.png">
         <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
         <meta name="theme-color" content="#F44336">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="apple-mobile-web-app-title" content="Comfort Moving Chicago">
-
         
         <!-- Structured Data for SEO -->
         <script type="application/ld+json">
@@ -53,7 +51,7 @@
           "areaServed": {
             "@type": "Place",
             "name": [
-              "Lincoln Park, Chicago, IL",
+            "Lincoln Park, Chicago, IL",
             "Lakeview, Chicago, IL",
             "Wicker Park, Chicago, IL",
             "Bucktown, Chicago, IL",
@@ -410,7 +408,7 @@
             
             /* Mobile Reviews Section */
             .reviews-scroll {
-              max-height: 405px !important; /* Increased by 35% from 300px */
+              max-height: none !important;
               border-radius: 12px !important;
             }
             
@@ -522,6 +520,7 @@
               display: flex !important;
               flex-direction: column !important;
               height: 100% !important;
+              width: 100% !important;
             }
             
             .reviews-contact-section .card-body {
@@ -530,7 +529,7 @@
               flex: 1 !important;
             }
             
-            /* Desktop Button Alignment - Push buttons to bottom */
+            /* Desktop Button Alignment - Push button to bottom */
             .reviews-contact-section .card-body .text-center {
               margin-top: auto !important;
             }
@@ -544,6 +543,111 @@
             .reviews-contact-section .card-body form .btn {
               margin-top: auto !important;
             }
+          }
+
+          /* Reviews layout tweaks */
+          .reviews-contact-section .card-body { padding-bottom: 12px !important; }
+          .reviews-contact-section .card-body .text-center .btn { margin-top: 0 !important; }
+          .reviews-scroll { margin-bottom: 8px !important; }
+
+          /* Quote form redesign */
+          .quote-form-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+          }
+          .quote-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            color: #162a45;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+          }
+          .quote-input,
+          .quote-select {
+            width: 100%;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 999px;
+            padding: 12px 16px;
+            outline: none;
+            background-color: #fff;
+          }
+          .quote-input:focus,
+          .quote-select:focus {
+            border-color: #cfd8dc;
+            box-shadow: 0 0 0 3px rgba(26,35,126,0.08);
+          }
+          .quote-textarea {
+            width: 100%;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 12px 16px;
+            min-height: 56px;
+            resize: vertical;
+            outline: none;
+            background-color: #fff;
+          }
+          .quote-textarea:focus {
+            border-color: #cfd8dc;
+            box-shadow: 0 0 0 3px rgba(26,35,126,0.08);
+          }
+          .quote-submit-btn {
+            background: #F44336;
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            font-weight: 800;
+            padding: 14px 22px;
+            width: 100%;
+            letter-spacing: 0.02em;
+          }
+          .quote-submit-btn:hover {
+            background: #e53935;
+            color: #fff;
+          }
+
+          /* Reviews button styling to match quote button */
+          .reviews-btn {
+            background: #F44336;
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            font-weight: 800;
+            padding: 14px 22px;
+            width: 100%;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+          }
+          .reviews-btn:hover {
+            background: #e53935;
+            color: #fff;
+          }
+
+          /* Make reviews content fill width and card height */
+          .reviews-scroll {
+            width: 100% !important;
+            flex: 1 1 auto !important;
+            overflow-y: auto !important;
+            min-height: 0 !important; /* allow flex child to shrink for full-height scroll */
+          }
+          /* Remove indent inside scroll to use full width */
+          .reviews-scroll .ms-5 { margin-left: 0 !important; }
+
+          /* Form field stacking and spacing */
+          .quote-fields { margin: 0; padding: 0; }
+          .quote-field { margin-bottom: 14px; }
+          .quote-label { display: block; margin: 0 0 6px 0; }
+          .quote-input, .quote-select { display: block; width: 100%; margin: 0; min-height: 44px; box-sizing: border-box; }
+          .quote-input::placeholder, .quote-select::placeholder, .quote-textarea::placeholder { color: #9aa0a6; }
+          .quote-form-card .card-body { padding: 24px; }
+          @media (min-width: 768px) { .quote-form-card .card-body { padding: 32px 36px; } }
+          @media (max-width: 767.98px) {
+            .quote-form-card { border-radius: 16px; }
+            .quote-submit-btn { padding: 16px 20px; font-size: 1rem; }
           }
         </style>
 </head>
@@ -583,14 +687,7 @@
               </li>
             </ul>
                 <div class="d-flex">
-                  <a href="https://www.instagram.com/comfortmovingchicago" class="btn me-2 p-0 d-inline-flex align-items-center justify-content-center" target="_blank" rel="noopener" aria-label="Instagram" style="height:38px;min-width:38px;background-color:#1a237e;color:#fff;border-radius:.375rem;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block">
-                      <rect x="4" y="4" width="16" height="16" rx="4" ry="4"></rect>
-                      <circle cx="12" cy="12" r="4"></circle>
-                      <circle cx="17.5" cy="6.5" r="1.5"></circle>
-                    </svg>
-                    <span class="visually-hidden">Instagram</span>
-                  </a>
+
                   <a href="tel:+17732361724" class="btn me-2" style="background-color: #F44336; color: white;">Call Now</a>
                   <a href="mailto:info@comfortmovingchicago.com" class="btn btn-outline-primary">Email Us</a>
                 </div>
@@ -655,7 +752,26 @@
                   </div>
                   <div class="mt-3 d-flex align-items-center gap-3" style="display: inline-flex;">
                     <iframe border="0" frameborder="0" scrolling="no" style="display:block;border:0;height:64px;width:300px;overflow:hidden;" title="BBB Accredited Business Seal" loading="lazy" src="https://seal-chicago.bbb.org/frame/blue-seal-200-42-bbb-1000120613.png?chk=0C39ED404C"></iframe>
-                    <!-- Instagram link moved to footer -->
+                    <a href="https://www.facebook.com/p/Comfort-Moving-Chicago-100085395917097/" class="btn p-0 d-inline-flex align-items-center justify-content-center" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="height:38px;min-width:38px;background-color:#1877F2;color:#fff;border-radius:.375rem;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true" style="display:block">
+                        <path d="M12 2.04C6.48 2.04 2 6.52 2 12.04c0 4.99 3.66 9.13 8.44 9.88v-6.99H8.1v-2.89h2.34V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99c4.78-.75 8.44-4.89 8.44-9.88 0-5.52-4.48-10-10-10z"></path>
+                      </svg>
+                      <span class="visually-hidden">Facebook</span>
+                    </a>
+                    <a href="https://www.yelp.com/biz/comfort-moving-chicago-oak-park-5" class="btn p-0 d-inline-flex align-items-center justify-content-center" target="_blank" rel="noopener noreferrer" aria-label="Yelp" style="height:38px;min-width:38px;background-color:#d32323;color:#fff;border-radius:.375rem;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="white" aria-hidden="true" style="display:block">
+                        <path d="m4.188 10.095.736-.17.073-.02A.813.813 0 0 0 5.45 8.65a1 1 0 0 0-.3-.258 3 3 0 0 0-.428-.198l-.808-.295a76 76 0 0 0-1.364-.493C2.253 7.3 2 7.208 1.783 7.14c-.041-.013-.087-.025-.124-.038a2.1 2.1 0 0 0-.606-.116.72.72 0 0 0-.572.245 2 2 0 0 0-.105.132 1.6 1.6 0 0 0-.155.309c-.15.443-.225.908-.22 1.376.002.423.013.966.246 1.334a.8.8 0 0 0 .22.24c.166.114.333.129.507.141.26.019.513-.045.764-.103l2.447-.566zm8.219-3.911a4.2 4.2 0 0 0-.8-1.14 1.6 1.6 0 0 0-.275-.21 2 2 0 0 0-.15-.073.72.72 0 0 0-.621.031c-.142.07-.294.182-.496.37-.028.028-.063.06-.094.089-.167.156-.353.35-.574.575q-.51.516-1.01 1.042l-.598.62a3 3 0 0 0-.298.365 1 1 0 0 0-.157.364.8.8 0 0 0 .007.301q0 .007.003.013a.81.81 0 0 0 .945.616l.074-.014 3.185-.736c.251-.058.506-.112.732-.242.151-.088.295-.175.394-.35a.8.8 0 0 0 .093-.313c.05-.434-.178-.927-.36-1.308M6.706 7.523c.23-.29.23-.722.25-1.075.07-1.181.143-2.362.201-3.543.022-.448.07-.89.044-1.34-.022-.372-.025-.799-.26-1.104C6.528-.077 5.644-.033 5.04.05q-.278.038-.553.104a8 8 0 0 0-.543.149c-.58.19-1.393.537-1.53 1.204-.078.377.106.763.249 1.107.173.417.41.792.625 1.185.57 1.036 1.15 2.066 1.728 3.097.172.308.36.697.695.857q.033.015.068.025c.15.057.313.068.469.032l.028-.007a.8.8 0 0 0 .377-.226zm-.276 3.161a.74.74 0 0 0-.923-.234 1 1 0 0 0-.145.09 2 2 0 0 0-.346.354c-.026.033-.05.077-.08.104l-.512.705q-.435.591-.861 1.193c-.185.26-.346.479-.472.673l-.072.11c-.152.235-.238.406-.282.559a.7.7 0 0 0-.03.314c.013.11.05.217.108.312q.046.07.1.138a1.6 1.6 0 0 0 .257.237 4.5 4.5 0 0 0 2.196.76 1.6 1.6 0 0 0 .349-.027 2 2 0 0 0 .163-.048.8.8 0 0 0 .278-.178.7.7 0 0 0 .17-.266c.059-.147.098-.335.123-.613l.012-.13c.02-.231.03-.502.045-.821q.037-.735.06-1.469l.033-.87a2.1 2.1 0 0 0-.055-.623 1 1 0 0 0-.117-.27Zm5.783 1.362a2.2 2.2 0 0 0-.498-.378l-.112-.067c-.199-.12-.438-.246-.719-.398q-.644-.353-1.295-.695l-.767-.407c-.04-.012-.08-.04-.118-.059a2 2 0 0 0-.466-.166 1 1 0 0 0-.17-.018.74.74 0 0 0-.725.616 1 1 0 0 0 .01.293c.038.204.13.406.224.583l.41.768q.341.65.696 1.294c.152.28.28.52.398.719q.036.057.068.112c.145.239.261.39.379.497a.73.73 0 0 0 .596.201 2 2 0 0 0 .168-.029 1.6 1.6 0 0 0 .325-.129 4 4 0 0 0 .855-.64c.306-.3.577-.63.788-1.006q.045-.08.076-.165a2 2 0 0 0 .051-.161q.019-.083.029-.168a.8.8 0 0 0-.038-.327.7.7 0 0 0-.165-.27"/>
+                      </svg>
+                      <span class="visually-hidden">Yelp</span>
+                    </a>
+                    <a href="https://www.instagram.com/comfortmovingchicago" class="btn p-0 d-inline-flex align-items-center justify-content-center" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="height:38px;min-width:38px;background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color:#fff; border-radius:.375rem;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                        <rect x="4" y="4" width="16" height="16" rx="4" ry="4"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                      </svg>
+                      <span class="visually-hidden">Instagram</span>
+                    </a>
                   </div>
                 </div>
                 
@@ -698,9 +814,9 @@
            <div class="reviews-contact-section" style="position: relative; min-height: 800px; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
              <div class="container py-5">
                <div class="row position-relative">
-                 <div class="col-md-6 mb-4">
+                 <div class="col-12 col-md-6 mb-4">
                    <!-- Google Business Profile Reviews -->
-                   <div class="card bg-white mb-4 mb-md-0 h-100">
+                   <div class="card bg-white mb-4 mb-md-0 h-100 quote-form-card">
                      <div class="card-body">
                        <h2 class="card-title mb-2">Customer Reviews</h2>
                        <div class="d-flex align-items-center mb-4">
@@ -716,7 +832,7 @@
                          <span class="text-muted" style="font-size: 1rem; font-weight: 500;">5 stars on Google</span>
                        </div>
                        
-                       <div class="reviews-scroll" style="max-height: 400px; overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;" data-desktop-height="800px">
+                       <div class="reviews-scroll" style="overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;" data-desktop-height="800px">
                          <!-- Google Reviews -->
                          <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
                            <div class="d-flex align-items-start mb-2">
@@ -836,166 +952,82 @@
                          <div class="text-center mt-3">
                            <a href="https://www.google.com/search?q=Comfort+Moving+Chicago+reviews" 
                               target="_blank" 
-                              class="btn btn-primary w-100 mt-3">View All Reviews on Google
+                              class="btn reviews-btn w-100 mt-3">View All Reviews on Google
                            </a>
                          </div>
                      </div>
                      
                    </div>
                  </div>
-                 <div class="col-md-6 mb-4">
-          <div class="card bg-white h-100">
+                 <div class="col-12 col-md-6 mb-4">
+          <div class="card bg-white h-100 quote-form-card">
             <div class="card-body">
               <h2 class="card-title mb-4" id="quoteForm">Free Quote Form</h2>
-              <form action="https://formsubmit.co/comfortmovingchicago@gmail.com" method="POST">
-                <div class="quote-form-scroll" style="max-height: 400px; overflow-y: auto; padding-right: 5px; padding-left: 5px; padding-top: 6px; -webkit-overflow-scrolling: touch; border: 1px solid #e0e0e0; border-radius: 8px; position: relative;" data-desktop-height="800px">
-                  <div class="mb-3">
-                    <input type="text" class="form-control bg-white" placeholder="Your Name" name="yourName" required>
+              <form action="https://formsubmit.co/comfortmovingchicago@gmail.com" method="POST" class="quote-grid">
+                <div class="quote-fields">
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-name">FULL NAME</label>
+                    <input id="q-name" type="text" class="quote-input" name="yourName" placeholder="Full Name" required>
                   </div>
-                  <div class="mb-3">
-                    <input type="email" class="form-control bg-white" placeholder="Email Address" name="email" required>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-phone">PHONE NUMBER</label>
+                    <input id="q-phone" type="tel" class="quote-input" name="Phone" placeholder="Mobile Number" required>
                   </div>
-                  <div class="mb-3">
-                    <input type="tel" class="form-control bg-white" placeholder="Phone Number" name="Phone">
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-email">EMAIL</label>
+                    <input id="q-email" type="email" class="quote-input" name="email" placeholder="Email Address" required>
                   </div>
-                  <div class="mb-3">
-                    <label class="form-label">Move Date*</label>
-                    <input type="date" class="form-control bg-white" name="Date" required>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-date">DATE</label>
+                    <input id="q-date" type="date" class="quote-input" name="Date" placeholder="Moving date" required>
                   </div>
-                  <div class="mb-3">
-                    <label class="form-label">Move Time*</label>
-                    <div class="d-flex gap-2">
-                      <input type="time" class="form-control bg-white" name="Time" required>
-                      <select class="form-select bg-white" style="width: 100px;" name="AM_PM">
-                        <option>AM</option>
-                        <option>PM</option>
-                      </select>
-                    </div>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-from">MOVING FROM</label>
+                    <input id="q-from" type="text" class="quote-input" name="Starting" placeholder="Address" required>
                   </div>
-                  <div class="mb-3">
-                    <label class="form-label">Type Of Move*</label>
-                    <select class="form-select bg-white" name="Type" required>
-                      <option value="">Select move type...</option>
-                      <option>Apartment Move (with truck)</option>
-                      <option>House Move (with truck)</option>
-                      <option>Office Move (with truck)</option>
-                      <option>Labor Only (NO truck provided)</option>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-to">MOVING TO</label>
+                    <input id="q-to" type="text" class="quote-input" name="Ending" placeholder="Address" required>
+                  </div>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-type">TYPE OF MOVE</label>
+                    <select id="q-type" class="quote-select" name="Type" required>
+                      <option value="MOVING SERVICE (Loading & Unloading)">MOVING SERVICE (Loading & Unloading)</option>
+                      <option value="Apartment Move (with truck)">Apartment Move (with truck)</option>
+                      <option value="House Move (with truck)">House Move (with truck)</option>
+                      <option value="Office Move (with truck)">Office Move (with truck)</option>
+                      <option value="Labor Only (NO truck provided)">Labor Only (NO truck provided)</option>
                     </select>
                   </div>
-                  
-                  <!-- New fields start here -->
-                  <div class="mb-3">
-                    <label class="form-label">Services Requested*</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Moving" id="moving" name="Services">
-                      <label class="form-check-label" for="moving">Moving</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Packing" id="packing">
-                      <label class="form-check-label" for="packing">Packing</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Hoisting" id="hoisting">
-                      <label class="form-check-label" for="hoisting">Hoisting (for oversized items)</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Oversized" id="oversized">
-                      <label class="form-check-label" for="oversized">Oversized items</label>
-                    </div>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Move Size*</label>
-                    <select class="form-select bg-white" name="Size" required>
-                      <option value="">Select size...</option>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-size">SIZE OF MOVE</label>
+                    <select id="q-size" class="quote-select" name="Size" required>
                       <option>Studio</option>
                       <option>1 Bedroom</option>
                       <option>2 Bedroom</option>
                       <option>3 Bedroom</option>
                       <option>4 Bedroom</option>
                       <option>5 Bedroom+</option>
+                    </select>
+                  </div>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-comments">COMMENTS</label>
+                    <input id="q-comments" type="text" class="quote-input" name="comments" placeholder="Best time for call, Elevators, Extra stop, etc..">
+                  </div>
+                  <div class="quote-field">
+                    <label class="quote-label" for="q-referral">HOW DID YOU HEAR ABOUT US?</label>
+                    <select id="q-referral" class="quote-select" name="referralSource">
+                      <option value="">- Select -</option>
+                      <option>Flyers</option>
+                      <option>Facebook</option>
+                      <option>Google</option>
+                      <option>Instagram</option>
+                      <option>Referral</option>
                       <option>Other</option>
                     </select>
                   </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Starting Address*</label>
-                    <input type="text" class="form-control bg-white" name="Starting" required>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Additional Stops</label>
-                    <input type="text" class="form-control bg-white" name="AdditionalStops">
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Ending Address*</label>
-                    <input type="text" class="form-control bg-white" name="Ending" required>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Flights Of Stairs (starting location)*</label>
-                    <select class="form-select bg-white" name="stairsStart" required>
-                      <option value="">Select option...</option>
-                      <option>No Stairs/No Elevator/Garden Unit</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4+</option>
-                      <option>Elevator</option>
-                    </select>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Flights Of Stairs (ending location)*</label>
-                    <select class="form-select bg-white" name="stairsEnd" required>
-                      <option value="">Select option...</option>
-                      <option>No Stairs/No Elevator/Garden Unit</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4+</option>
-                      <option>Elevator</option>
-                      <option>N/A (only one location)</option>
-                    </select>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Any other Details?</label>
-                    <textarea class="form-control bg-white" rows="3" name="other"></textarea>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">Detailed Inventory List (Optional)</label>
-                    <small class="form-text text-muted d-block mb-2">For a more accurate quote, please list all items you're moving (furniture, appliances, boxes, etc.). Include quantities and any special items that require extra care.</small>
-                    <textarea class="form-control bg-white" rows="5" name="inventory" placeholder="Example: Living room: 1 sofa, 2 chairs, 1 coffee table, 1 55in TV"), 1 entertainment center\n- Kitchen: 1 refrigerator, 1 stove, 1 microwave, 1 dining table with 4 chairs\n- Bedroom: 1 queen bed, 2 nightstands, 1 dresser\n- Boxes: Approximately 20 medium boxes, 10 large boxes\n- Special items: 1 piano, artwork, fragile items"></textarea>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label">How did you hear about us?</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="referralSource" id="flyers" value="Flyers">
-                      <label class="form-check-label" for="flyers">Flyers</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="referralSource" id="facebook" value="Facebook">
-                      <label class="form-check-label" for="facebook">Facebook</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="referralSource" id="referral" value="Referral">
-                      <label class="form-check-label" for="referral">Referral</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="referralSource" id="other" value="Other">
-                      <label class="form-check-label" for="other">Other</label>
-                      <input type="text" class="form-control bg-white mt-1" placeholder="Please specify">
-                    </div>
-                  </div>
-                  <!-- New fields end here -->
                 </div>
-                <button type="submit" class="btn btn-primary w-100 mt-3 pageclip-form__submit" >
-                    <span>Send Message</span>
-                </button>
+                <button type="submit" class="quote-submit-btn mt-3">GET A FREE QUOTE</button>
               </form>
             </div>
           </div>
@@ -1194,7 +1226,53 @@
           </div>
         </div>
 
-        <!-- Footer -->
+        <!-- Areas Served -->
+<div id="areas-served" style="background-color: #f8f9fa; padding: 60px 0;">
+  <div class="container">
+    <h2 class="text-center mb-4">Areas Served</h2>
+    <p class="text-center text-muted mb-4">We proudly serve these Chicago neighborhoods and nearby areas.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-3 service-area-column">
+        <ul class="list-unstyled">
+          <li>Lincoln Park</li>
+          <li>Lakeview</li>
+          <li>Wicker Park</li>
+          <li>Bucktown</li>
+          <li>Logan Square</li>
+        </ul>
+      </div>
+      <div class="col-md-3 service-area-column">
+        <ul class="list-unstyled">
+          <li>Gold Coast</li>
+          <li>River North</li>
+          <li>Old Town</li>
+          <li>Streeterville</li>
+          <li>Near North Side</li>
+        </ul>
+      </div>
+      <div class="col-md-3 service-area-column">
+        <ul class="list-unstyled">
+          <li>Lincoln Square</li>
+          <li>North Center</li>
+          <li>Roscoe Village</li>
+          <li>Ravenswood</li>
+          <li>Andersonville</li>
+        </ul>
+      </div>
+      <div class="col-md-3 service-area-column">
+        <ul class="list-unstyled">
+          <li>Uptown</li>
+          <li>Edgewater</li>
+          <li>Rogers Park</li>
+          <li>West Town</li>
+          <li>Ukrainian Village</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
         <footer class="py-5 my-5 border-top">
           <div class="container">
             <div class="row justify-content-center" style="max-width: 800px; margin: 0 auto;">
@@ -1203,7 +1281,7 @@
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Free Quote</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
+                  <li class="nav-item mb-2"><a href="#areas-served" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
                   <li class="nav-item mb-2"><a href="blog.html" class="nav-link p-0 text-body-secondary">Moving Tips</a></li>
