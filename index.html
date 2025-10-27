@@ -17,7 +17,7 @@
         <title>Comfort Moving Chicago</title>
         <link rel="canonical" href="https://comfortmovingchicago.com/">
         <meta name="robots" content="index, follow">
-        <meta name="description" content="Local Chicago moving company—simple, safe, stress-free residential moves.">
+        <meta name="description" content="Friendly, licensed Chicago movers with 114 five-star reviews. Affordable pricing, no hidden fees - get your free quote today and see why moving with Comfort is easy.">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="icon" type="image/png" href="./Images/CMC_logo.png">
@@ -34,7 +34,7 @@
           "@context": "https://schema.org",
           "@type": "MovingCompany",
           "name": "Comfort Moving Chicago",
-          "description": "Professional apartment and residential moving services in Chicago neighborhoods including Lincoln Park, Lakeview, and beyond.",
+          "description": "Friendly, licensed Chicago movers with 114 five-star reviews. Affordable pricing, no hidden fees — get your free quote today and see why moving with Comfort is easy.",
           "url": "https://comfortmovingchicago.com",
           "telephone": "+17732361724",
           "email": "comfortmovingchicago@gmail.com",
@@ -594,28 +594,26 @@
             background: linear-gradient(90deg, #F44336, #FF9B50);
           }
           #areas-served p { color: #6c757d; }
-          #areas-served .service-area-column { text-align: center; }
-          #areas-served .service-area-column ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+          /* Simple grid for areas */
+          #areas-served .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
             padding: 0;
             margin: 0;
             list-style: none;
           }
-          #areas-served .service-area-column ul li {
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 999px;
+          #areas-served .areas-grid li {
             background: #fff;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px 12px;
+            text-align: center;
             color: #162a45;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
           }
           @media (max-width: 768px) {
             #areas-served { padding: 40px 0 !important; }
-            #areas-served .service-area-column ul li { padding: 7px 12px; font-size: 0.95rem; }
+            #areas-served .areas-grid { grid-template-columns: repeat(2, 1fr); }
           }
 
           /* Quote form redesign */
@@ -708,6 +706,15 @@
           .reviews-btn:hover {
             background: #e53935;
             color: #fff;
+          }
+          /* Ensure single-line and pill style on mobile */
+          @media (max-width: 768px) {
+            .reviews-btn {
+              border-radius: 999px !important;
+              font-size: 0.95rem !important;
+              padding: 12px 18px !important;
+              white-space: nowrap !important;
+            }
           }
 
           /* Make reviews content fill width and card height */
@@ -1193,9 +1200,8 @@
                   <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center p-4">
                       <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" class="bi bi-building" viewBox="0 0 16 16">
-                          <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
-                          <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" class="bi bi-tools" viewBox="0 0 16 16">
+                          <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
                         </svg>
                       </div>
                       <h4 class="mb-3">Furniture Disassembly<br>& Reassembly </h4>
@@ -1208,8 +1214,9 @@
                   <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center p-4">
                       <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" viewBox="0 0 24 24">
-                          <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zm14 0v-6.7l-6 3.37v6.71l6-3.38z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" class="bi bi-box-seam" viewBox="0 0 16 16">
+                          <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                        </svg>
                       </div>
                       <h4 class="mb-3">Packing & Box Up<br>Services</h4>
                       <p>Let us do the boxing up. We provide all the materials and know-how to pack your things safely and efficiently. Fragile dishes, overflowing closets, last-minute chaos — we've got you covered. <br>  </p>
@@ -1222,8 +1229,9 @@
                   <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center p-4">
                       <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" class="bi bi-box-seam" viewBox="0 0 16 16">
-                          <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#F44336" class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1z"/>
+                          <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z"/>
                         </svg>
                       </div>
                       <h4 class="mb-3">Hoisting Service</h4>
@@ -1314,44 +1322,28 @@
   <div class="container">
     <h2 class="text-center mb-4">Areas Served</h2>
     <p class="text-center text-muted mb-4">We proudly serve these Chicago neighborhoods and nearby areas.</p>
-    <div class="row justify-content-center">
-      <div class="col-md-3 service-area-column">
-        <ul class="list-unstyled">
-          <li>Lincoln Park</li>
-          <li>Lakeview</li>
-          <li>Wicker Park</li>
-          <li>Bucktown</li>
-          <li>Logan Square</li>
-        </ul>
-      </div>
-      <div class="col-md-3 service-area-column">
-        <ul class="list-unstyled">
-          <li>Gold Coast</li>
-          <li>River North</li>
-          <li>Old Town</li>
-          <li>Streeterville</li>
-          <li>Near North Side</li>
-        </ul>
-      </div>
-      <div class="col-md-3 service-area-column">
-        <ul class="list-unstyled">
-          <li>Lincoln Square</li>
-          <li>North Center</li>
-          <li>Roscoe Village</li>
-          <li>Ravenswood</li>
-          <li>Andersonville</li>
-        </ul>
-      </div>
-      <div class="col-md-3 service-area-column">
-        <ul class="list-unstyled">
-          <li>Uptown</li>
-          <li>Edgewater</li>
-          <li>Rogers Park</li>
-          <li>West Town</li>
-          <li>Ukrainian Village</li>
-        </ul>
-      </div>
-    </div>
+    <ul class="areas-grid">
+      <li>Lincoln Park</li>
+      <li>Lakeview</li>
+      <li>Wicker Park</li>
+      <li>Bucktown</li>
+      <li>Logan Square</li>
+      <li>Gold Coast</li>
+      <li>River North</li>
+      <li>Old Town</li>
+      <li>Streeterville</li>
+      <li>Near North Side</li>
+      <li>Lincoln Square</li>
+      <li>North Center</li>
+      <li>Roscoe Village</li>
+      <li>Ravenswood</li>
+      <li>Andersonville</li>
+      <li>Uptown</li>
+      <li>Edgewater</li>
+      <li>Rogers Park</li>
+      <li>West Town</li>
+      <li>Ukrainian Village</li>
+    </ul>
   </div>
 </div>
 
