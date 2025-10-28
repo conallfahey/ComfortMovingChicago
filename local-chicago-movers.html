@@ -48,7 +48,7 @@
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="shortcut icon" href="/favicon-32x32.png">
-        <link rel="apple-touch-icon" href="/Images/CMC_logo.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
         <meta name="theme-color" content="#F44336">
         <meta name="mobile-web-app-capable" content="yes">
@@ -240,7 +240,6 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.12);
             overflow: hidden;
             margin-top: 12px;
-            border: none;
           }
           .quote-label {
             font-weight: 700;
@@ -262,6 +261,12 @@
             text-align: left !important;
             font-size: 0.75rem;
           }
+          /* Form field stacking and spacing to match index */
+          .quote-fields { margin: 0; padding: 0; }
+          .quote-field { margin-bottom: 14px; }
+          .quote-label { display: block; margin: 0 0 6px 0; }
+          .quote-input, .quote-select { display: block; width: 100%; margin: 0; min-height: 44px; box-sizing: border-box; }
+          .quote-input::placeholder, .quote-select::placeholder, .quote-textarea::placeholder { color: #9aa0a6; }
           select.quote-select { text-align-last: left !important; }
           .quote-input::placeholder, .quote-textarea::placeholder { color: #9aa0a6 !important; }
           input.quote-input:-webkit-autofill,
@@ -303,6 +308,13 @@
             font-size: 0.95rem;
           }
           .quote-submit-btn:hover { background: #e53935; color: #fff; }
+          /* Card body padding and mobile tweaks to match index */
+          .quote-form-card .card-body { padding: 24px; }
+          @media (min-width: 768px) { .quote-form-card .card-body { padding: 32px 36px; } }
+          @media (max-width: 767.98px) {
+            .quote-form-card { border-radius: 16px; }
+            .quote-submit-btn { padding: 16px 20px; font-size: 1rem; }
+          }
           
           .quote-grid {
             display: grid;
@@ -451,6 +463,34 @@
           .review-author {
             font-weight: bold;
             color: #333;
+          }
+
+          /* Reviews button styling to match homepage */
+          .reviews-btn {
+            background: #F44336;
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            font-weight: 800;
+            padding: 14px 22px;
+            width: 100%;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+          }
+          .reviews-btn:hover {
+            background: #e53935;
+            color: #fff;
+          }
+          /* Reviews scroll container */
+          .reviews-scroll {
+            width: 100% !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 6px 5px 6px 5px;
           }
           
           /* Navbar uses Bootstrap off-white (bg-light) like index */
@@ -652,7 +692,7 @@
                     
                     <div class="col-lg-6 mt-5 mt-lg-0">
                         <!-- Quote Form (exact copy from index.html) -->
-                        <div class="card quote-form-card" id="quote-form">
+                        <div class="card bg-white h-100 quote-form-card" id="quote-form">
                             <div class="card-body">
                               <h2 class="card-title mb-4" id="quoteForm">Free Quote Form</h2>
                               <form action="https://formsubmit.co/comfortmovingchicago@gmail.com" method="POST" class="quote-grid">
@@ -768,43 +808,115 @@
             </div>
         </section>
 
-        <!-- Reviews Section -->
+        <!-- Reviews Section (real reviews pulled from homepage) -->
         <section class="py-5">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold mb-3">What Chicago Locals Say About Us</h2>
-                    <div class="review-stars mb-3">★★★★★</div>
-                    <p class="lead">115+ Five-Star Reviews from Happy Chicago Customers</p>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Best local movers in Chicago! They knew exactly how to navigate my Lincoln Park building and made the whole process seamless. Highly recommend!"</p>
-                            <div class="review-author">- Sarah M., Lincoln Park</div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8">
+                <div class="card bg-white mb-4 mb-md-0 h-100 quote-form-card">
+                  <div class="card-body">
+                    <h2 class="card-title mb-2">Customer Reviews</h2>
+                    <div class="d-flex align-items-center mb-4">
+                      <div class="me-2">
+                        <div class="chicago-stars text-warning" aria-label="5 out of 5 stars" role="img" style="display:inline-flex; gap:4px; align-items:center;">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><polygon points="22,12 16.33,9.5 17,3.34 12,7 7,3.34 7.67,9.5 2,12 7.67,14.5 7,20.66 12,17 17,20.66 16.33,14.5"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><polygon points="22,12 16.33,9.5 17,3.34 12,7 7,3.34 7.67,9.5 2,12 7.67,14.5 7,20.66 12,17 17,20.66 16.33,14.5"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><polygon points="22,12 16.33,9.5 17,3.34 12,7 7,3.34 7.67,9.5 2,12 7.67,14.5 7,20.66 12,17 17,20.66 16.33,14.5"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><polygon points="22,12 16.33,9.5 17,3.34 12,7 7,3.34 7.67,9.5 2,12 7.67,14.5 7,20.66 12,17 17,20.66 16.33,14.5"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><polygon points="22,12 16.33,9.5 17,3.34 12,7 7,3.34 7.67,9.5 2,12 7.67,14.5 7,20.66 12,17 17,20.66 16.33,14.5"/></svg>
                         </div>
+                      </div>
+                      <span class="text-muted" style="font-size: 1rem; font-weight: 500;">5 stars on Google</span>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Called them for a last-minute move in Wicker Park. They came the same day and handled everything perfectly. True Chicago professionals!"</p>
-                            <div class="review-author">- Mike D., Wicker Park</div>
+                    <div class="reviews-scroll" style="position: relative;" data-desktop-height="800px">
+                      <!-- Google Reviews -->
+                      <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #4CAF50; color: white; font-weight: bold; font-size: 18px;">C</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Cindy Western</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">a month ago</small>
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Moving from Gold Coast to River North was stress-free with these guys. They know Chicago like the back of their hand. Fair pricing too!"</p>
-                            <div class="review-author">- Jennifer L., Gold Coast</div>
+                        <p class="mb-0 ms-5">"Henry and Matteo helped us out with a last minute move. The prices were reasonable and the quality of the move was excellent. In addition, they are personable, accommodating, and easy to work with. I highly recommend them!"</p>
+                      </div>
+                      <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #F44336; color: white; font-weight: bold; font-size: 18px;">A</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Anna Kolleng</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">8 months ago</small>
+                          </div>
                         </div>
+                        <p class="mb-0 ms-5">"We used comfort moving on a pretty large move into a single family home based off of a flyer in our neighborhood.<br>Mateo, Henry and Junior were a delight to work with and absolutely amazing movers and an extremely fair price.<br>We would recommend them to anyone in Chicago looking to support a local business and looking for lovely, hard working and insured movers. We truly couldn't have asked for a more seamless move."</p>
+                      </div>
+                      <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #2196F3; color: white; font-weight: bold; font-size: 18px;">M</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Mancer1980</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">3 months ago</small>
+                          </div>
+                        </div>
+                        <p class="mb-0 ms-5">"Mateo and Henry did an exceptional job of moving me across the country. Moving is stressful enough even when it's local but these guys did an amazing job from start to finish at an extremely affordable price. I will definitely be recommending them to friends and family!"</p>
+                      </div>
+                      <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #9C27B0; color: white; font-weight: bold; font-size: 18px;">J</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Josephine Ho</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">September 10, 2025</small>
+                          </div>
+                        </div>
+                        <p class="mb-0 ms-5">"Quick and efficient. Best price in the city"</p>
+                      </div>
+                      <div class="review-item mb-3 p-3" style="border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #F44336; color: white; font-weight: bold; font-size: 18px;">J</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Jenna Dobbs</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">September 17, 2025</small>
+                          </div>
+                        </div>
+                        <p class="mb-0 ms-5">"If I could, I'd give them wayyy more stars! Henery, Nate and Mateo did an absolutely phenomenal job with this big move! Done in a very timely manner. Very polite and friendly. Great sense of humor. Made this move a lot less stressful. Such a blessing to help us out in the situation we were in!"</p>
+                      </div>
+                      <div class="review-item mb-3 p-3">
+                        <div class="d-flex align-items-start mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: #607D8B; color: white; font-weight: bold; font-size: 18px;">M</div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-1">
+                              <strong class="text-dark me-2">Marco Sepulveda</strong>
+                              <div class="text-warning">★★★★★</div>
+                            </div>
+                            <small class="text-muted">September 10, 2025</small>
+                          </div>
+                        </div>
+                        <p class="mb-0 ms-5">"Friendly guys, showed up on time and took great care of my appliances. Fully Recommended!"</p>
+                      </div>
                     </div>
+                    <div class="text-center mt-3">
+                      <a href="https://www.google.com/search?q=Comfort+Moving+Chicago+reviews" target="_blank" class="btn reviews-btn w-100 mt-3">View All Reviews on Google</a>
+                    </div>
+                  </div>
                 </div>
-                
-                <div class="text-center mt-4">
-                    <a href="#quote-form" class="cta-button">Join Our Happy Customers</a>
-                </div>
+              </div>
             </div>
+          </div>
         </section>
 
         <!-- Areas Served (matching index.html) -->
