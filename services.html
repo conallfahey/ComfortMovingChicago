@@ -100,11 +100,60 @@
             z-index: 1;
             border-radius: 15px;
           }
-          .service-content {
+         .service-content {
             position: relative;
             z-index: 2;
           }
          </style>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "name": "Residential Moving",
+              "serviceType": "Apartment and residential moving",
+              "areaServed": {
+                "@type": "City",
+                "name": "Chicago",
+                "address": {"@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60622"}
+              },
+              "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://comfortmovingchicago.com/services.html"},
+              "provider": {"@type": "LocalBusiness", "name": "Comfort Moving Chicago", "telephone": "+1-773-236-1724"},
+              "offers": {
+                "@type": "Offer",
+                "priceSpecification": {"@type": "UnitPriceSpecification", "price": 150, "priceCurrency": "USD", "unitText": "hour"},
+                "availability": "https://schema.org/InStock",
+                "areaServed": "Chicago, IL"
+              }
+            },
+            {
+              "@type": "Service",
+              "name": "Commercial Moving",
+              "serviceType": "Office and business relocation",
+              "areaServed": "Chicago, IL",
+              "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://comfortmovingchicago.com/services.html"},
+              "provider": {"@type": "LocalBusiness", "name": "Comfort Moving Chicago", "telephone": "+1-773-236-1724"}
+            },
+            {
+              "@type": "Service",
+              "name": "Packing Services",
+              "serviceType": "Professional packing and materials",
+              "areaServed": "Chicago, IL",
+              "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://comfortmovingchicago.com/services.html"},
+              "provider": {"@type": "LocalBusiness", "name": "Comfort Moving Chicago", "telephone": "+1-773-236-1724"}
+            },
+            {
+              "@type": "Service",
+              "name": "Specialty Moving",
+              "serviceType": "Pianos, antiques, artwork, large appliances",
+              "areaServed": "Chicago, IL",
+              "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://comfortmovingchicago.com/services.html"},
+              "provider": {"@type": "LocalBusiness", "name": "Comfort Moving Chicago", "telephone": "+1-773-236-1724"}
+            }
+          ]
+        }
+        </script>
     </head>
     <body>
 
