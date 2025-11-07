@@ -5,3 +5,44 @@
   padding: 0.5rem 1rem;
   line-height: 1.5;
 }
+
+/* Navbar normalization across all pages */
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar .container-fluid {
+  /* Keep consistent horizontal padding even when other pages override container paddings */
+  padding-left: 1.5rem !important; /* ~24px */
+  padding-right: 1.5rem !important;
+}
+
+.navbar-brand {
+  font-size: 1.1rem;
+}
+
+.navbar-brand img {
+  height: 55px;
+  width: auto;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+  }
+}

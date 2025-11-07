@@ -43,9 +43,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <!-- Favicons and app icons -->
-        <link rel="icon" type="image/png" href="/favicon.png">
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
@@ -221,21 +219,7 @@
               margin-right: 0 !important;
             }
             
-            /* Mobile Navigation Improvements */
-            .navbar {
-              padding: 0.5rem 1rem !important;
-            }
-            .navbar-brand {
-              font-size: 1.1rem !important;
-            }
-            .navbar-brand img {
-              width: auto !important;
-              height: 55px !important;
-            }
-            .navbar-nav .nav-link {
-              padding: 0.75rem 1rem !important;
-              font-size: 1.1rem !important;
-            }
+            /* Mobile Navigation Improvements moved to assets/css/nav.css for consistency */
             
             /* Hero Section Mobile Optimization */
             .hero-section {
@@ -301,7 +285,7 @@
               justify-content: center !important;
               width: 100% !important;
             }
-            
+
             /* Mobile Card Improvements */
             .card {
               border-radius: 12px !important;
@@ -322,17 +306,12 @@
             h3 { font-size: 1.3rem !important; }
             h4 { font-size: 1.1rem !important; }
             
-            /* Mobile Touch Targets */
-            .btn {
+            /* Mobile Touch Targets (scoped to hero buttons only to avoid affecting navbar sizing) */
+            .hero-section .btn {
               min-height: 48px !important;
               padding: 12px 20px !important;
               font-size: 1rem !important;
               border-radius: 999px !important;
-            }
-            .nav-link, .dropdown-item {
-              min-height: 48px !important;
-              display: flex !important;
-              align-items: center !important;
             }
             
             /* Mobile Spacing */
@@ -455,13 +434,7 @@
               height: auto !important;
             }
             
-            /* Mobile Logo Improvements */
-            .logo-img {
-              height: 45px !important;
-              width: auto !important;
-              max-width: none !important;
-              object-fit: contain !important;
-            }
+            /* Mobile Logo uses shared nav.css for consistent sizing across pages */
             
             /* Mobile Footer Improvements */
             .footer {
@@ -556,13 +529,7 @@
             /* Constrain reviews list so card doesn't exceed slideshow height */
             .reviews-scroll { max-height: 440px !important; }
             
-            /* Desktop Logo Improvements */
-            .logo-img {
-              height: 65px !important;
-              width: auto !important;
-              max-width: none !important;
-              object-fit: contain !important;
-            }
+            /* Desktop logo uses shared nav.css sizing for consistency */
             
             /* Desktop Reviews and Contact Section Vertical Alignment */
             .reviews-contact-section .row {
@@ -842,7 +809,7 @@
         <link rel="stylesheet" href="assets/css/nav.css">
         <script defer src="assets/js/nav-include.js"></script>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="shared-nav" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
               <a class="navbar-brand" href="#">
                 <img src="./Images/CMC_logo.png" alt="CMC Logo" class="logo-img" style="height: 55px; width: auto;">
@@ -878,7 +845,7 @@
                 <div class="d-flex">
 
                   <a href="tel:+17732361724" class="btn me-2" style="background-color: #F44336; color: white;">Call Now</a>
-                  <a href="mailto:info@comfortmovingchicago.com" class="btn btn-outline-primary">Email Us</a>
+<a href="mailto:comfortmovingchicago@gmail.com" class="btn btn-outline-primary">Email Us</a>
                 </div>
               </div>
             </div>
@@ -1584,7 +1551,7 @@
                 <ul class="nav flex-column">
                   <!-- Instagram icon moved to navbar -->
                   <li class="nav-item mb-2"><a href="https://www.facebook.com/p/Comfort-Moving-Chicago-100085395917097/" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener">Facebook</a></li>
-                    <li class="nav-item mb-2"><a href="mailto:info@comfortmovingchicago.com" class="nav-link p-0 text-body-secondary">Contact us</a></li>
+<li class="nav-item mb-2"><a href="mailto:comfortmovingchicago@gmail.com" class="nav-link p-0 text-body-secondary">Contact us</a></li>
                 </ul>
               </div>
             </div>

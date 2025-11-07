@@ -78,6 +78,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch {}
 
+      // Robust fallback: only add manual toggler if Bootstrap isn't available
+      try {
+        const toggler = document.querySelector('.navbar-toggler');
+        const targetSel = toggler ? toggler.getAttribute('data-bs-target') : null;
+        const targetEl = targetSel ? document.querySelector(targetSel) : null;
+        if (toggler && targetEl && !window.bootstrap) {
+          toggler.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isShown = targetEl.classList.contains('show');
+            targetEl.classList.toggle('show', !isShown);
+            toggler.setAttribute('aria-expanded', String(!isShown));
+          }, { once: false });
+        }
+      } catch {}
+
+      // Dropdown fallback: ensure Services dropdown works even without Bootstrap
+      try {
+        if (!window.bootstrap) {
+          // Toggle dropdown menus manually
+          const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+          dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              const parent = toggle.closest('.dropdown');
+              const menu = parent ? parent.querySelector('.dropdown-menu') : null;
+              if (!menu) return;
+              const isShown = menu.classList.contains('show');
+              // Close any other open menus first
+              document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
+              if (!isShown) menu.classList.add('show');
+              toggle.setAttribute('aria-expanded', String(!isShown));
+            });
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (e) => {
+            const openMenu = document.querySelector('.dropdown-menu.show');
+            if (!openMenu) return;
+            const clickedInsideDropdown = !!e.target.closest('.dropdown');
+            if (!clickedInsideDropdown) {
+              document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
+              document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            }
+          });
+
+          // Allow ESC to close any open dropdown
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
+              document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(t => t.setAttribute('aria-expanded', 'false'));
+            }
+          });
+        }
+      } catch {}
+
+      // Ensure the menu collapses after clicking a nav link (mobile UX)
+      try {
+        const collapseTarget = document.querySelector('.navbar .navbar-collapse') || document.querySelector('#navbarSupportedContent');
+        const toggler = document.querySelector('.navbar-toggler');
+        const collapseMenu = () => {
+          if (!collapseTarget) return;
+          try {
+            if (window.bootstrap) {
+              const instance = bootstrap.Collapse.getInstance(collapseTarget) || new bootstrap.Collapse(collapseTarget, { toggle: false });
+              instance.hide();
+            } else {
+              collapseTarget.classList.remove('show');
+            }
+            if (toggler) toggler.setAttribute('aria-expanded', 'false');
+          } catch {}
+        };
+
+        // Collapse when clicking any real navigation item
+        document.querySelectorAll('.navbar .nav-link, .navbar .dropdown-item').forEach(link => {
+          const isDropdownToggle = link.matches('[data-bs-toggle="dropdown"]');
+          link.addEventListener('click', () => {
+            if (!isDropdownToggle) collapseMenu();
+          });
+        });
+
+        // Removed explicit close button wiring per request
+        // Click outside the open menu should close it (mobile UX)
+        document.addEventListener('click', (e) => {
+          try {
+            const isOpen = collapseTarget && collapseTarget.classList.contains('show');
+            const clickedInsideMenu = collapseTarget && collapseTarget.contains(e.target);
+            const clickedToggler = toggler && toggler.contains(e.target);
+            if (isOpen && !clickedInsideMenu && !clickedToggler) {
+              collapseMenu();
+            }
+          } catch {}
+        });
+        // Allow ESC to close the menu
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') collapseMenu();
+        });
+      } catch {}
+
       // Wait a tick for DOM to reflect replacement
       setTimeout(setActive, 0);
     })
