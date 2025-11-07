@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=yes, maximum-scale=5">
-
     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Google tag (gtag.js) -->
        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10973490773"></script>
        <script>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){dataLayer.push(arguments);}  
           gtag('js', new Date());
 
           gtag('config', 'AW-10973490773');
@@ -50,6 +49,7 @@
         <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <script defer src="assets/js/footer-include.js"></script>
         <meta name="theme-color" content="#F44336">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -794,6 +794,19 @@
           @media (max-width: 767.98px) {
             .quote-form-card { border-radius: 16px; }
             .quote-submit-btn { padding: 16px 20px; font-size: 1rem; }
+            /* Normalize bubble input sizing on mobile */
+            .quote-input,
+            .quote-select {
+              min-height: 52px !important;
+              font-size: 16px !important; /* Prevent iOS zoom and ensure consistency */
+              padding: 14px 18px !important;
+              border-radius: 999px !important;
+            }
+            /* Stabilize native date control height */
+            input[type="date"].quote-input {
+              min-height: 52px !important;
+              line-height: 1.4 !important;
+            }
           }
         </style>
         <style>
@@ -824,6 +837,10 @@
         </style>
 </head>
     <body>
+        
+        <!-- Shared navbar styles and injection script -->
+        <link rel="stylesheet" href="assets/css/nav.css">
+        <script defer src="assets/js/nav-include.js"></script>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">

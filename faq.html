@@ -25,7 +25,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <link rel="stylesheet" href="assets/css/content.css">
+    <script defer src="assets/js/footer-include.js"></script>
     <style>
       .faq-item {
         border-bottom: 1px solid #e9ecef;
@@ -46,12 +48,6 @@
       .faq-answer {
         color: #6c757d;
         line-height: 1.6;
-      }
-      .faq-icon {
-        transition: transform 0.3s ease;
-      }
-      .faq-icon.rotated {
-        transform: rotate(180deg);
       }
       /* Navy Blue Color Overrides */
       :root {
@@ -167,6 +163,9 @@
 </head>
 
 <body>
+    <!-- Shared navbar styles and injection script -->
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <script defer src="assets/js/nav-include.js"></script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
           <a class="navbar-brand" href="index.html">
@@ -232,97 +231,124 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>How much does an apartment move cost in Chicago?</span>
-                        <span class="faq-icon">▼</span>
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      How much does an apartment move cost in Chicago?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Apartment moves in Chicago typically range from $300-800 for local moves, depending on the size of your place and how much stuff you have. A studio or 1BR usually runs $300-500, while a 2-3BR can be $500-800. Factors that affect price include: number of stairs, elevator availability, distance between locations, and how much packing help you need. We always provide free, no-obligation quotes so you know exactly what to expect.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Apartment moves in Chicago typically range from $300-800 for local moves, depending on the size of your place and how much stuff you have. A studio or 1BR usually runs $300-500, while a 2-3BR can be $500-800. Factors that affect price include: number of stairs, elevator availability, distance between locations, and how much packing help you need. We always provide free, no-obligation quotes so you know exactly what to expect.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What's the best time of year to move in Chicago?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Spring and fall are ideal - you'll avoid the brutal Chicago winters and sweltering summers. That said, we move people year-round! Winter moves can actually be cheaper since it's our slower season. Summer is our busiest time (especially around college move-in/out dates), so book early if you're planning a summer move. Weather-wise, we're prepared for anything Chicago throws at us.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Can you move me on short notice?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      What's the best time of year to move in Chicago?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Spring and fall are ideal - you'll avoid the brutal Chicago winters and sweltering summers. That said, we move people year-round! Winter moves can actually be cheaper since it's our slower season. Summer is our busiest time (especially around college move-in/out dates), so book early if you're planning a summer move. Weather-wise, we're prepared for anything Chicago throws at us.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>We offer last minute and next-day moving services when possible! Chicago apartment hunting can be unpredictable - we get it, though availability depends on our schedule and crew availability.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Do you provide packing materials?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Can you move me on short notice?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      We offer last minute and next-day moving services when possible! Chicago apartment hunting can be unpredictable - we get it, though availability depends on our schedule and crew availability.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Yes! We bring basic packing materials like blankets, shrink wrap, and tape. If you need boxes, packing paper, or bubble wrap, we can provide those for an additional fee. Many of our customers prefer to pack their personal items themselves and let us handle the furniture and heavy lifting - whatever works best for you!</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Are you insured and licensed?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Absolutely. We're fully licensed and insured for your peace of mind. Our team is trained, background-checked, and experienced with Chicago apartment moves. We carry liability insurance and can provide proof of insurance if your building requires it. Your belongings and property are protected when you choose Comfort Moving Chicago.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What if something gets damaged during the move?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Do you provide packing materials?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Yes! We bring basic packing materials like blankets, shrink wrap, and tape. If you need boxes, packing paper, or bubble wrap, we can provide those for an additional fee. Many of our customers prefer to pack their personal items themselves and let us handle the furniture and heavy lifting - whatever works best for you!
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>While we take every precaution to protect your belongings, accidents can happen. We're fully insured and will work with you to resolve any damage claims quickly and fairly. We use professional moving equipment, blankets, and techniques to minimize risk. Most of our moves are completed without any issues, but we stand behind our work 100%.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Do you move during Chicago winters?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Are you insured and licensed?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Absolutely. We're fully licensed and insured for your peace of mind. Our team is trained, background-checked, and experienced with Chicago apartment moves. We carry liability insurance and can provide proof of insurance if your building requires it. Your belongings and property are protected when you choose Comfort Moving Chicago.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Yes, we're tough enough to handle Chicago winters! We move year-round and have the equipment and experience to deal with snow, ice, and cold temperatures. We take extra precautions during winter moves - using floor protection, being extra careful on icy steps, and making sure your belongings stay dry. Plus, winter moves often cost less since it's our slower season.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>How far in advance should I book my move?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      What if something gets damaged during the move?
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      While we take every precaution to protect your belongings, accidents can happen. We're fully insured and will work with you to resolve any damage claims quickly and fairly. We use professional moving equipment, blankets, and techniques to minimize risk. Most of our moves are completed without any issues, but we stand behind our work 100%.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>For the best availability and rates, we recommend booking 1-2 weeks in advance. During busy seasons (summer months, end/beginning of month), booking 2-3 weeks ahead is ideal. That said, we understand Chicago apartment hunting doesn't always allow for advance planning - we'll do our best to accommodate last-minute requests whenever possible.</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What areas of Chicago do you serve?</span>
-                        <span class="faq-icon">▼</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Do you move during Chicago winters?
+                    </button>
+                  </h2>
+                  <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Yes, we're tough enough to handle Chicago winters! We move year-round and have the equipment and experience to deal with snow, ice, and cold temperatures. We take extra precautions during winter moves - using floor protection, being extra careful on icy steps, and making sure your belongings stay dry. Plus, winter moves often cost less since it's our slower season.
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>We specialize in Northside Chicago neighborhoods including Lincoln Park, Lakeview, Wicker Park, Bucktown, Logan Square, and Gold Coast. We also serve the greater Chicago area and suburbs. If you're not sure if we cover your area, just give us a call - we're pretty flexible and love helping Chicagoans with their moves!</p>
-                    </div>
+                  </div>
                 </div>
 
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      How far in advance should I book my move?
+                    </button>
+                  </h2>
+                  <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      For the best availability and rates, we recommend booking 1-2 weeks in advance. During busy seasons (summer months, end/beginning of month), booking 2-3 weeks ahead is ideal. That said, we understand Chicago apartment hunting doesn't always allow for advance planning - we'll do our best to accommodate last-minute requests whenever possible.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingNine">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      What areas of Chicago do you serve?
+                    </button>
+                  </h2>
+                  <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      We specialize in Northside Chicago neighborhoods including Lincoln Park, Lakeview, Wicker Park, Bucktown, Logan Square, and Gold Coast. We also serve the greater Chicago area and suburbs. If you're not sure if we cover your area, just give us a call - we're pretty flexible and love helping Chicagoans with their moves!
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -334,7 +360,7 @@
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="mb-4">Still Have Questions?</h2>
                     <p class="lead mb-4">We're here to help! Give us a call or send us an email.</p>
-                    <div class="d-flex justify-content-center gap-3">
+                    <div class="cta-buttons">
                         <a href="tel:+17732361724" class="btn btn-lg" style="background-color: #FF9B50; color: white;">
                             📞 (773) 236-1724
                         </a>
@@ -386,19 +412,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('.faq-icon');
-            
-            if (answer.style.display === 'none' || answer.style.display === '') {
-                answer.style.display = 'block';
-                icon.classList.add('rotated');
-            } else {
-                answer.style.display = 'none';
-                icon.classList.remove('rotated');
-            }
-        }
-    </script>
+    
 </body>
 </html>
