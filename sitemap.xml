@@ -13,7 +13,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://comfortmovingchicago.com/blog.html</loc>
+    <loc>https://comfortmovingchicago.com/blog/</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -25,28 +25,70 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://comfortmovingchicago.com/blog-stress-free-moving-day.html</loc>
+    <loc>https://comfortmovingchicago.com/blog/blog-stress-free-moving-day.html</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://comfortmovingchicago.com/blog-chicago-neighborhoods-guide.html</loc>
+    <loc>https://comfortmovingchicago.com/blog/blog-chicago-neighborhoods-guide.html</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://comfortmovingchicago.com/blog-packing-fragile-items.html</loc>
+    <loc>https://comfortmovingchicago.com/blog/blog-packing-fragile-items.html</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://comfortmovingchicago.com/blog-hoisting-benefits.html</loc>
+    <loc>https://comfortmovingchicago.com/blog/blog-hoisting-benefits.html</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/blog/blog-best-time-to-move-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/blog/blog-elevator-loading-zone-permits-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/blog/blog-moving-wicker-lincoln-south-loop.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/services/residential-moving-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/services/furniture-assembly-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/services/packing-services-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/services/local-hoisting-chicago.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/temp_reviews.html</loc>

@@ -1,6 +1,16 @@
 // Inject shared footer across pages
 document.addEventListener('DOMContentLoaded', () => {
-  const fetchFooter = () => fetch('partials/footer.html', { cache: 'no-cache' }).then(r => r.text());
+  // Fetch partial via absolute path first, with robust fallbacks
+  const fetchFooter = async () => {
+    try {
+      const abs = await fetch('/partials/footer.html', { cache: 'no-cache' });
+      if (abs.ok) return abs.text();
+      const rel = await fetch('partials/footer.html', { cache: 'no-cache' });
+      return rel.text();
+    } catch (e) {
+      return fetch('partials/footer.html', { cache: 'no-cache' }).then(r => r.text());
+    }
+  };
 
   const replaceFooter = (html) => {
     const target = document.getElementById('shared-footer') || document.querySelector('footer');
