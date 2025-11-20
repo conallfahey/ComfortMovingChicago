@@ -47,6 +47,7 @@
         <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="https://use.typekit.net/oiz1emy.css">
+        <link rel="stylesheet" href="assets/css/content.css">
         <script defer src="assets/js/footer-include.js"></script>
         <meta name="theme-color" content="#5FA6DB">
         <meta name="mobile-web-app-capable" content="yes">
@@ -155,37 +156,7 @@
         }
         </script>
         <style>
-          /* Navy Blue Color Overrides */
-          :root {
-            --bs-primary: #1a237e;
-            --bs-primary-rgb: 26, 35, 126;
-          }
-          .btn-primary {
-            background-color: #1a237e !important;
-            border-color: #1a237e !important;
-          }
-          .btn-primary:hover {
-            background-color: #0d47a1 !important;
-            border-color: #0d47a1 !important;
-          }
-          .btn-outline-primary {
-            color: #1a237e !important;
-            border-color: #1a237e !important;
-          }
-          .btn-outline-primary:hover {
-            background-color: #1a237e !important;
-            border-color: #1a237e !important;
-            color: white !important;
-          }
-          
-          /* Star Color Consistency */
-          .text-warning {
-            color: #faa64b !important;
-          }
-          /* Reviews list: make stars yellow like Google */
-          .reviews-scroll .text-warning {
-            color: #faa64b !important;
-          }
+          /* Additional page-specific styles can go here */
           
           .service-area-column {
             min-width: 180px;
@@ -358,7 +329,7 @@
             content: '↓ Scroll to see more fields ↓';
             position: sticky;
             top: 0;
-            background: linear-gradient(to bottom, #5FA6DB, #faa64b);
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-orange));
             color: white;
             text-align: center;
             padding: 8px;
@@ -697,7 +668,7 @@
             box-shadow: 0 0 0 3px rgba(26,35,126,0.08);
           }
           .quote-submit-btn {
-            background: #5FA6DB;
+            background: var(--accent-blue);
             color: #ffffff;
             border: none;
             border-radius: 999px;
@@ -708,13 +679,13 @@
             font-size: 0.95rem;
           }
           .quote-submit-btn:hover {
-            background: #4a89c4;
+            background: var(--hover-blue-light);
             color: #fff;
           }
 
           /* Reviews button styling to match quote button */
           .reviews-btn {
-            background: #5FA6DB;
+            background: var(--accent-blue);
             color: #ffffff;
             border: none;
             border-radius: 999px;
@@ -727,7 +698,7 @@
             text-align: center;
           }
           .reviews-btn:hover {
-            background: #4a89c4;
+            background: var(--hover-blue-light);
             color: #fff;
           }
           /* Ensure single-line and pill style on mobile */
@@ -811,7 +782,7 @@
 
     <nav id="shared-nav" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
-              <a class="navbar-brand" href="/index.html">
+              <a class="navbar-brand" href="/">
                 <img src="/Images/CMC_logo.png" alt="CMC Logo" class="logo-img" style="height: 55px; width: auto;">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -845,8 +816,8 @@
             </ul>
                 <div class="d-flex">
 
-                  <a href="tel:+17732361724" class="btn me-2" style="background-color: #5FA6DB; color: white;">Call Now</a>
-<a href="mailto:comfortmovingchicago@gmail.com" class="btn btn-outline-primary">Email Us</a>
+                  <a href="tel:+17732361724" class="btn btn-accent-blue me-2">Call Now</a>
+                  <a href="mailto:comfortmovingchicago@gmail.com" class="btn btn-outline-primary btn-pill">Email Us</a>
                 </div>
               </div>
             </div>
@@ -905,8 +876,8 @@
                   <!-- CTA Buttons -->
                   <div class="hero-buttons-container d-flex gap-3 mt-2 mb-4" style="justify-content: flex-start;">
                     <!-- Mobile CTA links to mobile form under buttons -->
-                    <a href="#quoteFormMobile" class="btn hero-btn flex-fill d-inline-block d-md-none" style="background-color: #5FA6DB; color: white; font-size: 1.2rem; font-weight: bold; padding: 15px 20px; border-radius: 50px; border: none; text-decoration: none; display: inline-block; transition: all 0.3s ease; max-width: 48%;">Get My Free Quote</a>
-                    <a href="tel:+17732361724" class="btn hero-btn flex-fill" style="background-color: #1a237e; color: white; font-size: 1.2rem; font-weight: bold; padding: 15px 20px; border-radius: 50px; border: none; text-decoration: none; display: inline-block; transition: all 0.3s ease; max-width: 48%;">Call Now</a>
+                    <a href="#quoteFormMobile" class="btn btn-accent-blue hero-btn flex-fill d-inline-block d-md-none">Get My Free Quote</a>
+                    <a href="tel:+17732361724" class="btn btn-primary hero-btn flex-fill">Call Now</a>
                   </div>
                   <!-- Mobile-only quote form placed directly under CTA buttons -->
                   <div class="d-block d-md-none mt-3">
@@ -1367,7 +1338,7 @@
                       <h4 class="mb-3">Residential Moving in Chicago</h4>
                       <p>We make moving day simple. Whether you’re heading across the street or across the city, our team handles your belongings with care, speed, and professionalism. From high-rises to walk-ups, we’ve moved it all — and we’re ready to get you home.</p>
                       <a href="/services/residential-moving-chicago.html" class="stretched-link" aria-label="Go to Residential Moving in Chicago"></a>
-                      <a href="/services/residential-moving-chicago.html" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                      <a href="/services/residential-moving-chicago.html" class="btn btn-outline-primary mt-3 btn-pill">Get a Quote</a>
                     </div>
                   </div>
                 </div>
@@ -1382,7 +1353,7 @@
                       <h4 class="mb-3">Furniture Disassembly<br>& Reassembly for Moving</h4>
                       <p>Big furniture? Tight corners? No problem. We’ll take apart your beds, tables, and more — then put them back together exactly how you had them. Save yourself the stress (and the stripped screws).</p>
                       <a href="/services/furniture-assembly-chicago.html" class="stretched-link" aria-label="Go to Furniture Assembly"></a>
-                      <a href="/services/furniture-assembly-chicago.html" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                      <a href="/services/furniture-assembly-chicago.html" class="btn btn-outline-primary mt-3 btn-pill">Get a Quote</a>
                     </div>
                   </div>
                 </div>
@@ -1397,7 +1368,7 @@
                       <h4 class="mb-3">Packing & Box Up<br>Services in Chicago</h4>
                       <p>Let us do the boxing up. We provide all the materials and know-how to pack your things safely and efficiently. Fragile dishes, overflowing closets, last-minute chaos — we've got you covered. <br>  </p>
                       <a href="/services/packing-services-chicago.html" class="stretched-link" aria-label="Go to Packing Services"></a>
-                      <a href="/services/packing-services-chicago.html" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                      <a href="/services/packing-services-chicago.html" class="btn btn-outline-primary mt-3 btn-pill">Get a Quote</a>
                     </div>
                   </div>
                 </div>
@@ -1414,7 +1385,7 @@
                       <h4 class="mb-3">Hoisting Service for Large Items</h4>
                       <p>Need to move large items through tight spaces or upper floors? Our team safely hoists furniture and appliances using professional equipment and techniques.</p>
                       <a href="/services/local-hoisting-chicago.html" class="stretched-link" aria-label="Go to Hoisting Service"></a>
-                      <a href="/services/local-hoisting-chicago.html" class="btn btn-outline-primary mt-3">Get a Quote</a>
+                      <a href="/services/local-hoisting-chicago.html" class="btn btn-outline-primary mt-3 btn-pill">Get a Quote</a>
                     </div>
                   </div>
                 </div>
@@ -1488,7 +1459,7 @@
                 </div>
                 
                 <div class="text-center mt-4">
-                  <a href="faq.html" class="btn btn-primary">View All FAQs</a>
+                  <a href="faq.html" class="btn btn-primary btn-pill">View All FAQs</a>
                 </div>
               </div>
             </div>
@@ -1532,7 +1503,7 @@
               <div class="col-md-3 mb-3">
                 <h5>Company</h5>
                 <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Home</a></li>
                     <li class="nav-item mb-2"><a href="#quoteForm" class="nav-link p-0 text-body-secondary">Free Quote</a></li>
                     <li class="nav-item mb-2"><a href="#areas-served" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
                     <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-body-secondary">FAQs</a></li>

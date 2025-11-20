@@ -4,8 +4,7 @@ Allow: /
 # Sitemap location
 Sitemap: https://comfortmovingchicago.com/sitemap.xml
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+
 
 # Allow all search engines to access images
 User-agent: *
