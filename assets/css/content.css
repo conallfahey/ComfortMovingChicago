@@ -805,3 +805,27 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     background-repeat: repeat;
     background-size: 60px 60px;
 }
+
+/* Brand Button Colors */
+.btn-brand-blue {
+    background-color: #5FA6DB !important;
+    border-color: #5FA6DB !important;
+    color: white !important;
+}
+.btn-brand-blue:hover {
+    background-color: #4a89c4 !important;
+    border-color: #4a89c4 !important;
+    color: white !important;
+}
+
+.btn-brand-orange {
+    background-color: #faa64b !important;
+    border-color: #faa64b !important;
+    color: white !important;
+}
+.btn-brand-orange:hover {
+    background-color: #e59542 !important;
+    border-color: #e59542 !important;
+    color: white !important;
+}
+
