@@ -1,5 +1,25 @@
 // Inject shared navbar across pages and set active state
 document.addEventListener('DOMContentLoaded', () => {
+  // Inject Google Fonts for Oswald if not already present
+  if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Oswald"]')) {
+    const preconnect1 = document.createElement('link');
+    preconnect1.rel = 'preconnect';
+    preconnect1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(preconnect1);
+
+    const preconnect2 = document.createElement('link');
+    preconnect2.rel = 'preconnect';
+    preconnect2.href = 'https://fonts.gstatic.com';
+    preconnect2.crossOrigin = 'anonymous';
+    document.head.appendChild(preconnect2);
+
+    // Add Google Fonts (Oswald and Roboto)
+    const fontLink = document.createElement('link');
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;700&display=swap';
+    fontLink.rel = 'stylesheet';
+    document.head.appendChild(fontLink);
+  }
+
   // Fetch partial via absolute path with fallback to relative, improving robustness across serving contexts
   const fetchNavbar = async () => {
     try {
@@ -40,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isHome = path.endsWith('/index.html') || path === '/' || /\/$/i.test(path);
     const isFAQ = path.endsWith('/faq.html');
-    const isBlog = path.endsWith('/blog.html');
+    const isBlog = path.includes('/blog/') || path.endsWith('/blog');
     const isServices = path.endsWith('/services.html');
 
     const markActive = (href) => {
@@ -51,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    if (isHome) markActive('index.html');
-    else if (isFAQ) markActive('faq.html');
-    else if (isBlog) markActive('blog.html');
+    if (isHome) markActive('/');
+    else if (isFAQ) markActive('/faq.html');
+    else if (isBlog) markActive('/blog/');
     else if (isServices) {
       // Services page: highlight dropdown toggle
-      const toggle = document.getElementById('navbarDropdown');
+      const toggle = document.getElementById('servicesDropdown');
       if (toggle) toggle.classList.add('active');
     }
   };

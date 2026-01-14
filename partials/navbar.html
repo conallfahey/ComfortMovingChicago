@@ -1,41 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" href="/">
-      <img src="/Images/CMC_logo.png" alt="CMC Logo" class="logo-img" style="height: 55px; width: auto;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/#about">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
+<nav id="shared-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="/">
+        <img src="/Images/CMC_logo.png" alt="Comfort Moving Chicago - Top Rated Local Movers" class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item py-2" href="/services/residential-moving-chicago.html">Residential Moving</a></li>
+              <li><a class="dropdown-item py-2" href="/services/packing-services-chicago.html">Packing Services</a></li>
+              <li><a class="dropdown-item py-2" href="/services/furniture-assembly-chicago.html">Furniture Assembly</a></li>
+              <li><a class="dropdown-item py-2" href="/services/local-hoisting-chicago.html">Hoisting Services</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2" href="/services/office-moving-chicago.html">Office Moving</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/blog/">Moving Tips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/#about">About</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="tel:+17732361724" class="btn btn-primary-brand fw-bold d-none d-lg-block">
+            <span class="d-flex align-items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>
+              (773) 236-1724
+            </span>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/services/residential-moving-chicago.html">Residential Moving</a></li>
-            <li><a class="dropdown-item" href="/services/furniture-assembly-chicago.html">Furniture Assembly</a></li>
-            <li><a class="dropdown-item" href="/services/packing-services-chicago.html">Packing Services</a></li>
-            <li><a class="dropdown-item" href="/services/local-hoisting-chicago.html">Hoisting</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">Moving Tips</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/faq.html">FAQ</a>
-        </li>
-      </ul>
-      <div class="d-flex">
-        <a href="tel:+17732361724" class="btn me-2" style="background-color: #5FA6DB; color: white;">Call Now</a>
-<a href="mailto:comfortmovingchicago@gmail.com" class="btn btn-outline-primary">Email Us</a>
+          <a href="/#quoteForm" class="btn btn-secondary-action fw-bold text-white px-4">Get Quote</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>

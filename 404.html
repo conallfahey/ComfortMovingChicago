@@ -9,151 +9,17 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <script defer src="assets/js/footer-include.js"></script>
-    <style>
-      :root {
-        --bg: #f7f7fb;
-        --text: #1f2937;
-        --muted: #6b7280;
-        --primary: #5FA6DB; /* brand accent used for CTAs elsewhere */
-        --card: #ffffff;
-        --border: #e5e7eb;
-      }
-
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        color: var(--text);
-        background: var(--bg);
-      }
-
-      .wrapper {
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-      }
-
-      header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 16px;
-      }
-      header img { height: 36px; width: auto; }
-      header .brand { font-weight: 700; font-size: 18px; letter-spacing: 0.2px; }
-
-      main {
-        display: grid;
-        place-items: center;
-        padding: 24px;
-      }
-      .card {
-        width: 100%;
-        max-width: 920px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        padding: 28px;
-      }
-      .status {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--primary);
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 8px;
-      }
-      .title {
-        font-size: clamp(28px, 4vw, 40px);
-        line-height: 1.15;
-        margin: 0 0 8px 0;
-      }
-      .subtitle {
-        color: var(--muted);
-        font-size: 16px;
-        margin: 0 0 20px 0;
-      }
-
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin: 10px 0 24px 0;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 12px 16px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.06s ease, box-shadow 0.2s ease;
-      }
-      .btn.primary {
-        background: var(--primary);
-        border-color: var(--primary);
-        color: #fff;
-      }
-      .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
-
-      .sections {
-        margin-top: 10px;
-      }
-      .section-title {
-        font-weight: 700;
-        font-size: 16px;
-        margin: 16px 0 8px 0;
-      }
-      .link-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .link-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 14px;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        background: #fff;
-        text-decoration: none;
-        color: var(--text);
-        font-weight: 600;
-      }
-      .link-item span { color: var(--muted); font-weight: 500; font-size: 14px; }
-
-      @media (min-width: 640px) {
-        .link-grid { grid-template-columns: repeat(2, 1fr); }
-      }
-      @media (min-width: 1024px) {
-        .link-grid { grid-template-columns: repeat(3, 1fr); }
-      }
-
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-        padding: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/content.css">
 </head>
-<body>
+<body class="error-page">
     <!-- Shared navbar styles and injection script -->
     <link rel="stylesheet" href="assets/css/nav.css">
     <script defer src="assets/js/nav-include.js"></script>
     <div class="wrapper">
       <header>
-        <img src="Images/CMC_logo.png" alt="Comfort Moving Chicago logo" />
+        <a class="navbar-brand" href="/">
+          <img src="Images/CMC_logo.png" alt="Comfort Moving Chicago - Top Rated Local Movers" />
+        </a>
         <div class="brand">Comfort Moving Chicago</div>
       </header>
       <main>
@@ -173,7 +39,6 @@
               <div class="section-title">Main Pages</div>
               <nav class="link-grid" aria-label="Primary links">
                 <a class="link-item" href="/">Home <span>/</span></a>
-                <a class="link-item" href="/local-chicago-movers.html">Local Chicago Movers <span>/local-chicago-movers.html</span></a>
                 <a class="link-item" href="/services.html">Services <span>/services.html</span></a>
                 <a class="link-item" href="/faq.html">FAQ <span>/faq.html</span></a>
                 <a class="link-item" href="/blog/">Blog <span>/blog/</span></a>
@@ -195,9 +60,44 @@
           </div>
         </div>
       </main>
-      <footer>
-        © Comfort Moving Chicago · All rights reserved
-      </footer>
+<footer class="py-5 my-5 border-top footer-section">
+  <div class="container">
+    <div class="row justify-content-center gap-5">
+      <div class="col-md-3 mb-3 offset-md-1">
+        <h5>Company</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="/#quoteForm" class="nav-link p-0 text-body-secondary">Free Quote</a></li>
+          <li class="nav-item mb-2"><a href="/#areas-served" class="nav-link p-0 text-body-secondary">Areas Served</a></li>
+          <li class="nav-item mb-2"><a href="/faq.html" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 text-body-secondary">Moving Tips</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h5>Contact</h5>
+        <address class="text-body-secondary address-line-height">
+          Comfort Moving Chicago LLC<br>
+          Chicago, IL 60622<br>
+          Phone: <a href="tel:+17732361724">(773) 236-1724</a><br>
+          Email: <a href="mailto:comfortmovingchicago@gmail.com">comfortmovingchicago@gmail.com</a><br>
+          ICC License # 236923 MC
+        </address>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h5>Connect</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://www.facebook.com/p/Comfort-Moving-Chicago-100085395917097/" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener">Facebook</a></li>
+          <li class="nav-item mb-2"><a href="https://www.instagram.com/comfortmovingchicago" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener">Instagram</a></li>
+          <li class="nav-item mb-2"><a href="https://www.yelp.com/biz/comfort-moving-chicago-oak-park-5" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener">Yelp</a></li>
+          <li class="nav-item mb-2"><a href="https://maps.google.com/?q=Comfort+Moving+Chicago" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener">Google Business Profile</a></li>
+          <li class="nav-item mb-2"><a href="mailto:comfortmovingchicago@gmail.com" class="nav-link p-0 text-body-secondary">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </div>
   </body>
 </html>
