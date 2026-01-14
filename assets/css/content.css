@@ -852,3 +852,44 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     color: white !important;
 }
 
+
+/* Service Page Styles */
+.service-container {
+    position: relative;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.service-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+.service-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.service-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.bg-service-residential { background-image: url('/Images/IMG_9070-2.webp'); }
+.bg-service-packing { background-image: url('/Images/IMG_0760.webp'); }
+.bg-service-moving { background-image: url('/Images/IMG_5820.webp'); }
+.bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers.webp'); }
+.bg-service-affordable { background-image: url('/Images/IMG_9070-2.webp'); }
+.bg-service-sameday { background-image: url('/Images/IMG_0760.webp'); }
+
