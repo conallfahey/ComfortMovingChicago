@@ -479,11 +479,11 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 /* Address */
 .address-line-height { line-height: 1.6; }
 /* Blog Header Images */
-.bg-img-moving-truck { background-image: url('/Images/IMG_9070-2.webp'); }
-.bg-img-neighborhoods { background-image: url('/Images/IMG_5820.webp'); }
+.bg-img-moving-truck { background-image: url('/Images/PackingServicesChicago.webp'); }
+.bg-img-neighborhoods { background-image: url('/Images/LocalAffordableChicagoMovers.webp'); }
 .bg-img-general-move { background-image: url('/Images/IMG_0760.webp'); }
-.bg-img-packing { background-image: url('/Images/Chicago_Moving_Company_1280-2.webp'); }
-.bg-img-stress-free { background-image: url('/Images/BG1-01.webp'); }
+.bg-img-packing { background-image: url('/Images/LocalChicagoMovers.webp'); }
+.bg-img-stress-free { background-image: url('/Images/IMG_0760.webp'); }
 
 /* Reviews Section Layout */
 .reviews-card {
@@ -886,10 +886,10 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     margin-bottom: 1rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
-.bg-service-residential { background-image: url('/Images/IMG_9070-2.webp'); }
+.bg-service-residential { background-image: url('/Images/PackingServicesChicago.webp'); }
 .bg-service-packing { background-image: url('/Images/IMG_0760.webp'); }
-.bg-service-moving { background-image: url('/Images/IMG_5820.webp'); }
+.bg-service-moving { background-image: url('/Images/LocalAffordableChicagoMovers.webp'); }
 .bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers.webp'); }
-.bg-service-affordable { background-image: url('/Images/IMG_9070-2.webp'); }
+.bg-service-affordable { background-image: url('/Images/PackingServicesChicago.webp'); }
 .bg-service-sameday { background-image: url('/Images/IMG_0760.webp'); }
 
