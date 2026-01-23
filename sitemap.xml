@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://comfortmovingchicago.com/</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/blog/blog-stress-free-moving-day.html</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/blog/blog-packing-fragile-items.html</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/services/residential-moving-chicago.html</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -98,19 +98,19 @@
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/services/office-moving-chicago.html</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/services/affordable-chicago-movers.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/services/same-day-movers-chicago.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -128,13 +128,25 @@
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/neighborhoods/lakeview-movers.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://comfortmovingchicago.com/services/piano-movers-chicago.html</loc>
     <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/services/emergency-movers-chicago.html</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comfortmovingchicago.com/neighborhoods/oak-park-movers.html</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
