@@ -73,7 +73,17 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 .google-stars-text { font-size: 1rem; font-weight: 500; }
 .reviews-scroll-container { position: relative; }
 .review-item-border { border-bottom: 1px solid #f0f0f0; }
-.review-avatar { width: 40px; height: 40px; color: white; font-weight: bold; font-size: 18px; }
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
 .avatar-green { background-color: #4CAF50; }
 .avatar-blue { background-color: #5FA6DB; }
 .avatar-dark-blue { background-color: #2196F3; }
@@ -736,14 +746,14 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 .service-card-modern:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.05);
 }
 
 .service-card-modern:hover::before {
-    height: 100%;
-    opacity: 0.03;
+    height: 5px;
+    opacity: 1;
 }
 
 .service-icon-modern {
@@ -767,7 +777,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 
 .service-card-modern:hover .service-icon-modern {
     background: #f8f9fa;
-    transform: translateY(-5px);
+    transform: none;
 }
 
 .service-card-modern:hover .service-icon-modern svg {
