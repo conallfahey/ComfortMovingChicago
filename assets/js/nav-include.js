@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isHome = path.endsWith('/index.html') || path === '/' || /\/$/i.test(path);
     const isFAQ = path.endsWith('/faq.html');
     const isBlog = path.includes('/blog/') || path.endsWith('/blog');
+    const isWeLoveChicago = path.includes('/we-love-chicago/') || path.endsWith('/we-love-chicago');
     const isServices = path.endsWith('/services.html');
 
     const markActive = (href) => {
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isHome) markActive('/');
     else if (isFAQ) markActive('/faq.html');
     else if (isBlog) markActive('/blog/');
+    else if (isWeLoveChicago) markActive('/we-love-chicago/');
     else if (isServices) {
       // Services page: highlight dropdown toggle
       const toggle = document.getElementById('servicesDropdown');
