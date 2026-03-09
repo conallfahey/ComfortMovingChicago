@@ -1,4 +1,4 @@
-﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -150,32 +150,32 @@
 
                     <div class="row g-3">
                        <div class="col-md-6">
-                          <label class="form-label-hero text-uppercase">Full Name</label>
-                          <input type="text" class="form-control form-control-hero" name="name" placeholder="Full Name" required>
+                          <label class="form-label-hero text-uppercase" for="hero-name">Full Name</label>
+                          <input type="text" class="form-control form-control-hero" name="name" id="hero-name" placeholder="Full Name" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Phone Number</label>
-                          <input type="tel" class="form-control form-control-hero" name="phone" placeholder="Mobile Number" required>
+                          <input type="tel" class="form-control form-control-hero" name="phone" id="hero-phone" placeholder="Mobile Number" required>
                        </div>
                        <div class="col-md-12">
                           <label class="form-label-hero text-uppercase">Email</label>
-                          <input type="email" class="form-control form-control-hero" name="email" placeholder="Email Address" required>
+                          <input type="email" class="form-control form-control-hero" name="email" id="hero-email" placeholder="Email Address" required>
                        </div>
                        <div class="col-md-12">
                           <label class="form-label-hero text-uppercase">Date</label>
-                          <input type="date" class="form-control form-control-hero" name="moveDate" required>
+                          <input type="date" class="form-control form-control-hero" name="moveDate" id="hero-moveDate" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Moving From</label>
-                          <input type="text" class="form-control form-control-hero" name="moveFrom" placeholder="Address" required>
+                          <input type="text" class="form-control form-control-hero" name="moveFrom" id="hero-moveFrom" placeholder="Address" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Moving To</label>
-                          <input type="text" class="form-control form-control-hero" name="moveTo" placeholder="Address" required>
+                          <input type="text" class="form-control form-control-hero" name="moveTo" id="hero-moveTo" placeholder="Address" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Type of Service</label>
-                          <select class="form-select form-select-hero" name="services">
+                          <select class="form-select form-select-hero" name="services" id="hero-services">
                             <option value="Apartment Moving (with truck)">Apartment Moving (with truck)</option>
                             <option value="House Moving (with truck)">House Moving (with truck)</option>
                             <option value="Labor Only">Labor Only</option>
@@ -184,7 +184,7 @@
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Size of Move</label>
-                          <select class="form-select form-select-hero" name="moveSize">
+                          <select class="form-select form-select-hero" name="moveSize" id="hero-moveSize">
                             <option value="Studio">Studio</option>
                             <option value="1 Bedroom">1 Bedroom</option>
                             <option value="2 Bedrooms">2 Bedrooms</option>
@@ -193,7 +193,7 @@
                        </div>
                        <div class="col-12">
                           <label class="form-label-hero text-uppercase">How did you hear about us?</label>
-                          <select class="form-select form-select-hero" name="referralSource" required>
+                          <select class="form-select form-select-hero" name="referralSource" id="hero-referralSource" required>
                              <option value="" selected disabled>Select an option</option>
                              <option value="Google">Google</option>
                              <option value="Social Media">Social Media</option>
@@ -205,7 +205,7 @@
                        </div>
                        <div class="col-12">
                           <label class="form-label-hero text-uppercase">Notes</label>
-                          <textarea class="form-control form-control-hero" name="details" rows="2" placeholder="Any stair details, elevator, or special items?"></textarea>
+                          <textarea class="form-control form-control-hero" name="details" id="hero-details" rows="2" placeholder="Any stair details, elevator, or special items?"></textarea>
                        </div>
                        <div class="col-12 mt-4">
                           <button type="submit" class="btn btn-secondary-action w-100 py-3 rounded-pill fw-bold shadow-sm">Get Your Free Quote</button>

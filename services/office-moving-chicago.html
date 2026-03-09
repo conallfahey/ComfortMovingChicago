@@ -204,32 +204,32 @@
 
                     <div class="row g-3">
                        <div class="col-md-6">
-                          <label class="form-label-hero text-uppercase">Contact Name</label>
-                          <input type="text" class="form-control form-control-hero" name="name" placeholder="Full Name" required>
+                          <label class="form-label-hero text-uppercase" for="hero-name">Contact Name</label>
+                          <input type="text" class="form-control form-control-hero" name="name" id="hero-name" placeholder="Full Name" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Phone Number</label>
-                          <input type="tel" class="form-control form-control-hero" name="phone" placeholder="Mobile Number" required>
+                          <input type="tel" class="form-control form-control-hero" name="phone" id="hero-phone" placeholder="Mobile Number" required>
                        </div>
                        <div class="col-md-12">
                           <label class="form-label-hero text-uppercase">Business Email</label>
-                          <input type="email" class="form-control form-control-hero" name="email" placeholder="Email Address" required>
+                          <input type="email" class="form-control form-control-hero" name="email" id="hero-email" placeholder="Email Address" required>
                        </div>
                        <div class="col-md-12">
                           <label class="form-label-hero text-uppercase">Target Move Date</label>
-                          <input type="date" class="form-control form-control-hero" name="moveDate" required>
+                          <input type="date" class="form-control form-control-hero" name="moveDate" id="hero-moveDate" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Moving From</label>
-                          <input type="text" class="form-control form-control-hero" name="moveFrom" placeholder="Current Office Address" required>
+                          <input type="text" class="form-control form-control-hero" name="moveFrom" id="hero-moveFrom" placeholder="Current Office Address" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Moving To</label>
-                          <input type="text" class="form-control form-control-hero" name="moveTo" placeholder="New Office Address" required>
+                          <input type="text" class="form-control form-control-hero" name="moveTo" id="hero-moveTo" placeholder="New Office Address" required>
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Type of Service</label>
-                          <select class="form-select form-select-hero" name="services">
+                          <select class="form-select form-select-hero" name="services" id="hero-services">
                             <option value="Office Moving (Small)">Office Moving (Small)</option>
                             <option value="Office Moving (Large)">Office Moving (Large)</option>
                             <option value="Corporate Relocation">Corporate Relocation</option>
@@ -238,7 +238,7 @@
                        </div>
                        <div class="col-md-6">
                           <label class="form-label-hero text-uppercase">Office Size</label>
-                          <select class="form-select form-select-hero" name="moveSize">
+                          <select class="form-select form-select-hero" name="moveSize" id="hero-moveSize">
                             <option value="1-5 Employees">1-5 Employees</option>
                             <option value="6-15 Employees">6-15 Employees</option>
                             <option value="16-30 Employees">16-30 Employees</option>
@@ -247,7 +247,7 @@
                        </div>
                        <div class="col-12">
                           <label class="form-label-hero text-uppercase">How did you hear about us?</label>
-                          <select class="form-select form-select-hero" name="referralSource" required>
+                          <select class="form-select form-select-hero" name="referralSource" id="hero-referralSource" required>
                              <option value="" selected disabled>Select an option</option>
                              <option value="Google">Google</option>
                              <option value="Social Media">Social Media</option>
@@ -259,7 +259,7 @@
                        </div>
                        <div class="col-12">
                           <label class="form-label-hero text-uppercase">Notes</label>
-                          <textarea class="form-control form-control-hero" name="details" rows="2" placeholder="Describe large items (copiers, desks, etc) and building requirements"></textarea>
+                          <textarea class="form-control form-control-hero" name="details" id="hero-details" rows="2" placeholder="Describe large items (copiers, desks, etc) and building requirements"></textarea>
                        </div>
                        <div class="col-12 mt-4">
                           <button type="submit" class="btn btn-secondary-action w-100 py-3 rounded-pill fw-bold shadow-sm">Get Your Free Quote</button>
