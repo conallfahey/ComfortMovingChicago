@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,17 +29,16 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Local Hoisting Chicago | Window Hoisting • Heavy Item Lifts">
     <meta name="twitter:description" content="Professional window hoisting and heavy item lifts. Free quotes.">
-    <meta name="twitter:image" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
+    <meta name="twitter:image" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
 
     <!-- Enhanced Open Graph Image Tags -->
-    <meta property="og:image" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
-    <meta property="og:image:secure_url" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
+    <meta property="og:image" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
+    <meta property="og:image:secure_url" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Local Hoisting Chicago - Comfort Moving Chicago Logo">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Favicons and app icons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -113,10 +112,13 @@
     </script>
 
     <!-- Shared navbar styles and injection script -->
-<link rel="stylesheet" href="/assets/css/nav.css">
 <link rel="stylesheet" href="/assets/css/content.css">
 <script defer src="/assets/js/nav-include.js"></script>
-  </head>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
+<link rel="preload" href="https://use.typekit.net/oiz1emy.css" as="style">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" as="style" crossorigin="anonymous">
+<link rel="preload" href="/assets/css/content.css" as="style">
+</head>
   <body>
     <!-- Navigation placeholder (replaced by shared nav include) -->
     <nav id="shared-nav" class="navbar navbar-expand-lg navbar-light bg-light"></nav>
@@ -128,7 +130,7 @@
       <div class="container position-relative hero-content-z py-5">
         <div class="row align-items-start">
           <!-- Left Content -->
-          <div class="col-lg-7 text-start pt-lg-4">
+          <div class="col-lg-7 order-2 order-lg-1 text-start pt-lg-4">
             <div class="d-flex align-items-center mb-4">
               <h1 class="display-3 fw-bold mb-0 hero-title me-3">
                 Hoisting Services <br>Chicago
@@ -157,20 +159,68 @@
                </div>
             </div>
 
-            <!-- Map Embed -->
-            <div class="mb-4 rounded-4 overflow-hidden shadow-lg" style="max-width: 500px; height: 250px;">
-               <iframe class="hero-map-embed" style="height: 100%; width: 100%; border:0;" title="Comfort Moving Chicago - Service Area Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68910.64222024499!2d-87.66767529475756!3d41.930245808749014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5bf2bd826f19ab%3A0x43519a12a665ddb4!2sComfort%20Moving%20Chicago%20LLC!5e0!3m2!1sen!2sus!4v1761614182085!5m2!1sen!2sus"></iframe>
-            </div>
-
             <!-- Buttons -->
             <div class="d-flex flex-nowrap gap-2 gap-lg-3 mb-5 mb-lg-0 hero-buttons-container">
               <a href="#quoteForm" class="btn btn-secondary-action btn-lg px-4 py-3 rounded-pill shadow-lg fw-bold">Get Free Quote Now</a>
               <a href="tel:+17732361724" class="btn btn-primary-brand btn-lg px-4 py-3 rounded-pill shadow-lg fw-bold">Call (773) 236-1724</a>
             </div>
+
+            <div class="mt-4">
+              <div class="row g-4 justify-content-center">
+                <!-- Review 1: Mike McMahon -->
+                <div class="col-md-4">
+                  <div class="reviews-card h-100 p-4">
+                    <div class="d-flex text-secondary-brand mb-3">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"I hired these guys to help me get a large elliptical machine out of a third story walk up condo. I underestimated how difficult the job was going to be... Mateo and Henry were cordial on the phone, cooperative and professional with each other, and fortunately for me, intelligent and thoughtful problem solvers."</p>
+                    <div class="d-flex align-items-center">
+                      <div class="review-avatar-img avatar-blue me-3">MM</div>
+                      <div>
+                        <div class="review-author">Mike McMahon</div>
+                        <small class="text-muted">Chicago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Review 2: Nathaniel Palmer -->
+                <div class="col-md-4">
+                  <div class="reviews-card h-100 p-4">
+                    <div class="d-flex text-secondary-brand mb-3">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"These guys are my friends, but helped us move an electric organ up the stairs a few months back and we wouldn’t have been able to do it without them."</p>
+                    <div class="d-flex align-items-center">
+                      <div class="review-avatar-img avatar-orange me-3">NP</div>
+                      <div>
+                        <div class="review-author">Nathaniel Palmer</div>
+                        <small class="text-muted">Chicago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Review 3: Margaret Pier -->
+                <div class="col-md-4">
+                  <div class="reviews-card h-100 p-4">
+                    <div class="d-flex text-secondary-brand mb-3">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"Ethan and Henry helped me move into a 4th floor walk-up on a hot and muggy day and were total troopers about it. I've got two heavy dressers, a heavy bed frame... With just the two of them it took about three hours start to finish... I would definitely recommend Comfort Moving!"</p>
+                    <div class="d-flex align-items-center">
+                      <div class="review-avatar-img avatar-teal me-3">MP</div>
+                      <div>
+                        <div class="review-author">Margaret Pier</div>
+                        <small class="text-muted">Chicago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Right Column: Form -->
-          <div class="col-lg-5" id="quoteForm">
+          <div class="col-lg-5 order-1 order-lg-2" id="quoteForm">
             <div class="card border-0 hero-form-card bg-white">
               <div class="card-body p-4">
                  <h3 class="fw-bold mb-4 text-black">Free Hoisting Quote</h3>
@@ -289,68 +339,6 @@
 
             <div class="mt-4">
               <a href="#quoteForm" class="btn btn-primary-brand rounded-pill px-4 py-2 fw-bold shadow-sm">Get Hoisting Quote</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="reviews-section py-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <span class="badge bg-secondary-brand rounded-pill px-3 py-2 mb-3">Testimonials</span>
-          <h2 class="display-5 fw-bold font-family-sans-serif">What Our Customers Say</h2>
-          <p class="lead text-muted">Real reviews from your Chicago neighbors.</p>
-        </div>
-        
-        <div class="row g-4 justify-content-center">
-          <!-- Review 1: Mike McMahon -->
-          <div class="col-md-4">
-            <div class="reviews-card h-100 p-4">
-              <div class="d-flex text-secondary-brand mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="mb-4">"I hired these guys to help me get a large elliptical machine out of a third story walk up condo. I underestimated how difficult the job was going to be... Mateo and Henry were cordial on the phone, cooperative and professional with each other, and fortunately for me, intelligent and thoughtful problem solvers."</p>
-              <div class="d-flex align-items-center">
-                <div class="review-avatar-img avatar-blue me-3">MM</div>
-                <div>
-                  <div class="review-author">Mike McMahon</div>
-                  <small class="text-muted">Chicago</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Review 2: Nathaniel Palmer -->
-          <div class="col-md-4">
-             <div class="reviews-card h-100 p-4">
-              <div class="d-flex text-secondary-brand mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="mb-4">"These guys are my friends, but helped us move an electric organ up the stairs a few months back and we wouldn’t have been able to do it without them."</p>
-              <div class="d-flex align-items-center">
-                <div class="review-avatar-img avatar-orange me-3">NP</div>
-                <div>
-                  <div class="review-author">Nathaniel Palmer</div>
-                  <small class="text-muted">Chicago</small>
-                </div>
-              </div>
-            </div>
-          </div>
-           <!-- Review 3: Margaret Pier -->
-          <div class="col-md-4">
-             <div class="reviews-card h-100 p-4">
-              <div class="d-flex text-secondary-brand mb-3">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <p class="mb-4">"Ethan and Henry helped me move into a 4th floor walk-up on a hot and muggy day and were total troopers about it. I've got two heavy dressers, a heavy bed frame... With just the two of them it took about three hours start to finish... I would definitely recommend Comfort Moving!"</p>
-              <div class="d-flex align-items-center">
-                <div class="review-avatar-img avatar-teal me-3">MP</div>
-                <div>
-                  <div class="review-author">Margaret Pier</div>
-                  <small class="text-muted">Chicago</small>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -565,6 +553,9 @@
 </footer>
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </body>
 </html>
+
+
 

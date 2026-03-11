@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,11 +30,11 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Chicago Top-Rated Movers (120 Five-Star Reviews)">
         <meta name="twitter:description" content="Chicago's #1 Rated Movers with 115+ Five-Star Reviews! Licensed, insured & affordable. Same-day quotes, no hidden fees. Book today & experience stress-free moving!">
-        <meta name="twitter:image" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
+        <meta name="twitter:image" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
         
         <!-- Enhanced Open Graph Image Tags -->
-        <meta property="og:image" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
-        <meta property="og:image:secure_url" content="https://comfortmovingchicago.com/Images/CMC_logo.png">
+        <meta property="og:image" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
+        <meta property="og:image:secure_url" content="https://comfortmovingchicago.com/Images/CMC_logo.webp">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
@@ -42,7 +42,6 @@
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!-- Favicons and app icons -->
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <!-- Removed shortcut icon to avoid confusion; Google uses rel=icon -->
@@ -89,7 +88,7 @@
           },
           "priceRange": "$$",
           "openingHours": "Mo-Su 07:00-20:00",
-          "logo": "https://comfortmovingchicago.com/Images/CMC_logo.png",
+          "logo": "https://comfortmovingchicago.com/Images/CMC_logo.webp",
           "sameAs": [
             "https://www.facebook.com/comfortmovingchicago",
             "https://www.instagram.com/comfortmovingchicago",
@@ -147,17 +146,20 @@
           }
         }
         </script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" as="style">
+<link rel="preload" href="assets/css/content.css" as="style">
 </head>
     <body class="home">
         
         <!-- Shared navbar styles and injection script -->
-        <link rel="stylesheet" href="/assets/css/nav.css">
         <script defer src="/assets/js/nav-include.js"></script>
 
     <nav id="shared-nav" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
               <a class="navbar-brand" href="/">
-                <img src="/Images/CMC_logo.png" alt="Comfort Moving Chicago - Top Rated Local Movers" class="logo-img">
+                <img src="/Images/CMC_logo.webp" alt="Comfort Moving Chicago - Top Rated Local Movers" class="logo-img">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -180,7 +182,7 @@
                       <li><a class="dropdown-item py-2" href="/services/affordable-chicago-movers.html">Affordable Movers</a></li>
                       <li><a class="dropdown-item py-2" href="/services/same-day-movers-chicago.html">Same Day Movers</a></li>
                       <li><a class="dropdown-item py-2" href="/services/emergency-movers-chicago.html">Emergency Movers</a></li>
-                      <li><hr class="dropdown-divider"></li>
+                      <li><hr class="dropdown-divider"></li> 
                       <li><a class="dropdown-item py-2" href="/services/office-moving-chicago.html">Office Moving</a></li>
                     </ul>
                   </li>
@@ -257,15 +259,90 @@
                    </div>
                 </div>
 
-                <!-- Map Embed -->
-                <div class="mb-4 rounded-4 overflow-hidden shadow-lg" style="max-width: 500px; height: 250px;">
-                   <iframe class="hero-map-embed" style="height: 100%; width: 100%; border:0;" title="Comfort Moving Chicago - Service Area Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68910.64222024499!2d-87.66767529475756!3d41.930245808749014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5bf2bd826f19ab%3A0x43519a12a665ddb4!2sComfort%20Moving%20Chicago%20LLC!5e0!3m2!1sen!2sus!4v1761614182085!5m2!1sen!2sus"></iframe>
-                </div>
-
                 <!-- Buttons -->
                 <div class="d-flex flex-nowrap gap-2 gap-lg-3 mb-5 mb-lg-0 hero-buttons-container">
                   <a href="#quoteForm" class="btn btn-secondary-action btn-lg px-4 py-3 rounded-pill shadow-lg fw-bold">Get Free Quote Now</a>
                   <a href="tel:+17732361724" class="btn btn-primary-brand btn-lg px-4 py-3 rounded-pill shadow-lg fw-bold">Call (773) 236-1724</a>
+                </div>
+
+                <div class="mt-4 d-none d-lg-block">
+                  <div class="reviews-card hero-reviews-card d-flex flex-column">
+                    <div class="reviews-header">
+                      <h2 class="text-black">Customer Reviews</h2>
+                      <div class="d-flex align-items-center gap-2">
+                         <div class="d-flex text-secondary-brand small">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                         </div>
+                         <span class="text-muted small fw-bold">5 stars on Google</span>
+                      </div>
+                    </div>
+                    
+                    <div class="reviews-scroll-container flex-grow-1">
+                       <!-- Review 1 -->
+                       <div class="review-item">
+                          <div class="d-flex gap-3 align-items-start">
+                             <div class="review-avatar flex-shrink-0" style="background-color: #28a745;">GM</div>
+                             <div>
+                                <div class="fw-bold text-dark">Georgia Matousek</div>
+                                <div class="small text-muted">February 10, 2024</div>
+                                <div class="text-secondary-brand small my-1">
+                                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="small text-muted mb-0">I had to move my house within one week and this company was so efficient and clean about the time constraint. The staff was extremely kind and considerate, especially Henry, who spoke and contacted me directly regarding my concerns. The company is so customer-centric. The team works so well together and gets the job done no matter what. I love them!</p>
+                             </div>
+                          </div>
+                       </div>
+  
+                       <!-- Review 2 -->
+                       <div class="review-item">
+                          <div class="d-flex gap-3 align-items-start">
+                             <div class="review-avatar flex-shrink-0" style="background-color: #0d6efd;">AK</div>
+                             <div>
+                                <div class="fw-bold text-dark">Anna Kolleng</div>
+                                <div class="small text-muted">January 3, 2025</div>
+                                <div class="text-secondary-brand small my-1">
+                                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="small text-muted mb-0">We used comfort moving on a pretty large move into a single family home based off of a flyer in our neighborhood. Mateo, Henry and Junior were a delight to work with and absolutely amazing movers and an extremely fair price. We would recommend them to anyone in Chicago looking to support a local business and looking for lovely, hard working and insured movers. We truly couldn’t have asked for a more seamless move.</p>
+                             </div>
+                          </div>
+                       </div>
+  
+                       <!-- Review 3 -->
+                       <div class="review-item">
+                          <div class="d-flex gap-3 align-items-start">
+                             <div class="review-avatar flex-shrink-0" style="background-color: #6f42c1;">M</div>
+                             <div>
+                                <div class="fw-bold text-dark">Marika</div>
+                                <div class="small text-muted">October 25, 2024</div>
+                                <div class="text-secondary-brand small my-1">
+                                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="small text-muted mb-0">I’d been dreading this move after a bad experience in the past, but I kept passing these guys' flyers around the city and took it as a sign—no pun intended! From start to finish, Mateo and Henry went above and beyond to make this move easy for me. They were straightforward, reliable, and took great care with my things. It was a huge relief to simply hand over my key fob and watch them handle everything so smoothly and efficiently. I always prefer supporting local businesses, and Mateo and Henry made me feel like family. I’ll definitely be calling them again in the future! Thanks again guys! :)</p>
+                             </div>
+                          </div>
+                       </div>
+  
+                       <!-- Review 4 -->
+                       <div class="review-item">
+                          <div class="d-flex gap-3 align-items-start">
+                             <div class="review-avatar flex-shrink-0" style="background-color: #dc3545;">BB</div>
+                             <div>
+                                <div class="fw-bold text-dark">Bethany Bura</div>
+                                <div class="small text-muted">February 9, 2024</div>
+                                <div class="text-secondary-brand small my-1">
+                                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="small text-muted mb-0">I recently moved and needed assistance. I was referred to comfort moving by a friend, and was incredibly pleased with my experience. The professionalism and enthusiasm of the movers made the experience so much more comforting. Very reliable and funny guys. Will definitely recommend to all my friends and family!!!</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+  
+                    <div class="google-review-btn-container">
+                      <a href="https://www.google.com/maps/place/Comfort+Moving+Chicago+LLC/@41.9368888,-87.675768,12z/data=!4m18!1m9!3m8!1s0x5bf2bd826f19ab:0x43519a12a665ddb4!2sComfort+Moving+Chicago+LLC!8m2!3d41.9368888!4d-87.675768!9m1!1b1!16s%2Fg%2F11t16g7r3g!3m7!1s0x5bf2bd826f19ab:0x43519a12a665ddb4!8m2!3d41.9368888!4d-87.675768!9m1!1b1!16s%2Fg%2F11t16g7r3g?entry=ttu&g_ep=EgoyMDI2MDExMS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" class="btn btn-google-reviews">VIEW ALL REVIEWS ON GOOGLE</a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -376,17 +453,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Reviews Section -->
-        <div class="py-5 bg-white">
-          <div class="container">
-            <div class="row g-4 align-items-stretch">
-              <!-- Reviews Card Column -->
-              <div class="col-lg-5">
-                <div class="reviews-card d-flex flex-column">
+              <div class="col-12 d-lg-none mt-4">
+                <div class="reviews-card hero-reviews-card d-flex flex-column">
                   <div class="reviews-header">
                     <h2 class="text-black">Customer Reviews</h2>
                     <div class="d-flex align-items-center gap-2">
@@ -464,38 +533,9 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Carousel Column -->
-              <div class="col-lg-7">
-                 <div id="reviewsCarousel" class="carousel slide reviews-carousel" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                       <div class="carousel-item active">
-                          <img src="/Images/PackingServicesChicago.webp" class="d-block w-100" alt="Comfort Moving Chicago Team with Truck - Licensed and Insured">
-                       </div>
-                       <div class="carousel-item">
-                          <img src="/Images/IMG_0760.webp" class="d-block w-100" alt="Professional Chicago Movers Safely Moving Furniture">
-                       </div>
-                       <div class="carousel-item">
-                          <img src="/Images/LocalChicagoMovers.webp" class="d-block w-100" alt="cago Movers Team">
-                       </div>
-                       <div class="carousel-item">
-                          <img src="/Images/LocalAffordableChicagoMovers.webp" class="d-block w-100" alt="Comfort Moving Chicago Professional Moving Services">
-                       </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
-                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                       <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
-                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                       <span class="visually-hidden">Next</span>
-                    </button>
-                 </div>
-              </div>
             </div>
           </div>
         </div>
-
 
         <!-- Modern About Section -->
         <section id="about" class="about-section-modern">
@@ -504,7 +544,30 @@
               <!-- Image Column -->
               <div class="col-lg-6 order-2 order-lg-1">
                 <div class="about-image-container">
-                  <img src="/Images/LocalAffordableChicagoMovers.webp" alt="Comfort Moving Chicago Professional Moving Team" class="img-fluid w-100">
+                  <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/Images/PackingServicesChicago.webp" class="d-block w-100" alt="Comfort Moving Chicago Team with Truck - Licensed and Insured">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/Images/IMG_0760.webp" class="d-block w-100" alt="Professional Chicago Movers Safely Moving Furniture">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/Images/LocalChicagoMovers.webp" class="d-block w-100" alt="Chicago Movers Team">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/Images/LocalAffordableChicagoMovers.webp" class="d-block w-100" alt="Comfort Moving Chicago Professional Moving Services">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
               </div>
               
@@ -846,6 +909,25 @@
           </div>
         </section>
 
+        <!-- Featured Blog Posts Section -->
+        <section class="py-5 bg-light">
+          <div class="container">
+            <div class="text-center mb-5">
+              <span class="badge bg-brand-blue rounded-pill px-3 py-2 mb-3 text-white">Moving Tips & Guides</span>
+              <h2 class="display-5 fw-bold font-family-sans-serif mb-3">Latest From Our Blog</h2>
+              <p class="lead text-muted mx-auto" style="max-width: 700px;">Expert advice, neighborhood guides, and packing tips from Chicago's trusted moving professionals.</p>
+            </div>
+            <div class="row g-4" id="featured-blog-container">
+              <!-- Blog posts will be injected here by JS -->
+            </div>
+            <div class="text-center mt-5">
+               <a href="/blog/" class="btn btn-primary-brand rounded-pill px-4 shadow-sm">
+                 <i class="bi bi-journal-text me-2"></i>View All Articles
+               </a>
+            </div>
+          </div>
+        </section>
+
         <!-- Instagram Section -->
         <section class="instagram-section py-5 bg-light-pattern">
           <div class="container">
@@ -864,7 +946,7 @@
               <script async src="//www.instagram.com/embed.js"></script>
             </div>
             <div class="text-center mt-4">
-               <a href="https://www.instagram.com/comfortmovingchicago" class="btn btn-outline-primary rounded-pill px-4" target="_blank">
+               <a href="https://www.instagram.com/comfortmovingchicago" class="btn btn-primary-brand rounded-pill px-4 shadow-sm" target="_blank">
                  <i class="bi bi-instagram me-2"></i>View More Posts
                </a>
             </div>
@@ -913,6 +995,10 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    </body>
+<script defer src="/assets/js/featured-blog.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</body>
 </html>
+
+
 
