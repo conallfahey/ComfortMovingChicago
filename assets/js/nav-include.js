@@ -129,11 +129,105 @@ document.addEventListener('DOMContentLoaded', () => {
     nodesToMove.forEach(el => main.appendChild(el));
   };
 
+  const ensureFormControlLabels = () => {
+    const controls = document.querySelectorAll('input, select, textarea');
+    let counter = 0;
+
+    const isSkippableInput = (el) => {
+      if (!el || el.tagName !== 'INPUT') return false;
+      const type = (el.getAttribute('type') || '').toLowerCase();
+      return type === 'hidden' || type === 'submit' || type === 'button' || type === 'reset' || type === 'image';
+    };
+
+    const ensureId = (el) => {
+      if (el.id) return el.id;
+      const baseRaw = (el.getAttribute('name') || el.getAttribute('type') || el.tagName || 'field').toLowerCase();
+      const base = baseRaw.replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '') || 'field';
+      let id = `field-${base}-${counter++}`;
+      while (document.getElementById(id)) id = `field-${base}-${counter++}`;
+      el.id = id;
+      return id;
+    };
+
+    const labelTextFor = (el) => {
+      const placeholder = (el.getAttribute('placeholder') || '').trim();
+      if (placeholder) return placeholder;
+      const name = (el.getAttribute('name') || '').trim();
+      if (name) return name.replace(/([A-Z])/g, ' $1').replace(/[-_]+/g, ' ').trim();
+      const type = (el.getAttribute('type') || '').trim();
+      if (type) return type;
+      return 'Field';
+    };
+
+    controls.forEach((control) => {
+      if (isSkippableInput(control)) return;
+
+      const inlineStyle = (control.getAttribute('style') || '').toLowerCase();
+      if (control.hasAttribute('hidden')) return;
+      if ((control.getAttribute('aria-hidden') || '').toLowerCase() === 'true') return;
+      if (inlineStyle.includes('display:none') || inlineStyle.includes('display: none')) return;
+
+      if (control.closest('label')) return;
+
+      const id = control.id || '';
+      if (id && document.querySelector(`label[for="${CSS.escape(id)}"]`)) return;
+
+      const parent = control.parentElement;
+      const existingLabel = parent ? parent.querySelector('label') : null;
+      if (existingLabel) {
+        const controlId = ensureId(control);
+        if (!existingLabel.getAttribute('for')) existingLabel.setAttribute('for', controlId);
+        return;
+      }
+
+      const controlId = ensureId(control);
+      const label = document.createElement('label');
+      label.className = 'visually-hidden';
+      label.setAttribute('for', controlId);
+      label.textContent = labelTextFor(control);
+      control.insertAdjacentElement('beforebegin', label);
+    });
+  };
+
+  const ensureIframeTitles = () => {
+    const titleForSrc = (src) => {
+      const s = (src || '').toLowerCase();
+      if (s.includes('instagram.com')) return 'Instagram embed';
+      if (s.includes('youtube.com') || s.includes('youtu.be')) return 'YouTube video';
+      if (s.includes('google.com/maps') || s.includes('maps.google.com')) return 'Google map';
+      return 'Embedded content';
+    };
+
+    const ensureTitle = (iframe) => {
+      if (!iframe || iframe.tagName !== 'IFRAME') return;
+      const current = (iframe.getAttribute('title') || '').trim();
+      if (current) return;
+      iframe.setAttribute('title', titleForSrc(iframe.getAttribute('src')));
+    };
+
+    document.querySelectorAll('iframe').forEach(ensureTitle);
+
+    try {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((m) => {
+          m.addedNodes.forEach((node) => {
+            if (node.nodeType !== Node.ELEMENT_NODE) return;
+            if (node.tagName === 'IFRAME') ensureTitle(node);
+            node.querySelectorAll?.('iframe')?.forEach(ensureTitle);
+          });
+        });
+      });
+      if (document.body) observer.observe(document.body, { childList: true, subtree: true });
+    } catch {}
+  };
+
   fetchNavbar()
     .then(html => {
       replaceNavbar(html);
       ensureSkipLink();
       ensureMainLandmark();
+      ensureFormControlLabels();
+      ensureIframeTitles();
       // Initialize Bootstrap components after dynamic injection (helps on some mobile contexts)
       try {
         if (window.bootstrap) {
