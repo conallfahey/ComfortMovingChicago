@@ -83,9 +83,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const ensureSkipLink = () => {
+    const nav = document.getElementById('shared-nav') || document.querySelector('nav.navbar');
+    if (!nav) return;
+
+    const existing = nav.querySelector('a.skip-link[href="#main-content"]');
+    if (existing) return;
+
+    const a = document.createElement('a');
+    a.href = '#main-content';
+    a.className = 'skip-link';
+    a.textContent = 'Skip to main content';
+    nav.insertBefore(a, nav.firstChild);
+  };
+
+  const ensureMainLandmark = () => {
+    const nav = document.getElementById('shared-nav') || document.querySelector('nav.navbar');
+    if (!nav || !nav.parentElement) return;
+
+    let main = document.querySelector('main#main-content');
+    if (!main) {
+      main = document.createElement('main');
+      main.id = 'main-content';
+      main.setAttribute('tabindex', '-1');
+      nav.insertAdjacentElement('afterend', main);
+    } else if (!main.hasAttribute('tabindex')) {
+      main.setAttribute('tabindex', '-1');
+    }
+
+    const footerBoundary = document.getElementById('shared-footer') || document.querySelector('footer');
+
+    const nodesToMove = [];
+    let node = main.nextSibling;
+    while (node && node !== footerBoundary) {
+      const next = node.nextSibling;
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        const tag = node.tagName;
+        if (tag !== 'MAIN' && tag !== 'NAV' && tag !== 'FOOTER' && tag !== 'SCRIPT' && tag !== 'STYLE' && tag !== 'LINK') {
+          nodesToMove.push(node);
+        }
+      }
+      node = next;
+    }
+
+    nodesToMove.forEach(el => main.appendChild(el));
+  };
+
   fetchNavbar()
     .then(html => {
       replaceNavbar(html);
+      ensureSkipLink();
+      ensureMainLandmark();
       // Initialize Bootstrap components after dynamic injection (helps on some mobile contexts)
       try {
         if (window.bootstrap) {

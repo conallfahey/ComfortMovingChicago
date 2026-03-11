@@ -8,6 +8,27 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    z-index: 9999;
+    transform: translateY(-200%);
+    transition: transform 0.15s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid #5FA6DB;
+    outline-offset: 2px;
+}
+
 /* Ensure Oswald font for buttons */
 .btn, .btn-primary-brand, .btn-secondary-action, .btn-outline-secondary-action, button, input[type="submit"] {
     font-family: 'Oswald', sans-serif !important;
@@ -62,17 +83,8 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 .bg-brand-red { background-color: var(--brand-red) !important; }
 .bg-brand-blue { background-color: var(--brand-blue) !important; }
 
-.bbb-iframe { display: block; border: 0; height: 64px; width: 300px; overflow: hidden; }
-.btn-social-square { height: 38px; min-width: 38px; border-radius: 0.375rem; color: #fff; }
-.btn-social-square svg { display: block; }
-.btn-social-fb { background-color: #1877F2; }
-.btn-social-yelp { background-color: #d32323; }
-.btn-social-insta { background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
 .bg-light-gray { background-color: #f8f9fa; }
-.stars-container { display: inline-flex; gap: 4px; align-items: center; }
-.google-stars-text { font-size: 1rem; font-weight: 500; }
 .reviews-scroll-container { position: relative; }
-.review-item-border { border-bottom: 1px solid #f0f0f0; }
 .review-avatar {
     width: 40px;
     height: 40px;
@@ -92,7 +104,6 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 .avatar-red { background-color: #d32323; }
 .avatar-orange { background-color: #ff9800; }
 .avatar-teal { background-color: #009688; }
-.grid-column-full, .quote-field-full { grid-column: 1 / -1; }
 
 /* New Hero Section Styles */
 .hero-section-new {
@@ -129,9 +140,18 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-image: url('/Images/ChicagoMovingMap.webp');
+    background-image: url('/Images/ChicagoMovingMap-mobile-400x800.webp');
     background-size: cover;
     background-position: center;
+}
+
+@media (min-width: 577px) {
+    .hero-overlay-new {
+        background-image: url('/Images/ChicagoMovingMap.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 .hero-overlay-new::before {
@@ -166,6 +186,12 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 @media (max-width: 576px) {
+    .hero-overlay-new {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
     .hero-stat-card {
         min-width: 0; /* Allow shrinking below 120px */
         padding: 0.5rem !important; /* Reduce padding */
@@ -597,10 +623,6 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
   color: #fff;
 }
 
-.icon-block {
-  display: block;
-}
-
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem 1rem;
@@ -634,40 +656,6 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     border-bottom: none;
 }
 
-.review-avatar-img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.review-author {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 0;
-    line-height: 1.2;
-}
-
-.review-date {
-    font-size: 0.75rem;
-    color: #6c757d;
-}
-
-.review-text {
-    font-size: 0.95rem;
-    color: #333;
-    line-height: 1.5;
-    margin-top: 10px;
-    font-style: italic;
-}
-
 .google-review-btn-container {
     padding: 16px 24px 24px;
     background: #fff;
@@ -690,19 +678,6 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     background-color: #4a8ec0;
     color: white;
 }
-
-.reviews-carousel {
-    border-radius: 12px;
-    overflow: hidden;
-    height: 100%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-.reviews-carousel .carousel-inner, .reviews-carousel .carousel-item {
-    height: 100%;
-    min-height: 400px;
-}
-
 
 /* --- Modern About Section --- */
 .about-section-modern {
