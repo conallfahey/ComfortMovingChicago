@@ -11,8 +11,6 @@
 
       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-      <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-
       <link rel="preload" href="https://fonts.gstatic.com/s/oswald/v57/TK3IWkUHHAIjg75cFRf3bXL8LICs1_Fv40pKlN4NNSeSASz7FmlWHYg.woff2" as="font" type="font/woff2" crossorigin>
 
       <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2" as="font" type="font/woff2" crossorigin>
@@ -949,7 +947,6 @@
                   </a>
                 </div>
               </blockquote>
-              <script defer async src="//www.instagram.com/embed.js"></script>
             </div>
             <div class="text-center mt-4">
                <a href="https://www.instagram.com/comfortmovingchicago" class="btn btn-primary-brand rounded-pill px-4 shadow-sm" target="_blank">
@@ -1000,8 +997,7 @@
     </footer>
 
     <!-- Google tag (gtag.js) -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10973490773"></script>
-       <script>
+<script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}  
           gtag('js', new Date());
@@ -1014,8 +1010,10 @@
 
 <script defer src="/assets/js/nav-include.js"></script>
 <script defer src="/assets/js/featured-blog.js"></script>
+<script>
+(function(){var e=document.querySelector("blockquote.instagram-media");if(!e)return;var o=false;function t(){if(o)return;o=true;function n(){if(window.instgrm&&window.instgrm.Embeds&&typeof window.instgrm.Embeds.process==="function"){window.instgrm.Embeds.process();}}if(document.querySelector('script[src="https://www.instagram.com/embed.js"]')||document.querySelector('script[src="//www.instagram.com/embed.js"]')){n();return;}var r=document.createElement("script");r.async=true;r.defer=true;r.src="https://www.instagram.com/embed.js";r.onload=n;document.body.appendChild(r);}if("IntersectionObserver"in window){var i=new IntersectionObserver(function(s){for(var a=0;a<s.length;a++){if(s[a].isIntersecting){i.disconnect();t();break;}}},{rootMargin:"200px 0px"});i.observe(e);}else{t();}})();
+</script>
 </body>
 </html>
-
 
 
