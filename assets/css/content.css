@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .skip-link {
@@ -977,9 +978,18 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     margin-bottom: 1rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
-.bg-service-residential { background-image: url('/Images/PackingServicesChicago.webp'); }
-.bg-service-packing { background-image: url('/Images/IMG_0760.webp'); }
-.bg-service-moving { background-image: url('/Images/LocalAffordableChicagoMovers.webp'); }
-.bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers.webp'); }
-.bg-service-affordable { background-image: url('/Images/PackingServicesChicago.webp'); }
-.bg-service-sameday { background-image: url('/Images/IMG_0760.webp'); }
+.bg-service-residential { background-image: url('/Images/PackingServicesChicago-mobile.webp'); }
+.bg-service-packing { background-image: url('/Images/IMG_0760-mobile.webp'); }
+.bg-service-moving { background-image: url('/Images/LocalAffordableChicagoMovers-mobile.webp'); }
+.bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers-mobile.webp'); }
+.bg-service-affordable { background-image: url('/Images/PackingServicesChicago-mobile.webp'); }
+.bg-service-sameday { background-image: url('/Images/IMG_0760-mobile.webp'); }
+
+@media (min-width: 577px) {
+    .bg-service-residential { background-image: url('/Images/PackingServicesChicago.webp'); }
+    .bg-service-packing { background-image: url('/Images/IMG_0760.webp'); }
+    .bg-service-moving { background-image: url('/Images/LocalAffordableChicagoMovers.webp'); }
+    .bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers.webp'); }
+    .bg-service-affordable { background-image: url('/Images/PackingServicesChicago.webp'); }
+    .bg-service-sameday { background-image: url('/Images/IMG_0760.webp'); }
+}
