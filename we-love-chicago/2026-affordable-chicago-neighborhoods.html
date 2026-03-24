@@ -33,6 +33,8 @@
         .border-brand-blue { border-color: var(--brand-blue) !important; }
         article a { color: var(--brand-blue); text-decoration: none; }
         article a:hover { color: #4a8dc0; text-decoration: underline; }
+        .btn-orange { background-color: #fd7e14 !important; color: #fff !important; }
+        .btn-orange:hover { background-color: #e96f0f !important; color: #fff !important; }
     </style>
 
     <script type="application/ld+json">
@@ -319,7 +321,7 @@
                             <p class="mb-4">If you’re picking a neighborhood and need help planning your move, start with our local guide and then grab a quote when you’re ready.</p>
                             <div class="d-flex flex-column flex-sm-row gap-3">
                                 <a href="/local-chicago-movers.html" class="btn btn-primary-brand rounded-pill px-4 py-2 fw-bold shadow-sm">Local Moving Guide</a>
-                                <a href="/#quoteForm" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold shadow-sm">Get a Free Quote</a>
+                                <a href="/#quoteForm" class="btn btn-orange rounded-pill px-4 py-2 fw-bold shadow-sm">Get a Free Quote</a>
                             </div>
                         </div>
                     </div>
@@ -424,6 +426,36 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Ensure FAQ accordion toggles reliably
+      try {
+        const container = document.getElementById('affordableNeighborhoodsFaq');
+        if (container) {
+          container.querySelectorAll('.accordion-button').forEach(function (btn) {
+            const targetSel = btn.getAttribute('data-bs-target');
+            const targetEl = targetSel ? document.querySelector(targetSel) : null;
+            if (!targetEl) return;
+            // Prepare collapse instance if Bootstrap is available
+            if (window.bootstrap && bootstrap.Collapse) {
+              let instance = bootstrap.Collapse.getInstance(targetEl);
+              if (!instance) instance = new bootstrap.Collapse(targetEl, { toggle: false });
+              btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                instance.toggle();
+              });
+            } else {
+              // Fallback: toggle via class if Bootstrap JS isn't available
+              btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                targetEl.classList.toggle('show');
+              });
+            }
+          });
+        }
+      } catch {}
+    });
+  </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </body>
 </html>

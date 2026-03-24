@@ -1,5 +1,80 @@
 // Inject shared navbar across pages and set active state
 document.addEventListener('DOMContentLoaded', () => {
+  // Normalize site orange across components
+  const ensureBrandOrange = () => {
+    try {
+      if (document.querySelector('style[data-brand-orange="true"]')) return;
+      const style = document.createElement('style');
+      style.setAttribute('data-brand-orange', 'true');
+      style.textContent = `
+        :root {
+          --site-orange: #fd7e14;
+          --bs-warning: #fd7e14;
+          --bs-warning-rgb: 253,126,20;
+          --bs-warning-text-emphasis: #fd7e14;
+          --bs-warning-bg-subtle: rgba(253,126,20,.1);
+          --bs-warning-border-subtle: #fd7e14;
+        }
+        .text-warning { color: #fd7e14 !important; }
+        .bg-warning { background-color: #fd7e14 !important; }
+        .text-bg-warning { color: #fff !important; background-color: #fd7e14 !important; }
+        .border-warning { border-color: #fd7e14 !important; }
+        .link-warning { color: #fd7e14 !important; }
+        .badge.bg-warning, .badge.text-bg-warning { background-color: #fd7e14 !important; color: #fff !important; }
+        .alert-warning { color: #212529 !important; background-color: rgba(253,126,20,.1) !important; border-color: #fd7e14 !important; }
+        .btn-warning {
+          --bs-btn-color: #fff;
+          --bs-btn-bg: #fd7e14;
+          --bs-btn-border-color: #fd7e14;
+          --bs-btn-hover-color: #fff;
+          --bs-btn-hover-bg: #e96f0f;
+          --bs-btn-hover-border-color: #e96f0f;
+          --bs-btn-focus-shadow-rgb: 253,126,20;
+          --bs-btn-active-color: #fff;
+          --bs-btn-active-bg: #e96f0f;
+          --bs-btn-active-border-color: #e96f0f;
+          --bs-btn-disabled-bg: #fd7e14;
+          --bs-btn-disabled-border-color: #fd7e14;
+        }
+        .btn-outline-warning {
+          --bs-btn-color: #fd7e14;
+          --bs-btn-border-color: #fd7e14;
+          --bs-btn-hover-color: #fff;
+          --bs-btn-hover-bg: #fd7e14;
+          --bs-btn-hover-border-color: #fd7e14;
+          --bs-btn-focus-shadow-rgb: 253,126,20;
+          --bs-btn-active-color: #fff;
+          --bs-btn-active-bg: #fd7e14;
+          --bs-btn-active-border-color: #fd7e14;
+        }
+      `;
+      document.head.appendChild(style);
+    } catch {}
+  };
+  const enforceAllOrange = () => {
+    try {
+      const toHex = (s) => (s || '').trim().toLowerCase();
+      const ORANGE = '#fd7e14';
+      const tokens = new Set([
+        '#ffa500','#ff8c00','#ff7f50','#ff8800','#ff6f00','#f97316','#fd7e14','#e96f0f','orange',
+        'rgb(253, 126, 20)','rgba(253, 126, 20, 1)','rgb(255, 165, 0)','rgba(255, 165, 0, 1)'
+      ]);
+      document.querySelectorAll('[style]').forEach(el => {
+        const s = el.style;
+        const c = toHex(s.color);
+        const bg = toHex(s.backgroundColor);
+        const bc = toHex(s.borderColor);
+        if (tokens.has(c)) s.color = ORANGE;
+        if (tokens.has(bg)) s.backgroundColor = ORANGE;
+        if (tokens.has(bc)) s.borderColor = ORANGE;
+        ['borderTopColor','borderRightColor','borderBottomColor','borderLeftColor'].forEach(prop => {
+          const v = toHex(s[prop]);
+          if (tokens.has(v)) s[prop] = ORANGE;
+        });
+      });
+    } catch {}
+  };
+
   // Inject Google Fonts for Oswald if not already present
   if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Oswald"]')) {
     // Add Google Fonts (Oswald and Roboto)
@@ -213,6 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchNavbar()
     .then(html => {
       replaceNavbar(html);
+      ensureBrandOrange();
+      enforceAllOrange();
       ensureSkipLink();
       ensureMainLandmark();
       ensureFormControlLabels();
