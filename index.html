@@ -128,6 +128,29 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     font-size: 3.5rem;
 }
 
+.home .hero-section-new .d-flex.align-items-center.mb-4 {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.home .hero-avatar {
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+
+}
+
+@media (max-width: 576px) {
+    .home .hero-avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 /* CTA Banner */
 .cta-banner {
     background: linear-gradient(90deg, #5FA6DB, #ff9800);
@@ -1235,7 +1258,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
               <div class="col-lg-7 order-1 order-lg-1 text-start pt-lg-4">
                 <div class="d-flex align-items-center mb-4">
                   <h1 class="display-3 fw-bold mb-0 hero-title me-3">Chicago Local<br>Movers</h1>
-                  
+                  <img src="/Images/LocalAffordableChicagoMovers.webp" alt="Comfort Moving Chicago crew" class="hero-avatar" loading="lazy">
                 </div>
                 <h2 class="h3 mb-4 fw-bold text-brand-blue">Apartments • 3-Flats • Condos</h2>
                 <p class="lead mb-4 text-black fw-bold" style="max-width: 600px;">Local experts for Chicago moves. Owner-operated, fast, careful, and affordable.</p>
@@ -1544,30 +1567,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
               <!-- Image Column -->
               <div class="col-lg-6 order-2 order-lg-1">
                 <div class="about-image-container">
-                  <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Images/LocalChicagoMovers-mobile.webp" srcset="/Images/LocalChicagoMovers-mobile.webp 640w, /Images/LocalChicagoMovers.webp 960w" sizes="(max-width: 576px) 100vw, 50vw" alt="Comfort Moving Chicago crew" class="d-block w-100" loading="lazy" decoding="async">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Images/LocalAffordableChicagoMovers-mobile.webp" srcset="/Images/LocalAffordableChicagoMovers-mobile.webp 640w, /Images/LocalAffordableChicagoMovers.webp 960w" sizes="(max-width: 576px) 100vw, 50vw" alt="Chicago local moving team" class="d-block w-100" loading="lazy" decoding="async">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Images/PackingServicesChicago-mobile.webp" srcset="/Images/PackingServicesChicago-mobile.webp 640w, /Images/PackingServicesChicago.webp 960w" sizes="(max-width: 576px) 100vw, 50vw" alt="Packing services in Chicago" class="d-block w-100" loading="lazy" decoding="async">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Images/IMG_0760-mobile.webp" srcset="/Images/IMG_0760-mobile.webp 640w, /Images/IMG_0760.webp 960w" sizes="(max-width: 576px) 100vw, 50vw" alt="Moving day in Chicago" class="d-block w-100" loading="lazy" decoding="async">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
+                  <img src="/Images/Chicago-Movers-Loop.webp" alt="Comfort Moving Chicago working in the Chicago Loop" class="d-block w-100" loading="lazy" decoding="async">
                 </div>
               </div>
               
@@ -1609,6 +1609,54 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                       <div class="about-feature-text">
                         <h3 class="h5"><a href="/services/affordable-chicago-movers.html" class="text-dark text-decoration-none">Budget Friendly</a></h3>
                         <p>Top-notch service without breaking the bank.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-white">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                  <div class="card-body p-4 p-lg-5">
+                    <div class="d-flex align-items-start gap-3">
+                      <div class="flex-shrink-0 text-brand-blue">
+                        <i class="bi bi-cash-coin fs-2"></i>
+                      </div>
+                      <div class="flex-grow-1">
+                        <h2 class="h3 fw-bold mb-2">Affordable Chicago Movers (Without The Big-Company Markup)</h2>
+                        <p class="text-muted mb-4">Big national chains spend on ads, franchises, and call centers. We’re owner-operated, so you pay for labor and logistics—more care, less overhead.</p>
+
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <div class="d-flex gap-2">
+                              <i class="bi bi-check-circle-fill text-secondary-brand mt-1"></i>
+                              <div>
+                                <div class="fw-bold">Transparent pricing</div>
+                                <div class="text-muted small">Straightforward rates with no surprise “mandatory fees”.</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex gap-2">
+                              <i class="bi bi-check-circle-fill text-secondary-brand mt-1"></i>
+                              <div>
+                                <div class="fw-bold">A consistent crew</div>
+                                <div class="text-muted small">A tight-knit team usually means faster work and fewer damaged items.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="mt-4 d-flex flex-wrap gap-2">
+                          <a href="/services/affordable-chicago-movers.html" class="btn btn-secondary-action rounded-pill px-4 py-2 fw-bold shadow-sm">Affordable Movers</a>
+                          <a href="/blog/blog-small-vs-big-moving-companies.html" class="btn btn-primary-brand rounded-pill px-4 py-2 fw-bold shadow-sm">Big vs Small Moving Co.</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1712,6 +1760,34 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                   <h3 class="service-title">Office Moving</h3>
                   <p class="service-desc">Relocating your business? We minimize downtime with efficient commercial moving services. Desks, files, electronics“ we move it all so you can get back to work.</p>
                   <a href="/services/office-moving-chicago.html" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="service-card-modern">
+                  <div class="service-icon-modern">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M8 4.5v3.7l2.6 1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 class="service-title">Same Day Movers</h3>
+                  <p class="service-desc">Need help today or tomorrow? We keep slots open for short-notice moves and quick turnarounds across Chicago and the suburbs.</p>
+                  <a href="/services/same-day-movers-chicago.html" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="service-card-modern">
+                  <div class="service-icon-modern">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M3.5 14c.7-2.8 2.6-4.5 4.5-4.5s3.8 1.7 4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 class="service-title">Senior Moving</h3>
+                  <p class="service-desc">Downsizing or moving into assisted living? We handle senior relocations with extra care, patience, and clear communication.</p>
+                  <a href="/services/senior-moving-chicago.html" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>

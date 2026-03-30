@@ -121,6 +121,38 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     font-size: 3.5rem;
 }
 
+.hero-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.home .hero-avatar {
+    width: 56px;
+    height: 56px;
+}
+
+.hero-section-new .d-flex.align-items-center.mb-4 {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 576px) {
+    .hero-avatar {
+        width: 56px;
+        height: 56px;
+    }
+
+    .home .hero-avatar {
+        width: 44px;
+        height: 44px;
+    }
+}
+
 /* CTA Banner */
 .cta-banner {
     background: linear-gradient(90deg, #5FA6DB, #ff9800);
@@ -154,6 +186,9 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
         background-repeat: no-repeat;
         background-position: center;
     }
+
+    .west-loop-page .hero-overlay-new { background-image: url('/Images/West-Loop-Moving-Company.webp'); }
+    .loop-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Loop.webp'); }
 }
 
 .hero-overlay-new::before {
