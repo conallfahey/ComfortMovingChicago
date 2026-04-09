@@ -2,6 +2,7 @@
 title: "Change of Address Checklist: Don't Miss a Thing | Comfort Moving Chicago"
 description: "Don't forget to update your address with these key organizations and services. A comprehensive checklist for your Chicago move."
 original_url: "https://comfortmovingchicago.com/blog/blog-change-of-address.html"
+author: "Conall Fahey"
 ---
 
 # Change of Address Checklist: Don't Miss a Thing | Comfort Moving Chicago
@@ -48,3 +49,4 @@ Moving involves a lot of logistics, and updating your address is one of the most
 ### Pro Tip
 
 Start this process about two weeks before your move. While USPS mail forwarding helps, it's temporary and doesn't update your address with individual senders. Direct notification is the only way to ensure you don't miss important mail.
+

@@ -2,6 +2,7 @@
 title: "Office Move Planning Guide: Minimize Downtime | Comfort Moving Chicago"
 description: "Expert tips for planning a successful office move in Chicago to minimize business downtime."
 original_url: "https://comfortmovingchicago.com/blog/blog-office-move.html"
+author: "Conall Fahey"
 ---
 
 # Office Move Planning Guide: Minimize Downtime | Comfort Moving Chicago
@@ -31,3 +32,4 @@ Don't forget to update your address on your website, Google Business Profile, so
 ### Expert Commercial Movers
 
 We specialize in minimizing downtime so you can get back to business.
+

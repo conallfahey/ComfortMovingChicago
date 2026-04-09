@@ -2,6 +2,7 @@
 title: "First Apartment Checklist: Essentials | Comfort Moving Chicago"
 description: "Moving into your first apartment in Chicago? Here is the ultimate checklist of essentials."
 original_url: "https://comfortmovingchicago.com/blog/blog-first-apartment.html"
+author: "Conall Fahey"
 ---
 
 # First Apartment Checklist: Essentials | Comfort Moving Chicago
@@ -47,3 +48,4 @@ Keep your new place sparkling from day one:
 ### Let Us Handle the Move
 
 You focus on shopping for your new place; we'll handle the heavy lifting.
+

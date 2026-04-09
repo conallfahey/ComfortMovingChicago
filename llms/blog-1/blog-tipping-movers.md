@@ -2,6 +2,7 @@
 title: "How Much to Tip Movers in Chicago: A Complete Guide | Comfort Moving Chicago"
 description: "Wondering how much to tip your movers? Our guide breaks down the etiquette of tipping movers in Chicago to help you budget for your move."
 original_url: "https://comfortmovingchicago.com/blog/blog-tipping-movers.html"
+author: "Conall Fahey"
 ---
 
 # How Much to Tip Movers in Chicago: A Complete Guide | Comfort Moving Chicago
@@ -18,7 +19,7 @@ A general rule of thumb is to tip $5 to $10 per mover, per hour. Alternatively, 
 
 ## 3. Factors to Consider
 
-Consider the complexity of your move. If you have a lot of heavy items, several flights of stairs, or difficult access, you might want to tip on the higher end. The quality of service should also be a factor—did they arrive on time, handle your items with care, and work efficiently?
+Consider the complexity of your move. If you have a lot of heavy items, several flights of stairs, or difficult access, you might want to tip on the higher end. The quality of service should also be a factorâ€”did they arrive on time, handle your items with care, and work efficiently?
 
 ## 4. When to Tip
 
@@ -34,3 +35,4 @@ In addition to cash, providing cold water, sports drinks, and snacks throughout 
 - If a mover goes above and beyond, feel free to tip them a little extra.
 - Always offer water, especially on hot summer days.
 - A sincere "thank you" and a positive review are also valuable ways to show appreciation.
+

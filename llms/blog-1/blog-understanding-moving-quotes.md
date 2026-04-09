@@ -2,6 +2,7 @@
 title: "Understanding Moving Quotes: Binding vs. Non-Binding | Comfort Moving Chicago"
 description: "Confused by moving quotes? Learn the difference between binding and non-binding estimates and how to avoid hidden fees."
 original_url: "https://comfortmovingchicago.com/blog/blog-understanding-moving-quotes.html"
+author: "Conall Fahey"
 ---
 
 # Understanding Moving Quotes: Binding vs. Non-Binding | Comfort Moving Chicago
@@ -34,3 +35,4 @@ Regardless of the estimate type, be aware of potential extra charges. These can 
 - Be honest about everything you need to move. Hiding items will only lead to price increases later.
 - Ask specifically about "accessorial charges" like stairs or shuttle services.
 - Read the fine print and the "Bill of Lading" carefully before signing.
+

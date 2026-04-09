@@ -1,4 +1,4 @@
-# Comfort Moving Chicago — llms-full
+# Comfort Moving Chicago â€” llms-full
 
 ## Services
 
@@ -72,7 +72,7 @@ description: "Chicago furniture assembly: IKEA, West Elm, CB2, Wayfair. Fast, pr
 original_url: "https://comfortmovingchicago.com/services/furniture-assembly-chicago.html"
 ---
 
-# Furniture Assembly Chicago | IKEA • West Elm • CB2 | Flat-Rate | Comfort Moving Chicago
+# Furniture Assembly Chicago | IKEA â€¢ West Elm â€¢ CB2 | Flat-Rate | Comfort Moving Chicago
 
 ## Expert Furniture Assembly Done Right
 
@@ -132,7 +132,7 @@ We understand that time is money. Our experienced team ensures your business rel
 
 ##### Business Continuity
 
-We work around your schedule”including weekends and after-hours”to keep your operations running.
+We work around your scheduleâ€including weekends and after-hoursâ€to keep your operations running.
 
 ##### Furniture Assembly
 
@@ -274,7 +274,7 @@ Transitioning to a smaller home, a retirement community, or an assisted living f
 
 ##### Pace That Works for You
 
-We don’t rush. We work at a comfortable speed that respects the emotional weight of downsizing.
+We donâ€™t rush. We work at a comfortable speed that respects the emotional weight of downsizing.
 
 ##### Expert Downsizing Support
 
@@ -296,33 +296,34 @@ We don't just drop boxes. We can help set up the new space so it feels like "hom
 title: "Best Time to Move in Chicago: Parking, Permits, and Weather Tips (2025) | Comfort Moving Chicago"
 description: "Best time to move in Chicago: months, CDOT permits, parking tips, and neighborhood insights."
 original_url: "https://comfortmovingchicago.com/blog/blog-best-time-to-move-chicago.html"
+author: "Conall Fahey"
 ---
 
 # Best Time to Move in Chicago: Parking, Permits, and Weather Tips (2025) | Comfort Moving Chicago
 
-[Chicago moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) are shaped by seasons, parking rules, and neighborhood quirks. Here’s a practical 2025 guide to timing your move, securing legal parking, and avoiding weather surprises in Lakeview, Logan Square, and South Loop.
+[Chicago moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) are shaped by seasons, parking rules, and neighborhood quirks. Hereâ€™s a practical 2025 guide to timing your move, securing legal parking, and avoiding weather surprises in Lakeview, Logan Square, and South Loop.
 
 ## Best Months to Move
 
-- April–June: Mild temps, fewer snow/ice risks. Elevators are easier to book than peak summer.
-- September–October: Post-lease turnover with better availability. Streets less congested than summer festival season.
+- Aprilâ€“June: Mild temps, fewer snow/ice risks. Elevators are easier to book than peak summer.
+- Septemberâ€“October: Post-lease turnover with better availability. Streets less congested than summer festival season.
 - Avoid major events: Cubs games (Wrigleyville), marathons, and street festivals can complicate parking and access.
 
 ## Parking & CDOT Permits
 
-Use [CDOT resources](https://www.chicago.gov/city/en/depts/cdot.html) and your alderman’s ward office to confirm temporary no-parking signs or loading zone permits. In Lakeview and Logan Square, residential streets often need 48–72 hours’ notice for signage.
+Use [CDOT resources](https://www.chicago.gov/city/en/depts/cdot.html) and your aldermanâ€™s ward office to confirm temporary no-parking signs or loading zone permits. In Lakeview and Logan Square, residential streets often need 48â€“72 hoursâ€™ notice for signage.
 
-- Check street cleaning schedules—tickets are common during spring cleaning.
+- Check street cleaning schedulesâ€”tickets are common during spring cleaning.
 - For South Loop high-rises, coordinate with building management and verify dock hours and COI requirements.
 - Document signage placement with photos and times to resolve disputes.
 
 ## Weather Planning
 
-Chicago’s weather swings quickly. In spring and fall, pack floor protection, shrink-wrap for upholstery, and tarps for sudden showers. Winter moves require salt, stair runners, and extra time buffers.
+Chicagoâ€™s weather swings quickly. In spring and fall, pack floor protection, shrink-wrap for upholstery, and tarps for sudden showers. Winter moves require salt, stair runners, and extra time buffers.
 
 ### Quick Checklist
 
-- Request building elevator and loading dock reservations 2–3 weeks out.
+- Request building elevator and loading dock reservations 2â€“3 weeks out.
 - Place temporary no-parking signs 48 hours before move day.
 - Confirm COI language and additional insured for your building.
 - Prepare floor protection and weather contingencies.
@@ -349,6 +350,7 @@ What to know about moving in different parts of the city.
 title: "Change of Address Checklist: Don't Miss a Thing | Comfort Moving Chicago"
 description: "Don't forget to update your address with these key organizations and services. A comprehensive checklist for your Chicago move."
 original_url: "https://comfortmovingchicago.com/blog/blog-change-of-address.html"
+author: "Conall Fahey"
 ---
 
 # Change of Address Checklist: Don't Miss a Thing | Comfort Moving Chicago
@@ -402,6 +404,7 @@ Start this process about two weeks before your move. While USPS mail forwarding 
 title: "Navigating Chicago's Neighborhoods: A Mover's Guide | Comfort Moving Chicago"
 description: "Chicago neighborhoods moving guide: permits, elevators, timing."
 original_url: "https://comfortmovingchicago.com/blog/blog-chicago-neighborhoods-guide.html"
+author: "Conall Fahey"
 ---
 
 # Navigating Chicago's Neighborhoods: A Mover's Guide | Comfort Moving Chicago
@@ -432,6 +435,7 @@ Let us handle the logistics of permits, parking, and heavy lifting.
 title: "Declutter Before You Move: Expert Tips | Comfort Moving Chicago"
 description: "Save time and money by downsizing your belongings before the movers arrive. Expert tips on how to declutter efficiently."
 original_url: "https://comfortmovingchicago.com/blog/blog-decluttering-before-move.html"
+author: "Conall Fahey"
 ---
 
 # Declutter Before You Move: Expert Tips | Comfort Moving Chicago
@@ -471,11 +475,12 @@ Storage areas are often the biggest culprits for clutter. Go through old boxes y
 title: "Chicago Elevator Reservations & Loading Zone Permits: Step-by-Step Guide | Comfort Moving Chicago"
 description: "How to book elevator time and secure temporary loading zones for Chicago high-rise moves, plus COI tips."
 original_url: "https://comfortmovingchicago.com/blog/blog-elevator-loading-zone-permits-chicago.html"
+author: "Conall Fahey"
 ---
 
 # Chicago Elevator Reservations & Loading Zone Permits: Step-by-Step Guide | Comfort Moving Chicago
 
-[High-rise moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) in Chicago—especially in the South Loop, Streeterville, and West Loop—require careful coordination with building management, COI documentation, and legal loading arrangements. Here’s a simple flow to keep your move compliant and on schedule.
+[High-rise moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) in Chicagoâ€”especially in the South Loop, Streeterville, and West Loopâ€”require careful coordination with building management, COI documentation, and legal loading arrangements. Hereâ€™s a simple flow to keep your move compliant and on schedule.
 
 ### The Compliance Checklist
 
@@ -483,7 +488,7 @@ original_url: "https://comfortmovingchicago.com/blog/blog-elevator-loading-zone-
 
 - Ask for freight elevator dimensions and maximum load.
 - Confirm allowed hours (many buildings restrict weekends or evenings).
-- Provide your mover’s Certificate of Insurance (COI) with the building listed as additional insured.
+- Provide your moverâ€™s Certificate of Insurance (COI) with the building listed as additional insured.
 
 #### 2) Secure Legal Curb Space
 
@@ -491,7 +496,7 @@ Use alderman offices and CDOT guidance for temporary no-parking signs to reserve
 
 - Photograph sign placement and timestamps.
 - Coordinate with building dock managers if curb loading is not permitted.
-- Avoid bus stops, hydrants, and bike lanes—tickets add cost and delay.
+- Avoid bus stops, hydrants, and bike lanesâ€”tickets add cost and delay.
 
 #### 3) COI and Building Rules
 
@@ -503,11 +508,11 @@ Proper planning ensures smooth access on moving day.
 
 ##### South Loop
 
-Freight docks fill fast—book early and bring IDs for vendor check-in.
+Freight docks fill fastâ€”book early and bring IDs for vendor check-in.
 
 ##### Streeterville
 
-Expect traffic—schedule early mornings for better curb access.
+Expect trafficâ€”schedule early mornings for better curb access.
 
 ##### West Loop
 
@@ -523,6 +528,7 @@ We handle COI, dock reservations, and curb signage for you.
 title: "First Apartment Checklist: Essentials | Comfort Moving Chicago"
 description: "Moving into your first apartment in Chicago? Here is the ultimate checklist of essentials."
 original_url: "https://comfortmovingchicago.com/blog/blog-first-apartment.html"
+author: "Conall Fahey"
 ---
 
 # First Apartment Checklist: Essentials | Comfort Moving Chicago
@@ -575,11 +581,12 @@ You focus on shopping for your new place; we'll handle the heavy lifting.
 title: "Hoisting for Moving: What It Is and Why You Should Use It | Comfort Moving Chicago"
 description: "Hoisting for moving: benefits, safety, and when to use it."
 original_url: "https://comfortmovingchicago.com/blog/blog-hoisting-benefits.html"
+author: "Conall Fahey"
 ---
 
 # Hoisting for Moving: What It Is and Why You Should Use It | Comfort Moving Chicago
 
-[Hoisting](https://comfortmovingchicago.com/services/local-hoisting-chicago.html) is a professional moving technique where trained movers use ropes, pulleys, or mechanical equipment to lift large items through windows or over balconies when they can’t fit through stairwells or hallways. It’s common in Chicago’s vintage buildings and modern high-rises.
+[Hoisting](https://comfortmovingchicago.com/services/local-hoisting-chicago.html) is a professional moving technique where trained movers use ropes, pulleys, or mechanical equipment to lift large items through windows or over balconies when they canâ€™t fit through stairwells or hallways. Itâ€™s common in Chicagoâ€™s vintage buildings and modern high-rises.
 
 ### When to Hoist
 
@@ -599,7 +606,7 @@ Hoisting should always be performed by trained professionals using proper riggin
 
 ### Get a Hoisting Estimate
 
-Tell us about the item, its dimensions, floor level, and access (balcony/window) and we’ll provide a plan.
+Tell us about the item, its dimensions, floor level, and access (balcony/window) and weâ€™ll provide a plan.
 
 ---
 
@@ -607,6 +614,7 @@ Tell us about the item, its dimensions, floor level, and access (balcony/window)
 title: "The Ultimate Moving Checklist: 8 Weeks to Moving Day | Comfort Moving Chicago"
 description: "Stay organized with our ultimate moving checklist. A week-by-week guide to help you prepare for your big move without the stress."
 original_url: "https://comfortmovingchicago.com/blog/blog-moving-checklist.html"
+author: "Conall Fahey"
 ---
 
 # The Ultimate Moving Checklist: 8 Weeks to Moving Day | Comfort Moving Chicago
@@ -646,27 +654,28 @@ Pack an essentials bag with everything you'll need for the first 24 hours. Do a 
 title: "Moving to Wicker Park, Lincoln Park, or South Loop: Local Tips | Comfort Moving Chicago"
 description: "Moving tips for Wicker Park, Lincoln Park, and South Loop: parking, stairs, elevators, and timing."
 original_url: "https://comfortmovingchicago.com/blog/blog-moving-wicker-lincoln-south-loop.html"
+author: "Conall Fahey"
 ---
 
 # Moving to Wicker Park, Lincoln Park, or South Loop: Local Tips | Comfort Moving Chicago
 
-Each Chicago neighborhood has unique access rules, street patterns, and building requirements. Here’s how to plan smart for Wicker Park, Lincoln Park, and South Loop.
+Each Chicago neighborhood has unique access rules, street patterns, and building requirements. Hereâ€™s how to plan smart for Wicker Park, Lincoln Park, and South Loop.
 
 ## Wicker Park
 
-- Narrow streets and busy weekends—target weekday mornings for better curb space.
+- Narrow streets and busy weekendsâ€”target weekday mornings for better curb space.
 - Walk-ups are common; ask [movers](https://comfortmovingchicago.com/services/residential-moving-chicago.html) about stair protection and multi-stop logistics.
 - Check for street festivals and construction zones along Milwaukee Ave.
 
 ## Lincoln Park
 
-- Residential permit parking—use temporary no-parking signs to secure clean loading space.
+- Residential permit parkingâ€”use temporary no-parking signs to secure clean loading space.
 - Older buildings may have tight stairwells; measure oversized furniture in advance (see our [hoisting options](https://comfortmovingchicago.com/services/local-hoisting-chicago.html) if it won't fit).
 - Plan around DePaul University move-in periods for lighter traffic.
 
 ## South Loop
 
-- High-rises require freight elevator reservations and COI—coordinate early.
+- High-rises require freight elevator reservations and COIâ€”coordinate early.
 - Confirm dock hours and vehicle clearance; some garages have height limits.
 - Expect weekday-only move windows in many buildings.
 
@@ -678,7 +687,7 @@ Each Chicago neighborhood has unique access rules, street patterns, and building
 
 ### Moving in the City?
 
-We specialize in Chicago’s North and Near South side moves. We’ll book elevators, arrange signage, and bring the right crew size.
+We specialize in Chicagoâ€™s North and Near South side moves. Weâ€™ll book elevators, arrange signage, and bring the right crew size.
 
 ---
 
@@ -686,6 +695,7 @@ We specialize in Chicago’s North and Near South side moves. We’ll book eleva
 title: "Moving with Pets: A Guide for Chicago Pet Owners | Comfort Moving Chicago"
 description: "Moving with pets can be stressful for both you and your furry friends. Here are our top tips for a safe and smooth move with dogs and cats."
 original_url: "https://comfortmovingchicago.com/blog/blog-moving-with-pets.html"
+author: "Conall Fahey"
 ---
 
 # Moving with Pets: A Guide for Chicago Pet Owners | Comfort Moving Chicago
@@ -720,3 +730,4 @@ When you arrive at your new home, set up a designated space for your pet with th
 - Use pheromone sprays or diffusers to help calm anxious pets.
 
 ---
+

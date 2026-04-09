@@ -2,11 +2,12 @@
 title: "Eco-Friendly Moving Tips: Reduce Waste | Comfort Moving Chicago"
 description: "Make your Chicago move greener with these sustainable packing and moving tips."
 original_url: "https://comfortmovingchicago.com/blog/blog-sustainable-moving.html"
+author: "Conall Fahey"
 ---
 
 # Eco-Friendly Moving Tips: Reduce Waste | Comfort Moving Chicago
 
-Moving can generate a lot of waste—cardboard boxes, bubble wrap, tape, and unwanted items. But it doesn't have to be that way. By planning ahead and making conscious choices, you can significantly reduce your environmental footprint during your move.
+Moving can generate a lot of wasteâ€”cardboard boxes, bubble wrap, tape, and unwanted items. But it doesn't have to be that way. By planning ahead and making conscious choices, you can significantly reduce your environmental footprint during your move.
 
 ## 1. Declutter Responsibly
 
@@ -31,3 +32,4 @@ If you're driving a rental truck, plan the most efficient route to your new home
 ### Move Greener with Us
 
 We are committed to eco-friendly practices, including efficient routing and recycling materials.
+

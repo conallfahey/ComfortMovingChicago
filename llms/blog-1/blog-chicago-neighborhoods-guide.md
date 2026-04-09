@@ -2,6 +2,7 @@
 title: "Navigating Chicago's Neighborhoods: A Mover's Guide | Comfort Moving Chicago"
 description: "Chicago neighborhoods moving guide: permits, elevators, timing."
 original_url: "https://comfortmovingchicago.com/blog/blog-chicago-neighborhoods-guide.html"
+author: "Conall Fahey"
 ---
 
 # Navigating Chicago's Neighborhoods: A Mover's Guide | Comfort Moving Chicago
@@ -25,3 +26,4 @@ We coordinate with building management to ensure your move meets all requirement
 ### Moving to a New Neighborhood?
 
 Let us handle the logistics of permits, parking, and heavy lifting.
+

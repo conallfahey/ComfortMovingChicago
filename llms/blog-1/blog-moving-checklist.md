@@ -2,6 +2,7 @@
 title: "The Ultimate Moving Checklist: 8 Weeks to Moving Day | Comfort Moving Chicago"
 description: "Stay organized with our ultimate moving checklist. A week-by-week guide to help you prepare for your big move without the stress."
 original_url: "https://comfortmovingchicago.com/blog/blog-moving-checklist.html"
+author: "Conall Fahey"
 ---
 
 # The Ultimate Moving Checklist: 8 Weeks to Moving Day | Comfort Moving Chicago
@@ -34,3 +35,4 @@ Pack an essentials bag with everything you'll need for the first 24 hours. Do a 
 - Schedule utility disconnections for the day *after* you move and connections for the day *before* you arrive.
 - Board pets or have a friend watch them on moving day to keep them safe and out of the way.
 - Keep some cash on hand for tipping your movers and buying snacks/drinks.
+

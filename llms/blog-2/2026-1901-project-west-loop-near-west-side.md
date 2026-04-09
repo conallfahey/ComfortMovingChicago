@@ -2,6 +2,7 @@
 title: "The 1901 Project in Chicago: What It Could Mean for the West Loop & Near West Side | Comfort Moving Chicago"
 description: "The 1901 Project near the United Center could reshape the West Loop and Near West Side with new housing, parks, hotels, and entertainment. Here\u2019s what that means for Chicago residents and movers."
 original_url: "https://comfortmovingchicago.com/we-love-chicago/2026-1901-project-west-loop-near-west-side.html"
+author: "Conall Fahey"
 ---
 
 # The 1901 Project in Chicago: What It Could Mean for the West Loop & Near West Side | Comfort Moving Chicago
@@ -12,7 +13,7 @@ For residents, renters, property owners, and anyone planning a move, this is the
 
 ## What Is the 1901 Project?
 
-The project is backed by the ownership groups behind the Chicago Bulls and Chicago Blackhawks, and the vision goes far beyond the arena itself. Plans call for a large mixed-use district with housing, hospitality, retail, entertainment, and major public open space. The goal is to turn the current sea of parking lots around the United Center into a more connected, walkable neighborhood on Chicago’s West Side.
+The project is backed by the ownership groups behind the Chicago Bulls and Chicago Blackhawks, and the vision goes far beyond the arena itself. Plans call for a large mixed-use district with housing, hospitality, retail, entertainment, and major public open space. The goal is to turn the current sea of parking lots around the United Center into a more connected, walkable neighborhood on Chicagoâ€™s West Side.
 
 ### At-a-Glance
 
@@ -60,3 +61,4 @@ For people who love following how Chicago grows, this is one of the biggest proj
 - [https://news.wttw.com/2026/03/24/johnson-defends-proposal-give-plan-area-around-united-center-55m-tax-break](https://news.wttw.com/2026/03/24/johnson-defends-proposal-give-plan-area-around-united-center-55m-tax-break)
 - [https://www.chicago.gov/city/en/depts/dcd/supp_info/chicago_plan_commission/January_2025_Plan_Commission_Hearing.html](https://www.chicago.gov/city/en/depts/dcd/supp_info/chicago_plan_commission/January_2025_Plan_Commission_Hearing.html)
 - [https://chicago.urbanize.city/post/city-council-approves-1901-project](https://chicago.urbanize.city/post/city-council-approves-1901-project)
+

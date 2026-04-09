@@ -2,6 +2,7 @@
 title: "Expert Packing Tips for a Stress-Free Move | Comfort Moving Chicago"
 description: "Learn how to pack like a pro with our expert moving tips. From boxes to labeling, we cover everything you need to know for a safe move."
 original_url: "https://comfortmovingchicago.com/blog/blog-packing-tips.html"
+author: "Conall Fahey"
 ---
 
 # Expert Packing Tips for a Stress-Free Move | Comfort Moving Chicago
@@ -34,3 +35,4 @@ Keep box weight manageable. Use small boxes for heavy items like books and canne
 - Pack an "essentials" box with toiletries, a change of clothes, and important documents for the first night.
 - Take photos of electronic connections before unplugging them.
 - Use plastic wrap to keep drawers shut or to keep liquids from spilling.
+

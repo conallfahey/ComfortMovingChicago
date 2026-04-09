@@ -2,6 +2,7 @@
 title: "Moving with Pets: A Guide for Chicago Pet Owners | Comfort Moving Chicago"
 description: "Moving with pets can be stressful for both you and your furry friends. Here are our top tips for a safe and smooth move with dogs and cats."
 original_url: "https://comfortmovingchicago.com/blog/blog-moving-with-pets.html"
+author: "Conall Fahey"
 ---
 
 # Moving with Pets: A Guide for Chicago Pet Owners | Comfort Moving Chicago
@@ -34,3 +35,4 @@ When you arrive at your new home, set up a designated space for your pet with th
 - Don't wash your pet's bedding right before the move; the familiar scent provides comfort.
 - Research pet-friendly parks and vets in your new neighborhood before you arrive.
 - Use pheromone sprays or diffusers to help calm anxious pets.
+

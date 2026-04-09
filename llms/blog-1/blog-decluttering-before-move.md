@@ -2,6 +2,7 @@
 title: "Declutter Before You Move: Expert Tips | Comfort Moving Chicago"
 description: "Save time and money by downsizing your belongings before the movers arrive. Expert tips on how to declutter efficiently."
 original_url: "https://comfortmovingchicago.com/blog/blog-decluttering-before-move.html"
+author: "Conall Fahey"
 ---
 
 # Declutter Before You Move: Expert Tips | Comfort Moving Chicago
@@ -34,3 +35,4 @@ Storage areas are often the biggest culprits for clutter. Go through old boxes y
 - Check expiration dates on pantry items, toiletries, and medications.
 - Donate books to local libraries or schools.
 - Take photos of sentimental items that are too bulky to keep.
+
