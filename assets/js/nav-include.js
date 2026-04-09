@@ -115,16 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const replaceFooter = (html) => {
-    const target = document.getElementById('shared-footer') || document.querySelector('footer');
+    const target = document.getElementById('shared-footer') || document.querySelector('footer.footer-section');
     if (target) {
       target.outerHTML = html;
-    } else {
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = html.trim();
-      const footerEl = wrapper.firstElementChild;
-      if (footerEl) {
-        document.body.appendChild(footerEl);
-      }
+      return;
+    }
+
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = html.trim();
+    const footerEl = wrapper.firstElementChild;
+    if (footerEl) {
+      document.body.appendChild(footerEl);
     }
   };
 
@@ -189,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
       main.setAttribute('tabindex', '-1');
     }
 
-    const footerBoundary = document.getElementById('shared-footer') || document.querySelector('footer');
+    const footerBoundary = document.getElementById('shared-footer') || document.querySelector('footer.footer-section');
 
     const nodesToMove = [];
     let node = main.nextSibling;
@@ -315,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (document.getElementById('internal-links-block')) return;
 
       const path = (location.pathname || '').toLowerCase();
-      const footer = document.getElementById('shared-footer') || document.querySelector('footer');
+      const footer = document.getElementById('shared-footer') || document.querySelector('footer.footer-section');
       if (!footer) return;
 
       const services = [

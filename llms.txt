@@ -1,0 +1,46 @@
+# Comfort Moving Chicago
+
+Licensed and insured Chicago moving company offering residential moving, packing, furniture assembly, hoisting, office moves, piano moves, senior moving, and same-day/emergency moving services.
+
+## Core Pages
+- [Free Quote | Movers Chicago | Top Rated & Affordable](/llms/home.md)
+- [Moving Services Chicago | Residential & Commercial | Comfort Moving Chicago](/llms/services-index.md)
+- [Moving FAQ Chicago | Apartment Moving Questions | Comfort Moving Chicago](/llms/faq.md)
+
+## Services
+- [Affordable Chicago Movers | Free Quote | Comfort Moving Chicago](/llms/services/affordable-chicago-movers.md)
+- [Emergency Movers Chicago | 24/7 Crisis & Eviction Assistance | Comfort Moving Chicago](/llms/services/emergency-movers-chicago.md)
+- [Furniture Assembly Chicago | IKEA • West Elm • CB2 | Flat-Rate | Comfort Moving Chicago](/llms/services/furniture-assembly-chicago.md)
+- [Local Hoisting Chicago | Window Hoisting Services | Comfort Moving Chicago](/llms/services/local-hoisting-chicago.md)
+- [Office Moving Chicago | Commercial Movers | Comfort Moving Chicago](/llms/services/office-moving-chicago.md)
+- [Packing Services Chicago | Professional Packers | Comfort Moving Chicago](/llms/services/packing-services-chicago.md)
+- [Piano Movers Chicago | Professional Piano Moving | Comfort Moving Chicago](/llms/services/piano-movers-chicago.md)
+- [Residential Moving Chicago | Apartment & House Movers | Comfort Moving Chicago](/llms/services/residential-moving-chicago.md)
+- [Same Day Movers Chicago | Last Minute Moving Company | Comfort Moving Chicago](/llms/services/same-day-movers-chicago.md)
+- [Senior Moving Services Chicago | Stress-Free Relocations | Comfort Moving Chicago](/llms/services/senior-moving-chicago.md)
+
+## Blog 1 (Moving Tips)
+- [Best Time to Move in Chicago: Parking, Permits, and Weather Tips (2025) | Comfort Moving Chicago](/llms/blog-1/blog-best-time-to-move-chicago.md)
+- [Change of Address Checklist: Don't Miss a Thing | Comfort Moving Chicago](/llms/blog-1/blog-change-of-address.md)
+- [Navigating Chicago's Neighborhoods: A Mover's Guide | Comfort Moving Chicago](/llms/blog-1/blog-chicago-neighborhoods-guide.md)
+- [Declutter Before You Move: Expert Tips | Comfort Moving Chicago](/llms/blog-1/blog-decluttering-before-move.md)
+- [Chicago Elevator Reservations & Loading Zone Permits: Step-by-Step Guide | Comfort Moving Chicago](/llms/blog-1/blog-elevator-loading-zone-permits-chicago.md)
+- [First Apartment Checklist: Essentials | Comfort Moving Chicago](/llms/blog-1/blog-first-apartment.md)
+- [Hoisting for Moving: What It Is and Why You Should Use It | Comfort Moving Chicago](/llms/blog-1/blog-hoisting-benefits.md)
+- [The Ultimate Moving Checklist: 8 Weeks to Moving Day | Comfort Moving Chicago](/llms/blog-1/blog-moving-checklist.md)
+- [Moving to Wicker Park, Lincoln Park, or South Loop: Local Tips | Comfort Moving Chicago](/llms/blog-1/blog-moving-wicker-lincoln-south-loop.md)
+- [Moving with Pets: A Guide for Chicago Pet Owners | Comfort Moving Chicago](/llms/blog-1/blog-moving-with-pets.md)
+- [Office Move Planning Guide: Minimize Downtime | Comfort Moving Chicago](/llms/blog-1/blog-office-move.md)
+- [The Ultimate Guide to Packing Fragile Items | Comfort Moving Chicago](/llms/blog-1/blog-packing-fragile-items.md)
+- [Expert Packing Tips for a Stress-Free Move | Comfort Moving Chicago](/llms/blog-1/blog-packing-tips.md)
+- [Why Bigger Isn’t Always Better: Small vs. Big Moving Companies | Comfort Moving Chicago](/llms/blog-1/blog-small-vs-big-moving-companies.md)
+- [5 Tips for a Stress-Free Moving Day | Comfort Moving Chicago](/llms/blog-1/blog-stress-free-moving-day.md)
+- [Eco-Friendly Moving Tips: Reduce Waste | Comfort Moving Chicago](/llms/blog-1/blog-sustainable-moving.md)
+- [How Much to Tip Movers in Chicago: A Complete Guide | Comfort Moving Chicago](/llms/blog-1/blog-tipping-movers.md)
+- [Understanding Moving Quotes: Binding vs. Non-Binding | Comfort Moving Chicago](/llms/blog-1/blog-understanding-moving-quotes.md)
+
+## Blog 2 (We Love Chicago)
+- [The 1901 Project in Chicago: What It Could Mean for the West Loop & Near West Side | Comfort Moving Chicago](/llms/blog-2/2026-1901-project-west-loop-near-west-side.md)
+- [Top 5 Affordable & Best Neighborhoods in Chicago (2026) | Comfort Moving Chicago](/llms/blog-2/2026-affordable-chicago-neighborhoods.md)
+- [2026 Chicago Neighborhood Growth Report | Trends & Data | Comfort Moving Chicago](/llms/blog-2/2026-chicago-neighborhood-growth-report.md)
+- [Logan Square Development Update 2026 | Congress Theater & Trader Joe's | Comfort Moving Chicago](/llms/blog-2/2026-logan-square-development-update.md)

@@ -1374,11 +1374,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                 <div class="card border-0 hero-form-card bg-white">
                   <div class="card-body p-4">
                      <h3 class="fw-bold mb-4 text-black">Free Quote Form</h3>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="bff2b39c-2cd6-470e-a95d-657aba6e88e5">
-                        <input type="hidden" name="_subject" value="New Moving Quote Request!">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://comfortmovingchicago.com/thank-you.html">
+                    <form id="main-quote-form" action="#" method="POST">
                     <input type="text" name="_honey" style="display:none">
 
                         <div class="row g-3">
@@ -1388,15 +1384,15 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                            </div>
                            <div class="col-md-6">
                               <label class="form-label-hero text-uppercase" for="hero-phone">Phone Number</label>
-                              <input type="tel" class="form-control form-control-hero" name="phone" id="hero-phone" placeholder="Mobile Number" required>
+                              <input type="tel" class="form-control form-control-hero" name="phone" id="hero-phone" placeholder="Mobile Number">
                            </div>
                            <div class="col-md-12">
                               <label class="form-label-hero text-uppercase" for="hero-email">Email</label>
-                              <input type="email" class="form-control form-control-hero" name="email" id="hero-email" placeholder="Email Address" required>
+                              <input type="email" class="form-control form-control-hero" name="email" id="hero-email" placeholder="Email Address">
                            </div>
                            <div class="col-md-12">
-                              <label class="form-label-hero text-uppercase" for="hero-moveDate">Date</label>
-                              <input type="date" class="form-control form-control-hero" name="moveDate" id="hero-moveDate" required>
+                              <label class="form-label-hero text-uppercase" for="hero-moveDate">Date &amp; Time</label>
+                              <input type="datetime-local" class="form-control form-control-hero" name="moveDate" id="hero-moveDate" required>
                            </div>
                            <div class="col-md-6">
                               <label class="form-label-hero text-uppercase" for="hero-moveFrom">Moving From</label>
@@ -2106,6 +2102,133 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
           integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <script defer src="/assets/js/nav-include.js"></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('main-quote-form');
+  if (!form) return;
+
+  const getValue = (selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return '';
+    return String(el.value ?? '');
+  };
+
+  const clean = (v) => {
+    const s = String(v ?? '').trim();
+    return s ? s : undefined;
+  };
+
+  const ensureStatusEl = () => {
+    let el = document.getElementById('main-quote-status');
+    if (el) return el;
+    el = document.createElement('div');
+    el.id = 'main-quote-status';
+    el.className = 'alert d-none mb-3';
+    form.prepend(el);
+    return el;
+  };
+
+  const setStatus = (kind, text) => {
+    const el = ensureStatusEl();
+    el.classList.remove('d-none', 'alert-danger', 'alert-success', 'alert-warning');
+    el.classList.add(kind === 'success' ? 'alert-success' : kind === 'warning' ? 'alert-warning' : 'alert-danger');
+    el.textContent = text;
+  };
+
+  const setSubmitting = (isSubmitting) => {
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = Boolean(isSubmitting);
+  };
+
+  const serviceTypeFromSelect = () => {
+    const raw = clean(getValue('#hero-services'));
+    if (!raw) return 'moving_with_truck';
+    const v = raw.toLowerCase();
+    if (v.includes('labor')) return 'labor_only';
+    if (v.includes('pack')) return 'packing_only';
+    return 'moving_with_truck';
+  };
+
+  async function submitLead(formData) {
+    const serviceType = formData.serviceType;
+    const url = `https://us-central1-comfort-moving-crm-dev.cloudfunctions.net/inboundLead_submit?serviceType=${encodeURIComponent(serviceType)}`;
+
+    const payload = {
+      name: formData.name,
+      email: formData.email || undefined,
+      phone: formData.phone || undefined,
+      moveDate: formData.moveDate || undefined,
+      originAddress: formData.originAddress || undefined,
+      destinationAddress: formData.destinationAddress || undefined,
+      moveSize: formData.moveSize || undefined,
+      referralSource: formData.referralSource || undefined,
+      message: formData.message || undefined
+    };
+
+    Object.keys(payload).forEach((k) => payload[k] === undefined && delete payload[k]);
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || !json.ok) throw new Error(json.error || 'Lead submit failed');
+    return json;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = clean(getValue('#hero-name'));
+    const email = clean(getValue('#hero-email'));
+    const phone = clean(getValue('#hero-phone'));
+    const moveDate = clean(getValue('#hero-moveDate'));
+    const originAddress = clean(getValue('#hero-moveFrom'));
+    const destinationAddress = clean(getValue('#hero-moveTo'));
+    const moveSize = clean(getValue('#hero-moveSize'));
+    const referralSource = clean(getValue('#hero-referralSource'));
+    const message = clean(getValue('#hero-details'));
+
+    if (!name) {
+      setStatus('error', 'Please enter your name.');
+      return;
+    }
+    if (!email && !phone) {
+      setStatus('error', 'Please enter either an email or a phone number so we can contact you.');
+      return;
+    }
+
+    const qsServiceType = clean(new URLSearchParams(location.search).get('serviceType'));
+    const serviceType = qsServiceType || serviceTypeFromSelect();
+
+    setSubmitting(true);
+    try {
+      await submitLead({
+        serviceType,
+        name,
+        email,
+        phone,
+        moveDate,
+        originAddress,
+        destinationAddress,
+        moveSize,
+        referralSource,
+        message
+      });
+      setStatus('success', "Thanks! We got your request and we'll reach out shortly.");
+      window.location.assign('/thank-you.html');
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err || 'Lead submit failed');
+      setStatus('error', "Sorry — something went wrong submitting the form. Please call (773) 236-1724 and we'll take care of you.");
+      console.error(msg);
+    } finally {
+      setSubmitting(false);
+    }
+  });
+});
+</script>
 <script defer src="/assets/js/featured-blog.js"></script>
 <script>
 (function(){var e=document.querySelector("blockquote.instagram-media");if(!e)return;var o=false;function t(){if(o)return;o=true;function n(){if(window.instgrm&&window.instgrm.Embeds&&typeof window.instgrm.Embeds.process==="function"){window.instgrm.Embeds.process();}}if(document.querySelector('script[src="https://www.instagram.com/embed.js"]')||document.querySelector('script[src="//www.instagram.com/embed.js"]')){n();return;}var r=document.createElement("script");r.async=true;r.defer=true;r.src="https://www.instagram.com/embed.js";r.onload=n;document.body.appendChild(r);}if("IntersectionObserver"in window){var i=new IntersectionObserver(function(s){for(var a=0;a<s.length;a++){if(s[a].isIntersecting){i.disconnect();t();break;}}},{rootMargin:"200px 0px"});i.observe(e);}else{t();}})();

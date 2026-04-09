@@ -1028,3 +1028,50 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     .bg-service-affordable { background-image: url('/Images/PackingServicesChicago.webp'); }
     .bg-service-sameday { background-image: url('/Images/IMG_0760.webp'); }
 }
+
+/* We Love Chicago: disable hover lift/animation in blog sections */
+.we-love-chicago .btn-primary-brand,
+.we-love-chicago .btn-secondary-action,
+.we-love-chicago .btn-outline-secondary-action,
+.we-love-chicago .btn-orange,
+.we-love-chicago .btn-call-now {
+  transition: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .btn-primary-brand:hover {
+  background-color: #5FA6DB !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .btn-secondary-action:hover {
+  background-color: #fd7e14 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .btn-outline-secondary-action:hover {
+  background-color: transparent !important;
+  color: #fd7e14 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .btn-orange:hover {
+  background-color: #fd7e14 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .btn-call-now:hover {
+  background-color: var(--brand-blue, #5FA6DB) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.we-love-chicago .card:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+.we-love-chicago .card.border-brand-blue:hover {
+  background-color: #fff !important;
+  color: inherit !important;
+}
+.we-love-chicago .card.border-brand-blue:hover .text-brand-blue {
+  color: var(--brand-blue, #5FA6DB) !important;
+}
