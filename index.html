@@ -126,10 +126,11 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     line-height: 1.1;
     font-weight: 700;
     font-size: 3.5rem;
+    min-width: 0;
 }
 
 .home .hero-section-new .d-flex.align-items-center.mb-4 {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 12px;
 }
 
@@ -145,6 +146,14 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 @media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .home .hero-section-new .d-flex.align-items-center.mb-4 {
+        flex-wrap: nowrap;
+    }
+
     .home .hero-avatar {
         width: 100px;
         height: 100px;

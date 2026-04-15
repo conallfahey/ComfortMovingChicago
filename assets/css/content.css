@@ -119,6 +119,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     line-height: 1.1;
     font-weight: 700;
     font-size: 3.5rem;
+    min-width: 0;
 }
 
 .hero-avatar {
@@ -142,6 +143,14 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 @media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-section-new .d-flex.align-items-center.mb-4 {
+        flex-wrap: nowrap;
+    }
+
     .hero-avatar {
         width: 56px;
         height: 56px;
