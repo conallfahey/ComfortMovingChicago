@@ -123,8 +123,8 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 .hero-avatar {
-    width: 76px;
-    height: 76px;
+    width: 156px;
+    height: 156px;
     border-radius: 50%;
     object-fit: cover;
     flex: 0 0 auto;
