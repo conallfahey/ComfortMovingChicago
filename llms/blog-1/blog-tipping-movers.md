@@ -19,7 +19,7 @@ A general rule of thumb is to tip $5 to $10 per mover, per hour. Alternatively, 
 
 ## 3. Factors to Consider
 
-Consider the complexity of your move. If you have a lot of heavy items, several flights of stairs, or difficult access, you might want to tip on the higher end. The quality of service should also be a factorâ€”did they arrive on time, handle your items with care, and work efficiently?
+Consider the complexity of your move. If you have a lot of heavy items, several flights of stairs, or difficult access, you might want to tip on the higher end. The quality of service should also be a factor”did they arrive on time, handle your items with care, and work efficiently?
 
 ## 4. When to Tip
 

@@ -13,7 +13,7 @@ For residents, renters, property owners, and anyone planning a move, this is the
 
 ## What Is the 1901 Project?
 
-The project is backed by the ownership groups behind the Chicago Bulls and Chicago Blackhawks, and the vision goes far beyond the arena itself. Plans call for a large mixed-use district with housing, hospitality, retail, entertainment, and major public open space. The goal is to turn the current sea of parking lots around the United Center into a more connected, walkable neighborhood on Chicagoâ€™s West Side.
+The project is backed by the ownership groups behind the Chicago Bulls and Chicago Blackhawks, and the vision goes far beyond the arena itself. Plans call for a large mixed-use district with housing, hospitality, retail, entertainment, and major public open space. The goal is to turn the current sea of parking lots around the United Center into a more connected, walkable neighborhood on Chicago™s West Side.
 
 ### At-a-Glance
 

@@ -7,7 +7,7 @@ author: "Conall Fahey"
 
 # Chicago Elevator Reservations & Loading Zone Permits: Step-by-Step Guide | Comfort Moving Chicago
 
-[High-rise moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) in Chicagoâ€”especially in the South Loop, Streeterville, and West Loopâ€”require careful coordination with building management, COI documentation, and legal loading arrangements. Hereâ€™s a simple flow to keep your move compliant and on schedule.
+[High-rise moves](https://comfortmovingchicago.com/services/residential-moving-chicago.html) in Chicago”especially in the South Loop, Streeterville, and West Loop”require careful coordination with building management, COI documentation, and legal loading arrangements. Here™s a simple flow to keep your move compliant and on schedule.
 
 ### The Compliance Checklist
 
@@ -15,7 +15,7 @@ author: "Conall Fahey"
 
 - Ask for freight elevator dimensions and maximum load.
 - Confirm allowed hours (many buildings restrict weekends or evenings).
-- Provide your moverâ€™s Certificate of Insurance (COI) with the building listed as additional insured.
+- Provide your mover™s Certificate of Insurance (COI) with the building listed as additional insured.
 
 #### 2) Secure Legal Curb Space
 
@@ -23,7 +23,7 @@ Use alderman offices and CDOT guidance for temporary no-parking signs to reserve
 
 - Photograph sign placement and timestamps.
 - Coordinate with building dock managers if curb loading is not permitted.
-- Avoid bus stops, hydrants, and bike lanesâ€”tickets add cost and delay.
+- Avoid bus stops, hydrants, and bike lanes”tickets add cost and delay.
 
 #### 3) COI and Building Rules
 
@@ -35,11 +35,11 @@ Proper planning ensures smooth access on moving day.
 
 ##### South Loop
 
-Freight docks fill fastâ€”book early and bring IDs for vendor check-in.
+Freight docks fill fast”book early and bring IDs for vendor check-in.
 
 ##### Streeterville
 
-Expect trafficâ€”schedule early mornings for better curb access.
+Expect traffic”schedule early mornings for better curb access.
 
 ##### West Loop
 

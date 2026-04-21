@@ -7,7 +7,7 @@ author: "Conall Fahey"
 
 # Hoisting for Moving: What It Is and Why You Should Use It | Comfort Moving Chicago
 
-[Hoisting](https://comfortmovingchicago.com/services/local-hoisting-chicago.html) is a professional moving technique where trained movers use ropes, pulleys, or mechanical equipment to lift large items through windows or over balconies when they canâ€™t fit through stairwells or hallways. Itâ€™s common in Chicagoâ€™s vintage buildings and modern high-rises.
+[Hoisting](https://comfortmovingchicago.com/services/local-hoisting-chicago.html) is a professional moving technique where trained movers use ropes, pulleys, or mechanical equipment to lift large items through windows or over balconies when they can™t fit through stairwells or hallways. It™s common in Chicago™s vintage buildings and modern high-rises.
 
 ### When to Hoist
 
@@ -27,5 +27,5 @@ Hoisting should always be performed by trained professionals using proper riggin
 
 ### Get a Hoisting Estimate
 
-Tell us about the item, its dimensions, floor level, and access (balcony/window) and weâ€™ll provide a plan.
+Tell us about the item, its dimensions, floor level, and access (balcony/window) and we™ll provide a plan.
 

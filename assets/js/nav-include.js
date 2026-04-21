@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isFAQ = path.endsWith('/faq.html');
     const isBlog = path.includes('/blog/') || path.endsWith('/blog');
     const isWeLoveChicago = path.includes('/we-love-chicago/') || path.endsWith('/we-love-chicago');
-    const isServices = path.endsWith('/services.html');
+    const isServices = path.endsWith('/services.html') || path.includes('/services/');
 
     const markActive = (href) => {
       const link = Array.from(links).find(a => a.getAttribute('href') === href);

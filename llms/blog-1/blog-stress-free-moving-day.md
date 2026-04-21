@@ -20,7 +20,7 @@ On moving day, make sure pathways are clear and designate someone to direct the 
 - Keep a small toolkit handy for last-minute [disassembly and reassembly](https://comfortmovingchicago.com/services/furniture-assembly-chicago.html).
 - Photograph cable setups for TVs and computers before disconnecting.
 
-If you want a truly hands-off experience, our team can handle [packing](https://comfortmovingchicago.com/services/packing-services-chicago.html), loading, transport, and setup. Weâ€™ll tailor the plan to your buildingâ€™s requirements and your schedule.
+If you want a truly hands-off experience, our team can handle [packing](https://comfortmovingchicago.com/services/packing-services-chicago.html), loading, transport, and setup. We™ll tailor the plan to your building™s requirements and your schedule.
 
 ### Ready for a Stress-Free Move?
 

@@ -7,7 +7,7 @@ author: "Conall Fahey"
 
 # The Ultimate Guide to Packing Fragile Items | Comfort Moving Chicago
 
-Proper packing is essential to prevent damage during your move. Whether it's fine china or a flat-screen TV, starting with high-quality materialsâ€”sturdy boxes, packing paper, bubble wrap, and packing tapeâ€”is your first line of defense.
+Proper packing is essential to prevent damage during your move. Whether it's fine china or a flat-screen TV, starting with high-quality materials”sturdy boxes, packing paper, bubble wrap, and packing tape”is your first line of defense.
 
 ## Dishes and Glassware
 
