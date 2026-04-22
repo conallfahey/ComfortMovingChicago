@@ -34,16 +34,16 @@ const BUSINESS = {
 
 const ROOT_PAGES = {
   'index.html': {
-    title: `Chicago Movers | Local Moving Company | ${BRAND}`,
+    title: `Chicago Movers | Apartments, Homes & Same-Day Moves | ${BRAND}`,
     description:
-      'Chicago movers for apartments, homes, offices, and last-minute moves. Licensed and insured local moving company with free quotes and strong local reviews.',
+      'Chicago movers for apartments, condos, homes, offices, packing, and last-minute moves. Owner-operated, licensed, and built for real Chicago move-day logistics.',
     schemaType: 'home'
   },
   'services.html': {
-    title: `Chicago Moving Services | Local, Packing & Specialty Movers | ${BRAND}`,
+    title: `Chicago Moving Services | Residential, Packing, Office & Same-Day Help | ${BRAND}`,
     description:
-      'Explore Chicago moving services for homes, apartments, offices, packing, hoisting, piano moves, and last-minute relocations. Get a free quote.',
-    schemaType: 'none'
+      'Compare Chicago moving services for apartments, homes, offices, packing, hoisting, affordable moves, and same-day help. Find the right fit and request a quote.',
+    schemaType: 'webPage'
   },
   'faq.html': {
     title: `Chicago Moving FAQ | Pricing, Permits & Apartment Moves | ${BRAND}`,
@@ -72,25 +72,25 @@ const ROOT_PAGES = {
 
 const SERVICE_PAGES = {
   'services/affordable-chicago-movers.html': {
-    title: `Affordable Chicago Movers | Apartments, Studios & Small Moves | ${BRAND}`,
+    title: `Affordable Chicago Movers | Budget-Friendly Local Moving Without Hidden Fees | ${BRAND}`,
     description:
-      'Affordable Chicago movers for apartments, studios, and small moves with transparent hourly or flat-rate pricing. Licensed and insured.',
+      'Affordable Chicago movers for studios, apartments, and smaller local moves with transparent pricing, efficient crews, and no big-company markup.',
     serviceType: 'Affordable moving services',
     serviceName: 'Affordable Chicago Movers',
     areaServed: ['Chicago, IL']
   },
   'services/residential-moving-chicago.html': {
-    title: `Residential Moving Chicago | Apartment, Condo & House Movers | ${BRAND}`,
+    title: `Residential Moving Chicago | Apartment, Condo & House Movers That Know City Access | ${BRAND}`,
     description:
-      'Residential moving in Chicago for apartments, condos, and houses. Licensed and insured movers with careful loading, packing help, and free quotes.',
+      'Residential moving in Chicago for apartments, condos, walk-ups, and houses with careful loading, elevator planning, packing help, and fast local quotes.',
     serviceType: 'Residential moving services',
     serviceName: 'Residential Moving Chicago',
     areaServed: ['Chicago, IL']
   },
   'services/packing-services-chicago.html': {
-    title: `Packing Services Chicago | Full Packing & Fragile Item Help | ${BRAND}`,
+    title: `Packing Services Chicago | Full Packing, Fragile Prep & Unpacking Help | ${BRAND}`,
     description:
-      'Chicago packing services for full-home packing, fragile items, unpacking support, and moving supplies. Licensed and insured local movers.',
+      'Chicago packing services for full-home packing, fragile items, room-by-room packing, unpacking help, and supplies from a local moving crew.',
     serviceType: 'Packing services',
     serviceName: 'Packing Services Chicago',
     areaServed: ['Chicago, IL']
@@ -120,9 +120,9 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/office-moving-chicago.html': {
-    title: `Office Moving Chicago | Commercial Relocation & Business Moves | ${BRAND}`,
+    title: `Office Moving Chicago | Commercial Moves With COI, Scheduling & Downtime Planning | ${BRAND}`,
     description:
-      'Chicago office moving for commercial relocations, internal moves, and business transitions with planning that helps reduce downtime.',
+      'Chicago office moving for commercial relocations, internal office shifts, COIs, after-hours scheduling, and business moves built to reduce downtime.',
     serviceType: 'Office moving services',
     serviceName: 'Office Moving Chicago',
     areaServed: ['Chicago, IL']
@@ -136,9 +136,9 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/same-day-movers-chicago.html': {
-    title: `Same Day Movers Chicago | Today & Tomorrow Moves | ${BRAND}`,
+    title: `Same Day Movers Chicago | Last-Minute Moves, Today or Tomorrow | ${BRAND}`,
     description:
-      'Same day movers in Chicago for last-minute apartments, condos, and short-notice moves scheduled for today or tomorrow when crews are available.',
+      'Same day movers in Chicago for last-minute apartments, condos, and short-notice local moves with fast dispatch, clear communication, and real availability checks.',
     serviceType: 'Same day moving services',
     serviceName: 'Same Day Movers Chicago',
     areaServed: ['Chicago, IL']
@@ -162,9 +162,9 @@ const AREA_PAGES = {
     areaServed: ['Lincoln Park, Chicago, IL', '60614', '60657']
   },
   'neighborhoods/wicker-park-movers.html': {
-    title: `Wicker Park Movers | Walk-Ups, Tight Streets & Permit Help | ${BRAND}`,
+    title: `Wicker Park Movers | Walk-Ups, Permit Streets & Busy Chicago Blocks | ${BRAND}`,
     description:
-      'Wicker Park movers for walk-ups, permit-heavy streets, and apartment moves around 60622 and 60647 with local route planning.',
+      'Wicker Park movers for walk-ups, permit-heavy streets, alley loading, and apartment moves around 60622 with local route and timing planning.',
     serviceName: 'Wicker Park Movers',
     areaServed: ['Wicker Park, Chicago, IL', '60622', '60647']
   },
@@ -190,9 +190,9 @@ const AREA_PAGES = {
     areaServed: ['Rogers Park, Chicago, IL', '60626', '60645']
   },
   'neighborhoods/oak-park-movers.html': {
-    title: `Oak Park Movers | Historic Homes, Condos & Local Moves | ${BRAND}`,
+    title: `Oak Park Movers | Historic Homes, Tight Residential Streets & Careful Local Moves | ${BRAND}`,
     description:
-      'Oak Park movers for historic homes, condos, and apartments with careful loading plans and local moving support across key Oak Park blocks.',
+      'Oak Park movers for historic homes, condos, apartments, detached garages, and careful suburb moves across 60301, 60302, and 60304.',
     serviceName: 'Oak Park Movers',
     areaServed: ['Oak Park, IL', '60301', '60302', '60304']
   },
@@ -204,9 +204,9 @@ const AREA_PAGES = {
     areaServed: ['The Loop, Chicago, IL', '60601', '60602', '60603']
   },
   'neighborhoods/west-loop-movers.html': {
-    title: `West Loop Movers | Lofts, High-Rises & Office Relocation | ${BRAND}`,
+    title: `West Loop Movers | High-Rises, Lofts, Loading Docks & Fulton Market Moves | ${BRAND}`,
     description:
-      'West Loop movers for lofts, condos, Fulton Market offices, and high-rise moves with building coordination and busy-street logistics.',
+      'West Loop movers for lofts, condo towers, Fulton Market offices, and high-rise moves with dock coordination, freight reservations, and busy-street logistics.',
     serviceName: 'West Loop Movers',
     areaServed: ['West Loop, Chicago, IL', '60607', '60661']
   },

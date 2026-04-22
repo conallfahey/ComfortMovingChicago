@@ -1,0 +1,177 @@
+{
+  "reviews": [{
+    "reviewer": {
+      "displayName": "Marissa White"
+    },
+    "starRating": "FIVE",
+    "comment": "comfort moving was so helpful! highly recommend",
+    "createTime": "2024-02-08T23:37:55.352423Z",
+    "updateTime": "2024-02-08T23:37:55.352423Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSUR0bi1YVExBEAE"
+  }, {
+    "reviewer": {
+      "displayName": "Alison Kowalke"
+    },
+    "starRating": "FIVE",
+    "comment": "Friendly service!",
+    "createTime": "2024-02-08T20:27:50.808316Z",
+    "updateTime": "2024-02-08T20:27:50.808316Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSUR0NzllYVBnEAE"
+  }, {
+    "reviewer": {
+      "displayName": "Isaac Smoak"
+    },
+    "starRating": "FIVE",
+    "comment": "Best mover in town",
+    "createTime": "2024-02-06T04:50:03.431639Z",
+    "updateTime": "2024-02-06T04:50:03.431639Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSUR0OWZxMWN3EAE"
+  }, {
+    "reviewer": {
+      "displayName": "Ariana Zaninotto"
+    },
+    "starRating": "FIVE",
+    "comment": "Super helpful and extremely efficient!",
+    "createTime": "2024-02-05T21:46:15.436148Z",
+    "updateTime": "2024-02-05T21:46:15.436148Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUR0cGZYLWlBRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Gracie Bednarczyk"
+    },
+    "starRating": "FIVE",
+    "createTime": "2024-02-05T06:34:34.637286Z",
+    "updateTime": "2024-02-05T06:35:45.506376Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUR0MGEzVzFRRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Sam Yu"
+    },
+    "starRating": "FIVE",
+    "createTime": "2024-02-04T23:25:55.214626Z",
+    "updateTime": "2024-02-04T23:25:55.214626Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUR0Z2RQZHVBRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Lisa Michelle"
+    },
+    "starRating": "FIVE",
+    "createTime": "2024-02-04T23:15:49.651691Z",
+    "updateTime": "2024-02-04T23:15:49.651691Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUR0Z1kySzFnRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Zach Keyes"
+    },
+    "starRating": "FIVE",
+    "comment": "I could not have been more pleased with my moving experience! Ethan and Matteo were simply the most helpful and thoughtful movers I’ve ever worked with. They were quick, responsive and professional. We moved out of a 2 bed, 1 bath apartment second floor walk up and they were extremely efficient. We had quite a bit of items to load and they were able to strategically fit everything into a 20ft truck. So happy we chose them and they are truly the best value out of any movers I looked at!",
+    "createTime": "2023-10-02T23:27:03.248700Z",
+    "updateTime": "2023-10-02T23:27:03.248700Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSURaa1pPVEF3EAE"
+  }, {
+    "reviewer": {
+      "displayName": "Maram Elnagheeb"
+    },
+    "starRating": "FIVE",
+    "comment": "The movers are really kind and efficient. They will take the stress out of moving for you by calming your anxiety and are great problem solvers! Definitely recommend for a fast and efficient process!",
+    "createTime": "2023-09-02T01:36:43.125274Z",
+    "updateTime": "2023-09-02T01:36:43.125274Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSUNab0o3QkV3EAE"
+  }, {
+    "reviewer": {
+      "displayName": "Jillian Roth"
+    },
+    "starRating": "FIVE",
+    "createTime": "2023-08-31T20:10:57.731464Z",
+    "updateTime": "2023-08-31T20:10:57.731464Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSURwcjZlZ3NnRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Elizabeth DeIuliis"
+    },
+    "starRating": "FIVE",
+    "comment": "I have used Comfort Moving Chicago multiple times and I am always so thankful that I hire them for my moves. They make the process as streamlined and easy as possible. They are flexible, understanding, and careful when handling my things. I have now recommended them to countless friends and they have had the same experience when using them.",
+    "createTime": "2023-08-30T22:25:48.736914Z",
+    "updateTime": "2023-08-30T22:25:48.736914Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSURwMThpRTZnRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Karina Reyes"
+    },
+    "starRating": "FIVE",
+    "comment": "I hired these guys to pick up an elliptical for me. Aaron and Mateo did a great job!",
+    "createTime": "2023-08-24T17:39:20.532807Z",
+    "updateTime": "2023-08-24T17:39:20.532807Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSURwNlpxOFlnEAE"
+  }, {
+    "reviewer": {
+      "displayName": "Jurdle"
+    },
+    "starRating": "FIVE",
+    "comment": "Fast and easy",
+    "createTime": "2023-08-23T18:07:11.474700Z",
+    "updateTime": "2023-08-23T18:07:11.474700Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSURwa2J2LVhREAE"
+  }, {
+    "reviewer": {
+      "displayName": "Coley Goldie"
+    },
+    "starRating": "FIVE",
+    "createTime": "2023-08-23T00:07:47.878622Z",
+    "updateTime": "2023-08-23T00:07:47.878622Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSURwX3ZuMHRBRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "G Fox"
+    },
+    "starRating": "FIVE",
+    "comment": "Amazing team. These guys are fast, efficient, friendly, and very accommodating. Was the easiest move I\u0027ve ever done and I would recommend them to anyone. They were very communicative about any issues or minor things that came up during the move, even making me aware of a bit of water that got on one of my boxes as soon as they noticed so I could take action if it was needed. Can\u0027t thank them enough. And for the price I don\u0027t think any other company in Chicago has them beat.",
+    "createTime": "2023-08-15T22:53:29.575722Z",
+    "updateTime": "2023-08-15T22:53:29.575722Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSURwLVBEdlVREAE"
+  }, {
+    "reviewer": {
+      "displayName": "Alexia Walleser"
+    },
+    "starRating": "FIVE",
+    "comment": "Comfort Moving was great! The guys were super nice, helpful, and efficient.\n\nWe were moving into a new apartment on a 4th floor walkup and they managed it like champs! They got all our items moved and rebuilt in under two hours.\n\nWould 1000% recommend to anyone in the area looking for efficient and affordable movers!",
+    "createTime": "2023-08-14T17:40:21.408746Z",
+    "updateTime": "2023-08-14T17:40:21.408746Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSURwc0xTZ2lnRRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Niels Jacobsen"
+    },
+    "starRating": "FIVE",
+    "comment": "Very professional, helpful, and efficient movers. Would definitely recommend for any moving job.",
+    "createTime": "2023-08-13T10:59:22.736459Z",
+    "updateTime": "2023-08-13T10:59:22.736459Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUNwMzhpOW93RRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Romana Ruggiero"
+    },
+    "starRating": "FIVE",
+    "comment": "Great experience! Mateo and his team moved heavy furniture carefully and quickly at an amazing rate. They even finished with 10 minutes to spare! We’ll definitely consider for any future moves and continue to recommend them to friends in the city. Thanks!!!",
+    "createTime": "2023-08-02T17:52:42.105253Z",
+    "updateTime": "2023-08-02T17:52:42.105253Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSUNweHVPQ3J3RRAB"
+  }, {
+    "reviewer": {
+      "displayName": "Brian Boor"
+    },
+    "starRating": "FIVE",
+    "comment": "These guys are amazing! Very professional, excellent service, and they worked super fast! I will be recommending them to everyone.",
+    "createTime": "2023-07-30T21:15:01.732087Z",
+    "updateTime": "2023-07-30T21:15:01.732087Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChZDSUhNMG9nS0VJQ0FnSUNwdkpINlB3EAE"
+  }, {
+    "reviewer": {
+      "displayName": "Anne"
+    },
+    "starRating": "FIVE",
+    "createTime": "2023-07-22T19:15:38.139208Z",
+    "updateTime": "2023-07-22T19:15:38.139208Z",
+    "name": "accounts/116507434882864969255/locations/10010227020373101361/reviews/ChdDSUhNMG9nS0VJQ0FnSURKeS1UNGtRRRAB"
+  }]
+}

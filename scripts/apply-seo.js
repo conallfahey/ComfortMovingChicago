@@ -80,44 +80,77 @@ function buildPlace(value) {
   return place;
 }
 
-function buildBreadcrumbSchema(filePath, html) {
+function buildBreadcrumbSchema(filePath, html, page) {
   const items = [...html.matchAll(/<li class="breadcrumb-item(?: active)?[^"]*"[^>]*>([\s\S]*?)<\/li>/gi)]
     .map((match) => stripTags(match[1]));
 
-  if (items.length < 2) {
-    return null;
-  }
+  if (items.length >= 2) {
+    const listItems = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${BASE_URL}/`
+      }
+    ];
 
-  const listItems = [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: `${BASE_URL}/`
+    if (filePath.startsWith('blog/')) {
+      listItems.push({
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Moving Tips',
+        item: `${BASE_URL}/blog/`
+      });
+      listItems.push({
+        '@type': 'ListItem',
+        position: 3,
+        name: items[items.length - 1]
+      });
     }
-  ];
 
-  if (filePath.startsWith('blog/')) {
-    listItems.push({
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Moving Tips',
-      item: `${BASE_URL}/blog/`
-    });
-    listItems.push({
-      '@type': 'ListItem',
-      position: 3,
-      name: items[items.length - 1]
-    });
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: listItems
+    };
   }
 
-  return {
-    '@type': 'BreadcrumbList',
-    itemListElement: listItems
-  };
+  if (filePath === 'services.html') {
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Moving Services', item: `${BASE_URL}/services.html` }
+      ]
+    };
+  }
+
+  if (filePath.startsWith('services/')) {
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Moving Services', item: `${BASE_URL}/services.html` },
+        { '@type': 'ListItem', position: 3, name: page.serviceName || items[items.length - 1] || '' }
+      ]
+    };
+  }
+
+  if (filePath.startsWith('neighborhoods/')) {
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: page.serviceName || items[items.length - 1] || '' }
+      ]
+    };
+  }
+
+  return null;
 }
 
 function extractFaqEntries(html) {
+  const seen = new Set();
+
   return [...html.matchAll(/<div class="accordion-item">[\s\S]*?<button[^>]*>([\s\S]*?)<\/button>[\s\S]*?<div class="accordion-body">([\s\S]*?)<\/div>[\s\S]*?<\/div>\s*<\/div>/gi)]
     .map((match) => ({
       '@type': 'Question',
@@ -126,7 +159,15 @@ function extractFaqEntries(html) {
         '@type': 'Answer',
         text: stripTags(match[2])
       }
-    }));
+    }))
+    .filter((entry) => {
+      const key = entry.name.toLowerCase();
+      if (!entry.name || seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
 }
 
 function findArticleDates(html) {
@@ -166,19 +207,34 @@ function buildSchema(filePath, page, html) {
   }
 
   if (page.schemaType === 'home') {
+    const faqEntries = extractFaqEntries(html);
+    const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
+    const graph = [
+      BUSINESS,
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: page.title,
+        description: page.description,
+        about: { '@id': BUSINESS['@id'] }
+      }
+    ];
+
+    if (breadcrumb) {
+      graph.push(breadcrumb);
+    }
+    if (faqEntries.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        '@id': `${canonical}#faq`,
+        mainEntity: faqEntries
+      });
+    }
+
     return {
       '@context': 'https://schema.org',
-      '@graph': [
-        BUSINESS,
-        {
-          '@type': 'WebPage',
-          '@id': `${canonical}#webpage`,
-          url: canonical,
-          name: 'Chicago Movers | Local Moving Company',
-          description: page.description,
-          about: { '@id': BUSINESS['@id'] }
-        }
-      ]
+      '@graph': graph
     };
   }
 
@@ -203,28 +259,76 @@ function buildSchema(filePath, page, html) {
     };
   }
 
-  if (page.schemaType === 'service' || page.schemaType === 'areaService') {
+  if (page.schemaType === 'webPage') {
+    const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
+    const graph = [
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: page.title,
+        description: page.description
+      }
+    ];
+
+    if (breadcrumb) {
+      graph.push(breadcrumb);
+    }
+
     return {
       '@context': 'https://schema.org',
-      '@graph': [
-        BUSINESS,
-        {
-          '@type': 'Service',
-          '@id': `${canonical}#service`,
-          url: canonical,
-          name: page.serviceName || h1,
-          serviceType: page.serviceType || 'Moving services',
-          description: lead || page.description,
-          provider: { '@id': BUSINESS['@id'] },
-          areaServed: (page.areaServed || ['Chicago, IL']).map(buildPlace)
-        }
-      ]
+      '@graph': graph
+    };
+  }
+
+  if (page.schemaType === 'service' || page.schemaType === 'areaService') {
+    const faqEntries = extractFaqEntries(html);
+    const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
+    const areaServed = (page.areaServed || ['Chicago, IL']).map(buildPlace);
+    const graph = [
+      BUSINESS,
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: page.title,
+        description: page.description,
+        about: { '@id': `${canonical}#service` }
+      },
+      {
+        '@type': 'Service',
+        '@id': `${canonical}#service`,
+        url: canonical,
+        name: page.serviceName || h1,
+        serviceType: page.serviceType || 'Moving services',
+        description: lead || page.description,
+        provider: { '@id': BUSINESS['@id'] },
+        areaServed,
+        mainEntityOfPage: { '@id': `${canonical}#webpage` }
+      }
+    ];
+
+    if (breadcrumb) {
+      graph.push(breadcrumb);
+    }
+
+    if (faqEntries.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        '@id': `${canonical}#faq`,
+        mainEntity: faqEntries
+      });
+    }
+
+    return {
+      '@context': 'https://schema.org',
+      '@graph': graph
     };
   }
 
   if (page.schemaType === 'blogPost' || page.schemaType === 'communityPost') {
     const { datePublished, dateModified, author } = findArticleDates(html);
-    const breadcrumb = buildBreadcrumbSchema(filePath, html);
+    const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
     const graph = [
       {
         '@type': filePath.startsWith('blog/') ? 'BlogPosting' : 'Article',
