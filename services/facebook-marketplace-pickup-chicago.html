@@ -289,7 +289,7 @@
             <div class="card border-0 hero-form-card bg-white">
               <div class="card-body p-4">
                 <h2 class="h3 fw-bold mb-2 text-black">Marketplace Pickup Quote</h2>
-                <p class="text-muted marketplace-form-note mb-4">Send the pickup location, drop-off location, and item description. Add phone or email so we can confirm timing.</p>
+                <p class="text-muted marketplace-form-note mb-4">Add your contact info, then send the pickup location, drop-off location, and item description.</p>
 
                 <form id="marketplace-pickup-form" action="#" method="POST">
                   <input type="text" name="_honey" style="display:none">
@@ -301,6 +301,18 @@
 
                   <div class="row g-3">
                     <div class="col-12">
+                      <label class="form-label-hero text-uppercase" for="marketplace-name">Name</label>
+                      <input type="text" class="form-control form-control-hero" name="name" id="marketplace-name" placeholder="Full name" autocomplete="name" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-hero text-uppercase" for="marketplace-phone">Phone</label>
+                      <input type="tel" class="form-control form-control-hero" name="phone" id="marketplace-phone" placeholder="Mobile number">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-hero text-uppercase" for="marketplace-email">Email</label>
+                      <input type="email" class="form-control form-control-hero" name="email" id="marketplace-email" placeholder="Email address">
+                    </div>
+                    <div class="col-12">
                       <label class="form-label-hero text-uppercase" for="marketplace-pickup-location">Pickup Location</label>
                       <input type="text" class="form-control form-control-hero" name="moveFrom" id="marketplace-pickup-location" placeholder="Seller pickup address or neighborhood" autocomplete="street-address" required>
                     </div>
@@ -311,14 +323,6 @@
                     <div class="col-12">
                       <label class="form-label-hero text-uppercase" for="marketplace-item-description">Item Description</label>
                       <textarea class="form-control form-control-hero" name="details" id="marketplace-item-description" rows="4" placeholder="Example: couch, 86 inches, pickup has 2 flights of stairs, delivery has elevator" required></textarea>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label-hero text-uppercase" for="marketplace-phone">Phone</label>
-                      <input type="tel" class="form-control form-control-hero" name="phone" id="marketplace-phone" placeholder="Mobile number">
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label-hero text-uppercase" for="marketplace-email">Email</label>
-                      <input type="email" class="form-control form-control-hero" name="email" id="marketplace-email" placeholder="Email address">
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-secondary-action quote-submit-btn w-100 py-3 rounded-pill fw-bold shadow-sm" data-default-text="Send Pickup Details" data-loading-text="Sending Pickup Details..." aria-live="polite">
@@ -553,14 +557,20 @@
           const honey = clean(form.querySelector('[name="_honey"]')?.value);
           if (honey) return;
 
+          const name = valueById('marketplace-name');
+          const phone = valueById('marketplace-phone');
+          const email = valueById('marketplace-email');
           const originAddress = valueById('marketplace-pickup-location');
           const destinationAddress = valueById('marketplace-dropoff-location');
           const itemDescription = valueById('marketplace-item-description');
-          const phone = valueById('marketplace-phone');
-          const email = valueById('marketplace-email');
 
           if (!originAddress || !destinationAddress || !itemDescription) {
             setStatus('error', 'Please add the pickup location, drop-off location, and item description.');
+            return;
+          }
+
+          if (!name) {
+            setStatus('error', 'Please add your name.');
             return;
           }
 
@@ -570,7 +580,7 @@
           }
 
           const payload = {
-            name: 'Facebook Marketplace Pickup Lead',
+            name,
             email,
             phone,
             originAddress,
