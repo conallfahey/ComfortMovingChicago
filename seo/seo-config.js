@@ -103,6 +103,14 @@ const SERVICE_PAGES = {
     serviceName: 'Furniture Assembly Chicago',
     areaServed: ['Chicago, IL']
   },
+  'services/facebook-marketplace-pickup-chicago.html': {
+    title: `Facebook Marketplace Pickup Chicago | Furniture & Item Delivery | ${BRAND}`,
+    description:
+      'Chicago Facebook Marketplace pickup and delivery for couches, dressers, tables, marketplace furniture, and single-item local moves. Send pickup, drop-off, and item details for a fast quote.',
+    serviceType: 'Marketplace item pickup and delivery',
+    serviceName: 'Facebook Marketplace Pickup Chicago',
+    areaServed: ['Chicago, IL']
+  },
   'services/local-hoisting-chicago.html': {
     title: `Hoisting Services Chicago | Window Hoists & Oversized Items | ${BRAND}`,
     description:
