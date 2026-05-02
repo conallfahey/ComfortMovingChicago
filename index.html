@@ -297,6 +297,42 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     margin-bottom: 0.3rem;
 }
 
+.quote-submit-btn {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 58px;
+}
+
+.quote-submit-spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: quote-submit-spin 0.8s linear infinite;
+}
+
+.quote-submit-btn:not(.is-loading) .quote-submit-spinner {
+    display: none;
+}
+
+.quote-submit-btn.is-loading {
+    cursor: wait;
+}
+
+.quote-submit-btn.is-loading .quote-submit-text {
+    white-space: nowrap;
+}
+
+@keyframes quote-submit-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Home Page Utilities */
 .hero-section-home { min-height: 85vh; background: #000; overflow: hidden; }
 .hero-overlay-home { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('/Images/IMG_0760.webp'); background-size: cover; background-position: center; opacity: 0.6; }
@@ -1461,7 +1497,10 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                               <textarea class="form-control form-control-hero" name="details" id="hero-details" rows="2" placeholder="Any stair details, elevator, or special items?"></textarea>
                            </div>
                            <div class="col-12 mt-4">
-                              <button type="submit" class="btn btn-secondary-action w-100 py-3 rounded-pill fw-bold shadow-sm">Get Your Free Quote</button>
+                              <button type="submit" class="btn btn-secondary-action quote-submit-btn w-100 py-3 rounded-pill fw-bold shadow-sm" data-default-text="Get Your Free Quote" data-loading-text="Sending Quote Request..." aria-live="polite">
+                                <span class="quote-submit-spinner" aria-hidden="true"></span>
+                                <span class="quote-submit-text">Get Your Free Quote</span>
+                              </button>
                            </div>
                         </div>
                      </form>
@@ -2151,14 +2190,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const setStatus = (kind, text) => {
     const el = ensureStatusEl();
-    el.classList.remove('d-none', 'alert-danger', 'alert-success', 'alert-warning');
-    el.classList.add(kind === 'success' ? 'alert-success' : kind === 'warning' ? 'alert-warning' : 'alert-danger');
+    el.classList.remove('d-none', 'alert-danger', 'alert-success', 'alert-warning', 'alert-info');
+    el.classList.add(kind === 'success' ? 'alert-success' : kind === 'warning' ? 'alert-warning' : kind === 'info' ? 'alert-info' : 'alert-danger');
     el.textContent = text;
   };
 
   const setSubmitting = (isSubmitting) => {
     const btn = form.querySelector('button[type="submit"]');
-    if (btn) btn.disabled = Boolean(isSubmitting);
+    if (!btn) return;
+    const text = btn.querySelector('.quote-submit-text');
+    btn.disabled = Boolean(isSubmitting);
+    btn.classList.toggle('is-loading', Boolean(isSubmitting));
+    btn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
+    if (text) {
+      text.textContent = isSubmitting
+        ? btn.dataset.loadingText || 'Sending...'
+        : btn.dataset.defaultText || 'Get Your Free Quote';
+    }
   };
 
   const serviceTypeFromSelect = () => {
@@ -2224,7 +2272,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const qsServiceType = clean(new URLSearchParams(location.search).get('serviceType'));
     const serviceType = qsServiceType || serviceTypeFromSelect();
 
+    let isRedirecting = false;
     setSubmitting(true);
+    setStatus('info', 'Sending your request now...');
     try {
       await submitLead({
         serviceType,
@@ -2239,13 +2289,14 @@ document.addEventListener('DOMContentLoaded', () => {
         message
       });
       setStatus('success', "Thanks! We got your request and we'll reach out shortly.");
+      isRedirecting = true;
       window.location.assign('/thank-you.html');
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err || 'Lead submit failed');
       setStatus('error', "Sorry  -  something went wrong submitting the form. Please call (773) 236-1724 and we'll take care of you.");
       console.error(msg);
     } finally {
-      setSubmitting(false);
+      if (!isRedirecting) setSubmitting(false);
     }
   });
 });
