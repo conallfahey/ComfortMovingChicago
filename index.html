@@ -2172,7 +2172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function submitLead(formData) {
     const serviceType = formData.serviceType;
-    const url = `https://us-central1-comfort-moving-crm-dev.cloudfunctions.net/inboundLead_submit?serviceType=${encodeURIComponent(serviceType)}`;
+    const url = `https://us-central1-comfort-moving-crm.cloudfunctions.net/inboundLead_submit?serviceType=${encodeURIComponent(serviceType)}`;
 
     const payload = {
       name: formData.name,
