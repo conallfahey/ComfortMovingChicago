@@ -80,12 +80,12 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/residential-moving-chicago.html': {
-    title: `Residential Moving Chicago | Apartment, Condo & House Movers That Know City Access | ${BRAND}`,
+    title: `House Movers Chicago & Suburbs | Large Home Residential Moving | ${BRAND}`,
     description:
-      'Residential moving in Chicago for apartments, condos, walk-ups, and houses with careful loading, elevator planning, packing help, and fast local quotes.',
+      'House movers for Chicago and nearby suburbs, including large homes, townhomes, condos, family moves, careful furniture protection, packing help, and clear local quotes.',
     serviceType: 'Residential moving services',
     serviceName: 'Residential Moving Chicago',
-    areaServed: ['Chicago, IL']
+    areaServed: ['Chicago, IL', 'Oak Park, IL', 'Evanston, IL', 'Skokie, IL', 'Park Ridge, IL']
   },
   'services/packing-services-chicago.html': {
     title: `Packing Services Chicago | Full Packing, Fragile Prep & Unpacking Help | ${BRAND}`,
