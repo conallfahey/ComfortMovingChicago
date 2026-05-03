@@ -72,9 +72,9 @@ const ROOT_PAGES = {
 
 const SERVICE_PAGES = {
   'services/affordable-chicago-movers.html': {
-    title: `Affordable Chicago Movers | Budget-Friendly Local Moving Without Hidden Fees | ${BRAND}`,
+    title: `Affordable Movers Chicago | Cheap Local Moving Quotes | ${BRAND}`,
     description:
-      'Affordable Chicago movers for studios, apartments, and smaller local moves with transparent pricing, efficient crews, and no big-company markup.',
+      'Affordable movers in Chicago for studios, apartments, labor-only moves, and small local moves with clear quotes, efficient crews, and no hidden fees.',
     serviceType: 'Affordable moving services',
     serviceName: 'Affordable Chicago Movers',
     areaServed: ['Chicago, IL']
