@@ -14,7 +14,7 @@ Your neighborhood experts. Moving Chicago, one happy customer at a time.
 
 Local experts for Chicago moves. Owner-operated, fast, careful, and affordable.
 
-115+
+139+
 
 5-Star Reviews
 

@@ -14,7 +14,7 @@ We love bubble wrap almost as much as we love keeping your stuff safe.
 
 Professional packers who protect your items and prep your move right. We bring the boxes and the expertise.
 
-115+
+139+
 
 5-Star Reviews
 

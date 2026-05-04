@@ -17,12 +17,12 @@ Big national moving chains have massive overheads. Corporate headquarters, franc
 
 As a small local business, our overhead is minimal. We don't have a CEO bonus structure or a fleet of idle trucks sitting in a lot. We pass those savings directly to you in the form of transparent, hourly rates.
 
-| Expense Category | Big National Van Lines | Comfort Moving Chicago |
-| --- | --- | --- |
-| Admin & Franchise Fees | High (Up to 25% of your bill) | Zero ($0) |
-| Middlemen/Brokers | Yes (Commission-based) | No (Direct to Owner) |
-| Hidden Surcharges | Common (Fuel, Long Carry, Stairs) | None (Transparent Hourly) |
-| The Bottom Line | Paying for the logo. | Paying for labor & logistics. |
+| Expense Category       | Big National Van Lines            | Comfort Moving Chicago        |
+| ---------------------- | --------------------------------- | ----------------------------- |
+| Admin & Franchise Fees | High (Up to 25% of your bill)     | Zero ($0)                     |
+| Middlemen/Brokers      | Yes (Commission-based)            | No (Direct to Owner)          |
+| Hidden Surcharges      | Common (Fuel, Long Carry, Stairs) | None (Transparent Hourly)     |
+| The Bottom Line        | Paying for the logo.              | Paying for labor & logistics. |
 
 ## 2. The "Owner-Operated" Difference
 
@@ -34,7 +34,7 @@ No Day Laborers: Large companies often scramble to fill crews during busy season
 
 These operators quote a lowball price to get your business, then hold your furniture hostage on the truck until you pay exorbitant "mandatory fees" for stairs, shrink wrap, or "heavy items."
 
-Because we rely on local reputation and word-of-mouth (check our [115+ 5-star reviews](https://comfortmovingchicago.com/services/affordable-chicago-movers.html)), we can't afford to play games. Our price is our price.
+Because we rely on local reputation and word-of-mouth (check our [139+ 5-star reviews](https://comfortmovingchicago.com/services/affordable-chicago-movers.html)), we can't afford to play games. Our price is our price.
 
 ### Support Local, Move Better
 
@@ -49,4 +49,3 @@ How to prepare for the big day and keep your sanity intact.
 #### Our Affordable Rates
 
 See our full pricing breakdown and service options.
-

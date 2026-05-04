@@ -18,7 +18,7 @@ Affordable Chicago movers for studios, one-bedrooms, labor-only help, rental-tru
 - Flexible crew sizing so you do not overbook labor.
 - Quote guidance for stairs, elevators, packing, and travel time before move day.
 
-115+
+139+
 
 5-Star Reviews
 
@@ -70,12 +70,12 @@ When you hire us, you’re paying for labor and logistics—not a CEO’s bonus.
 
 Most people searching for cheap movers are really trying to avoid a quote that grows after the crew arrives. Comfort Moving Chicago clarifies move size, access, service type, and timing before booking.
 
-| Price Factor | Why It Changes Cost | How Comfort Moving Chicago Keeps It Efficient |
-| --- | --- | --- |
-| Move size | Studios, one-bedrooms, and small apartment moves usually need a leaner plan than full-house moves. | Crew and truck plan are matched to the actual inventory. |
-| Access | Stairs, long carries, elevators, loading docks, and parking all affect how long the move takes. | Access is discussed before move day so the quote is realistic. |
-| Service type | Labor-only loading, furniture moving, packing help, and truck moves are different scopes. | The quote follows the service needed instead of a larger package. |
-| Timing | End-of-month, weekends, and short-notice requests can tighten availability. | Flexible dates and prepared boxes help keep the move affordable. |
+| Price Factor | Why It Changes Cost                                                                                | How Comfort Moving Chicago Keeps It Efficient                     |
+| ------------ | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Move size    | Studios, one-bedrooms, and small apartment moves usually need a leaner plan than full-house moves. | Crew and truck plan are matched to the actual inventory.          |
+| Access       | Stairs, long carries, elevators, loading docks, and parking all affect how long the move takes.    | Access is discussed before move day so the quote is realistic.    |
+| Service type | Labor-only loading, furniture moving, packing help, and truck moves are different scopes.          | The quote follows the service needed instead of a larger package. |
+| Timing       | End-of-month, weekends, and short-notice requests can tighten availability.                        | Flexible dates and prepared boxes help keep the move affordable.  |
 
 Best-fit affordable moving requests include studio and one-bedroom apartment moves, labor-only loading or unloading, small local moves inside Chicago, furniture-only moves, partial loads, and budget-conscious moves with flexible timing.
 
