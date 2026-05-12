@@ -295,7 +295,6 @@
                   <input type="text" name="_honey" style="display:none">
                   <input type="hidden" name="services" value="Facebook Marketplace Pickup">
                   <input type="hidden" name="moveSize" value="Single Item / Marketplace Pickup">
-                  <input type="hidden" name="referralSource" value="Facebook Marketplace Pickup Service Page">
 
                   <div id="marketplace-quote-status" class="alert d-none mb-3" role="status"></div>
 
@@ -323,6 +322,18 @@
                     <div class="col-12">
                       <label class="form-label-hero text-uppercase" for="marketplace-item-description">Item Description</label>
                       <textarea class="form-control form-control-hero" name="details" id="marketplace-item-description" rows="4" placeholder="Example: couch, 86 inches, pickup has 2 flights of stairs, delivery has elevator" required></textarea>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label-hero text-uppercase" for="marketplace-referral-source">How did you hear about us?</label>
+                      <select class="form-select form-select-hero" name="referralSource" id="marketplace-referral-source" required>
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="Google">Google</option>
+                        <option value="Social Media">Social Media</option>
+                        <option value="Referral">Referral</option>
+                        <option value="Friends or Family">Friends or Family</option>
+                        <option value="Flyers">Flyers</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-secondary-action quote-submit-btn w-100 py-3 rounded-pill fw-bold shadow-sm" data-default-text="Send Pickup Details" data-loading-text="Sending Pickup Details..." aria-live="polite">
@@ -563,6 +574,7 @@
           const originAddress = valueById('marketplace-pickup-location');
           const destinationAddress = valueById('marketplace-dropoff-location');
           const itemDescription = valueById('marketplace-item-description');
+          const referralSource = valueById('marketplace-referral-source');
 
           if (!originAddress || !destinationAddress || !itemDescription) {
             setStatus('error', 'Please add the pickup location, drop-off location, and item description.');
@@ -579,6 +591,11 @@
             return;
           }
 
+          if (!referralSource) {
+            setStatus('error', 'Please choose how you heard about us.');
+            return;
+          }
+
           const payload = {
             name,
             email,
@@ -586,7 +603,7 @@
             originAddress,
             destinationAddress,
             moveSize: 'Single Item / Marketplace Pickup',
-            referralSource: 'Facebook Marketplace Pickup Service Page',
+            referralSource,
             message: `Facebook Marketplace pickup request. Item description: ${itemDescription}`
           };
 

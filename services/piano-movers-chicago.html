@@ -363,11 +363,12 @@
             <div class="card border-0 hero-form-card bg-white">
               <div class="card-body p-4">
                  <h3 class="fw-bold mb-4 text-black">Free Piano Move Quote</h3>
-                 <form action="https://api.web3forms.com/submit" method="POST">
+                 <form data-crm-quote-form action="#" method="POST">
   <input type="hidden" name="access_key" value="bff2b39c-2cd6-470e-a95d-657aba6e88e5">
                     <input type="hidden" name="_subject" value="New Piano Move Quote Request!">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://comfortmovingchicago.com/thank-you.html">
+                    <input type="text" name="_honey" style="display:none">
 
                     <div class="row g-3">
                        <div class="col-md-6">
@@ -404,10 +405,12 @@
                        </div>
                        <div class="col-12">
                           <label class="form-label-hero text-uppercase" for="hero-referralSource">How did you hear about us?</label>
-                          <select class="form-select form-select-hero" name="referralSource" id="hero-referralSource">
+                          <select class="form-select form-select-hero" name="referralSource" id="hero-referralSource" required>
                              <option value="" selected disabled>Select an option</option>
                              <option value="Google">Google</option>
+                             <option value="Social Media">Social Media</option>
                              <option value="Referral">Referral</option>
+                             <option value="Friends or Family">Friends or Family</option>
                              <option value="Flyers">Flyers</option>
                              <option value="Other">Other</option>
                           </select>
@@ -830,5 +833,6 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  </body>
+  <script defer src="/assets/js/quote-form-crm.js"></script>
+</body>
 </html>
