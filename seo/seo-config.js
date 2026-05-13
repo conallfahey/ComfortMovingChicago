@@ -72,7 +72,7 @@ const ROOT_PAGES = {
 
 const SERVICE_PAGES = {
   'services/affordable-chicago-movers.html': {
-    title: `Affordable Movers Chicago | Cheap Local Moving Quotes | ${BRAND}`,
+    title: `Affordable Movers Chicago | Budget-Friendly Local Moving Quotes | ${BRAND}`,
     description:
       'Affordable movers in Chicago for studios, apartments, labor-only moves, and small local moves with clear quotes, efficient crews, and no hidden fees.',
     serviceType: 'Affordable moving services',
@@ -177,9 +177,9 @@ const AREA_PAGES = {
     areaServed: ['Wicker Park, Chicago, IL', '60622', '60647']
   },
   'neighborhoods/lakeview-movers.html': {
-    title: `Lakeview Movers | Apartments, High-Rises & Condo Moves | ${BRAND}`,
+    title: `Lakeview Movers Chicago | Apartment & Local Moving Help`,
     description:
-      'Lakeview movers for apartments, high-rises, and condo moves with elevator coordination, loading logistics, and licensed local crews.',
+      'Moving in Lakeview? Comfort Moving helps with apartment moves, furniture, loading, and local Chicago moves. Fast quotes, flexible scheduling, and local crews.',
     serviceName: 'Lakeview Movers',
     areaServed: ['Lakeview, Chicago, IL', '60613', '60657']
   },
