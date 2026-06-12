@@ -24,6 +24,12 @@ Minimizing downtime for your business operations
 
 We understand that time is money for businesses...
 
+## FF&E Moving and Installation
+
+Furniture, fixtures, equipment, and commercial setup
+
+Commercial furniture delivery, assembly, placement, and room-by-room setup for offices, retail spaces, restaurants, showrooms, amenity rooms, model units, and small businesses.
+
 ## Packing Services
 
 Professional packing for ultimate protection

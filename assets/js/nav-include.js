@@ -224,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '/services/same-day-movers-chicago.html': '/Images/IMG_0760-mobile.webp',
         '/services/emergency-movers-chicago.html': '/Images/IMG_0760-mobile.webp',
         '/services/office-moving-chicago.html': '/Images/Chicago-Moving-Company-Elevator-Dolly.webp',
+        '/services/ffe-movers-installation-chicago.html': '/Images/Chicago-Moving-Company-Elevator-Dolly.webp',
         '/services/piano-movers-chicago.html': '/Images/IMG_0760-mobile.webp',
         '/services/senior-moving-chicago.html': '/Images/Comfort-Moving-Client.webp',
         '/neighborhoods/logan-square-movers.html': '/Images/IMG_0760-mobile.webp',
@@ -275,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '/services/same-day-movers-chicago.html': '/Images/IMG_0760.webp',
         '/services/emergency-movers-chicago.html': '/Images/IMG_0760.webp',
         '/services/office-moving-chicago.html': '/Images/Chicago-Moving-Company-Elevator-Dolly.webp',
+        '/services/ffe-movers-installation-chicago.html': '/Images/Chicago-Moving-Company-Elevator-Dolly.webp',
         '/services/piano-movers-chicago.html': '/Images/IMG_0760.webp',
         '/services/senior-moving-chicago.html': '/Images/Comfort-Moving-Client.webp',
         '/neighborhoods/logan-square-movers.html': '/Images/IMG_0760.webp',
@@ -331,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: '/services/same-day-movers-chicago.html', label: 'Same Day Movers' },
         { href: '/services/emergency-movers-chicago.html', label: 'Emergency Movers' },
         { href: '/services/office-moving-chicago.html', label: 'Office Moving' },
+        { href: '/services/ffe-movers-installation-chicago.html', label: 'FF&E Moving & Installation' },
         { href: '/services/piano-movers-chicago.html', label: 'Piano Movers' },
         { href: '/services/senior-moving-chicago.html', label: 'Senior Moving' }
       ];
