@@ -291,7 +291,7 @@
                 <h2 class="h3 fw-bold mb-2 text-black">Marketplace Pickup Quote</h2>
                 <p class="text-muted marketplace-form-note mb-4">Add your contact info, then send the pickup location, drop-off location, and item description.</p>
 
-                <form id="marketplace-pickup-form" action="#" method="POST">
+                <form id="marketplace-pickup-form" data-form-name="Facebook Marketplace Pickup" action="#" method="POST">
                   <input type="text" name="_honey" style="display:none">
                   <input type="hidden" name="services" value="Facebook Marketplace Pickup">
                   <input type="hidden" name="moveSize" value="Single Item / Marketplace Pickup">
@@ -532,6 +532,16 @@
 
         const valueById = (id) => clean(document.getElementById(id)?.value);
 
+        const collectFormFields = () => {
+          const fields = {};
+          new FormData(form).forEach((rawValue, name) => {
+            if (name === '_honey' || rawValue instanceof File) return;
+            const value = clean(rawValue);
+            if (value) fields[name] = fields[name] ? `${fields[name]}, ${value}` : value;
+          });
+          return fields;
+        };
+
         const setStatus = (kind, text) => {
           if (!statusEl) return;
           statusEl.classList.remove('d-none', 'alert-danger', 'alert-success', 'alert-warning', 'alert-info');
@@ -604,8 +614,12 @@
             originAddress,
             destinationAddress,
             moveSize: 'Single Item / Marketplace Pickup',
+            serviceType: 'moving_with_truck',
             referralSource,
-            message: `Facebook Marketplace pickup request. Item description: ${itemDescription}`
+            message: `Facebook Marketplace pickup request. Item description: ${itemDescription}`,
+            websiteFormName: form.dataset.formName || 'Facebook Marketplace Pickup',
+            websiteFormUrl: location.href,
+            websiteFormFields: collectFormFields()
           };
 
           Object.keys(payload).forEach((key) => payload[key] === undefined && delete payload[key]);

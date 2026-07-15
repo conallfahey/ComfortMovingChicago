@@ -1434,7 +1434,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
                 <div class="card border-0 hero-form-card bg-white">
                   <div class="card-body p-4">
                      <h3 class="fw-bold mb-4 text-black">Free Quote Form</h3>
-                    <form id="main-quote-form" action="#" method="POST">
+                    <form id="main-quote-form" data-form-name="Homepage Free Quote" action="#" method="POST">
                     <input type="text" name="_honey" style="display:none">
 
                         <div class="row g-3">
@@ -2179,6 +2179,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return s ? s : undefined;
   };
 
+  const collectFormFields = () => {
+    const fields = {};
+    new FormData(form).forEach((rawValue, name) => {
+      if (name === '_honey' || rawValue instanceof File) return;
+      const value = clean(rawValue);
+      if (value) fields[name] = fields[name] ? `${fields[name]}, ${value}` : value;
+    });
+    return fields;
+  };
+
   const ensureStatusEl = () => {
     let el = document.getElementById('main-quote-status');
     if (el) return el;
@@ -2231,8 +2241,12 @@ document.addEventListener('DOMContentLoaded', () => {
       originAddress: formData.originAddress || undefined,
       destinationAddress: formData.destinationAddress || undefined,
       moveSize: formData.moveSize || undefined,
+      serviceType: formData.serviceType || undefined,
       referralSource: formData.referralSource || undefined,
-      message: formData.message || undefined
+      message: formData.message || undefined,
+      websiteFormName: form.dataset.formName || 'Homepage Free Quote',
+      websiteFormUrl: location.href,
+      websiteFormFields: formData.websiteFormFields
     };
 
     Object.keys(payload).forEach((k) => payload[k] === undefined && delete payload[k]);
@@ -2287,7 +2301,8 @@ document.addEventListener('DOMContentLoaded', () => {
         destinationAddress,
         moveSize,
         referralSource,
-        message
+        message,
+        websiteFormFields: collectFormFields()
       });
       setStatus('success', "Thanks! We got your request and we'll reach out shortly.");
       isRedirecting = true;
