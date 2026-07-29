@@ -1,46 +1,113 @@
 const BRAND = 'Comfort Moving Chicago';
-const BUSINESS_NAME = 'Comfort Moving Chicago LLC';
+const BUSINESS_NAME = 'Comfort Moving Chicago';
 const BASE_URL = 'https://comfortmovingchicago.com';
+
+const CHICAGOLAND_AREA_SERVED = [
+  { '@type': 'City', name: 'Chicago', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'Chicago metropolitan area', alternateName: 'Chicagoland' },
+  { '@type': 'AdministrativeArea', name: 'Cook County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'DuPage County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'Kane County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'Kendall County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'Lake County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'McHenry County', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  { '@type': 'AdministrativeArea', name: 'Will County', containedInPlace: { '@type': 'State', name: 'Illinois' } }
+];
 
 const BUSINESS = {
   '@id': `${BASE_URL}/#business`,
   '@type': 'MovingCompany',
   name: BUSINESS_NAME,
   url: `${BASE_URL}/`,
-  image: `${BASE_URL}/Images/CMC_logo.webp`,
-  logo: `${BASE_URL}/Images/CMC_logo.webp`,
+  image: [
+    `${BASE_URL}/Images/Chicago-Movers-Loading-Large-Box-Truck.webp`,
+    `${BASE_URL}/Images/Chicago-Moving-Company-Crew-Loading-Boxes.webp`,
+    `${BASE_URL}/Images/Friendly-Chicago-Mover-With-Moving-Box.webp`
+  ],
+  logo: {
+    '@type': 'ImageObject',
+    '@id': `${BASE_URL}/#logo`,
+    url: `${BASE_URL}/Images/CMC_logo.webp`,
+    contentUrl: `${BASE_URL}/Images/CMC_logo.webp`,
+    width: 863,
+    height: 863
+  },
   telephone: '+17732361724',
   email: 'comfortmovingchicago@gmail.com',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '3605 N Damen Ave',
     addressLocality: 'Chicago',
     addressRegion: 'IL',
-    postalCode: '60622',
+    postalCode: '60618',
     addressCountry: 'US'
   },
-  areaServed: [
-    { '@type': 'City', name: 'Chicago', containedInPlace: { '@type': 'State', name: 'Illinois' } },
-    { '@type': 'City', name: 'Oak Park', containedInPlace: { '@type': 'State', name: 'Illinois' } },
-    { '@type': 'City', name: 'Evanston', containedInPlace: { '@type': 'State', name: 'Illinois' } }
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 41.947076,
+    longitude: -87.678368
+  },
+  areaServed: CHICAGOLAND_AREA_SERVED,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Moving Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Local Moving Across Chicagoland',
+          serviceType: 'Local moving services',
+          provider: { '@id': `${BASE_URL}/#business` },
+          areaServed: { '@type': 'AdministrativeArea', name: 'Chicago metropolitan area', alternateName: 'Chicagoland' }
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Long-Distance Moving From or To Chicagoland',
+          serviceType: 'Long-distance moving services',
+          provider: { '@id': `${BASE_URL}/#business` },
+          areaServed: { '@type': 'AdministrativeArea', name: 'Chicago metropolitan area', alternateName: 'Chicagoland' }
+        }
+      }
+    ]
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'https://schema.org/Monday',
+        'https://schema.org/Tuesday',
+        'https://schema.org/Wednesday',
+        'https://schema.org/Thursday',
+        'https://schema.org/Friday',
+        'https://schema.org/Saturday',
+        'https://schema.org/Sunday'
+      ],
+      opens: '08:00',
+      closes: '18:00'
+    }
   ],
   sameAs: [
     'https://www.facebook.com/p/Comfort-Moving-Chicago-100085395917097/',
     'https://www.instagram.com/comfortmovingchicago',
     'https://www.yelp.com/biz/comfort-moving-chicago-oak-park-5',
-    'https://maps.google.com/?q=Comfort+Moving+Chicago'
+    'https://www.google.com/maps/place/Comfort+Moving+Chicago/@41.947076,-87.678368,12z/data=!4m18!1m9!3m8!1s0x5bf2bd826f19ab:0x43519a12a665ddb4!2sComfort+Moving+Chicago!8m2!3d41.947076!4d-87.678368!9m1!1b1!16s%2Fg%2F11t16g7r3g!3m7!1s0x5bf2bd826f19ab:0x43519a12a665ddb4!8m2!3d41.947076!4d-87.678368!9m1!1b1!16s%2Fg%2F11t16g7r3g?entry=ttu'
   ]
 };
 
 const ROOT_PAGES = {
   'index.html': {
-    title: `Chicago Movers | Apartments, Homes & Same-Day Moves | ${BRAND}`,
+    title: 'Chicago Movers | Apartments, Homes & Same-Day Moves',
     description:
-      'Chicago movers for apartments, condos, homes, offices, packing, and last-minute moves. Owner-operated, licensed, and built for real Chicago move-day logistics.',
+      'Chicago movers for apartments, homes, offices, same-day, and long-distance moves. Owner-operated, licensed, and serving the Chicagoland region.',
     schemaType: 'home'
   },
   'services.html': {
-    title: `Chicago Moving Services | Residential, Packing, Office & Same-Day Help | ${BRAND}`,
+    title: 'Chicago Moving Services | Residential, Office & Packing',
     description:
       'Compare Chicago moving services for apartments, homes, offices, packing, hoisting, affordable moves, and same-day help. Find the right fit and request a quote.',
     schemaType: 'webPage'
@@ -55,13 +122,19 @@ const ROOT_PAGES = {
     title: `Chicago Moving Tips Blog | Checklists, Packing & Neighborhood Guides | ${BRAND}`,
     description:
       'Chicago moving tips, packing guides, checklists, and neighborhood advice from a local moving company that works across the city every day.',
-    schemaType: 'none'
+    schemaType: 'webPage'
   },
   'we-love-chicago/index.html': {
     title: `Chicago Neighborhood Blog | Local Trends & Moving Insights | ${BRAND}`,
     description:
       'Read Chicago neighborhood updates, development news, affordability guides, and local insights from Comfort Moving Chicago.',
-    schemaType: 'none'
+    schemaType: 'webPage'
+  },
+  'careers.html': {
+    title: `Moving Jobs in Chicago | Join Our Crew | ${BRAND}`,
+    description:
+      'Explore mover, driver, and crew opportunities with Comfort Moving Chicago. Learn what we value and apply to join our dependable Chicago moving team.',
+    schemaType: 'webPage'
   },
   'local-chicago-movers.html': {
     title: 'Redirecting...',
@@ -72,7 +145,7 @@ const ROOT_PAGES = {
 
 const SERVICE_PAGES = {
   'services/affordable-chicago-movers.html': {
-    title: `Affordable Movers Chicago | Budget-Friendly Local Moving Quotes | ${BRAND}`,
+    title: 'Affordable Movers Chicago | Clear Local Moving Quotes',
     description:
       'Affordable movers in Chicago for studios, apartments, labor-only moves, and small local moves with clear quotes, efficient crews, and no hidden fees.',
     serviceType: 'Affordable moving services',
@@ -80,7 +153,7 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/residential-moving-chicago.html': {
-    title: `House Movers Chicago & Suburbs | Large Home Residential Moving | ${BRAND}`,
+    title: 'House Movers Chicago & Suburbs | Residential Moving',
     description:
       'House movers for Chicago and nearby suburbs, including large homes, townhomes, condos, family moves, careful furniture protection, packing help, and clear local quotes.',
     serviceType: 'Residential moving services',
@@ -88,7 +161,7 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL', 'Oak Park, IL', 'Evanston, IL', 'Skokie, IL', 'Park Ridge, IL']
   },
   'services/packing-services-chicago.html': {
-    title: `Packing Services Chicago | Full Packing, Fragile Prep & Unpacking Help | ${BRAND}`,
+    title: 'Packing Services Chicago | Full & Fragile-Item Packing',
     description:
       'Chicago packing services for full-home packing, fragile items, room-by-room packing, unpacking help, and supplies from a local moving crew.',
     serviceType: 'Packing services',
@@ -128,7 +201,7 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/office-moving-chicago.html': {
-    title: `Office Moving Chicago | Commercial Moves With COI, Scheduling & Downtime Planning | ${BRAND}`,
+    title: 'Office Movers Chicago | COI & After-Hours Moves',
     description:
       'Chicago office moving for commercial relocations, internal office shifts, COIs, after-hours scheduling, and business moves built to reduce downtime.',
     serviceType: 'Office moving services',
@@ -144,7 +217,7 @@ const SERVICE_PAGES = {
     areaServed: ['Chicago, IL']
   },
   'services/same-day-movers-chicago.html': {
-    title: `Same Day Movers Chicago | Last-Minute Moves, Today or Tomorrow | ${BRAND}`,
+    title: 'Same-Day Movers Chicago | Last-Minute Moving Help',
     description:
       'Same day movers in Chicago for last-minute apartments, condos, and short-notice local moves with fast dispatch, clear communication, and real availability checks.',
     serviceType: 'Same day moving services',
@@ -158,72 +231,87 @@ const SERVICE_PAGES = {
     serviceType: 'Senior moving services',
     serviceName: 'Senior Moving Services Chicago',
     areaServed: ['Chicago, IL']
+  },
+  'services/ffe-movers-installation-chicago.html': {
+    title: 'FF&E Movers Chicago | Furniture & Equipment Installation',
+    description:
+      'FF&E and FFE movers in Chicago for furniture, fixtures, equipment installation, office furniture setup, retail displays, model units, and commercial spaces.',
+    serviceType: 'FF&E moving and installation services',
+    serviceName: 'FF&E Moving and Installation Services in Chicago',
+    areaServed: ['Chicago, IL']
   }
 };
 
 const AREA_PAGES = {
   'neighborhoods/lincoln-park-movers.html': {
-    title: `Lincoln Park Movers | Apartments, Walk-Ups & High-Rises | ${BRAND}`,
+    title: 'Lincoln Park Movers | Walk-Ups, Condos & Homes',
     description:
       'Lincoln Park movers for apartments, walk-ups, condos, and high-rises with permit planning and careful handling for busy Chicago streets.',
     serviceName: 'Lincoln Park Movers',
     areaServed: ['Lincoln Park, Chicago, IL', '60614', '60657']
   },
   'neighborhoods/wicker-park-movers.html': {
-    title: `Wicker Park Movers | Walk-Ups, Permit Streets & Busy Chicago Blocks | ${BRAND}`,
+    title: 'Wicker Park Movers | Walk-Ups & Apartment Moves',
     description:
       'Wicker Park movers for walk-ups, permit-heavy streets, alley loading, and apartment moves around 60622 with local route and timing planning.',
     serviceName: 'Wicker Park Movers',
     areaServed: ['Wicker Park, Chicago, IL', '60622', '60647']
   },
   'neighborhoods/lakeview-movers.html': {
-    title: `Lakeview Movers Chicago | Apartment & Local Moving Help`,
+    title: 'Lakeview Movers | Apartments, High-Rises & Walk-Ups',
     description:
-      'Moving in Lakeview? Comfort Moving helps with apartment moves, furniture, loading, and local Chicago moves. Fast quotes, flexible scheduling, and local crews.',
+      'Lakeview movers for walk-ups, lakefront high-rises, condos, and Wrigleyville apartments with parking, elevator, and event-day planning.',
     serviceName: 'Lakeview Movers',
     areaServed: ['Lakeview, Chicago, IL', '60613', '60657']
   },
   'neighborhoods/evanston-movers.html': {
-    title: `Evanston Movers | Northwestern, Condos & North Shore Moves | ${BRAND}`,
+    title: 'Evanston Movers | Northwestern, Condos & Homes',
     description:
       'Evanston movers for condos, single-family homes, and Northwestern student moves with local scheduling and suburb-to-city coordination.',
     serviceName: 'Evanston Movers',
     areaServed: ['Evanston, IL']
   },
   'neighborhoods/rogers-park-movers.html': {
-    title: `Rogers Park Movers | Lakefront Apartments & Student Moves | ${BRAND}`,
+    title: 'Rogers Park Movers | Lakefront & Student Moves',
     description:
       'Rogers Park movers for lakefront apartments, Loyola-area student moves, and walk-ups with flexible scheduling across 60626 and 60645.',
     serviceName: 'Rogers Park Movers',
     areaServed: ['Rogers Park, Chicago, IL', '60626', '60645']
   },
   'neighborhoods/oak-park-movers.html': {
-    title: `Oak Park Movers | Historic Homes, Tight Residential Streets & Careful Local Moves | ${BRAND}`,
+    title: 'Oak Park Movers | Historic Homes, Condos & Apartments',
     description:
       'Oak Park movers for historic homes, condos, apartments, detached garages, and careful suburb moves across 60301, 60302, and 60304.',
     serviceName: 'Oak Park Movers',
     areaServed: ['Oak Park, IL', '60301', '60302', '60304']
   },
   'neighborhoods/the-loop-movers.html': {
-    title: `The Loop Movers | High-Rise, Condo & Office Moves | ${BRAND}`,
+    title: 'The Loop Movers | High-Rise, Condo & Office Moves',
     description:
       'The Loop movers for downtown high-rises, condo moves, and office relocations with COI support, loading dock coordination, and timing plans.',
     serviceName: 'The Loop Movers',
     areaServed: ['The Loop, Chicago, IL', '60601', '60602', '60603']
   },
   'neighborhoods/west-loop-movers.html': {
-    title: `West Loop Movers | High-Rises, Lofts, Loading Docks & Fulton Market Moves | ${BRAND}`,
+    title: 'West Loop Movers | Lofts, Towers & Office Moves',
     description:
       'West Loop movers for lofts, condo towers, Fulton Market offices, and high-rise moves with dock coordination, freight reservations, and busy-street logistics.',
     serviceName: 'West Loop Movers',
     areaServed: ['West Loop, Chicago, IL', '60607', '60661']
   },
   'neighborhoods/logan-square-movers.html': {
-    title: `Logan Square Movers | Boulevards, Walk-Ups & Condo Moves | ${BRAND}`,
+    title: 'Logan Square Movers | Greystones, Walk-Ups & Condos',
     description:
       'Logan Square movers for boulevard homes, vintage walk-ups, and condo moves across 60647 and 60618 with neighborhood-specific planning.',
     serviceName: 'Logan Square Movers',
     areaServed: ['Logan Square, Chicago, IL', '60618', '60647']
+  },
+  'neighborhoods/ravenswood-movers.html': {
+    title: 'Ravenswood Movers | Apartments, Homes & Studios',
+    description:
+      'Ravenswood movers for apartments, two-flats, courtyard buildings, homes, and studios with practical parking, stair, and loading plans.',
+    serviceName: 'Ravenswood Movers',
+    areaServed: ['Ravenswood, Chicago, IL', '60613', '60640']
   }
 };
 
@@ -359,6 +447,12 @@ const ARTICLE_PAGES = {
     description:
       'A local look at Chicago’s 1901 Project and what its West Loop and Near West Side changes could mean for traffic, housing, and moving demand.',
     schemaType: 'communityPost'
+  },
+  'we-love-chicago/2026-chicago-fire-stadium-the-78-south-loop.html': {
+    title: `Chicago Fire Stadium at The 78 | South Loop Moving Update | ${BRAND}`,
+    description:
+      "Chicago Fire FC's new stadium at The 78, McDonald's Park, could reshape South Loop traffic, apartments, business moves, and moving logistics near downtown Chicago.",
+    schemaType: 'communityPostWithFaq'
   }
 };
 

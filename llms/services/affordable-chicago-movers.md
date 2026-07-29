@@ -18,7 +18,7 @@ Affordable Chicago movers for studios, one-bedrooms, labor-only help, rental-tru
 - Flexible crew sizing so you do not overbook labor.
 - Quote guidance for stairs, elevators, packing, and travel time before move day.
 
-139+
+160+
 
 5-Star Reviews
 

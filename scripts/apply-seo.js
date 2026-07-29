@@ -65,14 +65,20 @@ function buildPlace(value) {
     return { '@type': 'PostalCodeRangeSpecification', postalCode: value, addressCountry: 'US' };
   }
 
-  const [name, region = ''] = value.split(',').map((part) => part.trim());
-  const type = 'City';
-  const place = { '@type': type, name };
+  const parts = value.split(',').map((part) => part.trim()).filter(Boolean);
+  const [name] = parts;
+  const region = parts.at(-1);
+  const locality = parts.length > 2 ? parts[1] : name;
+  const place = {
+    '@type': parts.length > 2 ? 'Place' : 'City',
+    name: parts.length > 2 ? `${name}, ${locality}` : name
+  };
 
-  if (region) {
+  if (parts.length > 1) {
     place.address = {
       '@type': 'PostalAddress',
-      addressRegion: region.replace('IL', 'IL'),
+      addressLocality: locality,
+      addressRegion: region,
       addressCountry: 'US'
     };
   }
@@ -172,25 +178,45 @@ function extractFaqEntries(html) {
 
 function findArticleDates(html) {
   const blocks = parseJsonLdBlocks(html);
+  let detectedAuthor = { '@type': 'Person', name: 'Conall Fahey' };
+
   for (const block of blocks) {
-    const nodes = Array.isArray(block) ? block : [block];
+    const nodes = Array.isArray(block) ? block : block['@graph'] || [block];
     for (const node of nodes) {
       if (!node || !node['@type']) {
         continue;
       }
       const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
       if (types.includes('BlogPosting') || types.includes('Article')) {
-        return {
-          datePublished: node.datePublished || undefined,
-          dateModified: node.dateModified || node.datePublished || undefined,
-          author: node.author || { '@type': 'Person', name: 'Conall Fahey' }
-        };
+        detectedAuthor = node.author || detectedAuthor;
+        if (node.datePublished) {
+          return {
+            datePublished: node.datePublished,
+            dateModified: node.dateModified || node.datePublished,
+            author: detectedAuthor
+          };
+        }
       }
     }
   }
 
+  const visibleDate = stripTags(html).match(
+    /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},\s+\d{4}\b/i
+  );
+  if (visibleDate) {
+    const parsedDate = new Date(visibleDate[0]);
+    if (!Number.isNaN(parsedDate.getTime())) {
+      const datePublished = parsedDate.toISOString().slice(0, 10);
+      return {
+        datePublished,
+        dateModified: datePublished,
+        author: detectedAuthor
+      };
+    }
+  }
+
   return {
-    author: { '@type': 'Person', name: 'Conall Fahey' }
+    author: detectedAuthor
   };
 }
 
@@ -206,18 +232,46 @@ function buildSchema(filePath, page, html) {
     return null;
   }
 
+  const websiteReference = { '@id': `${BASE_URL}/#website` };
+  const businessReference = { '@id': BUSINESS['@id'] };
+  const buildWebPage = (overrides = {}) => ({
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: page.title,
+    description: page.description,
+    isPartOf: websiteReference,
+    about: businessReference,
+    inLanguage: 'en-US',
+    ...overrides
+  });
+
   if (page.schemaType === 'home') {
     const faqEntries = extractFaqEntries(html);
     const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
     const graph = [
       BUSINESS,
       {
-        '@type': 'WebPage',
-        '@id': `${canonical}#webpage`,
-        url: canonical,
-        name: page.title,
-        description: page.description,
-        about: { '@id': BUSINESS['@id'] }
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: `${BASE_URL}/`,
+        name: 'Comfort Moving Chicago',
+        publisher: businessReference,
+        inLanguage: 'en-US'
+      },
+      buildWebPage({
+        primaryImageOfPage: {
+          '@id': `${BASE_URL}/#primaryimage`
+        }
+      }),
+      {
+        '@type': 'ImageObject',
+        '@id': `${BASE_URL}/#primaryimage`,
+        url: `${BASE_URL}/Images/Chicago-Movers-Loading-Large-Box-Truck.webp`,
+        contentUrl: `${BASE_URL}/Images/Chicago-Movers-Loading-Large-Box-Truck.webp`,
+        width: 1800,
+        height: 1200,
+        caption: 'Comfort Moving Chicago crew loading a moving truck'
       }
     ];
 
@@ -242,13 +296,19 @@ function buildSchema(filePath, page, html) {
     const faqEntries = extractFaqEntries(html);
     const faqNode = {
       '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      isPartOf: websiteReference,
       mainEntity: faqEntries
     };
 
     if (page.schemaType === 'faq') {
       return {
         '@context': 'https://schema.org',
-        '@graph': [faqNode]
+        '@graph': [
+          BUSINESS,
+          buildWebPage({ mainEntity: { '@id': `${canonical}#faq` } }),
+          faqNode
+        ]
       };
     }
 
@@ -262,13 +322,8 @@ function buildSchema(filePath, page, html) {
   if (page.schemaType === 'webPage') {
     const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
     const graph = [
-      {
-        '@type': 'WebPage',
-        '@id': `${canonical}#webpage`,
-        url: canonical,
-        name: page.title,
-        description: page.description
-      }
+      BUSINESS,
+      buildWebPage()
     ];
 
     if (breadcrumb) {
@@ -287,14 +342,7 @@ function buildSchema(filePath, page, html) {
     const areaServed = (page.areaServed || ['Chicago, IL']).map(buildPlace);
     const graph = [
       BUSINESS,
-      {
-        '@type': 'WebPage',
-        '@id': `${canonical}#webpage`,
-        url: canonical,
-        name: page.title,
-        description: page.description,
-        about: { '@id': `${canonical}#service` }
-      },
+      buildWebPage({ about: { '@id': `${canonical}#service` } }),
       {
         '@type': 'Service',
         '@id': `${canonical}#service`,
@@ -302,7 +350,7 @@ function buildSchema(filePath, page, html) {
         name: page.serviceName || h1,
         serviceType: page.serviceType || 'Moving services',
         description: lead || page.description,
-        provider: { '@id': BUSINESS['@id'] },
+        provider: businessReference,
         areaServed,
         mainEntityOfPage: { '@id': `${canonical}#webpage` }
       }
@@ -329,34 +377,33 @@ function buildSchema(filePath, page, html) {
   if (page.schemaType === 'blogPost' || page.schemaType === 'communityPost') {
     const { datePublished, dateModified, author } = findArticleDates(html);
     const breadcrumb = buildBreadcrumbSchema(filePath, html, page);
+    const articleNode = {
+      '@type': filePath.startsWith('blog/') ? 'BlogPosting' : 'Article',
+      '@id': `${canonical}#article`,
+      headline: h1,
+      description: page.description,
+      mainEntityOfPage: { '@id': `${canonical}#webpage` },
+      author,
+      publisher: businessReference,
+      image: extractAttribute(
+        html,
+        /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
+      ) || BUSINESS.image[0]
+    };
     const graph = [
-      {
-        '@type': filePath.startsWith('blog/') ? 'BlogPosting' : 'Article',
-        '@id': `${canonical}#article`,
-        headline: h1,
-        description: page.description,
-        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-        author,
-        publisher: {
-          '@type': 'Organization',
-          name: BUSINESS.name,
-          logo: {
-            '@type': 'ImageObject',
-            url: BUSINESS.logo
-          }
-        },
-        image: extractAttribute(
-          html,
-          /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
-        ) || BUSINESS.image
-      }
+      BUSINESS,
+      buildWebPage({
+        about: businessReference,
+        mainEntity: { '@id': `${canonical}#article` }
+      }),
+      articleNode
     ];
 
     if (datePublished) {
-      graph[0].datePublished = datePublished;
+      articleNode.datePublished = datePublished;
     }
     if (dateModified) {
-      graph[0].dateModified = dateModified;
+      articleNode.dateModified = dateModified;
     }
     if (breadcrumb) {
       graph.push(breadcrumb);
@@ -429,7 +476,7 @@ function updateHead(filePath, html, page) {
         .split('\n')
         .map((line) => `    ${line}`)
         .join('\n')}\n    </script>\n`
-    : '\n';
+    : '';
 
   return `${head}${schemaBlock}</head>${parts.slice(1).join('</head>')}`;
 }
@@ -445,7 +492,12 @@ function ensureServicesH1(html) {
   );
 }
 
+const requestedFiles = new Set(process.argv.slice(2).map((filePath) => filePath.replace(/\\/g, '/')));
+
 for (const [filePath, page] of Object.entries(PAGE_DEFINITIONS)) {
+  if (requestedFiles.size && !requestedFiles.has(filePath)) {
+    continue;
+  }
   const original = read(filePath);
   let updated = updateHead(filePath, original, page);
 

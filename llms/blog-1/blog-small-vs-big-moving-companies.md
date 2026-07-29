@@ -34,7 +34,7 @@ No Day Laborers: Large companies often scramble to fill crews during busy season
 
 These operators quote a lowball price to get your business, then hold your furniture hostage on the truck until you pay exorbitant "mandatory fees" for stairs, shrink wrap, or "heavy items."
 
-Because we rely on local reputation and word-of-mouth (check our [139+ 5-star reviews](https://comfortmovingchicago.com/services/affordable-chicago-movers.html)), we can't afford to play games. Our price is our price.
+Because we rely on local reputation and word-of-mouth (check our [160+ 5-star reviews](https://comfortmovingchicago.com/services/affordable-chicago-movers.html)), we can't afford to play games. Our price is our price.
 
 ### Support Local, Move Better
 

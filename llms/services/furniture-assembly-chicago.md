@@ -14,7 +14,7 @@ Don't lose your screws. We assemble it for you!
 
 Fast, professional assembly with flat-rate pricing and careful placement. We bring the tools and expertise.
 
-139+
+160+
 
 5-Star Reviews
 

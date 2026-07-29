@@ -1,5 +1,7 @@
 // Inject shared navbar across pages and set active state
 document.addEventListener('DOMContentLoaded', () => {
+  const SHARED_ASSET_VERSION = '20260729-2';
+
   // Normalize site orange across components
   const ensureBrandOrange = () => {
     try {
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Inject Google Fonts for Oswald if not already present
-  if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Oswald"]')) {
+  if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Oswald"], style[data-site-fonts="true"]')) {
     // Add Google Fonts (Oswald and Roboto)
     const fontLink = document.createElement('link');
     fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;700&display=swap';
@@ -84,21 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(fontLink);
   }
 
+  const versionedPath = (path) => `${path}${path.includes('?') ? '&' : '?'}v=${SHARED_ASSET_VERSION}`;
+
   const fetchPartial = async (absPath, relPath) => {
     try {
-      const abs = await fetch(absPath, { cache: 'no-cache' });
+      const abs = await fetch(versionedPath(absPath), { cache: 'no-store' });
       if (abs.ok) return abs.text();
-      const rel = await fetch(relPath, { cache: 'no-cache' });
+      const rel = await fetch(versionedPath(relPath), { cache: 'no-store' });
       return rel.text();
     } catch (e) {
-      return fetch(relPath, { cache: 'no-cache' }).then(r => r.text());
+      return fetch(versionedPath(relPath), { cache: 'no-store' }).then(r => r.text());
     }
   };
 
-  const fetchNavbar = () => fetchPartial('/partials/navbar.html', 'partials/navbar.html');
+  const fetchNavbar = () => {
+    const staticNavbar = document.querySelector('nav[data-static-nav="true"]');
+    return staticNavbar ? Promise.resolve(null) : fetchPartial('/partials/navbar.html', 'partials/navbar.html');
+  };
   const fetchFooter = () => fetchPartial('/partials/footer.html', 'partials/footer.html');
 
   const replaceNavbar = (html) => {
+    if (!html) return;
     // Prefer element with id="shared-nav" if present; else first nav.navbar
     const target = document.getElementById('shared-nav') || document.querySelector('nav.navbar');
     if (target) {
@@ -315,146 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch {}
   };
 
-  const injectInternalLinks = () => {
-    try {
-      if (document.getElementById('internal-links-block')) return;
-
-      const path = (location.pathname || '').toLowerCase();
-      const footer = document.getElementById('shared-footer') || document.querySelector('footer.footer-section');
-      if (!footer) return;
-
-      const services = [
-        { href: '/services/residential-moving-chicago.html', label: 'Residential Moving' },
-        { href: '/services/packing-services-chicago.html', label: 'Packing Services' },
-        { href: '/services/furniture-assembly-chicago.html', label: 'Furniture Assembly' },
-        { href: '/services/facebook-marketplace-pickup-chicago.html', label: 'Marketplace Pickup' },
-        { href: '/services/local-hoisting-chicago.html', label: 'Hoisting Services' },
-        { href: '/services/affordable-chicago-movers.html', label: 'Affordable Movers' },
-        { href: '/services/same-day-movers-chicago.html', label: 'Same Day Movers' },
-        { href: '/services/emergency-movers-chicago.html', label: 'Emergency Movers' },
-        { href: '/services/office-moving-chicago.html', label: 'Office Moving' },
-        { href: '/services/ffe-movers-installation-chicago.html', label: 'FF&E Moving & Installation' },
-        { href: '/services/piano-movers-chicago.html', label: 'Piano Movers' },
-        { href: '/services/senior-moving-chicago.html', label: 'Senior Moving' }
-      ];
-
-      const neighborhoods = [
-        { href: '/neighborhoods/logan-square-movers.html', label: 'Logan Square Movers' },
-        { href: '/neighborhoods/wicker-park-movers.html', label: 'Wicker Park Movers' },
-        { href: '/neighborhoods/lakeview-movers.html', label: 'Lakeview Movers' },
-        { href: '/neighborhoods/lincoln-park-movers.html', label: 'Lincoln Park Movers' },
-        { href: '/neighborhoods/west-loop-movers.html', label: 'West Loop Movers' },
-        { href: '/neighborhoods/the-loop-movers.html', label: 'The Loop Movers' },
-        { href: '/neighborhoods/rogers-park-movers.html', label: 'Rogers Park Movers' },
-        { href: '/neighborhoods/oak-park-movers.html', label: 'Oak Park Movers' },
-        { href: '/neighborhoods/evanston-movers.html', label: 'Evanston Movers' }
-      ];
-
-      const resources = [
-        { href: '/blog/blog-moving-checklist.html', label: 'Moving Checklist' },
-        { href: '/blog/blog-understanding-moving-quotes.html', label: 'Understanding Moving Quotes' },
-        { href: '/blog/blog-packing-tips.html', label: 'Packing Tips' },
-        { href: '/blog/blog-best-time-to-move-chicago.html', label: 'Best Time To Move' },
-        { href: '/blog/blog-elevator-loading-zone-permits-chicago.html', label: 'Permits & Loading Zones' },
-        { href: '/blog/blog-change-of-address.html', label: 'Change of Address' },
-        { href: '/blog/blog-tipping-movers.html', label: 'Tipping Movers' },
-        { href: '/blog/blog-chicago-neighborhoods-guide.html', label: 'Chicago Neighborhoods Guide' },
-        { href: '/we-love-chicago/', label: 'We Love Chicago' }
-      ];
-
-      const isServicesIndex = path.endsWith('/services.html');
-      const isServicesPage = path.includes('/services/') && !isServicesIndex;
-      const isNeighborhoodPage = path.includes('/neighborhoods/');
-      const isBlogIndex = path.endsWith('/blog/') || path.endsWith('/blog/index.html');
-      const isBlogPost = path.includes('/blog/') && !isBlogIndex;
-      const isWeLoveChicagoIndex = path.endsWith('/we-love-chicago/') || path.endsWith('/we-love-chicago/index.html');
-      const isWeLoveChicagoPost = path.includes('/we-love-chicago/') && !isWeLoveChicagoIndex;
-      const isFAQ = path.endsWith('/faq.html');
-      const isHome = path === '/' || path.endsWith('/index.html');
-
-      const currentPath = path;
-
-      const toList = (items, limit = 6) => {
-        const filtered = items.filter(i => (i.href || '').toLowerCase() !== currentPath).slice(0, limit);
-        return filtered.map(i => `<li class="mb-2"><a class="text-primary-brand fw-semibold" href="${i.href}">${i.label}</a></li>`).join('');
-      };
-
-      let title = '';
-      let colA = { heading: '', items: '' };
-      let colB = { heading: '', items: '' };
-      let colC = { heading: '', items: '' };
-
-      if (isServicesIndex) {
-        title = 'Explore Services';
-        colA = { heading: 'Popular Services', items: toList(services, 6) };
-        colB = { heading: 'Neighborhood Movers', items: toList(neighborhoods, 6) };
-        colC = { heading: 'Moving Resources', items: toList(resources, 5) };
-      } else if (isServicesPage) {
-        title = 'Related Pages';
-        colA = { heading: 'Popular Services', items: toList(services, 6) };
-        colB = { heading: 'Neighborhood Movers', items: toList(neighborhoods, 6) };
-        colC = { heading: 'Moving Resources', items: toList(resources, 5) };
-      } else if (isNeighborhoodPage) {
-        title = 'Plan Your Move';
-        colA = { heading: 'Moving Services', items: toList(services, 6) };
-        colB = { heading: 'Nearby Neighborhoods', items: toList(neighborhoods, 6) };
-        colC = { heading: 'Moving Resources', items: toList(resources, 5) };
-      } else if (isBlogIndex || isWeLoveChicagoIndex) {
-        title = 'Browse Popular Pages';
-        colA = { heading: 'Moving Services', items: toList(services, 6) };
-        colB = { heading: 'Neighborhood Movers', items: toList(neighborhoods, 6) };
-        colC = { heading: 'Moving Resources', items: toList(resources, 5) };
-      } else if (isBlogPost || isWeLoveChicagoPost) {
-        title = 'Next Steps';
-        colA = { heading: 'Get Moving Help', items: toList(services, 6) };
-        colB = { heading: 'Neighborhood Movers', items: toList(neighborhoods, 6) };
-        colC = { heading: 'More Guides', items: toList(resources, 5) };
-      } else if (isFAQ || isHome) {
-        title = 'Keep Exploring';
-        colA = { heading: 'Moving Services', items: toList(services, 6) };
-        colB = { heading: 'Neighborhood Movers', items: toList(neighborhoods, 6) };
-        colC = { heading: 'Moving Resources', items: toList(resources, 5) };
-      } else {
-        return;
-      }
-
-      const section = document.createElement('section');
-      section.id = 'internal-links-block';
-      section.className = 'py-5 bg-light-pattern border-top';
-      section.innerHTML = `
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
-                <h2 class="h3 fw-bold mb-3">${title}</h2>
-                <div class="row g-4">
-                  <div class="col-md-4">
-                    <div class="fw-bold mb-2">${colA.heading}</div>
-                    <ul class="list-unstyled text-muted mb-0">${colA.items}</ul>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="fw-bold mb-2">${colB.heading}</div>
-                    <ul class="list-unstyled text-muted mb-0">${colB.items}</ul>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="fw-bold mb-2">${colC.heading}</div>
-                    <ul class="list-unstyled text-muted mb-0">${colC.items}</ul>
-                  </div>
-                </div>
-                <div class="mt-4 d-flex flex-wrap gap-2">
-                  <a href="/#quoteForm" class="btn btn-primary-brand rounded-pill px-4 py-2 fw-bold shadow-sm">Get A Free Quote</a>
-                  <a href="/services.html" class="btn btn-secondary-action rounded-pill px-4 py-2 fw-bold shadow-sm">Browse Services</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `.trim();
-
-      footer.insertAdjacentElement('beforebegin', section);
-    } catch {}
-  };
-
   const ensureFormControlLabels = () => {
     const controls = document.querySelectorAll('input, select, textarea');
     let counter = 0;
@@ -557,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ensureMainLandmark();
       ensureServiceAndNeighborhoodHeroPhotos();
       ensureAboutSectionPhoto();
-      injectInternalLinks();
       ensureFormControlLabels();
       ensureIframeTitles();
       // Initialize Bootstrap components after dynamic injection (helps on some mobile contexts)
