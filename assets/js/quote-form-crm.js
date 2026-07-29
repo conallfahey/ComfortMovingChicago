@@ -71,6 +71,12 @@
       else btn.textContent = isSubmitting ? loadingText : defaultText;
     };
 
+    var autogrowTextarea = function (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+      textarea.style.overflowY = textarea.scrollHeight > textarea.clientHeight ? 'auto' : 'hidden';
+    };
+
     var submitLead = async function (payload) {
       var res = await fetch(endpoint, {
         method: 'POST',
@@ -83,6 +89,14 @@
     };
 
     Array.prototype.forEach.call(forms, function (form) {
+      var textareas = form.querySelectorAll('textarea');
+      Array.prototype.forEach.call(textareas, function (textarea) {
+        autogrowTextarea(textarea);
+        textarea.addEventListener('input', function () {
+          autogrowTextarea(textarea);
+        });
+      });
+
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
         if (clean(getFieldValue(form, ['_honey']))) return;

@@ -142,7 +142,7 @@ h1,h2,h3,h4,.h1,.h2,.h3{font-family:'Oswald',sans-serif;text-transform:uppercase
 .quote-card .row{--bs-gutter-y:.35rem;}
 .field-label{font-size:.68rem;font-weight:800;letter-spacing:.6px;color:#4a4a4a;text-transform:uppercase;margin-bottom:.25rem;display:block;font-family:'Oswald',sans-serif;}
 .form-control,.form-select{border:1px solid #e3e7ec;border-radius:11px;padding:.45rem .75rem;font-family:'Roboto',sans-serif;}
-.quote-card textarea.form-control{height:50px;min-height:50px;}
+.quote-card textarea.form-control{height:auto;min-height:50px;max-height:180px;overflow-y:hidden;resize:none;}
 .form-control:focus,.form-select:focus{border-color:var(--brand-blue);box-shadow:0 0 0 .2rem rgba(3,38,98,.2);}
 .quote-submit-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;width:100%;}
 .quote-submit-spinner{width:20px;height:20px;border:3px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;}
@@ -162,7 +162,7 @@ h1,h2,h3,h4,.h1,.h2,.h3{font-family:'Oswald',sans-serif;text-transform:uppercase
   .quote-card .row{--bs-gutter-y:.12rem;}
   .field-label{margin-bottom:.1rem;}
   .form-control,.form-select{padding:.3rem .7rem;}
-  .quote-card textarea.form-control{height:38px;min-height:38px;}
+  .quote-card textarea.form-control{height:auto;min-height:50px;}
   .quote-submit-btn{min-height:38px;padding-top:.45rem;padding-bottom:.45rem;}
 }
 
@@ -295,9 +295,14 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
 @media(max-width:767px){.final-cta-section{padding-top:64px;}.final-cta{padding:46px 24px;border-radius:22px;}.final-cta::before{background-image:url('/Images/Chicago-Movers-Moving-Blankets-Truck-mobile.webp');}.final-cta h2{font-size:2rem;}}
 
 /* ---- Sticky mobile CTA bar ---- */
-.mobile-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:1030;display:none;background:#fff;box-shadow:0 -8px 24px rgba(0,0,0,.12);padding:10px 12px;gap:10px;}
-.mobile-cta-bar a{flex:1;text-align:center;}
-@media(max-width:767px){.mobile-cta-bar{display:flex;}body{padding-bottom:70px;}}
+.mobile-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:1030;display:none;background:rgba(255,255,255,.96);box-shadow:0 -8px 24px rgba(0,0,0,.12);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px;backdrop-filter:blur(10px);}
+.mobile-cta-bar a{flex:1;text-align:center;min-height:40px;padding:.48rem .7rem;font-size:.88rem;line-height:1.2;}
+@media(max-width:767px){
+  .mobile-cta-bar{display:flex;}
+  .mobile-cta-bar a:first-child{flex:0 0 44px;padding:.48rem 0;font-size:0;}
+  .mobile-cta-bar a:first-child i{margin-right:0 !important;font-size:1rem;}
+  body{padding-bottom:58px;}
+}
 
 .social-row a{color:#fff;opacity:.85;transition:opacity .2s ease;}
 .social-row a:hover{opacity:1;}
@@ -333,6 +338,18 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
   .navbar-nav .nav-link{padding:.75rem .5rem !important;}
   .navbar-nav .nav-link::before{display:none;}
   .navbar .navbar-actions{margin-left:0;padding-left:0;margin-top:.75rem;}
+}
+@media(max-width:767px){
+  .promo-bar{display:none;}
+  .navbar{padding-top:.35rem;padding-bottom:.35rem;}
+  .navbar .container-fluid{padding-left:.9rem !important;padding-right:.9rem !important;}
+  .navbar-brand img,.navbar-brand .logo-img{height:40px;}
+  .navbar-toggler{padding:.3rem .45rem !important;border-radius:8px !important;}
+  .navbar .navbar-actions{display:none !important;}
+  .navbar-nav{padding-top:.35rem;padding-bottom:.4rem;}
+  .navbar .nav-link,.navbar-nav .nav-link{padding:.52rem .25rem !important;font-size:.88rem;letter-spacing:.8px;}
+  .navbar .dropdown-menu{margin-top:2px !important;padding:6px;box-shadow:none;border:1px solid #eef1f4;}
+  .navbar .dropdown-item{padding:.46rem .65rem;}
 }
 
 /* ---- Shared footer ---- */
@@ -640,8 +657,7 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
   <section class="hero">
     <picture class="hero-media">
       <source media="(max-width: 767px)"
-              srcset="/Images/Chicago-Movers-Loading-Large-Box-Truck-mobile.webp 640w,
-                      /Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp 960w"
+              srcset="/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture-hero-mobile.webp 720w"
               sizes="100vw">
       <img src="/Images/Chicago-Movers-Loading-Large-Box-Truck.webp"
            srcset="/Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp 960w,
@@ -695,7 +711,7 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
             <div class="quote-card-body">
               <h2>Get Your Free Quote</h2>
               <p class="sub">Tell us about your move &mdash; we usually reply within the hour.</p>
-              <form id="hero-quote-form" data-crm-quote-form data-form-name="Homepage Redesign Free Quote" data-status-id="hero-quote-status">
+              <form id="hero-quote-form" data-crm-quote-form data-form-name="Homepage Free Quote" data-status-id="hero-quote-status">
                 <input type="text" name="_honey" style="display:none">
                 <div class="row g-2">
                   <div class="col-md-6">
@@ -1354,7 +1370,7 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
 
 <!-- Mobile sticky CTA -->
 <div class="mobile-cta-bar">
-  <a href="tel:+17732361724" class="btn btn-blue"><i class="bi bi-telephone-fill me-2"></i>Call</a>
+  <a href="tel:+17732361724" class="btn btn-blue" aria-label="Call Comfort Moving Chicago"><i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>Call</a>
   <a href="#quoteForm" class="btn btn-orange">Free Quote</a>
 </div>
 
