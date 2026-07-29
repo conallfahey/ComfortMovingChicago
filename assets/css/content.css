@@ -5,6 +5,11 @@
     --brand-orange: #fd7e14;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -366,17 +371,19 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 /* New Hero Section Styles */
 .hero-section-new {
     position: relative;
-    background-color: #fff;
+    background-color: #08111d;
     overflow: hidden;
     padding-bottom: 60px;
+    isolation: isolate;
 }
 
 .hero-title {
-    color: black;
-    line-height: 1.1;
+    color: #fff;
+    line-height: 1.04;
     font-weight: 700;
     font-size: 3.5rem;
     min-width: 0;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
 .hero-avatar {
@@ -397,6 +404,41 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 .hero-section-new .d-flex.align-items-center.mb-4 {
     flex-wrap: wrap;
     gap: 12px;
+}
+
+.hero-section-new h2,
+.hero-section-new .h3,
+.hero-section-new p,
+.hero-section-new li {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-section-new .text-brand-blue {
+    color: #fd7e14 !important;
+}
+
+.hero-section-new .bi-check-circle-fill {
+    color: #fd7e14 !important;
+}
+
+.hero-section-new .reviews-card h2,
+.hero-section-new .hero-form-card h3 {
+    color: #000 !important;
+    text-shadow: none;
+}
+
+.hero-section-new .reviews-card p,
+.hero-section-new .reviews-card .text-muted {
+    color: #6c757d !important;
+}
+
+.hero-section-new .reviews-card .text-dark {
+    color: #212529 !important;
+}
+
+.hero-section-new .hero-form-card label,
+.hero-section-new .hero-form-card .form-label-hero {
+    color: #4a4a4a !important;
 }
 
 @media (max-width: 576px) {
@@ -439,23 +481,27 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: #f8f9fa;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235fa6db' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 60px 60px;
+    background-color: #08111d;
+    background-image: url('/Images/Chicago-Movers-Loading-Large-Box-Truck.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 45%;
 }
 
-@media (min-width: 577px) {
-    .hero-overlay-new {
-        background-image: url('/Images/ChicagoMovingMap.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .west-loop-page .hero-overlay-new { background-image: url('/Images/West-Loop-Moving-Company.webp'); }
-    .loop-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Loop.webp'); }
-}
+.residential-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Loading-Large-Box-Truck.webp'); }
+.packing-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Wrapping-Furniture-Moving-Blanket.webp'); }
+.piano-page .hero-overlay-new,
+.hoisting-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Carrying-Couch-Up-Stairs.webp'); }
+.furniture-assembly-page .hero-overlay-new { background-image: url('/Images/Chicago-Furniture-Disassembly.webp'); }
+.marketplace-page .hero-overlay-new,
+.sameday-page .hero-overlay-new,
+.emergency-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture.webp'); }
+.office-page .hero-overlay-new,
+.ffe-page .hero-overlay-new { background-image: url('/Images/Chicago-Moving-Company-Loading-Wrapped-Furniture.webp'); }
+.senior-page .hero-overlay-new,
+.affordable-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Team-Loading-Boxes-Truck.webp'); }
+.west-loop-page .hero-overlay-new { background-image: url('/Images/West-Loop-Moving-Company.webp'); }
+.loop-page .hero-overlay-new { background-image: url('/Images/Chicago-Movers-Loop.webp'); }
 
 .hero-overlay-new::before {
     content: '';
@@ -464,7 +510,7 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    background: linear-gradient(100deg, rgba(6, 10, 20, 0.95) 0%, rgba(6, 10, 20, 0.86) 43%, rgba(6, 10, 20, 0.52) 72%, rgba(6, 10, 20, 0.28) 100%);
     z-index: 1;
 }
 
@@ -490,23 +536,29 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 
 @media (max-width: 576px) {
     .hero-overlay-new {
-        background-repeat: repeat;
-        background-size: 60px 60px;
-        background-position: 0 0;
+        background-image: url('/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture-hero-mobile.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .residential-page .hero-overlay-new,
+    .packing-page .hero-overlay-new,
+    .piano-page .hero-overlay-new,
+    .hoisting-page .hero-overlay-new,
+    .furniture-assembly-page .hero-overlay-new,
+    .marketplace-page .hero-overlay-new,
+    .sameday-page .hero-overlay-new,
+    .emergency-page .hero-overlay-new,
+    .office-page .hero-overlay-new,
+    .ffe-page .hero-overlay-new,
+    .senior-page .hero-overlay-new,
+    .affordable-page .hero-overlay-new {
+        background-image: url('/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture-hero-mobile.webp');
+        background-position: center;
     }
 
     .hero-overlay-home { background-image: url('/Images/IMG_0760-mobile.webp'); }
-    .bg-img-moving-truck { background-image: url('/Images/PackingServicesChicago-mobile.webp'); }
-    .bg-img-neighborhoods { background-image: url('/Images/LocalAffordableChicagoMovers-mobile.webp'); }
-    .bg-img-general-move { background-image: url('/Images/IMG_0760-mobile.webp'); }
-    .bg-img-packing { background-image: url('/Images/LocalChicagoMovers-mobile.webp'); }
-    .bg-img-stress-free { background-image: url('/Images/IMG_0760-mobile.webp'); }
-    .bg-service-residential { background-image: url('/Images/PackingServicesChicago-mobile.webp'); }
-    .bg-service-packing { background-image: url('/Images/IMG_0760-mobile.webp'); }
-    .bg-service-moving { background-image: url('/Images/LocalAffordableChicagoMovers-mobile.webp'); }
-    .bg-service-hoisting { background-image: url('/Images/LocalChicagoMovers-mobile.webp'); }
-    .bg-service-affordable { background-image: url('/Images/PackingServicesChicago-mobile.webp'); }
-    .bg-service-sameday { background-image: url('/Images/IMG_0760-mobile.webp'); }
 
     .hero-stat-card {
         min-width: 0; /* Allow shrinking below 120px */
@@ -522,11 +574,15 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
     }
     
     /* Hero Buttons Mobile Optimization */
+    .hero-buttons-container {
+        flex-wrap: wrap !important;
+    }
+
     .hero-buttons-container .btn {
         padding: 0.75rem 1rem !important; /* Smaller padding */
         font-size: 0.9rem !important; /* Smaller font */
-        flex: 1; /* Distribute space evenly */
-        white-space: nowrap;
+        flex: 1 1 100%; /* Stack buttons on narrow screens */
+        white-space: normal;
     }
 }
 
@@ -535,8 +591,9 @@ h1, h2, h3, .h1, .h2, .h3, .hero-title, .navbar-brand {
 }
 
 .hero-form-card {
-    border-radius: 20px !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 34px 70px -14px rgba(0,0,0,0.5) !important;
+    overflow: hidden;
 }
 
 .form-control-hero, .form-select-hero {
