@@ -1,0 +1,28 @@
+[
+  {
+    "id": "2026-07-monthly-changelog-reporting-convention",
+    "area": "marketing",
+    "type": "reporting",
+    "title": "Added monthly marketing changelog convention",
+    "summary": "Created the monthly changelog structure and agent instructions for capturing meaningful Comfort Moving marketing-site changes.",
+    "impact": "Enables the CRM owner-report workflow to include marketing-site updates from reports/changelog/2026-07.json.",
+    "shippedAt": "2026-07-31",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "AGENTS.md",
+      "reports/changelog/README.md",
+      "reports/changelog/2026-07.json",
+      "scripts/check-changelog.mjs"
+    ],
+    "tags": [
+      "owner-report",
+      "changelog",
+      "marketing-workflow"
+    ],
+    "includeInReport": true,
+    "ownerNote": "This establishes the marketing-site source file the CRM report generator expects each month.",
+    "customerVisible": false,
+    "priority": "medium"
+  }
+]
