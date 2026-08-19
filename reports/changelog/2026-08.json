@@ -1,0 +1,29 @@
+[
+  {
+    "id": "2026-08-ai-chat-referral-source",
+    "area": "website",
+    "type": "feature",
+    "title": "Added AI chat referral source to website forms",
+    "summary": "Added a ChatGPT / AI chat option to every referral-source dropdown across quote, service, neighborhood, marketplace pickup, and careers forms.",
+    "impact": "Helps Comfort Moving Chicago identify leads and applicants who discovered the company through AI chat tools.",
+    "shippedAt": "2026-08-19",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "index.html",
+      "careers.html",
+      "services/*.html",
+      "neighborhoods/*.html"
+    ],
+    "tags": [
+      "forms",
+      "lead-capture",
+      "referral-source",
+      "ai-search"
+    ],
+    "includeInReport": true,
+    "ownerNote": "The existing CRM form script already sends referralSource, so submissions choosing ChatGPT / AI chat will flow through with the rest of the lead data.",
+    "customerVisible": true,
+    "priority": "medium"
+  }
+]
