@@ -25,5 +25,31 @@
     "ownerNote": "The existing CRM form script already sends referralSource, so submissions choosing ChatGPT / AI chat will flow through with the rest of the lead data.",
     "customerVisible": true,
     "priority": "medium"
+  },
+  {
+    "id": "2026-08-privacy-policy-lead-forms",
+    "area": "website",
+    "type": "content",
+    "title": "Published privacy policy and linked it on lead forms",
+    "summary": "Added a plain-language privacy policy covering the custom CRM, operational-only use, no data sharing, SMS opt-out, and indefinite retention. Quote and application forms now display a link immediately below their submit controls.",
+    "impact": "Gives prospective customers a clear explanation of how submitted information is handled before they send a request.",
+    "shippedAt": "2026-08-28",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "privacy-policy.html",
+      "assets/js/quote-form-crm.js",
+      "partials/footer.html",
+      "services/facebook-marketplace-pickup-chicago.html"
+    ],
+    "tags": [
+      "privacy",
+      "forms",
+      "lead-capture",
+      "crm"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "medium"
   }
 ]

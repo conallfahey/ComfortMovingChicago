@@ -77,6 +77,27 @@
       textarea.style.overflowY = textarea.scrollHeight > textarea.clientHeight ? 'auto' : 'hidden';
     };
 
+    var addPrivacyNotice = function (form) {
+      if (form.querySelector('[data-privacy-notice]')) return;
+      var submitButton = form.querySelector('button[type="submit"]');
+      if (!submitButton) return;
+
+      var notice = document.createElement('p');
+      notice.className = 'small text-muted text-center mt-3 mb-0';
+      notice.setAttribute('data-privacy-notice', '');
+      var isEmploymentApplication = form.getAttribute('data-service-type') === 'employment';
+      notice.append(isEmploymentApplication
+        ? 'We use your information to review your application and communicate with you about it. '
+        : 'We use your information to respond to your request and provide our services. ');
+      var link = document.createElement('a');
+      link.href = '/privacy-policy.html';
+      link.textContent = 'Privacy Policy';
+      notice.appendChild(link);
+
+      var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
+      submitContainer.insertAdjacentElement('afterend', notice);
+    };
+
     var submitLead = async function (payload) {
       var res = await fetch(endpoint, {
         method: 'POST',
@@ -89,6 +110,7 @@
     };
 
     Array.prototype.forEach.call(forms, function (form) {
+      addPrivacyNotice(form);
       var textareas = form.querySelectorAll('textarea');
       Array.prototype.forEach.call(textareas, function (textarea) {
         autogrowTextarea(textarea);
