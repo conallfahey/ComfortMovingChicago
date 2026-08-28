@@ -98,6 +98,38 @@
       submitContainer.insertAdjacentElement('afterend', notice);
     };
 
+    var addSmsConsent = function (form) {
+      if (form.getAttribute('data-service-type') === 'employment' || form.querySelector('[data-sms-consent]')) return;
+      var submitButton = form.querySelector('button[type="submit"]');
+      if (!submitButton) return;
+
+      var consent = document.createElement('div');
+      consent.className = 'small text-muted mt-3 mb-0';
+      consent.setAttribute('data-sms-consent', '');
+      var input = document.createElement('input');
+      input.type = 'checkbox';
+      input.name = 'smsConsent';
+      input.value = 'yes';
+      input.id = 'sms-consent';
+      input.className = 'form-check-input me-2';
+      var label = document.createElement('label');
+      label.htmlFor = input.id;
+      label.append('I agree to receive service-related SMS messages from Comfort Moving Chicago. Consent is not required to request or purchase services. Msg & data rates may apply. Reply STOP to opt out. ');
+      var termsLink = document.createElement('a');
+      termsLink.href = '/terms-conditions.html';
+      termsLink.textContent = 'Terms & Conditions';
+      label.appendChild(termsLink);
+      label.append(' and ');
+      var privacyLink = document.createElement('a');
+      privacyLink.href = '/privacy-policy.html';
+      privacyLink.textContent = 'Privacy Policy';
+      label.appendChild(privacyLink);
+      consent.append(input, label);
+
+      var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
+      submitContainer.insertAdjacentElement('afterend', consent);
+    };
+
     var submitLead = async function (payload) {
       var res = await fetch(endpoint, {
         method: 'POST',
@@ -111,6 +143,7 @@
 
     Array.prototype.forEach.call(forms, function (form) {
       addPrivacyNotice(form);
+      addSmsConsent(form);
       var textareas = form.querySelectorAll('textarea');
       Array.prototype.forEach.call(textareas, function (textarea) {
         autogrowTextarea(textarea);

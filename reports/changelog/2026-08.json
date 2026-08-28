@@ -51,5 +51,32 @@
     "includeInReport": true,
     "customerVisible": true,
     "priority": "medium"
+  },
+  {
+    "id": "2026-08-sms-terms-consent",
+    "area": "website",
+    "type": "feature",
+    "title": "Added SMS consent controls and terms",
+    "summary": "Published SMS and service terms, added an optional SMS-consent checkbox to every customer quote form, and linked the terms from the website footer.",
+    "impact": "Records voluntary SMS consent with each quote request while giving customers clear opt-out and message-rate disclosures.",
+    "shippedAt": "2026-08-28",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "terms-conditions.html",
+      "assets/js/quote-form-crm.js",
+      "services/facebook-marketplace-pickup-chicago.html",
+      "partials/footer.html"
+    ],
+    "tags": [
+      "sms",
+      "consent",
+      "forms",
+      "lead-capture",
+      "terms"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "high"
   }
 ]
