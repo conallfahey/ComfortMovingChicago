@@ -694,7 +694,7 @@
           const url = 'https://us-central1-comfort-moving-crm.cloudfunctions.net/inboundLead_submit?serviceType=moving_with_truck';
           const res = await fetch(url, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
             body: JSON.stringify(payload)
           });
           const json = await res.json().catch(() => ({}));

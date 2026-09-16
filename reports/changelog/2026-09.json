@@ -20,5 +20,28 @@
     "includeInReport": true,
     "customerVisible": true,
     "priority": "high"
+  },
+  {
+    "id": "instagram-browser-quote-submission",
+    "area": "website",
+    "type": "fix",
+    "title": "Improve quote submissions in Instagram browser",
+    "summary": "Changed the shared quote form and Marketplace form to send JSON as a simple cross-origin request, avoiding the browser preflight step. The production CRM endpoint was verified to parse this format.",
+    "impact": "Reduces submission failures for visitors opening the site inside Instagram and other in-app browsers.",
+    "shippedAt": "2026-09-16",
+    "shippedBy": "codex",
+    "source": "code",
+    "relatedFiles": [
+      "assets/js/quote-form-crm.js",
+      "services/facebook-marketplace-pickup-chicago.html"
+    ],
+    "tags": [
+      "forms",
+      "lead-capture",
+      "instagram"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "high"
   }
 ]

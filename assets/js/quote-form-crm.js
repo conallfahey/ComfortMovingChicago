@@ -134,7 +134,7 @@
       var url = endpoint + '?serviceType=' + encodeURIComponent(payload.serviceType);
       var res = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
         body: JSON.stringify(payload)
       });
       var json = await res.json().catch(function () { return {}; });
