@@ -131,13 +131,18 @@
     };
 
     var submitLead = async function (payload) {
-      var res = await fetch(endpoint, {
+      var url = endpoint + '?serviceType=' + encodeURIComponent(payload.serviceType);
+      var res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
       var json = await res.json().catch(function () { return {}; });
-      if (!res.ok || !json.ok) throw new Error(json.error || 'Lead submit failed');
+      if (!res.ok || !json.ok) {
+        var error = new Error(json.error || 'Lead submit failed');
+        error.status = res.status;
+        throw error;
+      }
       return json;
     };
 
@@ -202,8 +207,12 @@
           isRedirecting = true;
           window.location.assign(form.getAttribute('data-success-url') || '/thank-you.html');
         } catch (error) {
-          console.error(error instanceof Error ? error.message : error);
-          setStatus(form, 'error', "Sorry - something went wrong submitting the form. Please call (773) 236-1724 and we'll take care of you.");
+          console.error('Quote form submission failed', {
+            status: error && error.status,
+            message: error instanceof Error ? error.message : String(error)
+          });
+          var reference = error && error.status ? ' (error ' + error.status + ')' : ' (connection error)';
+          setStatus(form, 'error', 'Your request could not be sent' + reference + '. Please call (773) 236-1724 so we can help you.');
         } finally {
           if (!isRedirecting) setSubmitting(form, false);
         }

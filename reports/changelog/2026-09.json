@@ -1,0 +1,24 @@
+[
+  {
+    "id": "2026-09-quote-form-submission-error",
+    "area": "website",
+    "type": "fix",
+    "title": "Improved quote form submission and error reporting",
+    "summary": "Added the selected service type to the CRM request URL and made submission failures show whether the server or connection failed.",
+    "impact": "Helps quote requests reach the CRM and gives the team a clearer starting point when a customer reports an error.",
+    "shippedAt": "2026-09-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "assets/js/quote-form-crm.js"
+    ],
+    "tags": [
+      "forms",
+      "lead-capture",
+      "crm"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "high"
+  }
+]
