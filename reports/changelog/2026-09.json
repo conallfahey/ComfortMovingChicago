@@ -43,5 +43,29 @@
     "includeInReport": true,
     "customerVisible": true,
     "priority": "high"
+  },
+  {
+    "id": "recoverable-quote-form-submissions",
+    "area": "website",
+    "type": "fix",
+    "title": "Keep quote requests available until confirmed",
+    "summary": "Quote forms now save an unconfirmed request for retry, reuse its submission ID to prevent duplicate leads, and try a standard browser form POST when fetch fails. The saved request is cleared only after server confirmation.",
+    "impact": "Reduces lost requests from Instagram and other in-app browsers while giving visitors a clear retry path.",
+    "shippedAt": "2026-09-16",
+    "shippedBy": "codex",
+    "source": "code",
+    "relatedFiles": [
+      "assets/js/quote-form-crm.js",
+      "services/facebook-marketplace-pickup-chicago.html",
+      "thank-you.html"
+    ],
+    "tags": [
+      "forms",
+      "lead-capture",
+      "reliability"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "high"
   }
 ]
