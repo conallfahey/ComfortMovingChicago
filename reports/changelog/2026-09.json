@@ -67,5 +67,51 @@
     "includeInReport": true,
     "customerVisible": true,
     "priority": "high"
+  },
+  {
+    "id": "2026-09-homepage-hero-form-spacing",
+    "area": "website",
+    "type": "fix",
+    "title": "Improved homepage hero and quote form spacing",
+    "summary": "Removed the fixed hero height and cramped short-screen form rules, and added consistent spacing around the hero content and form fields.",
+    "impact": "Makes the homepage quote form easier to scan and use on desktop and mobile screens.",
+    "shippedAt": "2026-09-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "index.html"
+    ],
+    "tags": [
+      "homepage",
+      "forms",
+      "layout"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "medium"
+  },
+  {
+    "id": "2026-09-homepage-first-screen-form",
+    "area": "website",
+    "type": "fix",
+    "title": "Fit the homepage quote form into the first screen",
+    "summary": "Rearranged quote fields into fewer desktop rows, reduced excess hero spacing, and changed the SMS checkbox to an opt-out preference.",
+    "impact": "Keeps the quote button visible on typical laptop screens and records whether a visitor opts out of SMS updates.",
+    "shippedAt": "2026-09-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "index.html",
+      "assets/js/quote-form-crm.js"
+    ],
+    "tags": [
+      "homepage",
+      "forms",
+      "layout",
+      "sms"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "high"
   }
 ]

@@ -68,6 +68,8 @@
         if (!value) return;
         fields[name] = fields[name] ? fields[name] + ', ' + value : value;
       });
+      var smsOptOut = form.querySelector('[name="smsOptOut"]');
+      if (smsOptOut) fields.smsOptOut = smsOptOut.checked ? 'yes' : 'no';
       return fields;
     };
 
@@ -147,22 +149,13 @@
       consent.setAttribute('data-sms-consent', '');
       var input = document.createElement('input');
       input.type = 'checkbox';
-      input.name = 'smsConsent';
+      input.name = 'smsOptOut';
       input.value = 'yes';
-      input.id = 'sms-consent';
+      input.id = (form.id || 'quote-form') + '-sms-opt-out';
       input.className = 'form-check-input me-2';
       var label = document.createElement('label');
       label.htmlFor = input.id;
-      label.append('I agree to receive service-related SMS messages from Comfort Moving Chicago. Consent is not required to request or purchase services. Msg & data rates may apply. Reply STOP to opt out. ');
-      var termsLink = document.createElement('a');
-      termsLink.href = '/terms-conditions.html';
-      termsLink.textContent = 'Terms & Conditions';
-      label.appendChild(termsLink);
-      label.append(' and ');
-      var privacyLink = document.createElement('a');
-      privacyLink.href = '/privacy-policy.html';
-      privacyLink.textContent = 'Privacy Policy';
-      label.appendChild(privacyLink);
+      label.textContent = 'Opt out of sms updates if you book with us';
       consent.append(input, label);
 
       var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
