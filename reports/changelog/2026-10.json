@@ -1,0 +1,23 @@
+[
+  {
+    "id": "2026-10-separate-social-referral-sources",
+    "area": "website",
+    "type": "feature",
+    "title": "Separated social platforms in website forms",
+    "summary": "Replaced the combined social referral option with individual Instagram, Facebook, and TikTok choices across quote and application forms. Verified residential move-size options already use 3+ Bedrooms without a separate 5+ Bedrooms choice.",
+    "impact": "Lets customers identify the specific social platform that brought them to Comfort Moving and provides clearer lead-source data in the CRM.",
+    "shippedAt": "2026-10-14",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "index.html",
+      "careers.html",
+      "services/*.html",
+      "neighborhoods/*.html"
+    ],
+    "tags": ["forms", "lead-capture", "referral-source", "social-media"],
+    "includeInReport": true,
+    "customerVisible": true,
+    "priority": "medium"
+  }
+]
