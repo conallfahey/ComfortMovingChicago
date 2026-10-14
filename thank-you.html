@@ -91,7 +91,12 @@
         document.getElementById('thank-you-call').classList.add('d-none');
       }
     </script>
-  </body>
+  <script>
+  if (new URLSearchParams(location.search).get('submission') === 'received') {
+    try { localStorage.removeItem('cmcPendingQuote'); } catch (error) { /* Storage may be unavailable. */ }
+  }
+</script>
+</body>
 </html>
 
 

@@ -5,6 +5,45 @@
 
     var endpoint = 'https://us-central1-comfort-moving-crm.cloudfunctions.net/inboundLead_submit';
     var internalFields = new Set(['access_key', '_subject', '_captcha', '_next', '_honey']);
+    var draftKey = 'cmcPendingQuote';
+    var newSubmissionId = function () {
+      if (window.crypto && window.crypto.getRandomValues) {
+        var bytes = new Uint8Array(16);
+        window.crypto.getRandomValues(bytes);
+        return Array.from(bytes, function (byte) { return byte.toString(16).padStart(2, '0'); }).join('');
+      }
+      return String(Date.now()) + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+    };
+    var readDraft = function () {
+      try {
+        var draft = JSON.parse(localStorage.getItem(draftKey) || 'null');
+        if (draft && Date.now() - draft.savedAt < 7 * 24 * 60 * 60 * 1000) return draft;
+        localStorage.removeItem(draftKey);
+      } catch (error) { /* Storage may be unavailable in an in-app browser. */ }
+      return null;
+    };
+    var saveDraft = function (payload) {
+      try { localStorage.setItem(draftKey, JSON.stringify({ path: location.pathname, savedAt: Date.now(), payload: payload })); }
+      catch (error) { /* The visible form remains available for retry. */ }
+    };
+    var clearDraft = function () {
+      try { localStorage.removeItem(draftKey); } catch (error) { /* Ignore storage restrictions. */ }
+    };
+    var submitAsBrowserForm = function (payload) {
+      var fallback = document.createElement('form');
+      fallback.method = 'POST';
+      fallback.action = endpoint + '?transport=form&serviceType=' + encodeURIComponent(payload.serviceType);
+      fallback.style.display = 'none';
+      Object.keys(payload).forEach(function (key) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = key === 'websiteFormFields' ? JSON.stringify(payload[key]) : String(payload[key]);
+        fallback.appendChild(input);
+      });
+      document.body.appendChild(fallback);
+      fallback.submit();
+    };
 
     var clean = function (value) {
       var text = String(value == null ? '' : value).trim();
@@ -29,6 +68,8 @@
         if (!value) return;
         fields[name] = fields[name] ? fields[name] + ', ' + value : value;
       });
+      var smsOptOut = form.querySelector('[name="smsOptOut"]');
+      if (smsOptOut) fields.smsOptOut = smsOptOut.checked ? 'yes' : 'no';
       return fields;
     };
 
@@ -108,22 +149,13 @@
       consent.setAttribute('data-sms-consent', '');
       var input = document.createElement('input');
       input.type = 'checkbox';
-      input.name = 'smsConsent';
+      input.name = 'smsOptOut';
       input.value = 'yes';
-      input.id = 'sms-consent';
+      input.id = (form.id || 'quote-form') + '-sms-opt-out';
       input.className = 'form-check-input me-2';
       var label = document.createElement('label');
       label.htmlFor = input.id;
-      label.append('I agree to receive service-related SMS messages from Comfort Moving Chicago. Consent is not required to request or purchase services. Msg & data rates may apply. Reply STOP to opt out. ');
-      var termsLink = document.createElement('a');
-      termsLink.href = '/terms-conditions.html';
-      termsLink.textContent = 'Terms & Conditions';
-      label.appendChild(termsLink);
-      label.append(' and ');
-      var privacyLink = document.createElement('a');
-      privacyLink.href = '/privacy-policy.html';
-      privacyLink.textContent = 'Privacy Policy';
-      label.appendChild(privacyLink);
+      label.textContent = 'Opt out of sms updates if you book with us';
       consent.append(input, label);
 
       var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
@@ -131,19 +163,35 @@
     };
 
     var submitLead = async function (payload) {
-      var res = await fetch(endpoint, {
+      var url = endpoint + '?serviceType=' + encodeURIComponent(payload.serviceType);
+      var res = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
         body: JSON.stringify(payload)
       });
       var json = await res.json().catch(function () { return {}; });
-      if (!res.ok || !json.ok) throw new Error(json.error || 'Lead submit failed');
+      if (!res.ok || !json.ok || !json.id) {
+        var error = new Error(json.error || 'Lead submit failed');
+        error.status = res.status;
+        error.referenceId = json.referenceId;
+        throw error;
+      }
       return json;
     };
 
     Array.prototype.forEach.call(forms, function (form) {
       addPrivacyNotice(form);
       addSmsConsent(form);
+      var saved = readDraft();
+      if (saved && saved.path === location.pathname && saved.payload && saved.payload.websiteFormFields) {
+        Object.keys(saved.payload.websiteFormFields).forEach(function (name) {
+          var field = form.elements.namedItem(name);
+          if (!field || !('value' in field)) return;
+          if (field.type === 'checkbox') field.checked = saved.payload.websiteFormFields[name] === field.value;
+          else field.value = saved.payload.websiteFormFields[name];
+        });
+        setStatus(form, 'error', 'A previous request was not confirmed. Please review it and submit again, or call (773) 236-1724.');
+      }
       var textareas = form.querySelectorAll('textarea');
       Array.prototype.forEach.call(textareas, function (textarea) {
         autogrowTextarea(textarea);
@@ -193,17 +241,48 @@
           return;
         }
 
+        var previous = readDraft();
+        var sameRequest = previous && previous.path === location.pathname && previous.payload &&
+          previous.payload.name === payload.name && previous.payload.email === payload.email &&
+          previous.payload.phone === payload.phone && previous.payload.serviceType === payload.serviceType &&
+          JSON.stringify(previous.payload.websiteFormFields) === JSON.stringify(payload.websiteFormFields);
+        payload.submissionId = sameRequest ? previous.payload.submissionId : newSubmissionId();
+        saveDraft(payload);
+
         var isRedirecting = false;
         setSubmitting(form, true);
         setStatus(form, 'info', 'Sending your request now...');
         try {
           await submitLead(payload);
+          clearDraft();
           setStatus(form, 'success', "Thanks! We got your request and we'll reach out shortly.");
           isRedirecting = true;
           window.location.assign(form.getAttribute('data-success-url') || '/thank-you.html');
         } catch (error) {
-          console.error(error instanceof Error ? error.message : error);
-          setStatus(form, 'error', "Sorry - something went wrong submitting the form. Please call (773) 236-1724 and we'll take care of you.");
+          if (!error || !error.status || error.status >= 500) {
+            setStatus(form, 'info', 'Trying another way to send your request...');
+            try {
+              isRedirecting = true;
+              submitAsBrowserForm(payload);
+              setTimeout(function () {
+                if (document.visibilityState === 'visible') {
+                  isRedirecting = false;
+                  setSubmitting(form, false);
+                  setStatus(form, 'error', 'Your request is not confirmed. Please retry or call (773) 236-1724. Your entries are saved in this browser.');
+                }
+              }, 12000);
+              return;
+            } catch (fallbackError) {
+              isRedirecting = false;
+            }
+          }
+          console.error('Quote form submission failed', {
+            status: error && error.status,
+            message: error instanceof Error ? error.message : String(error)
+          });
+          var reference = error && error.referenceId ? ' (reference ' + error.referenceId + ')' :
+            error && error.status ? ' (error ' + error.status + ')' : ' (connection error)';
+          setStatus(form, 'error', 'Your request is not confirmed' + reference + '. Please call (773) 236-1724 so we can help you. Your entries are saved in this browser.');
         } finally {
           if (!isRedirecting) setSubmitting(form, false);
         }
