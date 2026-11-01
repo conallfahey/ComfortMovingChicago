@@ -1,0 +1,17 @@
+[
+  {
+    "id": "2026-11-homepage-rate-description",
+    "area": "website",
+    "type": "content",
+    "title": "Highlighted starting rates in the website description",
+    "summary": "Updated the homepage search, social sharing, and structured-data descriptions to state: Comfort Moving Chicago: Rates start at $135 per hour for two movers and a truck.",
+    "impact": "Gives prospective customers a clear starting price when previewing the homepage in search results or shared links.",
+    "shippedAt": "2026-11-01",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["index.html"],
+    "tags": ["seo", "pricing", "homepage", "social-sharing"],
+    "includeInReport": true,
+    "customerVisible": true
+  }
+]
