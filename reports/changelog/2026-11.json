@@ -9,9 +9,60 @@
     "shippedAt": "2026-11-01",
     "shippedBy": "Codex",
     "source": "codex",
-    "relatedFiles": ["index.html"],
-    "tags": ["seo", "pricing", "homepage", "social-sharing"],
+    "relatedFiles": [
+      "index.html"
+    ],
+    "tags": [
+      "seo",
+      "pricing",
+      "homepage",
+      "social-sharing"
+    ],
     "includeInReport": true,
     "customerVisible": true
+  },
+  {
+    "id": "2026-11-pause-new-job-lead-forms",
+    "area": "website",
+    "type": "content",
+    "title": "Paused new job requests across customer forms",
+    "summary": "Replaced all 23 customer quote and pickup forms with a notice that Comfort Moving Chicago is not accepting new jobs at this time. Updated the form-card headings and removed unused submission scripts from those pages.",
+    "impact": "Makes the booking pause clear at every customer lead form and stops those forms from collecting new job requests.",
+    "shippedAt": "2026-11-09",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": [
+      "index.html",
+      "neighborhoods/evanston-movers.html",
+      "neighborhoods/lakeview-movers.html",
+      "neighborhoods/lincoln-park-movers.html",
+      "neighborhoods/logan-square-movers.html",
+      "neighborhoods/oak-park-movers.html",
+      "neighborhoods/ravenswood-movers.html",
+      "neighborhoods/rogers-park-movers.html",
+      "neighborhoods/the-loop-movers.html",
+      "neighborhoods/west-loop-movers.html",
+      "neighborhoods/wicker-park-movers.html",
+      "services/affordable-chicago-movers.html",
+      "services/emergency-movers-chicago.html",
+      "services/facebook-marketplace-pickup-chicago.html",
+      "services/ffe-movers-installation-chicago.html",
+      "services/furniture-assembly-chicago.html",
+      "services/local-hoisting-chicago.html",
+      "services/office-moving-chicago.html",
+      "services/packing-services-chicago.html",
+      "services/piano-movers-chicago.html",
+      "services/residential-moving-chicago.html",
+      "services/same-day-movers-chicago.html",
+      "services/senior-moving-chicago.html"
+    ],
+    "tags": [
+      "forms",
+      "lead-capture",
+      "booking-availability"
+    ],
+    "includeInReport": true,
+    "customerVisible": true,
+    "ownerNote": "The careers application remains available; this change pauses customer job requests."
   }
 ]
