@@ -64,5 +64,20 @@
     "includeInReport": true,
     "customerVisible": true,
     "ownerNote": "The careers application remains available; this change pauses customer job requests."
+  },
+  {
+    "id": "2026-11-reopen-customer-quote-forms",
+    "area": "website",
+    "type": "feature",
+    "title": "Reopened customer quote and pickup forms",
+    "summary": "Removed the booking pause notices and restored all 23 customer quote and pickup forms and their CRM submission scripts.",
+    "impact": "Customers can once again submit new job requests through the website.",
+    "shippedAt": "2026-11-12",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["index.html", "neighborhoods/*.html", "services/*.html"],
+    "tags": ["forms", "lead-capture", "booking-availability"],
+    "includeInReport": true,
+    "customerVisible": true
   }
 ]
