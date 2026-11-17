@@ -124,5 +124,20 @@
     "tags": ["quote-form", "lead-capture", "design"],
     "includeInReport": false,
     "ownerNote": "This change is available on the Astro branch for review."
+  },
+  {
+    "id": "2026-11-homepage-layout-refinement",
+    "area": "website",
+    "type": "feature",
+    "title": "Refined the homepage layout",
+    "summary": "Grouped trust indicators in a row under the hero and refined spacing, service cards, and FAQ layout.",
+    "impact": "Visitors can scan service options and find answers more easily using the existing site content.",
+    "shippedAt": "2026-11-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["index.html", "assets/css/astro-refresh.css"],
+    "tags": ["design", "homepage"],
+    "includeInReport": false,
+    "ownerNote": "Available on the Astro branch for review."
   }
 ]
