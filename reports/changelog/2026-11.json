@@ -130,7 +130,7 @@
     "area": "website",
     "type": "feature",
     "title": "Refined the homepage layout and aligned the starting rate",
-    "summary": "Grouped trust indicators under the hero, refined the homepage layout, and updated the visible starting rate to $135 per hour for two movers and a truck.",
+    "summary": "Separated the crew photograph from the quote form, aligned the homepage sections, rebuilt the service directory layout, and updated the visible starting rate to $135 per hour for two movers and a truck.",
     "impact": "Visitors can scan service options and find answers more easily using the existing site content.",
     "shippedAt": "2026-11-16",
     "shippedBy": "Codex",

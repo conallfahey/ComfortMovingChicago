@@ -641,23 +641,11 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
 
   <!-- HERO -->
   <section class="hero">
-    <picture class="hero-media">
-      <source media="(max-width: 767px)"
-              srcset="/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture-hero-mobile.webp 720w"
-              sizes="100vw">
-      <img src="/Images/Chicago-Movers-Loading-Large-Box-Truck.webp"
-           srcset="/Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp 960w,
-                   /Images/Chicago-Movers-Loading-Large-Box-Truck.webp 1800w"
-           sizes="100vw"
-           alt="Comfort Moving Chicago crew loading boxes into a large moving truck"
-           width="1800" height="1200" fetchpriority="high" decoding="async">
-    </picture>
-    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <div class="row align-items-center gy-5">
-        <div class="col-lg-7">
+      <div class="cmc-hero-grid">
+        <div class="cmc-hero-copy">
           <span class="hero-eyebrow-pill"><i class="bi bi-geo-alt-fill"></i>Chicago &amp; Suburbs</span>
-          <h1>Chicago Local <span>Movers</span><br>You Can Actually Count On</h1>
+          <h1>Chicago Local <span>Movers</span><br><span class="cmc-hero-tagline">You Can Actually Count On</span></h1>
           <p class="hero-sub">Owner-operated Chicago movers for apartment walk-ups, condo buildings, homes, offices, short-notice moves, and long-distance relocations that start or finish in Chicagoland.</p>
 
           <div class="hero-cta-row">
@@ -682,14 +670,27 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
             <a href="https://www.instagram.com/comfortmovingchicago" target="_blank" rel="noopener" aria-label="Comfort Moving Chicago on Instagram"><i class="bi bi-instagram fs-5" aria-hidden="true"></i></a>
             <a href="mailto:comfortmovingchicago@gmail.com" aria-label="Email Comfort Moving Chicago"><i class="bi bi-envelope-fill fs-5" aria-hidden="true"></i></a>
           </div>
+          <picture class="cmc-hero-photo">
+            <source media="(max-width: 767px)"
+                    srcset="/Images/Chicago-Movers-Truck-Ramp-Loading-Furniture-hero-mobile.webp 720w"
+                    sizes="(max-width: 767px) 100vw, 560px">
+            <img src="/Images/Chicago-Movers-Loading-Large-Box-Truck.webp"
+                 srcset="/Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp 960w,
+                         /Images/Chicago-Movers-Loading-Large-Box-Truck.webp 1800w"
+                 sizes="(max-width: 767px) 100vw, 560px"
+                 alt="Comfort Moving Chicago crew loading boxes into a large moving truck"
+                 width="1800" height="1200" loading="lazy" decoding="async">
+          </picture>
         </div>
 
-        <div class="col-lg-5" id="quoteForm">
+        <div id="quoteForm">
           <div class="quote-card">
             <div class="quote-card-top"></div>
             <div class="quote-card-body">
-              <h2>Get Your Free Quote</h2>
-              <p class="sub">We usually reply within the hour.</p>
+              <div class="cmc-quote-heading">
+                <h2>Get Your Free Quote</h2>
+                <p class="sub">We usually reply within the hour.</p>
+              </div>
               <form id="hero-quote-form" data-crm-quote-form data-form-name="Homepage Free Quote" data-status-id="hero-quote-status">
                 <input type="text" name="_honey" style="display:none">
                 <div class="row g-2">
@@ -956,7 +957,7 @@ a.area-tag:hover{background:var(--brand-blue);color:#fff;border-color:var(--bran
         <h2>Professional Moving Services</h2>
         <p>We handle local moves across Chicagoland, long-distance relocations that start or finish here, and everything from packing to specialized moving needs.</p>
       </div>
-      <div class="row g-4">
+      <div class="row cmc-service-grid">
         <div class="col-md-6 col-lg-3">
           <div class="svc-card reveal">
             <div class="svc-icon"><i class="bi bi-truck"></i></div>
