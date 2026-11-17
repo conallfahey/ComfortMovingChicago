@@ -79,5 +79,35 @@
     "tags": ["forms", "lead-capture", "booking-availability"],
     "includeInReport": true,
     "customerVisible": true
+  },
+  {
+    "id": "2026-11-cloudflare-workers-hosting",
+    "area": "website",
+    "type": "maintenance",
+    "title": "Moved the website to Cloudflare Workers",
+    "summary": "Moved the live domain from GitHub Pages to Cloudflare Workers and verified HTTPS, existing page URLs, and the redirect from www.",
+    "impact": "Existing search and customer links continue working on the new host.",
+    "shippedAt": "2026-11-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["cloudflare.config.ts", "wrangler.config.ts", "scripts/stage-site.mjs", "README.md"],
+    "tags": ["hosting", "cloudflare", "seo"],
+    "includeInReport": true,
+    "ownerNote": "Google Workspace mail and verification DNS records were preserved. Production releases use npm run deploy."
+  },
+  {
+    "id": "2026-11-astro-website-and-quote-refresh",
+    "area": "website",
+    "type": "feature",
+    "title": "Prepared a cleaner website and step-by-step quote form",
+    "summary": "Migrated the site build to Astro, refreshed the shared navigation and homepage, and broke customer quote and pickup forms into short steps.",
+    "impact": "Makes the site easier to browse and lets customers request a quote with either a phone number or email.",
+    "shippedAt": "2026-11-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["astro.config.mjs", "wrangler.jsonc", "src", "assets/css/astro-refresh.css", "assets/js/quote-steps.js"],
+    "tags": ["astro", "seo", "design", "lead-capture"],
+    "includeInReport": false,
+    "ownerNote": "The Astro branch is ready for review. Include this entry in the owner report after the production release."
   }
 ]

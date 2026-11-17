@@ -1,0 +1,13 @@
+---
+import MarketingPage from "../layouts/MarketingPage.astro";
+import { pages } from "../../scripts/site-files.mjs";
+
+export function getStaticPaths() {
+  return pages
+    .filter((filename) => !filename.endsWith("index.html") && filename !== "404.html")
+    .map((filename) => ({ params: { page: filename.slice(0, -5) }, props: { filename } }));
+}
+
+const { filename } = Astro.props;
+---
+<MarketingPage filename={filename} />

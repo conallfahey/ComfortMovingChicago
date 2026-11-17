@@ -1,0 +1,31 @@
+---
+import { readFileSync } from "node:fs";
+import SiteHeader from "../components/SiteHeader.astro";
+import QuotePlanner from "../components/QuotePlanner.astro";
+import { loadPage } from "../lib/page-content.mjs";
+
+const { filename } = Astro.props;
+const page = loadPage(filename);
+const path = filename.endsWith("index.html") ? `/${filename.slice(0, -"index.html".length)}` : `/${filename}`;
+const quoteHref = page.quote ? "#quoteForm" : "/#quoteForm";
+const footer = readFileSync("partials/footer.html", "utf8");
+const { class: bodyClass, ...bodyAttrs } = page.body;
+---
+<!doctype html>
+<html lang={page.lang}>
+  <head>
+    <Fragment set:html={page.head} />
+    <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
+  </head>
+  <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home"]}>
+    <SiteHeader path={path} mainId={page.mainId || "main-content"} quoteHref={quoteHref} />
+    <div class="cmc-page" id={page.mainId ? undefined : "main-content"}>
+      <Fragment set:html={page.beforeQuote} />
+      {page.quote && <QuotePlanner config={page.quote} />}
+      {page.afterQuote && <Fragment set:html={page.afterQuote} />}
+    </div>
+    <div class="cmc-footer" set:html={footer} />
+    <script is:inline defer src="/assets/js/site-refresh.js"></script>
+    {page.quote && <script is:inline defer src="/assets/js/quote-steps.js"></script>}
+  </body>
+</html>

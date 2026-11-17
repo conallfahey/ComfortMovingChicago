@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "comfort-moving-chicago",
+  "compatibility_date": "2026-11-16",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "comfortmovingchicago.com", "custom_domain": true },
+    { "pattern": "www.comfortmovingchicago.com", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./.cloudflare/site",
+    "html_handling": "none",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true,
+    "traces": { "enabled": true }
+  },
+  "env": {
+    "preview": {
+      "name": "comfort-moving-chicago-astro-preview",
+      "routes": [],
+      "workers_dev": true,
+      "preview_urls": false
+    }
+  }
+}

@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "CMC Body";
+  src: url("/assets/fonts/roboto-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CMC Display";
+  src: url("/assets/fonts/oswald-latin.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+.cmc-site {
+  --cmc-ink: #101e33;
+  --cmc-muted: #536073;
+  --cmc-surface: #f7f6f2;
+  --cmc-line: #dae0e6;
+  --cmc-orange: #ff8a3d;
+  --cmc-radius: 14px;
+  margin: 0;
+  background: var(--cmc-surface);
+  color: var(--cmc-ink);
+  font-family: "CMC Body", system-ui, sans-serif;
+}
+
+.cmc-site [hidden] { display: none !important; }
+.cmc-site :is(a, button, summary, input, select, textarea):focus-visible {
+  outline: 3px solid #2163a9;
+  outline-offset: 3px;
+}
+
+.cmc-visually-hidden,
+.cmc-skip:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.cmc-skip:focus {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 12px;
+  padding: 10px 16px;
+  background: white;
+  color: var(--cmc-ink);
+}
+
+.cmc-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: #fff;
+  border-bottom: 1px solid var(--cmc-line);
+}
+
+.cmc-header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 3vw, 38px);
+  min-height: 75px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(18px, 4vw, 52px);
+}
+
+.cmc-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+  color: var(--cmc-ink);
+  text-decoration: none;
+  font-family: "CMC Display", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.cmc-brand img { object-fit: contain; }
+.cmc-brand-city {
+  display: block;
+  margin-top: 4px;
+  font-size: .58em;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.cmc-navigation,
+.cmc-header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 30px);
+}
+
+.cmc-navigation { margin-inline: auto; }
+.cmc-navigation a,
+.cmc-navigation summary,
+.cmc-header-phone {
+  color: var(--cmc-ink);
+  font-size: .88rem;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cmc-navigation a:is(:hover, [aria-current]),
+.cmc-navigation summary:hover,
+.cmc-header-phone:hover { color: #9d3b07; }
+.cmc-services-menu { position: relative; }
+.cmc-services-menu summary { cursor: pointer; list-style: none; }
+.cmc-services-menu summary::-webkit-details-marker { display: none; }
+.cmc-services-menu summary::after { content: "⌄"; margin-left: 6px; }
+.cmc-services-panel {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: -14px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2px 10px;
+  padding: 10px;
+  border: 1px solid var(--cmc-line);
+  border-radius: var(--cmc-radius);
+  background: white;
+  box-shadow: 0 14px 40px #101e3324;
+}
+
+.cmc-services-panel a { padding: 9px 11px; border-radius: 7px; }
+.cmc-services-panel a:hover { background: var(--cmc-surface); }
+.cmc-all-services { grid-column: 1 / -1; border-bottom: 1px solid var(--cmc-line); }
+.cmc-header-actions { gap: clamp(12px, 2vw, 22px); margin-left: auto; }
+.cmc-menu-toggle { display: none; }
+
+.cmc-site .cmc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  min-height: 45px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--cmc-orange);
+  color: #161d28;
+  font: 750 .9rem / 1.15 "CMC Body", sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cmc-site .cmc-button:hover { background: #ffab73; color: #161d28; }
+.cmc-site .cmc-button:disabled { cursor: wait; opacity: .68; }
+.cmc-site :is(#quoteForm, #areas-served, #about, .cmc-page [id]) { scroll-margin-top: 96px; }
+.cmc-footer .footer-section { border-top-width: 2px; }
+.cmc-footer .footer-section :is(h2, strong) { font-family: "CMC Body", system-ui, sans-serif; }
+
+/* The original articles and service copy still render inside the shared layout. */
+.cmc-site .cmc-page :is(.service-card-modern, .marketplace-support-card, .step-card, .feat-card) {
+  border-radius: var(--cmc-radius);
+  box-shadow: none;
+}
+
+.cmc-site .cmc-page :is(.btn-primary-brand, .btn-secondary-action):hover { filter: brightness(1.08); }
+.cmc-site .cmc-page :is(.quote-card, .quote-panel, .hero-form-card):has(.cmc-quote-form) {
+  border-radius: var(--cmc-radius);
+  box-shadow: 0 16px 42px #101e3324;
+}
+
+.cmc-home .hero {
+  min-height: clamp(580px, 45vw, 700px);
+  padding-block: clamp(46px, 6vw, 88px);
+  background: #10243d;
+}
+
+.cmc-home .hero .row { --bs-gutter-x: clamp(28px, 5vw, 76px); }
+.cmc-home .hero-scrim {
+  background: linear-gradient(100deg, #0b1b30f0 8%, #0e223bdd 42%, #0c192c65 100%);
+}
+
+.cmc-home .hero-eyebrow-pill {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  color: #ffd3b7;
+  font: 700 .77rem / 1.4 "CMC Body", sans-serif;
+  letter-spacing: .12em;
+}
+
+.cmc-home .hero h1 {
+  margin-block: 18px;
+  font-family: "CMC Display", sans-serif;
+  font-size: clamp(3.05rem, 4.6vw, 4.55rem);
+  line-height: 1.01;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.cmc-home .hero h1 span { color: #ffad75; }
+.cmc-home .hero-sub {
+  max-width: 48ch;
+  margin-bottom: 23px;
+  color: #eef3f8;
+  font: 450 clamp(1rem, 1.4vw, 1.17rem) / 1.65 "CMC Body", sans-serif;
+}
+
+.cmc-home .hero .hero-cta-row { gap: 10px; }
+.cmc-home .hero .hero-cta-row .btn { border-radius: 8px; letter-spacing: 0; }
+.cmc-home .hero-proof-mini { margin-top: 20px; }
+.cmc-home .hero-proof-mini .proof-stat { border-radius: 8px; }
+.cmc-home .quote-card-top { height: 4px; background: var(--cmc-orange); }
+.cmc-home .quote-card-body { padding: clamp(19px, 2.4vw, 32px); }
+.cmc-home .quote-card h2 {
+  color: var(--cmc-ink);
+  font: 750 clamp(1.35rem, 2vw, 1.65rem) / 1.2 "CMC Body", sans-serif;
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.cmc-home .quote-card .sub { margin: 7px 0 16px; color: var(--cmc-muted); }
+.cmc-home .section-head { max-width: 700px; margin-inline: auto; }
+.cmc-home .section-head h2 { letter-spacing: -.018em; }
+.cmc-home .reveal { opacity: 1; transform: none; }
+
+.cmc-quote-form {
+  color: var(--cmc-ink);
+  font: 400 .96rem / 1.45 "CMC Body", system-ui, sans-serif;
+  text-align: left;
+}
+
+.cmc-quote-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block: 13px 16px;
+  color: var(--cmc-muted);
+  font-size: .76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cmc-quote-progress progress {
+  flex: 1;
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  background: #ebedf1;
+  accent-color: #c65416;
+}
+
+.cmc-quote-progress progress::-webkit-progress-bar { background: #ebedf1; }
+.cmc-quote-progress progress::-webkit-progress-value { background: #c65416; }
+.cmc-quote-progress progress::-moz-progress-bar { background: #c65416; }
+.cmc-quote-panel { padding: 0 !important; }
+.cmc-quote-form .cmc-quote-panel h3 {
+  margin: 0 0 15px;
+  color: var(--cmc-ink);
+  font: 750 1.12rem / 1.3 "CMC Body", sans-serif;
+  text-transform: none;
+  letter-spacing: -.01em;
+}
+
+.cmc-quote-panel h3:focus { outline: none; }
+.cmc-quote-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.cmc-quote-fields > :only-child,
+.cmc-quote-field:has([autocomplete="name"]),
+.cmc-quote-wide { grid-column: 1 / -1; }
+.cmc-quote-field { min-width: 0; }
+.cmc-quote-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--cmc-ink);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.cmc-quote-field label span,
+.cmc-quote-optional summary span { color: var(--cmc-muted); font-weight: 400; }
+.cmc-quote-form .cmc-quote-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 9px 10px;
+  border: 1px solid #c5ced7;
+  border-radius: 7px;
+  background: #fbfbfa;
+  color: var(--cmc-ink);
+  font: 400 1rem / 1.4 "CMC Body", system-ui, sans-serif;
+}
+
+.cmc-quote-form textarea.cmc-quote-input { min-height: 66px; resize: vertical; }
+.cmc-quote-form .cmc-contact-hint { margin: 8px 0 12px; color: var(--cmc-muted); font-size: .8rem; }
+.cmc-quote-actions { display: flex; gap: 10px; margin-top: 16px; }
+.cmc-quote-actions .cmc-button { flex: 1; justify-content: center; min-height: 48px; }
+.cmc-quote-back {
+  min-width: 65px;
+  border: 1px solid var(--cmc-line);
+  border-radius: 7px;
+  background: white;
+  color: var(--cmc-ink);
+  font: 650 .85rem "CMC Body", sans-serif;
+}
+
+.cmc-quote-back:hover { background: var(--cmc-surface); }
+.cmc-service-choices { display: grid; gap: 8px; padding: 0; border: 0; margin: 0; }
+.cmc-service-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 43px;
+  padding: 8px 11px;
+  border: 1px solid #c5ced7;
+  border-radius: 7px;
+  background: #fbfbfa;
+  color: var(--cmc-ink);
+  font-size: .9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.cmc-service-choice:has(:checked) { border-color: #b74a13; background: #fff2e9; }
+.cmc-service-choice input { margin: 0; accent-color: #b74a13; }
+.cmc-quote-form .cmc-quote-optional { margin-top: 11px; font-size: .78rem; }
+.cmc-quote-optional summary { padding-block: 5px; font-weight: 700; cursor: pointer; }
+.cmc-quote-optional .cmc-quote-field { margin-top: 5px; }
+.cmc-quote-optional label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.cmc-quote-legal,
+.cmc-quote-form [data-sms-consent],
+.cmc-quote-form [data-privacy-notice] {
+  margin: 11px 0 0 !important;
+  color: var(--cmc-muted);
+  font: 400 .76rem / 1.4 "CMC Body", sans-serif;
+  text-align: left !important;
+}
+
+.cmc-quote-legal a,
+.cmc-quote-form [data-privacy-notice] a { color: #124779; text-decoration: underline; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cmc-quote-progress:not([hidden]) + .cmc-quote-panels .cmc-quote-panel:not([hidden]) {
+    animation: cmc-quote-in 150ms ease-out;
+  }
+  @keyframes cmc-quote-in {
+    from { opacity: 0; transform: translateX(5px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@media (max-width: 1050px) {
+  .cmc-header-phone { display: none; }
+  .cmc-header-inner { gap: 18px; }
+}
+
+@media (max-width: 840px) {
+  .cmc-header-inner { flex-wrap: wrap; gap: 0 12px; padding-block: 9px; min-height: 64px; }
+  .cmc-header-actions { order: 1; }
+  .cmc-menu-ready .cmc-menu-toggle {
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding-inline: 9px;
+    background: white;
+    border: 1px solid var(--cmc-line);
+    border-radius: 7px;
+    color: var(--cmc-ink);
+    font: 700 .84rem "CMC Body", sans-serif;
+  }
+  .cmc-navigation {
+    order: 3;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    padding-top: 6px;
+  }
+  .cmc-navigation > :is(a, details) { padding-block: 10px; }
+  .cmc-menu-ready .cmc-navigation:not(.cmc-nav-open) { display: none; }
+  .cmc-services-panel { position: static; margin-top: 10px; }
+}
+
+@media (max-width: 767px) {
+  .cmc-header-inner { padding-inline: 14px; }
+  .cmc-home .hero { min-height: auto; padding-block: 36px; }
+  .cmc-home .hero-scrim { background: #102138dc; }
+  .cmc-home .hero-inner > .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 0;
+  }
+  .cmc-home .hero-inner > .row > .col-lg-7 { display: contents; }
+  .cmc-home .hero-inner > .row > * { padding-inline: 0; margin-top: 0; }
+  .cmc-home .hero h1 { margin-block: 14px; font-size: clamp(2.24rem, 8.5vw, 3.3rem); }
+  .cmc-home .hero-sub { margin-bottom: 23px; }
+  .cmc-home .hero .hero-cta-row { display: none; }
+  .cmc-home .hero #quoteForm { order: 1; }
+  .cmc-home .hero :is(.hero-avatars, .hero-proof-mini, .social-row) { order: 2; }
+  .cmc-home .hero .hero-avatars { margin-top: 18px; }
+  .cmc-home .hero-proof-mini { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmc-site :is(#quoteForm, #areas-served, #about, .cmc-page [id]) { scroll-margin-top: 76px; }
+}
+
+@media (max-width: 420px) {
+  .cmc-header-inner { gap: 0 8px; }
+  .cmc-brand { gap: 6px; font-size: 17px; }
+  .cmc-brand img { width: 35px; height: 35px; }
+  .cmc-header-actions .cmc-button { padding-inline: 9px; min-height: 42px; font-size: .79rem; }
+  .cmc-header-actions .cmc-button span { display: none; }
+  .cmc-quote-fields { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .cmc-services-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmc-services-panel a { font-size: .78rem; white-space: normal; }
+}

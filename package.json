@@ -1,0 +1,19 @@
+{
+  "name": "comfort-moving-chicago",
+  "private": true,
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "npm run build && wrangler dev --env preview",
+    "build": "astro build && node scripts/stage-site.mjs",
+    "check:seo": "node scripts/check-astro-build.mjs",
+    "deploy:preview": "npm run build -- --preview && wrangler deploy --env preview",
+    "deploy": "npm run build && wrangler deploy --env="
+  },
+  "devDependencies": {
+    "astro": "6.4.8",
+    "parse5": "8.1.1",
+    "wrangler": "4.163.0"
+  }
+}

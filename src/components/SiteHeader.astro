@@ -1,0 +1,47 @@
+---
+const { path, mainId, quoteHref } = Astro.props;
+const services = [
+  ["Residential moving", "residential-moving-chicago"],
+  ["Senior moving", "senior-moving-chicago"],
+  ["Packing services", "packing-services-chicago"],
+  ["Furniture assembly", "furniture-assembly-chicago"],
+  ["Marketplace pickup", "facebook-marketplace-pickup-chicago"],
+  ["Furniture hoisting", "local-hoisting-chicago"],
+  ["Piano moving", "piano-movers-chicago"],
+  ["Affordable moving", "affordable-chicago-movers"],
+  ["Same-day moving", "same-day-movers-chicago"],
+  ["Emergency moving", "emergency-movers-chicago"],
+  ["Office moving", "office-moving-chicago"],
+  ["FF&E installation", "ffe-movers-installation-chicago"],
+];
+---
+<header class="cmc-header">
+  <a class="cmc-skip" href={`#${mainId}`}>Skip to main content</a>
+  <div class="cmc-header-inner">
+    <a class="cmc-brand" href="/">
+      <img src="/Images/CMC_logo-100.webp" width="44" height="44" alt="" />
+      <span>Comfort Moving<span class="cmc-brand-city">Chicago</span></span>
+    </a>
+    <button type="button" class="cmc-menu-toggle" aria-controls="cmc-navigation" aria-expanded="false">Menu</button>
+    <nav id="cmc-navigation" class="cmc-navigation" aria-label="Primary navigation">
+      <details class="cmc-services-menu">
+        <summary>Services</summary>
+        <div class="cmc-services-panel">
+          <a class="cmc-all-services" href="/services.html" aria-current={path === "/services.html" ? "page" : undefined}>All moving services</a>
+          {services.map(([label, slug]) => {
+            const href = `/services/${slug}.html`;
+            return <a href={href} aria-current={path === href ? "page" : undefined}>{label}</a>;
+          })}
+        </div>
+      </details>
+      <a href="/#areas-served">Service areas</a>
+      <a href="/blog/" aria-current={path === "/blog/" ? "page" : undefined}>Moving tips</a>
+      <a href="/faq.html" aria-current={path === "/faq.html" ? "page" : undefined}>FAQ</a>
+      <a href="/#about">About</a>
+    </nav>
+    <div class="cmc-header-actions">
+      <a class="cmc-header-phone" href="tel:+17732361724">(773) 236-1724</a>
+      <a class="cmc-button" href={quoteHref}>Get a quote <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</header>

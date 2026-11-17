@@ -1,0 +1,63 @@
+---
+import QuoteField from "./QuoteField.astro";
+
+const { config } = Astro.props;
+const { attrs, hidden, steps, referral, sms, marketplace, submitLabel, loadingLabel } = config;
+const formId = attrs.id || "moving-quote-planner";
+---
+<form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner>
+  <Fragment set:html={hidden} />
+  <div class="cmc-quote-progress" data-quote-progress hidden>
+    <span data-quote-step-label aria-live="polite"></span>
+    <progress data-quote-bar max={steps.length} value="1" aria-label="Quote progress"></progress>
+  </div>
+  <div class="cmc-quote-panels">
+    {steps.map(({ kind, title, fields }, index) => (
+      <section class="cmc-quote-panel" data-quote-panel={kind} aria-labelledby={`${formId}-step-${index + 1}`}>
+        <h3 id={`${formId}-step-${index + 1}`} tabindex="-1">{title}</h3>
+        {kind === "service" ? (
+          <fieldset class="cmc-service-choices">
+            <legend class="cmc-visually-hidden">Type of service</legend>
+            {fields[0].options.map(({ value, label }, optionIndex) => (
+              <label class="cmc-service-choice">
+                <input type="radio" name={fields[0].name} value={value} checked={optionIndex === 0} required />
+                <span>{label.replace(" (with truck)", "")}</span>
+              </label>
+            ))}
+          </fieldset>
+        ) : (
+          <div class="cmc-quote-fields">
+            {fields.map((field) => <QuoteField field={field} />)}
+          </div>
+        )}
+        {kind === "contact" && (
+          <>
+            <p class="cmc-contact-hint" data-quote-contact-hint>Enter a phone number or an email address.</p>
+            {referral && (
+              <details class="cmc-quote-optional">
+                <summary>How did you hear about us? <span>(optional)</span></summary>
+                <QuoteField field={referral} />
+              </details>
+            )}
+            {marketplace && sms && <div class="cmc-quote-legal" set:html={sms} />}
+            <div class="cmc-quote-actions">
+              <button type="button" class="cmc-quote-back" data-quote-back hidden>Back</button>
+              <button class="cmc-button cmc-quote-submit" type="submit" data-default-text={submitLabel} data-loading-text={loadingLabel} hidden>
+                <span class="quote-submit-text">{submitLabel}</span>
+              </button>
+            </div>
+            {marketplace && <p class="cmc-quote-legal">We use your information to respond to your request and provide our services. <a href="/privacy-policy.html">Privacy Policy</a></p>}
+          </>
+        )}
+        {kind !== "contact" && (
+          <div class="cmc-quote-actions" data-quote-navigation hidden>
+            {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}
+            <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>
+          </div>
+        )}
+      </section>
+    ))}
+  </div>
+  {marketplace && <div id="marketplace-quote-status" class="alert d-none mt-3 mb-0" role="status"></div>}
+  <noscript><p>For a quote, call <a href="tel:+17732361724">(773) 236-1724</a>.</p></noscript>
+</form>

@@ -1,0 +1,11 @@
+---
+const { field } = Astro.props;
+const { attrs, tag, label, required, content } = field;
+const optional = field.name === "details" && !required;
+---
+<div class:list={["cmc-quote-field", tag === "textarea" && "cmc-quote-wide"]}>
+  <label for={attrs.id}>{label}{optional && <span> (optional)</span>}</label>
+  {tag === "select" && <select {...attrs} required={required} set:html={content} />}
+  {tag === "textarea" && <textarea {...attrs} required={required} set:html={content} />}
+  {tag === "input" && <input {...attrs} required={required} />}
+</div>
