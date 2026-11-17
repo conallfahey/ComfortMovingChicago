@@ -2,9 +2,8 @@
 import QuoteField from "./QuoteField.astro";
 
 const { config } = Astro.props;
-const { attrs, hidden, steps, sms, marketplace, submitLabel, loadingLabel } = config;
+const { attrs, hidden, steps, sms, marketplace, fixedService, submitLabel, loadingLabel } = config;
 const formId = attrs.id || "moving-quote-planner";
-const contactMethods = { phone: "Phone", email: "Email" };
 ---
 <form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner>
   <Fragment set:html={hidden} />
@@ -16,38 +15,12 @@ const contactMethods = { phone: "Phone", email: "Email" };
     {steps.map(({ kind, title, fields }, index) => (
       <section class="cmc-quote-panel" data-quote-panel={kind} aria-labelledby={`${formId}-step-${index + 1}`}>
         <h3 id={`${formId}-step-${index + 1}`} tabindex="-1">{title}</h3>
-        {kind === "service" ? (
-          <fieldset class="cmc-service-choices">
-            <legend class="cmc-visually-hidden">Type of service</legend>
-            {fields[0].options.map(({ value, label }, optionIndex) => (
-              <label class="cmc-service-choice">
-                <input type="radio" name={fields[0].name} value={value} checked={optionIndex === 0} required />
-                <span>{label.replace(" (with truck)", "")}</span>
-              </label>
-            ))}
-          </fieldset>
-        ) : kind === "contact" ? (
-          <div class="cmc-quote-fields cmc-contact-fields">
-            {fields.filter(({ name }) => name === "name" || name === "fullName").map((field) => <QuoteField field={field} />)}
-            <fieldset class="cmc-contact-method cmc-quote-wide" data-contact-picker hidden>
-              <legend>How should we contact you?</legend>
-              <div class="cmc-contact-options">
-                {Object.entries(contactMethods).map(([method, label]) => (
-                  <button type="button" data-contact-method={method} aria-pressed={method === "phone"}>{label}</button>
-                ))}
-              </div>
-            </fieldset>
-            {fields.map((field) => {
-              if (field.name === "name" || field.name === "fullName") return null;
-              const method = Object.hasOwn(contactMethods, field.name) ? field.name : undefined;
-              return <QuoteField field={field} method={method} />;
-            })}
-          </div>
-        ) : (
-          <div class="cmc-quote-fields">
-            {fields.map((field) => <QuoteField field={field} />)}
-          </div>
-        )}
+        <div class="cmc-quote-fields">
+          {fields.map((field) => <QuoteField field={field} />)}
+          {kind === "contact" && fixedService && (
+            <p class="cmc-quote-service cmc-quote-wide"><strong>Service</strong> {fixedService}</p>
+          )}
+        </div>
         <div class="cmc-quote-actions" data-quote-navigation hidden>
           {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}
           {index === steps.length - 1

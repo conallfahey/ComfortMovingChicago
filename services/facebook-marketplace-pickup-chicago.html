@@ -435,6 +435,10 @@
                       <input type="email" class="form-control form-control-hero" name="email" id="marketplace-email" placeholder="Email address">
                     </div>
                     <div class="col-12">
+                      <label class="form-label-hero text-uppercase" for="marketplace-pickup-date">Preferred pickup date (optional)</label>
+                      <input type="date" class="form-control form-control-hero" name="moveDate" id="marketplace-pickup-date">
+                    </div>
+                    <div class="col-12">
                       <label class="form-label-hero text-uppercase" for="marketplace-pickup-location">Pickup Location</label>
                       <input type="text" class="form-control form-control-hero" name="moveFrom" id="marketplace-pickup-location" placeholder="Seller pickup address or neighborhood" autocomplete="street-address" required>
                     </div>
@@ -802,6 +806,7 @@
             phone,
             originAddress,
             destinationAddress,
+            moveDate: valueById('marketplace-pickup-date'),
             moveSize: 'Single Item / Marketplace Pickup',
             serviceType: 'moving_with_truck',
             referralSource,

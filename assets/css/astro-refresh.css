@@ -312,41 +312,13 @@
   text-align: center;
 }
 
-.cmc-contact-method { min-width: 0; padding: 0; margin: 0; border: 0; }
-.cmc-contact-method legend {
-  float: none;
-  width: auto;
-  margin: 0 0 5px;
-  color: var(--cmc-ink);
-  font-size: .8rem;
-  font-weight: 700;
-}
-
-.cmc-contact-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-  padding: 4px;
-  border-radius: 8px;
-  background: #eef1f5;
-}
-
-.cmc-contact-options button {
-  min-height: 44px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--cmc-muted);
-  font: 700 .9rem "CMC Body", system-ui, sans-serif;
-  cursor: pointer;
-}
-
-.cmc-contact-options button[aria-pressed="true"] {
-  border-color: var(--cmc-line);
-  background: white;
-  color: var(--cmc-ink);
-  box-shadow: 0 1px 2px #101e3312;
-}
+/* Inactive slides keep their grid size while staying out of the tab order. */
+[data-quote-ready] .cmc-quote-panels { display: grid; }
+[data-quote-ready] .cmc-quote-panel { display: flex; flex-direction: column; grid-area: 1 / 1; min-width: 0; }
+[data-quote-ready] .cmc-quote-panel[inert] { visibility: hidden; }
+[data-quote-ready] .cmc-quote-panel .cmc-quote-actions { margin-top: auto; padding-top: 16px; }
+.cmc-quote-service { margin: 0; color: var(--cmc-ink); font-size: .875rem; }
+.cmc-quote-service strong { display: block; }
 
 .cmc-quote-form .cmc-quote-input[aria-invalid="true"] { border-color: #a5241b; }
 .cmc-quote-form .cmc-quote-error {
@@ -366,31 +338,6 @@
 }
 
 .cmc-quote-back:hover { background: var(--cmc-surface); }
-.cmc-service-choices {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-.cmc-service-choice {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 8px 11px;
-  border: 1px solid #c5ced7;
-  border-radius: 7px;
-  background: #fbfbfa;
-  color: var(--cmc-ink);
-  font-size: .9rem;
-  font-weight: 650;
-  cursor: pointer;
-}
-
-.cmc-service-choice:has(:checked) { border-color: #b74a13; background: #fff7f1; }
-.cmc-service-choice input { margin: 0; accent-color: #b74a13; }
 .cmc-quote-legal,
 .cmc-quote-form [data-sms-consent],
 .cmc-quote-form [data-privacy-notice] {
@@ -404,7 +351,7 @@
 .cmc-quote-form [data-privacy-notice] a { color: #124779; text-decoration: underline; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .cmc-quote-progress:not([hidden]) + .cmc-quote-panels .cmc-quote-panel:not([hidden]) {
+  .cmc-quote-progress:not([hidden]) + .cmc-quote-panels .cmc-quote-panel:not([inert]) {
     animation: cmc-quote-in 150ms ease-out;
   }
   @keyframes cmc-quote-in {
@@ -474,7 +421,6 @@
   .cmc-header-actions .cmc-button { padding-inline: 9px; min-height: 42px; font-size: .79rem; }
   .cmc-header-actions .cmc-button span { display: none; }
   .cmc-quote-fields { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .cmc-service-choice { gap: 6px; padding-inline: 8px; font-size: .84rem; }
   .cmc-services-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cmc-services-panel a { font-size: .78rem; white-space: normal; }
 }

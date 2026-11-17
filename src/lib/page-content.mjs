@@ -17,17 +17,17 @@ function remove(node) {
   siblings.splice(siblings.indexOf(node), 1);
 }
 
-const contactFields = new Set(["name", "fullName", "phone", "email"]);
-const projectFields = new Set(["buildingType", "coiRequired", "freightElevatorOrDock", "itemList", "details"]);
+const contactFields = new Set(["name", "fullName", "phone", "email", "services", "serviceNeeded", "businessName"]);
+const schedulingFields = new Set(["moveDate", "targetDate", "moveFrom", "moveTo", "address", "projectAddress"]);
 const autocomplete = { name: "name", fullName: "name", phone: "tel", email: "email", businessName: "organization" };
 
-function quoteData(form, homepage) {
+function quoteData(form) {
   const nodes = [...walk(form)];
   const formAttrs = attributes(form);
   const submit = nodes.find((node) => node.tagName === "button" && attribute(node, "type") === "submit");
   const marketplace = formAttrs.id === "marketplace-pickup-form";
   const project = nodes.some((node) => attribute(node, "name") === "projectAddress");
-  const fields = { service: [], move: [], access: [], contact: [] };
+  const fields = { contact: [], move: [], details: [] };
   const hidden = [];
   let referral;
   let sms;
@@ -50,45 +50,37 @@ function quoteData(form, homepage) {
       name,
       tag: input.tagName,
       attrs: { ...inputAttrs, class: "cmc-quote-input", autocomplete: autocomplete[name] ?? inputAttrs.autocomplete },
-      required: name === "referralSource" || (inputAttrs.required !== undefined && !["phone", "email"].includes(name)),
+      required: ["name", "fullName", "phone", "email", "services", "serviceNeeded", "referralSource"].includes(name) || inputAttrs.required !== undefined,
       label: label ? text(label).trim() : name,
       content: serialize(input),
     };
     delete field.attrs.required;
     if (name === "referralSource") {
       referral = field;
-    } else if (homepage && name === "services") {
-      field.options = input.childNodes.filter((option) => option.tagName === "option")
-        .map((option) => ({ value: attribute(option, "value") ?? text(option), label: text(option).trim() }));
-      fields.service.push(field);
     } else if (contactFields.has(name)) {
       fields.contact.push(field);
-    } else if (project && projectFields.has(name)) {
-      fields.access.push(field);
-    } else {
+    } else if (schedulingFields.has(name)) {
       fields.move.push(field);
+    } else {
+      fields.details.push(field);
     }
   }
 
-  const moveStep = {
-    kind: "move",
-    title: marketplace ? "Where is the pickup?" : project ? "Project details" : "Move details",
-    fields: fields.move,
-  };
-  const contactStep = { kind: "contact", title: "Contact details", fields: fields.contact };
+  if (referral) fields.details.push(referral);
+  const contactOrder = ["name", "fullName", "email", "phone", "businessName", "services", "serviceNeeded"];
+  fields.contact.sort((left, right) => contactOrder.indexOf(left.name) - contactOrder.indexOf(right.name));
   const steps = [
-    contactStep,
-    { kind: "service", title: "Choose a service", fields: fields.service },
-    moveStep,
-    { kind: "access", title: "Access and inventory", fields: fields.access },
-  ].filter((step) => step.fields.length);
-  if (referral) steps.at(-1).fields.push(referral);
+    { kind: "contact", title: "Contact and service", fields: fields.contact },
+    { kind: "move", title: marketplace ? "Pickup and drop-off" : project ? "Project date and location" : "Date and locations", fields: fields.move },
+    { kind: "details", title: project ? "Access and inventory" : "Final details", fields: fields.details },
+  ];
 
   return {
     attrs: formAttrs,
     hidden: hidden.join(""),
     sms,
     marketplace,
+    fixedService: marketplace ? "Facebook Marketplace Pickup" : undefined,
     submitLabel: attribute(submit, "data-default-text") || text(submit).trim(),
     loadingLabel: attribute(submit, "data-loading-text") || "Sending your request…",
     steps,
@@ -122,7 +114,7 @@ export function loadPage(filename) {
     if (node.tagName === "form" && (attribute(node, "data-crm-quote-form") !== undefined || id === "marketplace-pickup-form") &&
         attribute(node, "data-service-type") !== "employment") {
       if (quote) throw new Error(`Multiple quote forms on ${filename}`);
-      quote = quoteData(node, homepage);
+      quote = quoteData(node);
       const siblings = node.parentNode.childNodes;
       siblings[siblings.indexOf(node)] = { nodeName: "#comment", data: "comfort-moving-quote", parentNode: node.parentNode };
     }

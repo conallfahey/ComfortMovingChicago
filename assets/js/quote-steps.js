@@ -4,17 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = form.querySelector("[data-quote-progress]");
     const bar = form.querySelector("[data-quote-bar]");
     const label = form.querySelector("[data-quote-step-label]");
-    const phone = form.elements.namedItem("phone");
-    const email = form.elements.namedItem("email");
-    const picker = form.querySelector("[data-contact-picker]");
-    const methods = {
-      phone: { input: phone, field: form.querySelector('[data-contact-input="phone"]') },
-      email: { input: email, field: form.querySelector('[data-contact-input="email"]') },
-    };
     const submit = form.querySelector('button[type="submit"]');
     let current = 0;
 
     form.noValidate = true;
+    form.dataset.quoteReady = "";
     progress.hidden = false;
     submit.hidden = false;
     form.querySelectorAll("[data-quote-navigation], [data-quote-back]").forEach((control) => {
@@ -23,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showStep(index, focusHeading = true) {
       current = index;
-      panels.forEach((panel, step) => { panel.hidden = step !== index; });
+      panels.forEach((panel, step) => { panel.inert = step !== index; });
       bar.value = index + 1;
       label.textContent = `Step ${index + 1} of ${panels.length}`;
       if (focusHeading) {
@@ -77,29 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function focusInvalid(control) {
       if (control.hasAttribute("aria-invalid")) control.focus();
       else control.reportValidity();
-    }
-
-    function chooseContact(method) {
-      for (const [key, { input, field }] of Object.entries(methods)) {
-        const selected = key === method;
-        field.hidden = !selected;
-        input.disabled = !selected;
-        input.required = selected;
-        if (!selected) validateField(input);
-        picker.querySelector(`[data-contact-method="${key}"]`).setAttribute("aria-pressed", String(selected));
-      }
-    }
-
-    if (picker && phone && email) {
-      picker.hidden = false;
-      chooseContact(email.value.trim() && !phone.value.trim() ? "email" : "phone");
-      picker.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-contact-method]");
-        if (!button || button.getAttribute("aria-pressed") === "true" || submit.disabled) return;
-        const method = button.dataset.contactMethod;
-        chooseContact(method);
-        methods[method].input.focus();
-      });
     }
 
     function advance() {

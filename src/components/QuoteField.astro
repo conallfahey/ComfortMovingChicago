@@ -1,5 +1,5 @@
 ---
-const { field, method } = Astro.props;
+const { field } = Astro.props;
 const { attrs, tag, label, required, content } = field;
 const optional = field.name === "details" && !required;
 const contactLabel = { name: "Full name", fullName: "Full name", phone: "Phone number", email: "Email address" }[field.name];
@@ -9,13 +9,14 @@ const inputAttrs = {
   "aria-describedby": [attrs["aria-describedby"], errorId].filter(Boolean).join(" "),
   required,
 };
-if (method) {
-  inputAttrs.inputmode = method === "phone" ? "tel" : "email";
-  if (method === "email") inputAttrs.autocapitalize = "none";
+if (field.name === "phone") inputAttrs.inputmode = "tel";
+if (field.name === "email") {
+  inputAttrs.inputmode = "email";
+  inputAttrs.autocapitalize = "none";
 }
 if (contactLabel) delete inputAttrs.placeholder;
 ---
-<div class:list={["cmc-quote-field", (tag === "textarea" || field.name === "referralSource" || method) && "cmc-quote-wide"]} data-contact-input={method}>
+<div class:list={["cmc-quote-field", (tag === "textarea" || ["referralSource", "services", "serviceNeeded"].includes(field.name)) && "cmc-quote-wide"]}>
   <label for={attrs.id}>{contactLabel ?? label}{optional && <span> (optional)</span>}</label>
   {tag === "select" && <select {...inputAttrs} set:html={content} />}
   {tag === "textarea" && <textarea {...inputAttrs} set:html={content} />}
