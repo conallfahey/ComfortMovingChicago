@@ -1,4 +1,4 @@
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   for (const form of document.querySelectorAll("[data-quote-planner]")) {
     const panels = Array.from(form.querySelectorAll("[data-quote-panel]"));
     const progress = form.querySelector("[data-quote-progress]");
@@ -6,9 +6,12 @@
     const label = form.querySelector("[data-quote-step-label]");
     const phone = form.elements.namedItem("phone");
     const email = form.elements.namedItem("email");
-    const contact = panels.find((panel) => panel.dataset.quotePanel === "contact");
+    const picker = form.querySelector("[data-contact-picker]");
+    const methods = {
+      phone: { input: phone, field: form.querySelector('[data-contact-input="phone"]') },
+      email: { input: email, field: form.querySelector('[data-contact-input="email"]') },
+    };
     const submit = form.querySelector('button[type="submit"]');
-    const name = form.elements.namedItem("name") || form.elements.namedItem("fullName");
     let current = 0;
 
     form.noValidate = true;
@@ -33,29 +36,83 @@
       }
     }
 
-    function firstInvalid(panel) {
-      if (panel === contact) {
-        if (phone && email) phone.setCustomValidity(phone.value.trim() || email.value.trim()
+    function fieldMessage(control) {
+      if (!control.willValidate) return "";
+      const { name, validity } = control;
+      const value = control.value.trim();
+      if (name === "name" || name === "fullName") return value ? "" : "Enter your name.";
+      if (name === "phone") {
+        if (!value) return "Enter your phone number.";
+        const digits = value.replace(/\D/g, "").length;
+        return /^\+?[\d().\s-]+$/.test(value) && digits >= 7 && digits <= 15
           ? ""
-          : "Enter a phone number or an email address.");
-        if (name) name.setCustomValidity(name.value.trim() ? "" : "Enter your name.");
+          : "Enter a valid phone number.";
       }
-      return Array.from(panel.querySelectorAll("input, select, textarea"))
-        .find((control) => control.willValidate && !control.checkValidity());
+      if (name === "email" && validity.valueMissing) return "Enter your email address.";
+      if (name === "email" && validity.typeMismatch) return "Enter a valid email address.";
+      if (name === "referralSource" && validity.valueMissing) return "Choose how you heard about us.";
+      return validity.valid ? "" : control.validationMessage;
+    }
+
+    function validateField(control) {
+      const message = fieldMessage(control);
+      const error = control.closest(".cmc-quote-field")?.querySelector("[data-quote-error]");
+      if (error) {
+        error.textContent = message;
+        error.hidden = !message;
+        if (message) control.setAttribute("aria-invalid", "true");
+        else control.removeAttribute("aria-invalid");
+      }
+      return message;
+    }
+
+    function firstInvalid(panel) {
+      let first;
+      for (const control of panel.querySelectorAll("input, select, textarea")) {
+        if (validateField(control) && !first) first = control;
+      }
+      return first;
+    }
+
+    function focusInvalid(control) {
+      if (control.hasAttribute("aria-invalid")) control.focus();
+      else control.reportValidity();
+    }
+
+    function chooseContact(method) {
+      for (const [key, { input, field }] of Object.entries(methods)) {
+        const selected = key === method;
+        field.hidden = !selected;
+        input.disabled = !selected;
+        input.required = selected;
+        if (!selected) validateField(input);
+        picker.querySelector(`[data-contact-method="${key}"]`).setAttribute("aria-pressed", String(selected));
+      }
+    }
+
+    if (picker && phone && email) {
+      picker.hidden = false;
+      chooseContact(email.value.trim() && !phone.value.trim() ? "email" : "phone");
+      picker.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-contact-method]");
+        if (!button || button.getAttribute("aria-pressed") === "true" || submit.disabled) return;
+        const method = button.dataset.contactMethod;
+        chooseContact(method);
+        methods[method].input.focus();
+      });
     }
 
     function advance() {
       const invalid = firstInvalid(panels[current]);
       if (invalid) {
-        invalid.reportValidity();
+        focusInvalid(invalid);
         return;
       }
       showStep(current + 1);
     }
 
     form.addEventListener("input", (event) => {
-      if (event.target === phone || event.target === email) phone?.setCustomValidity("");
-      if (event.target === name) name.setCustomValidity("");
+      if (event.target.hasAttribute("aria-invalid")) validateField(event.target);
     });
     form.addEventListener("click", (event) => {
       if (submit.disabled) return;
@@ -71,7 +128,7 @@
           event.preventDefault();
           event.stopImmediatePropagation();
           showStep(index);
-          invalid.reportValidity();
+          focusInvalid(invalid);
           return;
         }
         return;

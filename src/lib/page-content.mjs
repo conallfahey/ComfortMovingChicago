@@ -17,7 +17,7 @@ function remove(node) {
   siblings.splice(siblings.indexOf(node), 1);
 }
 
-const contactFields = new Set(["name", "fullName", "phone", "email", "referralSource"]);
+const contactFields = new Set(["name", "fullName", "phone", "email"]);
 const projectFields = new Set(["buildingType", "coiRequired", "freightElevatorOrDock", "itemList", "details"]);
 const autocomplete = { name: "name", fullName: "name", phone: "tel", email: "email", businessName: "organization" };
 
@@ -29,6 +29,7 @@ function quoteData(form, homepage) {
   const project = nodes.some((node) => attribute(node, "name") === "projectAddress");
   const fields = { service: [], move: [], access: [], contact: [] };
   const hidden = [];
+  let referral;
   let sms;
 
   for (const input of nodes.filter((node) => ["input", "select", "textarea"].includes(node.tagName))) {
@@ -54,7 +55,9 @@ function quoteData(form, homepage) {
       content: serialize(input),
     };
     delete field.attrs.required;
-    if (homepage && name === "services") {
+    if (name === "referralSource") {
+      referral = field;
+    } else if (homepage && name === "services") {
       field.options = input.childNodes.filter((option) => option.tagName === "option")
         .map((option) => ({ value: attribute(option, "value") ?? text(option), label: text(option).trim() }));
       fields.service.push(field);
@@ -73,9 +76,13 @@ function quoteData(form, homepage) {
     fields: fields.move,
   };
   const contactStep = { kind: "contact", title: "Contact details", fields: fields.contact };
-  const steps = homepage
-    ? [{ kind: "service", title: "Choose a service", fields: fields.service }, contactStep, moveStep]
-    : [moveStep, contactStep, { kind: "access", title: "Access and inventory", fields: fields.access }];
+  const steps = [
+    contactStep,
+    { kind: "service", title: "Choose a service", fields: fields.service },
+    moveStep,
+    { kind: "access", title: "Access and inventory", fields: fields.access },
+  ].filter((step) => step.fields.length);
+  if (referral) steps.at(-1).fields.push(referral);
 
   return {
     attrs: formAttrs,
@@ -84,7 +91,7 @@ function quoteData(form, homepage) {
     marketplace,
     submitLabel: attribute(submit, "data-default-text") || text(submit).trim(),
     loadingLabel: attribute(submit, "data-loading-text") || "Sending your request…",
-    steps: steps.filter((step) => step.fields.length),
+    steps,
   };
 }
 

@@ -305,7 +305,55 @@
 }
 
 .cmc-quote-form textarea.cmc-quote-input { min-height: 66px; resize: vertical; }
-.cmc-quote-form .cmc-contact-hint { margin: -8px 0 14px; color: var(--cmc-muted); font-size: .84rem; }
+.cmc-quote-form .cmc-contact-hint {
+  margin: 8px 0 0;
+  color: var(--cmc-muted);
+  font-size: .8rem;
+  text-align: center;
+}
+
+.cmc-contact-method { min-width: 0; padding: 0; margin: 0; border: 0; }
+.cmc-contact-method legend {
+  float: none;
+  width: auto;
+  margin: 0 0 5px;
+  color: var(--cmc-ink);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.cmc-contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #eef1f5;
+}
+
+.cmc-contact-options button {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cmc-muted);
+  font: 700 .9rem "CMC Body", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.cmc-contact-options button[aria-pressed="true"] {
+  border-color: var(--cmc-line);
+  background: white;
+  color: var(--cmc-ink);
+  box-shadow: 0 1px 2px #101e3312;
+}
+
+.cmc-quote-form .cmc-quote-input[aria-invalid="true"] { border-color: #a5241b; }
+.cmc-quote-form .cmc-quote-error {
+  margin: 5px 0 0;
+  color: #a5241b;
+  font: 600 .8rem / 1.35 "CMC Body", system-ui, sans-serif;
+}
 .cmc-quote-actions { display: flex; gap: 10px; margin-top: 16px; }
 .cmc-quote-actions .cmc-button { flex: 1; justify-content: center; min-height: 48px; }
 .cmc-quote-back {

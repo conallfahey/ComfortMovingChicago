@@ -4,7 +4,7 @@ import QuoteField from "./QuoteField.astro";
 const { config } = Astro.props;
 const { attrs, hidden, steps, sms, marketplace, submitLabel, loadingLabel } = config;
 const formId = attrs.id || "moving-quote-planner";
-const contactHint = `${formId}-contact-hint`;
+const contactMethods = { phone: "Phone", email: "Email" };
 ---
 <form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner>
   <Fragment set:html={hidden} />
@@ -16,7 +16,6 @@ const contactHint = `${formId}-contact-hint`;
     {steps.map(({ kind, title, fields }, index) => (
       <section class="cmc-quote-panel" data-quote-panel={kind} aria-labelledby={`${formId}-step-${index + 1}`}>
         <h3 id={`${formId}-step-${index + 1}`} tabindex="-1">{title}</h3>
-        {kind === "contact" && <p class="cmc-contact-hint" id={contactHint}>Phone or email is enough.</p>}
         {kind === "service" ? (
           <fieldset class="cmc-service-choices">
             <legend class="cmc-visually-hidden">Type of service</legend>
@@ -27,11 +26,26 @@ const contactHint = `${formId}-contact-hint`;
               </label>
             ))}
           </fieldset>
+        ) : kind === "contact" ? (
+          <div class="cmc-quote-fields cmc-contact-fields">
+            {fields.filter(({ name }) => name === "name" || name === "fullName").map((field) => <QuoteField field={field} />)}
+            <fieldset class="cmc-contact-method cmc-quote-wide" data-contact-picker hidden>
+              <legend>How should we contact you?</legend>
+              <div class="cmc-contact-options">
+                {Object.entries(contactMethods).map(([method, label]) => (
+                  <button type="button" data-contact-method={method} aria-pressed={method === "phone"}>{label}</button>
+                ))}
+              </div>
+            </fieldset>
+            {fields.map((field) => {
+              if (field.name === "name" || field.name === "fullName") return null;
+              const method = Object.hasOwn(contactMethods, field.name) ? field.name : undefined;
+              return <QuoteField field={field} method={method} />;
+            })}
+          </div>
         ) : (
           <div class="cmc-quote-fields">
-            {fields.map((field) => (
-              <QuoteField field={field} hint={["phone", "email"].includes(field.name) ? contactHint : undefined} />
-            ))}
+            {fields.map((field) => <QuoteField field={field} />)}
           </div>
         )}
         <div class="cmc-quote-actions" data-quote-navigation hidden>
@@ -44,6 +58,7 @@ const contactHint = `${formId}-contact-hint`;
             )
             : <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>}
         </div>
+        {kind === "contact" && <p class="cmc-contact-hint">Your request is sent after the last step.</p>}
         {index === steps.length - 1 && marketplace && (
           <>
             {sms && <div class="cmc-quote-legal" set:html={sms} />}

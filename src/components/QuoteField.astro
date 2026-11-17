@@ -1,11 +1,24 @@
 ---
-const { field, hint } = Astro.props;
+const { field, method } = Astro.props;
 const { attrs, tag, label, required, content } = field;
 const optional = field.name === "details" && !required;
+const contactLabel = { name: "Full name", fullName: "Full name", phone: "Phone number", email: "Email address" }[field.name];
+const errorId = `${attrs.id}-error`;
+const inputAttrs = {
+  ...attrs,
+  "aria-describedby": [attrs["aria-describedby"], errorId].filter(Boolean).join(" "),
+  required,
+};
+if (method) {
+  inputAttrs.inputmode = method === "phone" ? "tel" : "email";
+  if (method === "email") inputAttrs.autocapitalize = "none";
+}
+if (contactLabel) delete inputAttrs.placeholder;
 ---
-<div class:list={["cmc-quote-field", (tag === "textarea" || field.name === "referralSource") && "cmc-quote-wide"]}>
-  <label for={attrs.id}>{label}{optional && <span> (optional)</span>}</label>
-  {tag === "select" && <select {...attrs} required={required} set:html={content} />}
-  {tag === "textarea" && <textarea {...attrs} required={required} set:html={content} />}
-  {tag === "input" && <input {...attrs} aria-describedby={hint || attrs["aria-describedby"]} required={required} />}
+<div class:list={["cmc-quote-field", (tag === "textarea" || field.name === "referralSource" || method) && "cmc-quote-wide"]} data-contact-input={method}>
+  <label for={attrs.id}>{contactLabel ?? label}{optional && <span> (optional)</span>}</label>
+  {tag === "select" && <select {...inputAttrs} set:html={content} />}
+  {tag === "textarea" && <textarea {...inputAttrs} set:html={content} />}
+  {tag === "input" && <input {...inputAttrs} />}
+  <p id={errorId} class="cmc-quote-error" data-quote-error hidden></p>
 </div>

@@ -53,7 +53,7 @@
     var getFieldValue = function (form, names) {
       for (var i = 0; i < names.length; i += 1) {
         var field = form.elements.namedItem(names[i]);
-        if (!field) continue;
+        if (!field || field.disabled) continue;
         var value = clean(field.value);
         if (value) return value;
       }

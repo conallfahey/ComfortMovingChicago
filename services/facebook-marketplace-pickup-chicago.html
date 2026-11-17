@@ -700,7 +700,10 @@
           return text ? text : undefined;
         };
 
-        const valueById = (id) => clean(document.getElementById(id)?.value);
+        const valueById = (id) => {
+          const field = document.getElementById(id);
+          return field && !field.disabled ? clean(field.value) : undefined;
+        };
 
         const collectFormFields = () => {
           const fields = {};

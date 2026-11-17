@@ -111,16 +111,16 @@
     "ownerNote": "The Astro branch is ready for review. Include this entry in the owner report after the production release."
   },
   {
-    "id": "2026-11-quote-contact-second",
+    "id": "2026-11-quote-contact-first",
     "area": "website",
     "type": "feature",
-    "title": "Moved contact details to the second quote step",
-    "summary": "Simplified the quote card and placed contact details and the required referral question on step two for all quote and pickup forms.",
-    "impact": "Customers see fewer choices at once and can continue with either a phone number or email address.",
+    "title": "Simplified the first step of the quote form",
+    "summary": "The first step asks for a name and a choice of phone or email, with errors shown beside the fields. The final step includes the required referral question.",
+    "impact": "Customers start with two fields and can correct missing or mistyped details before continuing.",
     "shippedAt": "2026-11-16",
     "shippedBy": "Codex",
     "source": "codex",
-    "relatedFiles": ["src/components/QuotePlanner.astro", "src/lib/page-content.mjs", "assets/css/astro-refresh.css"],
+    "relatedFiles": ["src/components/QuotePlanner.astro", "src/lib/page-content.mjs", "assets/css/astro-refresh.css", "assets/js/quote-steps.js"],
     "tags": ["quote-form", "lead-capture", "design"],
     "includeInReport": false,
     "ownerNote": "This change is available on the Astro branch for review."
