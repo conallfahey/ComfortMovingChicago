@@ -74,6 +74,16 @@ function quoteData(form, homepage) {
     }
   }
 
+  const moveStep = {
+    kind: "move",
+    title: marketplace ? "Where is the pickup?" : project ? "Project details" : "Move details",
+    fields: fields.move,
+  };
+  const contactStep = { kind: "contact", title: "Contact details", fields: fields.contact };
+  const steps = homepage
+    ? [{ kind: "service", title: "Choose a service", fields: fields.service }, contactStep, moveStep]
+    : [moveStep, contactStep, { kind: "access", title: "Access and inventory", fields: fields.access }];
+
   return {
     attrs: formAttrs,
     hidden: hidden.join(""),
@@ -82,12 +92,7 @@ function quoteData(form, homepage) {
     marketplace,
     submitLabel: attribute(submit, "data-default-text") || text(submit).trim(),
     loadingLabel: attribute(submit, "data-loading-text") || "Sending your request…",
-    steps: [
-      { kind: "service", title: "What do you need help with?", fields: fields.service },
-      { kind: "move", title: marketplace ? "Where is the pickup?" : project ? "Tell us about the project" : "Tell us about your move", fields: fields.move },
-      { kind: "access", title: "What should the crew know?", fields: fields.access },
-      { kind: "contact", title: "How can we reach you?", fields: fields.contact },
-    ].filter((step) => step.fields.length),
+    steps: steps.filter((step) => step.fields.length),
   };
 }
 

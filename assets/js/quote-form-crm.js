@@ -135,7 +135,7 @@
       link.textContent = 'Privacy Policy';
       notice.appendChild(link);
 
-      var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
+      var submitContainer = submitButton.closest('[data-quote-navigation], .col-12') || submitButton.parentElement;
       submitContainer.insertAdjacentElement('afterend', notice);
     };
 
@@ -158,7 +158,7 @@
       label.textContent = 'Opt out of sms updates if you book with us';
       consent.append(input, label);
 
-      var submitContainer = submitButton.closest('.col-12') || submitButton.parentElement;
+      var submitContainer = submitButton.closest('[data-quote-navigation], .col-12') || submitButton.parentElement;
       submitContainer.insertAdjacentElement('afterend', consent);
     };
 

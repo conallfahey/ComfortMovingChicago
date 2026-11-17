@@ -1,5 +1,5 @@
 ---
-const { field } = Astro.props;
+const { field, hint } = Astro.props;
 const { attrs, tag, label, required, content } = field;
 const optional = field.name === "details" && !required;
 ---
@@ -7,5 +7,5 @@ const optional = field.name === "details" && !required;
   <label for={attrs.id}>{label}{optional && <span> (optional)</span>}</label>
   {tag === "select" && <select {...attrs} required={required} set:html={content} />}
   {tag === "textarea" && <textarea {...attrs} required={required} set:html={content} />}
-  {tag === "input" && <input {...attrs} required={required} />}
+  {tag === "input" && <input {...attrs} aria-describedby={hint || attrs["aria-describedby"]} required={required} />}
 </div>

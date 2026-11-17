@@ -4,6 +4,7 @@ import QuoteField from "./QuoteField.astro";
 const { config } = Astro.props;
 const { attrs, hidden, steps, referral, sms, marketplace, submitLabel, loadingLabel } = config;
 const formId = attrs.id || "moving-quote-planner";
+const contactHint = `${formId}-contact-hint`;
 ---
 <form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner>
   <Fragment set:html={hidden} />
@@ -15,6 +16,7 @@ const formId = attrs.id || "moving-quote-planner";
     {steps.map(({ kind, title, fields }, index) => (
       <section class="cmc-quote-panel" data-quote-panel={kind} aria-labelledby={`${formId}-step-${index + 1}`}>
         <h3 id={`${formId}-step-${index + 1}`} tabindex="-1">{title}</h3>
+        {kind === "contact" && <p class="cmc-contact-hint" id={contactHint}>Phone or email is enough.</p>}
         {kind === "service" ? (
           <fieldset class="cmc-service-choices">
             <legend class="cmc-visually-hidden">Type of service</legend>
@@ -27,33 +29,32 @@ const formId = attrs.id || "moving-quote-planner";
           </fieldset>
         ) : (
           <div class="cmc-quote-fields">
-            {fields.map((field) => <QuoteField field={field} />)}
+            {fields.map((field) => (
+              <QuoteField field={field} hint={["phone", "email"].includes(field.name) ? contactHint : undefined} />
+            ))}
           </div>
         )}
-        {kind === "contact" && (
-          <>
-            <p class="cmc-contact-hint" data-quote-contact-hint>Enter a phone number or an email address.</p>
-            {referral && (
-              <details class="cmc-quote-optional">
-                <summary>How did you hear about us? <span>(optional)</span></summary>
-                <QuoteField field={referral} />
-              </details>
-            )}
-            {marketplace && sms && <div class="cmc-quote-legal" set:html={sms} />}
-            <div class="cmc-quote-actions">
-              <button type="button" class="cmc-quote-back" data-quote-back hidden>Back</button>
+        {kind === "contact" && referral && (
+          <details class="cmc-quote-optional">
+            <summary>How did you hear about us? <span>(optional)</span></summary>
+            <QuoteField field={referral} />
+          </details>
+        )}
+        <div class="cmc-quote-actions" data-quote-navigation hidden>
+          {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}
+          {index === steps.length - 1
+            ? (
               <button class="cmc-button cmc-quote-submit" type="submit" data-default-text={submitLabel} data-loading-text={loadingLabel} hidden>
                 <span class="quote-submit-text">{submitLabel}</span>
               </button>
-            </div>
-            {marketplace && <p class="cmc-quote-legal">We use your information to respond to your request and provide our services. <a href="/privacy-policy.html">Privacy Policy</a></p>}
+            )
+            : <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>}
+        </div>
+        {index === steps.length - 1 && marketplace && (
+          <>
+            {sms && <div class="cmc-quote-legal" set:html={sms} />}
+            <p class="cmc-quote-legal">We use your information to respond to your request and provide our services. <a href="/privacy-policy.html">Privacy Policy</a></p>
           </>
-        )}
-        {kind !== "contact" && (
-          <div class="cmc-quote-actions" data-quote-navigation hidden>
-            {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}
-            <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>
-          </div>
         )}
       </section>
     ))}
