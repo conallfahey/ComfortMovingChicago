@@ -76,7 +76,7 @@ Moving blankets, shrink wrap, and disassembly are planned around the item, doorw
 
 ### Starting rate and quote details
 
-[Rates currently start at $150 per hour](https://comfortmovingchicago.com/blog/blog-understanding-moving-quotes.html) for two movers and a truck, with a two-hour minimum. Confirm travel time, materials, special-item work, and the expected crew size in your written quote.
+[Rates currently start at $135 per hour](https://comfortmovingchicago.com/blog/blog-understanding-moving-quotes.html) for two movers and a truck, with a two-hour minimum. Confirm travel time, materials, special-item work, and the expected crew size in your written quote.
 
 ## Real Work from Chicago Move Days
 
@@ -136,7 +136,7 @@ Quick answers to common moving questions
 
 ### How much does a move cost?
 
-Our [rates](https://comfortmovingchicago.com/blog/blog-understanding-moving-quotes.html) start at $150/hour for 2 movers and a truck. Final cost depends on the size of your move, distance, and any additional services like packing or furniture assembly.
+Our [rates](https://comfortmovingchicago.com/blog/blog-understanding-moving-quotes.html) start at $135/hour for 2 movers and a truck. Final cost depends on the size of your move, distance, and any additional services like packing or furniture assembly.
 
 ### Do you provide packing materials?
 
