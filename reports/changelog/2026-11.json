@@ -116,7 +116,7 @@
     "type": "feature",
     "title": "Simplified the first step of the quote form",
     "summary": "The three slides collect contact and service information, then timing and locations, then move details and the required referral source.",
-    "impact": "Customers can complete related fields together, with the buttons directly below each slide’s fields.",
+    "impact": "The quote card holds its height between slides, with the buttons directly below each slide’s fields.",
     "shippedAt": "2026-11-16",
     "shippedBy": "Codex",
     "source": "codex",

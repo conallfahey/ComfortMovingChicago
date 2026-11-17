@@ -315,7 +315,10 @@
   text-align: center;
 }
 
-[data-quote-ready] .cmc-quote-panel[inert] { display: none; }
+/* Size the card to its tallest slide without pushing the buttons away from the fields. */
+[data-quote-ready] .cmc-quote-panels { display: grid; }
+[data-quote-ready] .cmc-quote-panel { grid-area: 1 / 1; min-width: 0; }
+[data-quote-ready] .cmc-quote-panel[inert] { visibility: hidden; }
 .cmc-quote-service { margin: 0; color: var(--cmc-ink); font-size: .875rem; }
 .cmc-quote-service strong { display: block; }
 
