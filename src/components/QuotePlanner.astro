@@ -2,7 +2,7 @@
 import QuoteField from "./QuoteField.astro";
 
 const { config } = Astro.props;
-const { attrs, hidden, steps, referral, sms, marketplace, submitLabel, loadingLabel } = config;
+const { attrs, hidden, steps, sms, marketplace, submitLabel, loadingLabel } = config;
 const formId = attrs.id || "moving-quote-planner";
 const contactHint = `${formId}-contact-hint`;
 ---
@@ -33,12 +33,6 @@ const contactHint = `${formId}-contact-hint`;
               <QuoteField field={field} hint={["phone", "email"].includes(field.name) ? contactHint : undefined} />
             ))}
           </div>
-        )}
-        {kind === "contact" && referral && (
-          <details class="cmc-quote-optional">
-            <summary>How did you hear about us? <span>(optional)</span></summary>
-            <QuoteField field={referral} />
-          </details>
         )}
         <div class="cmc-quote-actions" data-quote-navigation hidden>
           {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}

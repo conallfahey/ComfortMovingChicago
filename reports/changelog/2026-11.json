@@ -115,7 +115,7 @@
     "area": "website",
     "type": "feature",
     "title": "Moved contact details to the second quote step",
-    "summary": "Simplified the quote card and placed contact details on step two for all quote and pickup forms.",
+    "summary": "Simplified the quote card and placed contact details and the required referral question on step two for all quote and pickup forms.",
     "impact": "Customers see fewer choices at once and can continue with either a phone number or email address.",
     "shippedAt": "2026-11-16",
     "shippedBy": "Codex",

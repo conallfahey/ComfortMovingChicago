@@ -17,7 +17,7 @@ function remove(node) {
   siblings.splice(siblings.indexOf(node), 1);
 }
 
-const contactFields = new Set(["name", "fullName", "phone", "email"]);
+const contactFields = new Set(["name", "fullName", "phone", "email", "referralSource"]);
 const projectFields = new Set(["buildingType", "coiRequired", "freightElevatorOrDock", "itemList", "details"]);
 const autocomplete = { name: "name", fullName: "name", phone: "tel", email: "email", businessName: "organization" };
 
@@ -29,7 +29,6 @@ function quoteData(form, homepage) {
   const project = nodes.some((node) => attribute(node, "name") === "projectAddress");
   const fields = { service: [], move: [], access: [], contact: [] };
   const hidden = [];
-  let referral;
   let sms;
 
   for (const input of nodes.filter((node) => ["input", "select", "textarea"].includes(node.tagName))) {
@@ -50,18 +49,12 @@ function quoteData(form, homepage) {
       name,
       tag: input.tagName,
       attrs: { ...inputAttrs, class: "cmc-quote-input", autocomplete: autocomplete[name] ?? inputAttrs.autocomplete },
-      required: inputAttrs.required !== undefined && !["phone", "email", "referralSource"].includes(name),
+      required: name === "referralSource" || (inputAttrs.required !== undefined && !["phone", "email"].includes(name)),
       label: label ? text(label).trim() : name,
       content: serialize(input),
     };
     delete field.attrs.required;
-    if (name === "referralSource") {
-      field.content = '<option value="Other">Prefer not to say</option>' +
-        input.childNodes.filter((option) => option.tagName === "option" &&
-          !["", "Other"].includes(attribute(option, "value")) && attribute(option, "selected") === undefined)
-          .map(serializeOuter).join("");
-      referral = field;
-    } else if (homepage && name === "services") {
+    if (homepage && name === "services") {
       field.options = input.childNodes.filter((option) => option.tagName === "option")
         .map((option) => ({ value: attribute(option, "value") ?? text(option), label: text(option).trim() }));
       fields.service.push(field);
@@ -87,7 +80,6 @@ function quoteData(form, homepage) {
   return {
     attrs: formAttrs,
     hidden: hidden.join(""),
-    referral,
     sms,
     marketplace,
     submitLabel: attribute(submit, "data-default-text") || text(submit).trim(),

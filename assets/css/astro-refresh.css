@@ -291,8 +291,7 @@
   font-weight: 700;
 }
 
-.cmc-quote-field label span,
-.cmc-quote-optional summary span { color: var(--cmc-muted); font-weight: 400; }
+.cmc-quote-field label span { color: var(--cmc-muted); font-weight: 400; }
 .cmc-quote-form .cmc-quote-input {
   box-sizing: border-box;
   width: 100%;
@@ -344,10 +343,6 @@
 
 .cmc-service-choice:has(:checked) { border-color: #b74a13; background: #fff7f1; }
 .cmc-service-choice input { margin: 0; accent-color: #b74a13; }
-.cmc-quote-form .cmc-quote-optional { margin-top: 11px; font-size: .78rem; }
-.cmc-quote-optional summary { padding-block: 5px; font-weight: 700; cursor: pointer; }
-.cmc-quote-optional .cmc-quote-field { margin-top: 5px; }
-.cmc-quote-optional label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .cmc-quote-legal,
 .cmc-quote-form [data-sms-consent],
 .cmc-quote-form [data-privacy-notice] {
