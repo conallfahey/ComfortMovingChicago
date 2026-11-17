@@ -139,5 +139,20 @@
     "tags": ["design", "homepage"],
     "includeInReport": false,
     "ownerNote": "Available on the Astro branch for review."
+  },
+  {
+    "id": "2026-11-site-off-white-background",
+    "area": "website",
+    "type": "feature",
+    "title": "Used a consistent off-white background across the site",
+    "summary": "Extended the off-white background from the homepage's Simple, No Surprises section to the header and light page sections.",
+    "impact": "The website has a consistent background across page types.",
+    "shippedAt": "2026-11-16",
+    "shippedBy": "Codex",
+    "source": "codex",
+    "relatedFiles": ["assets/css/astro-refresh.css"],
+    "tags": ["design"],
+    "includeInReport": false,
+    "ownerNote": "Available on the Astro branch for review."
   }
 ]

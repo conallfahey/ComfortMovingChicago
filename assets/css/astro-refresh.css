@@ -25,6 +25,10 @@
   font-family: "CMC Body", system-ui, sans-serif;
 }
 
+.cmc-site .cmc-page :is(main, section):is(.bg-white, .bg-light, .bg-light-gray, .bg-light-pattern, .bg-soft, .final-cta-section) {
+  background-color: var(--cmc-surface) !important;
+}
+
 .cmc-site [hidden] { display: none !important; }
 .cmc-site :is(a, button, summary, input, select, textarea):focus-visible {
   outline: 3px solid #2163a9;
@@ -55,7 +59,7 @@
   position: sticky;
   top: 0;
   z-index: 1020;
-  background: #fff;
+  background: var(--cmc-surface);
   border-bottom: 1px solid var(--cmc-line);
 }
 
