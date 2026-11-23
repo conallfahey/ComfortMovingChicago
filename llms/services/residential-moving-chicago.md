@@ -18,9 +18,7 @@ Residential movers for larger homes, suburban houses, townhomes, and condo moves
 - Helpful for Oak Park, Evanston, Skokie, Park Ridge, and city-to-suburb moves.
 - Protection planning for floors, doors, stairs, mirrors, TVs, beds, and dressers.
 
-160+
-
-5-Star Reviews
+175+ verified reviews
 
 4
 

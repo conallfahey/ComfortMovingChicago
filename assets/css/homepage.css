@@ -1,0 +1,495 @@
+.cmc-home .cmc-header-inner,
+.cmc-home main > :is(.hero, .section) > .container {
+  width: min(calc(100% - 2 * var(--cmc-content-inset)), var(--cmc-content-width));
+  max-width: none;
+  padding-inline: 0;
+  margin-inline: auto;
+}
+
+.cmc-home .cmc-header-inner { min-height: 86px; }
+.cmc-home .hero { padding: 42px 0 0; }
+.cmc-home .hero-scrim {
+  background: linear-gradient(90deg, rgb(6 10 20 / 92%), rgb(6 10 20 / 80%));
+}
+
+.cmc-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 86px);
+}
+
+.cmc-hero-copy { min-width: 0; padding-block: 12px; }
+.cmc-home .hero #quoteForm { width: 100%; min-width: 0; align-self: center; }
+.cmc-home .hero h1 {
+  margin: 22px 0;
+  font-size: clamp(48px, 4.7vw, 68px);
+  line-height: 1.02;
+  text-wrap: normal;
+}
+
+.cmc-home .hero h1 .cmc-hero-title { display: block; color: #fff; }
+.cmc-home .hero h1 .cmc-hero-accent { color: var(--brand-orange); }
+.cmc-home .hero h1 .cmc-hero-promise {
+  display: block;
+  margin-top: 12px;
+  color: #fff;
+  font-size: .64em;
+  line-height: 1.14;
+}
+
+.cmc-home .hero-sub { max-width: 43ch; font-size: 15px; line-height: 1.8; font-weight: 400; margin-bottom: 22px; }
+.cmc-home .hero .hero-cta-row { gap: 14px; }
+.cmc-home .hero .hero-cta-row .btn {
+  min-height: 44px;
+  padding: 11px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+
+.cmc-home .hero .hero-avatars { display: flex; margin-top: 24px; }
+.cmc-home .hero .social-row { display: flex !important; margin: 14px 0 0 !important; gap: 18px !important; }
+.cmc-home .hero .social-row i { font-size: 17px !important; }
+.cmc-home .cmc-page .hero .quote-card {
+  border-radius: 4px;
+  border-top: 3px solid var(--cmc-orange);
+  background: var(--cmc-surface);
+  box-shadow: 0 12px 38px rgb(6 10 20 / 16%);
+}
+
+.cmc-home .quote-card-body { padding: 25px 26px; }
+.cmc-home .quote-card h2 { font-size: 23px; }
+.cmc-home .quote-card .sub { margin: 8px 0 15px; font-size: 13px; }
+.cmc-home .cmc-quote-progress { margin-block: 14px 18px; font-size: 11px; }
+.cmc-home .cmc-quote-form .cmc-quote-panel h3 { font-size: 15px; margin-bottom: 14px; }
+.cmc-home .cmc-quote-fields { gap: 13px; }
+.cmc-home .cmc-quote-field label { font-size: 12px; margin-bottom: 6px; }
+.cmc-home .cmc-quote-form .cmc-quote-input { min-height: 45px; border-radius: 4px; }
+.cmc-home .cmc-quote-actions { margin-top: 18px; }
+.cmc-home .cmc-button { border-radius: 4px; }
+.cmc-home .hero-proof-mini { margin-top: 38px; }
+.cmc-home .hero-proof-mini .proof-stat { justify-content: center; padding-block: 19px; }
+
+@media (max-width: 991px) {
+  .cmc-hero-layout { gap: 26px; }
+  .cmc-home .hero h1 { font-size: 48px; }
+  .cmc-home .hero-sub { font-size: 14px; }
+}
+
+@media (max-width: 767px) {
+  .cmc-home .cmc-header-inner { min-height: 68px; }
+  .cmc-home .hero { padding-top: 26px; }
+  .cmc-hero-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .cmc-hero-copy { display: contents; }
+  .cmc-home .hero h1 { font-size: clamp(37px, 10vw, 58px); margin: 0; }
+  .cmc-home .hero-sub { margin: -6px 0 0; line-height: 1.7; }
+  .cmc-home .hero .hero-eyebrow-pill { font-size: 10px; }
+  .cmc-home .hero #quoteForm { margin: 0; order: 0; }
+  .cmc-home .hero :is(.hero-avatars, .social-row) { order: 1; }
+  .cmc-home .hero .hero-avatars { margin: 0; }
+  .cmc-home .hero .social-row { margin: -8px 0 0 !important; }
+  .cmc-home .quote-card-body { padding: 22px 19px; }
+  .cmc-home .quote-card h2 { font-size: 22px; }
+  .cmc-home .cmc-quote-input { font-size: 16px; }
+  .cmc-home .hero-proof-mini { margin-top: 24px; }
+  .cmc-home .hero-proof-mini .proof-stat { justify-content: start; padding: 13px 6px; }
+}
+
+/* Homepage content below the hero */
+.cmc-home main > .section {
+  --home-gap: var(--cmc-card-gap);
+  --home-section-space: var(--cmc-section-space);
+  --home-panel-space: var(--cmc-panel-space);
+  padding-block: var(--home-section-space);
+  border-top: 1px solid var(--cmc-line);
+}
+
+.cmc-home .section .section-head {
+  max-width: none;
+  margin: 0 0 var(--home-gap);
+  text-align: left;
+}
+
+.cmc-home .section h2 {
+  margin: 0;
+  color: var(--cmc-ink);
+  font: 650 clamp(1.95rem, 3vw, 2.75rem) / 1.13 "CMC Display", sans-serif;
+  letter-spacing: -.015em;
+  text-transform: none;
+  text-wrap: pretty;
+}
+
+.cmc-home .section h3 {
+  margin: 0;
+  color: var(--cmc-ink);
+  font: 730 1.125rem / 1.3 "CMC Body", sans-serif;
+  letter-spacing: -.01em;
+  text-transform: none;
+}
+
+.cmc-home .section p,
+.cmc-home .faq-a {
+  margin: 0;
+  color: var(--cmc-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cmc-home .section .section-head p {
+  max-width: 65ch;
+  margin-top: 10px;
+}
+
+.cmc-home .section p a {
+  color: var(--brand-blue);
+  text-underline-offset: .16em;
+}
+
+.cmc-home :is(.cmc-home-text-link, .svc-link) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5em;
+  width: fit-content;
+  color: var(--brand-blue);
+  font-size: .9375rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.cmc-home .cmc-home-section-action { margin-top: var(--home-gap); }
+.cmc-home .section :is(.cmc-home-text-link, .svc-link, p a):hover { color: #245e9a; }
+
+.cmc-home .cmc-home-services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--cmc-line);
+  border-left: 1px solid var(--cmc-line);
+}
+
+.cmc-home .svc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: clamp(16px, 2vw, 24px);
+  border-right: 1px solid var(--cmc-line);
+  border-bottom: 1px solid var(--cmc-line);
+  background: #fff;
+}
+
+.cmc-home .svc-card:focus-within,
+.cmc-home .svc-card:hover { background: #f4f7fa; }
+.cmc-home .svc-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 3px;
+  border-radius: 6px;
+  background: #eaf0f7;
+  color: var(--brand-blue);
+  font-size: 1.2rem;
+}
+
+.cmc-home .svc-link { margin-top: auto; padding-top: 4px; }
+
+.cmc-home .cmc-process { background: #edf1f5; }
+.cmc-home .cmc-home-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--home-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmc-home .cmc-process .step-card {
+  display: flex;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #cbd7e4;
+  border-radius: 0;
+}
+
+.cmc-home .step-num {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.cmc-home .step-card p { margin-top: 5px; }
+
+.cmc-home .operations-list { border-top: 1px solid var(--cmc-line); }
+.cmc-home .operation-item {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--cmc-line);
+}
+
+.cmc-home .operation-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--brand-blue);
+  background: #eaf0f7;
+}
+
+.cmc-home .operation-item p { margin-top: 5px; }
+.cmc-home .cmc-home-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cmc-home .cmc-home-gallery figure { margin: 0; }
+.cmc-home .cmc-home-gallery-main { grid-column: 1 / -1; }
+.cmc-home .cmc-home-gallery .proof-image {
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 2 / 1;
+  background: #e2e7ed;
+}
+
+.cmc-home .cmc-home-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cmc-home .cmc-home-gallery figcaption {
+  margin-top: 6px;
+  color: var(--cmc-muted);
+  font-size: .875rem;
+  line-height: 1.45;
+}
+
+.cmc-home main > :is(.cmc-home-pricing, .final-cta-section) {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.cmc-home .cmc-home-panel {
+  display: grid;
+  gap: var(--home-gap);
+  align-items: center;
+  padding: var(--home-panel-space);
+  border-radius: 8px;
+  background: #081522;
+  color: #fff;
+}
+
+.cmc-home .section .cmc-home-panel .section-head { margin: 0; }
+.cmc-home .cmc-home-panel :is(h2, h3) { color: inherit; }
+.cmc-home .cmc-home-panel p { color: #e2e9f1; }
+.cmc-home .cmc-home-panel :is(.cmc-home-text-link, p a),
+.cmc-home .cmc-home-panel :is(.cmc-home-text-link, p a):hover { color: #fff; }
+.cmc-home .cmc-home-panel :focus-visible { outline-color: #ffad75; }
+.cmc-home .cmc-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.cmc-home .cmc-home-panel .section-head .cmc-home-actions { margin-top: 20px; }
+.cmc-home .cmc-home-panel .btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font: 700 .9375rem / 1.4 "CMC Body", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cmc-home .cmc-home-panel .btn-orange,
+.cmc-home .cmc-home-panel .btn-orange:hover { color: #081522; }
+.cmc-home .cmc-home-panel .btn-orange:hover { background: #ffa363; }
+
+.cmc-home .cmc-home-price-details { border-top: 1px solid #445364; }
+.cmc-home .check-item {
+  display: flex;
+  gap: 12px;
+  padding-block: 14px;
+  border-bottom: 1px solid #445364;
+}
+
+.cmc-home .check-item i { margin-top: 2px; color: #ffad75; }
+.cmc-home .check-item p { margin-top: 4px; }
+
+.cmc-home .cmc-home-section-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: var(--home-gap);
+}
+
+.cmc-home .cmc-home-section-bar .section-head { margin: 0; }
+.cmc-home .rev-score {
+  color: var(--cmc-ink);
+  font: 650 2rem / 1 "CMC Display", sans-serif;
+  white-space: nowrap;
+}
+
+.cmc-home .cmc-home-trio {
+  display: grid;
+  gap: var(--home-gap);
+}
+
+.cmc-home .cmc-home-article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--cmc-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cmc-home .cmc-home-article time { color: var(--cmc-muted); font-size: .875rem; }
+
+.cmc-home .cmc-faq { background: #edf1f5; }
+.cmc-home .cmc-home-questions { border-top: 1px solid #cbd7e4; }
+.cmc-home .faq-item { border-bottom: 1px solid #cbd7e4; }
+.cmc-home .faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 50px;
+  padding: 14px 4px;
+  color: var(--cmc-ink);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cmc-home .faq-q::-webkit-details-marker { display: none; }
+.cmc-home .faq-q:hover { color: #245e9a; }
+.cmc-home .faq-item[open] .faq-q i { transform: rotate(180deg); }
+.cmc-home .faq-a { max-width: 65ch; padding: 0 22px 16px 4px; }
+.cmc-home .faq-a a { color: var(--brand-blue); }
+
+.cmc-home .cmc-home-area-list { border-top: 1px solid var(--cmc-line); }
+.cmc-home .area-card {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--cmc-line);
+}
+
+.cmc-home .area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cmc-home .area-tag {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #eeefed;
+  color: var(--cmc-muted);
+  font-size: .875rem;
+  line-height: 1.4;
+}
+
+.cmc-home a.area-tag {
+  color: var(--brand-blue);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+.cmc-home a.area-tag:hover { background: #e4ebf3; }
+
+.cmc-home .cmc-home-article-link { display: block; border-radius: 8px; text-decoration: none; }
+.cmc-home .cmc-home-article-link:hover .cmc-home-article { border-color: #8ca9c6; }
+.cmc-home .cmc-home-article .cmc-home-text-link { margin-top: auto; padding-top: 4px; }
+.cmc-home .cmc-home-article-link:hover .cmc-home-text-link { color: #245e9a; }
+
+.cmc-home .final-cta {
+  background-image: linear-gradient(100deg, rgb(8 21 34 / 98%), rgb(8 21 34 / 81%)),
+    url("/Images/Chicago-Movers-Moving-Blankets-Truck.webp");
+  background-size: cover;
+  background-position: center 52%;
+}
+
+@media (min-width: 600px) {
+  .cmc-home .cmc-home-reviews .cmc-home-trio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 720px) {
+  .cmc-home .area-card {
+    grid-template-columns: minmax(152px, 1fr) minmax(0, 4fr);
+    gap: var(--home-gap);
+  }
+
+  .cmc-home .cmc-home-blog .cmc-home-trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px) {
+  .cmc-home .cmc-home-about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(28px, 5vw, 68px);
+  }
+
+  .cmc-home .cmc-home-gallery { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+  .cmc-home .cmc-home-panel { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .cmc-home .final-cta .cmc-home-actions { justify-content: end; }
+  .cmc-home .cmc-home-reviews .cmc-home-trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cmc-home .cmc-home-faq-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    grid-template-rows: auto 1fr;
+    column-gap: var(--home-gap);
+  }
+
+  .cmc-home .cmc-home-faq-grid .section-head { margin: 0; }
+  .cmc-home .cmc-home-questions { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+@media (min-width: 1080px) {
+  .cmc-home .cmc-home-services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 899px) {
+  .cmc-home .cmc-home-gallery { margin-top: var(--home-gap); }
+}
+
+@media (max-width: 719px) {
+  .cmc-home .cmc-home-steps { grid-template-columns: minmax(0, 1fr); }
+  .cmc-home .final-cta {
+    background-image: linear-gradient(100deg, rgb(8 21 34 / 97%), rgb(8 21 34 / 83%)),
+      url("/Images/Chicago-Movers-Moving-Blankets-Truck-mobile.webp");
+  }
+}
+
+@media (max-width: 575px) {
+  .cmc-home .cmc-home-services { grid-template-columns: minmax(0, 1fr); }
+  .cmc-home .svc-card {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    gap: 6px 12px;
+  }
+
+  .cmc-home .svc-icon { grid-row: 1 / span 3; }
+  .cmc-home .cmc-home-gallery .proof-image { aspect-ratio: 3 / 2; }
+}

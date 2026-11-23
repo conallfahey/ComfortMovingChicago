@@ -14,9 +14,7 @@ Stress-free moves, handled with care.
 
 Moving after decades in one home is more than just a logistical shift—it’s an emotional transition. At Comfort Moving Chicago, we specialize in gentle, professional senior relocations across the Chicago area, handling every memory with the respect it deserves.
 
-160+
-
-5-Star Reviews
+175+ verified reviews
 
 4
 

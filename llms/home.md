@@ -1,6 +1,6 @@
 ---
 title: "Free Quote | Movers Chicago | Top Rated & Affordable"
-description: "Top-rated Chicago movers with 160+ five-star reviews. Licensed, insured, affordable. Free quotes with no hidden fees."
+description: "Top-rated Chicago movers with 175+ verified reviews. Licensed, insured, affordable. Free quotes with no hidden fees."
 original_url: "https://comfortmovingchicago.com/"
 ---
 
@@ -18,9 +18,7 @@ Your neighborhood experts. Moving Chicago, one happy customer at a time.
 
 Local experts for Chicago moves. Owner-operated, fast, careful, and affordable.
 
-160+
-
-5-Star Reviews
+175+ verified reviews
 
 4
 

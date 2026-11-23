@@ -14,9 +14,7 @@ Moving a masterpiece? Trust Chicago's piano experts.
 
 We treat your instrument with the respect it deserves. Specialized equipment and experienced crews for safe piano transport.
 
-160+
-
-5-Star Reviews
+175+ verified reviews
 
 4
 
@@ -54,9 +52,17 @@ August 2, 2023
 
 Great experience! Mateo and his team moved heavy furniture carefully and quickly at an amazing rate. They even finished with 10 minutes to spare! We’ll definitely consider for any future moves and continue to recommend them to friends in the city. Thanks!!!
 
-## Heavy Lifting, Gentle Touch.
+## How We Plan a Piano Move
 
-Moving a piano requires more than just muscle; it requires technique and care. We understand the sentimental and financial value of your instrument.
+The instrument and the route determine the crew and equipment. For a quote, tell us what instrument you’re moving and whether either address has stairs, tight landings, or an elevator.
+
+### Moving an Electric Organ Upstairs
+
+Nathaniel Palmer described how our crew helped carry an electric organ upstairs. For moves with stairs, photos of the turns and landings help us judge how much room the crew will have.
+
+### Moving a Piano and a Massage Chair
+
+In a [review on our Oak Park movers page](/neighborhoods/oak-park-movers.html), Donna Dee described a move that included a piano and a massage chair. The crew took extra time with the heavy pieces and made sure everything was right before leaving.
 
 ##### Specialized Equipment
 

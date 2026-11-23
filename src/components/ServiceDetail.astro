@@ -1,0 +1,109 @@
+---
+import QuotePlanner from "./QuotePlanner.astro";
+
+const { service, quote, mainId } = Astro.props;
+const { overview } = service;
+const avatarColors = ["#137357", "#185abc", "#6f42b5", "#a42665", "#006b78", "#ac4c0f"];
+const mobilePhotos = {
+  "/Images/LocalChicagoMovers.webp": "/Images/LocalChicagoMovers-mobile.webp 640w, /Images/LocalChicagoMovers.webp 960w",
+  "/Images/IMG_0760.webp": "/Images/IMG_0760-mobile.webp 640w, /Images/IMG_0760.webp 1400w",
+  "/Images/Chicago-Movers-Carrying-Sofa-Back-Stairs.webp": "/Images/Chicago-Movers-Carrying-Sofa-Back-Stairs-mobile.webp 640w, /Images/Chicago-Movers-Carrying-Sofa-Back-Stairs.webp 1800w",
+};
+const { srcset: sourceSet, sizes: sourceSizes, decoding = "async", ...photo } = overview?.image ?? {};
+const photoSources = sourceSet ?? mobilePhotos[photo.src];
+const photoSizes = "(min-width: 1320px) 450px, (min-width: 768px) 34vw, (min-width: 500px) 460px, calc(100vw - 40px)";
+---
+<main id={mainId} class="cmc-service-main">
+  <section class="cmc-service-hero">
+    <div class="hero-overlay-new" aria-hidden="true"></div>
+    <div class="container cmc-service-hero-grid">
+      <div class="cmc-service-intro">
+        <h1 set:html={service.title} />
+        <p class="cmc-service-subtitle" set:html={service.subtitle} />
+        <p class="cmc-service-lead" set:html={service.lead} />
+        {service.benefits?.length > 0 && (
+          <ul class="cmc-service-benefits">
+            {service.benefits.map((benefit) => <li set:html={benefit} />)}
+          </ul>
+        )}
+        <div class="cmc-service-actions">
+          {service.actions.map(({ href, label }) => (
+            <a class:list={["cmc-button", href.startsWith("tel:") && "cmc-service-button-ghost"]} href={href}>{label}</a>
+          ))}
+        </div>
+      </div>
+      <div id="quoteForm" class="cmc-service-quote">
+        <h2>{service.quoteTitle}</h2>
+        {service.quoteNote && <p>{service.quoteNote}</p>}
+        <QuotePlanner config={quote} />
+      </div>
+      <dl class="cmc-service-proof">
+        {service.stats.map(([value, label]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  {overview && (
+    <section id={overview.id} class="cmc-service-overview">
+      <div class="container">
+        <div class="cmc-service-overview-heading">
+          <h2 set:html={overview.heading} />
+          <p class="lead" set:html={overview.lead} />
+        </div>
+        <div class="cmc-service-overview-grid">
+          <div class="cmc-service-overview-copy" set:html={overview.details} />
+          <div class="cmc-service-overview-media">
+            <img
+              {...photo}
+              class="cmc-service-overview-image"
+              srcset={photoSources}
+              sizes={photoSources ? photoSizes : sourceSizes}
+              decoding={decoding}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {service.reviews.length > 0 && (
+    <section class="cmc-service-reviews" aria-labelledby="service-reviews-title">
+      <div class="container">
+        <div class="cmc-service-reviews-heading">
+          <h2 id="service-reviews-title">Customer Reviews</h2>
+          <div class="rev-summary">
+            <span class="rev-stars" aria-hidden="true">
+              {Array.from({ length: 5 }, () => <i class="bi bi-star-fill"></i>)}
+            </span>
+            <span>5 stars on Google</span>
+          </div>
+        </div>
+        <div class:list={["cmc-service-review-grid", service.reviews.some((review) => review.quote.length > 400) && "cmc-service-reviews-wide"]}>
+          {service.reviews.map((review, index) => (
+            <article class="rev-card">
+              <div class="d-flex gap-3 align-items-center">
+                <div class="rev-avatar" style={`--review-avatar-color: ${avatarColors[index % avatarColors.length]}`} aria-hidden="true">{review.initials}</div>
+                <div>
+                  <div class="rev-name">{review.name}</div>
+                  <div class="rev-date">{review.date}</div>
+                </div>
+              </div>
+              <span class="rev-stars-sm" role="img" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }, () => <i class="bi bi-star-fill" aria-hidden="true"></i>)}
+              </span>
+              <p class="rev-text">{review.quote}</p>
+            </article>
+          ))}
+        </div>
+        {service.reviewHref && <a class="cmc-service-text-link" href={service.reviewHref} target="_blank" rel="noopener">Read Reviews on Google <i class="bi bi-arrow-right" aria-hidden="true"></i></a>}
+      </div>
+    </section>
+  )}
+
+  <Fragment set:html={service.content} />
+</main>

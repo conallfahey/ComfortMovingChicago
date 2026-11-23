@@ -18,9 +18,7 @@ Affordable Chicago movers for studios, one-bedrooms, labor-only help, rental-tru
 - Flexible crew sizing so you do not overbook labor.
 - Quote guidance for stairs, elevators, packing, and travel time before move day.
 
-160+
-
-5-Star Reviews
+175+ verified reviews
 
 No
 
@@ -66,9 +64,9 @@ At Comfort Moving Chicago, "affordable" doesn’t mean "cheap." It means transpa
 
 When you hire us, you’re paying for labor and logistics—not a CEO’s bonus. Whether you need [full-service packing](https://comfortmovingchicago.com/services/packing-services-chicago.html) or just a couple of strong movers to load your rental truck, we customize our service to fit your budget, not the other way around.
 
-## How Affordable Movers Price a Chicago Move
+## How much does a local Chicago move cost?
 
-Most people searching for cheap movers are really trying to avoid a quote that grows after the crew arrives. Comfort Moving Chicago clarifies move size, access, service type, and timing before booking.
+Comfort Moving Chicago starts at $135 per hour for two movers and a truck, with a two-hour minimum. At that rate, two hours comes to $270 before any additional quoted charges. Ask how travel time, building access, and extras such as packing affect your total. If you already have a truck or container, ask for a separate labor-only quote.
 
 | Price Factor | Why It Changes Cost                                                                                | How Comfort Moving Chicago Keeps It Efficient                     |
 | ------------ | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |

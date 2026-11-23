@@ -1,0 +1,297 @@
+---
+import "./branding.css";
+
+const palette = [
+  { name: "Bright orange", hex: "#FD7E14", use: "Hero emphasis, homepage buttons, and review stars", token: "--brand-orange" },
+  { name: "Action orange", hex: "#FF8A3D", use: "Quote buttons and form accents", token: "--cmc-orange" },
+  { name: "Brand blue", hex: "#032662", use: "Links, icons, and dark panels", token: "--brand-blue" },
+  { name: "Hero navy", hex: "#081522", use: "Dark hero backgrounds and CTA text" },
+];
+
+const supportingColors = [
+  { name: "Ink", hex: "#101E33", use: "Headings and primary text", token: "--cmc-ink" },
+  { name: "Slate", hex: "#536073", use: "Secondary text and captions", token: "--cmc-muted" },
+  { name: "Warm white", hex: "#F7F6F2", use: "Page background and quote panels", token: "--cmc-surface" },
+  { name: "White", hex: "#FFFFFF", use: "Cards and text on dark surfaces" },
+  { name: "Border", hex: "#DAE0E6", use: "Card borders and dividers", token: "--cmc-line" },
+  { name: "Cool gray", hex: "#EDF1F5", use: "Process and FAQ backgrounds" },
+  { name: "Dark orange", hex: "#974406", use: "Orange text accents on light service panels" },
+  { name: "Brand red", hex: "#D32323", use: "Highlights on the Emergency Movers page", token: "--brand-red" },
+  { name: "Field error", hex: "#A5241B", use: "Quote validation text and borders" },
+  { name: "Field border", hex: "#C5CED7", use: "Default quote field outlines" },
+  { name: "Field surface", hex: "#FBFBFA", use: "Quote input backgrounds" },
+  { name: "Progress orange", hex: "#C65416", use: "Quote step progress bars" },
+];
+
+const avatars = [
+  { name: "Green", hex: "#137357", initials: "LM" },
+  { name: "Blue", hex: "#185ABC", initials: "WM" },
+  { name: "Purple", hex: "#6F42B5", initials: "MV" },
+  { name: "Berry", hex: "#A42665", initials: "CB" },
+  { name: "Teal", hex: "#006B78", initials: "JF" },
+  { name: "Rust", hex: "#AC4C0F", initials: "PS" },
+];
+
+const assets = [
+  { label: "Social sharing logo", src: "/Images/CMC_logo.webp", size: 863, format: "WebP", use: "Full-size mark used in website link previews." },
+  { label: "Website header mark", src: "/Images/CMC_logo-100.webp", size: 100, format: "WebP", use: "Compact mark used next to the site name." },
+  { label: "Home screen icon", src: "/apple-touch-icon.png", size: 180, format: "PNG", use: "Icon used when saving the website to a home screen." },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Branding Guide | Comfort Moving Chicago</title>
+    <meta name="description" content="The website colors, typography, logos, and components used by Comfort Moving Chicago." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
+    <link rel="stylesheet" href="/assets/css/marketing-reviews.css" />
+  </head>
+  <body class="cmc-site cmc-brand-guide">
+    <a class="cmc-skip" href="#main">Skip to main content</a>
+    <header id="top" class="guide-header">
+      <div class="guide-width guide-header-inner">
+        <a class="cmc-brand" href="/">
+          <img src="/Images/CMC_logo-100.webp" alt="" width="44" height="44" />
+          <span>Comfort Moving<span class="cmc-brand-city">Chicago</span></span>
+        </a>
+        <nav aria-label="Guide sections">
+          <a href="#colors">Colors</a>
+          <a href="#type">Type</a>
+          <a href="#logos">Logos</a>
+          <a href="#web-style">Web style</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="guide-hero">
+        <div class="guide-width guide-hero-inner">
+          <div class="guide-hero-copy">
+            <h1>Branding <span>guide</span></h1>
+            <p>The colors, fonts, and visual details used on the Comfort Moving Chicago website.</p>
+          </div>
+          <img
+            class="guide-hero-photo"
+            src="/Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp"
+            srcset="/Images/Chicago-Movers-Loading-Large-Box-Truck-mobile.webp 640w, /Images/Chicago-Movers-Loading-Large-Box-Truck-960.webp 960w"
+            sizes="(max-width: 720px) 100vw, 56vw"
+            alt="A Comfort Moving Chicago mover carrying a box onto a moving truck"
+            width="960"
+            height="640"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+
+      <div class="guide-width guide-content">
+        <section id="colors" class="guide-section" aria-labelledby="colors-title">
+          <div class="guide-section-heading">
+            <h2 id="colors-title">Color palette</h2>
+            <p>Select a hex value to copy it.</p>
+          </div>
+          <ul class="color-grid primary-colors">
+            {palette.map(({ name, hex, use, token }) => (
+              <li class="color-card">
+                <div class="color-sample" style={"--swatch:" + hex} aria-hidden="true"></div>
+                <div class="color-meta">
+                  <h3>{name}</h3>
+                  <button type="button" class="copy-hex" data-copy={hex} aria-label={"Copy " + name + " " + hex}>
+                    <code>{hex}</code><span aria-hidden="true">Copy</span>
+                  </button>
+                  <p>{use}</p>
+                  {token && <code class="color-token">{token}</code>}
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <h3 class="guide-subheading">Text, surfaces, and states</h3>
+          <ul class="color-grid support-colors">
+            {supportingColors.map(({ name, hex, use, token }) => (
+              <li class="color-card">
+                <div class="color-sample" style={"--swatch:" + hex} aria-hidden="true"></div>
+                <div class="color-meta">
+                  <h4>{name}</h4>
+                  <button type="button" class="copy-hex" data-copy={hex} aria-label={"Copy " + name + " " + hex}>
+                    <code>{hex}</code><span aria-hidden="true">Copy</span>
+                  </button>
+                  <p>{use}</p>
+                  {token && <code class="color-token">{token}</code>}
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div class="avatar-row">
+            <div>
+              <h3 class="guide-subheading">Review avatars</h3>
+              <p>White initials in a 38px circle.</p>
+            </div>
+            <ul>
+              {avatars.map(({ name, hex, initials }) => (
+                <li>
+                  <button type="button" class="avatar-copy" data-copy={hex} aria-label={"Copy " + name + " avatar color " + hex}>
+                    <span class="rev-avatar" style={"--review-avatar-color:" + hex} aria-hidden="true">{initials}</span>
+                    <code>{hex}</code>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="type" class="guide-section" aria-labelledby="type-title">
+          <div class="guide-section-heading">
+            <h2 id="type-title">Typography</h2>
+            <p>Oswald for display. Roboto for reading and interacting.</p>
+          </div>
+          <div class="guide-two">
+            <article class="type-card type-display">
+              <div class="type-card-title">
+                <h3>Oswald</h3>
+                <code>CMC Display</code>
+              </div>
+              <p class="display-specimen" aria-hidden="true">Chicago Local<br />Movers</p>
+              <dl>
+                <div><dt>Hero heading</dt><dd>700 weight, fluid size</dd></div>
+                <div><dt>Section heading</dt><dd>650 weight, 31–44px</dd></div>
+              </dl>
+              <a href="/assets/fonts/oswald-latin.woff2" download>Download web font <span aria-hidden="true">↓</span></a>
+            </article>
+            <article class="type-card type-body">
+              <div class="type-card-title">
+                <h3>Roboto</h3>
+                <code>CMC Body</code>
+              </div>
+              <div class="body-specimen">
+                <p>We plan around the details that come with moving through city buildings, streets, and stairways.</p>
+              </div>
+              <dl>
+                <div><dt>Body copy</dt><dd>400 weight, 16px</dd></div>
+                <div><dt>Form labels and actions</dt><dd>700–750 weight, 13–15px</dd></div>
+              </dl>
+              <a href="/assets/fonts/roboto-latin.woff2" download>Download web font <span aria-hidden="true">↓</span></a>
+            </article>
+          </div>
+        </section>
+
+        <section id="logos" class="guide-section" aria-labelledby="logos-title">
+          <div class="guide-section-heading">
+            <h2 id="logos-title">Logo files</h2>
+            <p>Download the marks used in the website header, link previews, and home screen.</p>
+          </div>
+          <div class="asset-grid">
+            {assets.map(({ label, src, size, format, use }) => (
+              <article class="asset-card">
+                <div class="asset-preview">
+                  <img src={src} alt="" width={size} height={size} loading="lazy" />
+                </div>
+                <div class="asset-meta">
+                  <h3>{label}</h3>
+                  <p>{use}</p>
+                  <a href={src} download aria-label={"Download " + label}>Download {format} <span aria-hidden="true">↓</span></a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p class="asset-extra"><a href="/favicon.ico" download>Download browser favicon <span aria-hidden="true">↓</span></a></p>
+        </section>
+
+        <section id="web-style" class="guide-section" aria-labelledby="web-title">
+          <div class="guide-section-heading">
+            <h2 id="web-title">Web style</h2>
+            <p>Use the same hierarchy for calls to action, quote fields, and customer reviews.</p>
+          </div>
+          <div class="guide-two">
+            <article class="interface-card actions-sample">
+              <h3>Actions</h3>
+              <div class="action-examples">
+                <a href="/#quoteForm" class="cmc-button">Get a quote <span aria-hidden="true">↗</span></a>
+                <a href="tel:+17732361724" class="cmc-button guide-secondary">Call (773) 236-1724</a>
+              </div>
+              <p>Pair an orange quote button with an outlined phone link on dark backgrounds.</p>
+            </article>
+            <article class="interface-card">
+              <h3>Quote fields</h3>
+              <div class="cmc-quote-form">
+                <div class="cmc-quote-field">
+                  <label for="sample-pickup">Pickup location</label>
+                  <input id="sample-pickup" class="cmc-quote-input" type="text" placeholder="Address or neighborhood" />
+                </div>
+              </div>
+              <p>Keep labels above the field and use the placeholder for an example.</p>
+            </article>
+          </div>
+          <div class="guide-two guide-bottom">
+            <article class="interface-card">
+              <h3>Reviews</h3>
+              <div class="rev-summary">
+                <span class="rev-stars" aria-hidden="true">★★★★★</span>
+                <span>5 stars on Google</span>
+              </div>
+              <p>Use a white card with an initials avatar, orange stars, and slate review text.</p>
+            </article>
+            <article class="interface-card">
+              <h3>Layout</h3>
+              <dl class="layout-specs">
+                <div><dt>Maximum content width</dt><dd>1180px</dd></div>
+                <div><dt>Mobile side inset</dt><dd>20px</dd></div>
+                <div><dt>Card gaps</dt><dd>16–28px</dd></div>
+              </dl>
+            </article>
+          </div>
+          <figure class="guide-photo-note">
+            <img
+              src="/Images/Chicago-Movers-Carrying-Couch-Up-Stairs-960.webp"
+              alt="Crew carrying a wrapped couch up a Chicago walk-up staircase"
+              width="960"
+              height="640"
+              loading="lazy"
+            />
+            <figcaption>
+              <h3>Photography and voice</h3>
+              <p>Show the crew working with real Chicago details in view, like walk-up stairs and tight loading spaces. Write as plainly as the quote form does. Tell people what we move, what details to share, and how to get a quote.</p>
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+    </main>
+
+    <footer class="guide-footer">
+      <div class="guide-width">
+        <a href="/">Comfort Moving Chicago <span aria-hidden="true">↗</span></a>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+    <p class="guide-copy-status" role="status"></p>
+
+    <script>
+      const status = document.querySelector(".guide-copy-status");
+      let hideStatus: ReturnType<typeof setTimeout>;
+      for (const button of document.querySelectorAll<HTMLButtonElement>("[data-copy]")) {
+        button.addEventListener("click", async () => {
+          const value = button.dataset.copy;
+          if (!value || !status) return;
+          try {
+            await navigator.clipboard.writeText(value);
+            status.textContent = "Copied " + value;
+          } catch {
+            const code = button.querySelector("code");
+            if (code) {
+              const selection = window.getSelection();
+              selection?.selectAllChildren(code);
+            }
+            status.textContent = "Color value selected. Copy it with your keyboard or device menu.";
+          }
+          clearTimeout(hideStatus);
+          hideStatus = setTimeout(() => { status.textContent = ""; }, 2500);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -2,10 +2,10 @@
 import QuoteField from "./QuoteField.astro";
 
 const { config } = Astro.props;
-const { attrs, hidden, steps, sms, marketplace, fixedService, submitLabel, loadingLabel } = config;
+const { attrs, hidden, steps, sms, marketplace, fixedService, submitLabel } = config;
 const formId = attrs.id || "moving-quote-planner";
 ---
-<form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner>
+<form {...attrs} class:list={[attrs.class, "cmc-quote-form"]} data-quote-planner data-quote-marketplace={marketplace ? "" : undefined}>
   <Fragment set:html={hidden} />
   <div class="cmc-quote-progress" data-quote-progress hidden>
     <span data-quote-step-label aria-live="polite"></span>
@@ -25,22 +25,20 @@ const formId = attrs.id || "moving-quote-planner";
           {index > 0 && <button type="button" class="cmc-quote-back" data-quote-back>Back</button>}
           {index === steps.length - 1
             ? (
-              <button class="cmc-button cmc-quote-submit" type="submit" data-default-text={submitLabel} data-loading-text={loadingLabel} hidden>
+              <button class="cmc-button cmc-quote-submit" type="submit" data-default-text={submitLabel} data-loading-text="Submitting…" hidden>
                 <span class="quote-submit-text">{submitLabel}</span>
               </button>
             )
-            : <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>}
+            : kind === "contact"
+              ? <button type="button" class="cmc-button" data-quote-contact-submit>Continue <span aria-hidden="true">→</span></button>
+              : <button type="button" class="cmc-button" data-quote-next>Continue <span aria-hidden="true">→</span></button>}
         </div>
-        {kind === "contact" && <p class="cmc-contact-hint">Your request is sent after the last step.</p>}
-        {index === steps.length - 1 && marketplace && (
-          <>
-            {sms && <div class="cmc-quote-legal" set:html={sms} />}
-            <p class="cmc-quote-legal">We use your information to respond to your request and provide our services. <a href="/privacy-policy.html">Privacy Policy</a></p>
-          </>
+        {index === steps.length - 1 && <div data-quote-status class="alert d-none mt-3 mb-0" role="alert"></div>}
+        {kind === "contact" && marketplace && (
+          sms && <div class="cmc-quote-legal" data-sms-consent set:html={sms} />
         )}
       </section>
     ))}
   </div>
-  {marketplace && <div id="marketplace-quote-status" class="alert d-none mt-3 mb-0" role="status"></div>}
   <noscript><p>For a quote, call <a href="tel:+17732361724">(773) 236-1724</a>.</p></noscript>
 </form>

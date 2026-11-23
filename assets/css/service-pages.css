@@ -1,0 +1,534 @@
+.cmc-service {
+  --service-section-space: clamp(34px, 4.2vw, 60px);
+  overflow-x: clip;
+}
+
+.cmc-service .cmc-header-inner,
+.cmc-service-main > section > .container {
+  width: min(calc(100% - 2 * var(--cmc-content-inset)), var(--cmc-content-width)) !important;
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0 !important;
+}
+
+.cmc-service .cmc-header-inner { min-height: 86px; }
+
+.cmc-service-hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(28px, 4vw, 54px);
+  background: #081522;
+  color: #fff;
+}
+
+.cmc-service-hero .hero-overlay-new { z-index: -1; }
+.cmc-service-hero .hero-overlay-new::before {
+  background: linear-gradient(90deg, rgb(6 10 20 / 92%), rgb(6 10 20 / 80%));
+}
+
+.cmc-service-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(30px, 5vw, 72px);
+}
+
+.cmc-service-intro h1 {
+  margin: 0 0 14px;
+  color: #fff;
+  font: 700 clamp(2.45rem, 4.4vw, 4rem) / 1.04 "CMC Display", sans-serif !important;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.cmc-service-intro h1 br { display: none; }
+.cmc-service-accent { color: var(--brand-orange); }
+
+.cmc-service-subtitle {
+  margin: 0 0 12px;
+  color: #fff;
+  font: 600 clamp(1.125rem, 2vw, 1.45rem) / 1.3 "CMC Display", sans-serif;
+}
+
+.cmc-service-lead {
+  max-width: 53ch;
+  margin: 0;
+  color: #eef3f8;
+  line-height: 1.65;
+}
+
+.cmc-service-benefits {
+  display: grid;
+  gap: 7px;
+  max-width: 60ch;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #eef3f8;
+  font-size: .9375rem;
+}
+
+.cmc-service-intro a:not(.cmc-button) { color: #fff; text-underline-offset: .15em; }
+.cmc-service-benefits i { color: var(--brand-orange); }
+.cmc-service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.cmc-service .cmc-button { border-radius: 4px; }
+.cmc-service .cmc-service-hero .cmc-button { white-space: normal; }
+.cmc-service .cmc-service-button-ghost {
+  border-color: #8491a0;
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+}
+
+.cmc-service .cmc-service-button-ghost:hover { background: #fff; color: var(--cmc-ink); }
+.cmc-service-hero .cmc-service-intro :focus-visible { outline-color: #ffad75; }
+.cmc-service-quote,
+.cmc-service-directory-panel {
+  min-width: 0;
+  align-self: center;
+  padding: clamp(18px, 2.15vw, 28px);
+  border-top: 3px solid var(--cmc-orange);
+  border-radius: 4px;
+  background: var(--cmc-surface);
+  color: var(--cmc-ink);
+  box-shadow: 0 12px 38px rgb(6 10 20 / 16%);
+}
+
+.cmc-service-quote > h2,
+.cmc-service-directory-panel > h2 {
+  margin: 0 0 12px;
+  font: 750 1.45rem / 1.2 "CMC Body", sans-serif !important;
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.cmc-service-quote > p {
+  margin: 0 0 14px;
+  color: var(--cmc-muted);
+  font-size: .9375rem;
+  line-height: 1.55;
+}
+
+.cmc-service-quote .cmc-quote-input { border-radius: 4px; }
+.cmc-service-quote .cmc-quote-progress { margin-block: 14px 18px; }
+.cmc-service-quote .cmc-quote-panel h3 { font-family: "CMC Body", sans-serif !important; }
+.cmc-service-proof {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: clamp(24px, 4vw, 40px) 0 0;
+  border-top: 1px solid rgb(255 255 255 / 24%);
+}
+
+.cmc-service-proof > div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 14px 0;
+  text-align: center;
+}
+
+.cmc-service-proof dd { margin: 0; font: 650 1.15rem / 1.2 "CMC Display", sans-serif; }
+.cmc-service-proof dt { color: #dfe7ef; font-size: .8125rem; font-weight: 600; }
+
+.cmc-service-main > section:not(.cmc-service-hero) {
+  padding-block: var(--service-section-space) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--cmc-line) !important;
+  background: var(--cmc-surface);
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) .row {
+  --bs-gutter-x: var(--cmc-card-gap);
+  --bs-gutter-y: var(--cmc-card-gap);
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) h2 {
+  color: var(--cmc-ink);
+  font: 650 clamp(1.95rem, 3vw, 2.75rem) / 1.13 "CMC Display", sans-serif !important;
+  letter-spacing: -.015em;
+  text-transform: none;
+  text-wrap: pretty;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) :is(h3, .service-card-modern :is(h4, h5)) {
+  color: var(--cmc-ink);
+  font: 730 1.125rem / 1.3 "CMC Body", sans-serif !important;
+  text-transform: none;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) h2 .text-secondary-brand {
+  color: #974406 !important;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) :is(p, .lead) {
+  color: var(--cmc-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) .lead {
+  max-width: 68ch;
+  font-weight: 400;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) .text-muted { color: var(--cmc-muted) !important; }
+.cmc-service-main > section:not(.cmc-service-hero) :is(p, li, dd, .cmc-service-answer) a:not(.btn, .cmc-button) {
+  color: var(--brand-blue);
+  text-underline-offset: .16em;
+}
+
+.cmc-service-copy { max-width: 70ch; }
+.cmc-service-main :is(.section-header, .areas-header-modern, .text-center:has(> h2)):not(.cmc-service-hero *, .container) {
+  max-width: none;
+  margin: 0 0 var(--cmc-card-gap) !important;
+  text-align: left !important;
+}
+
+.cmc-service-main > section:not(.cmc-service-hero) > .container.text-center:has(> h2) {
+  text-align: left !important;
+}
+
+.cmc-service-main :is(.section-header, .areas-header-modern, .text-center:has(> h2)) > p {
+  max-width: 65ch;
+  margin-inline: 0 !important;
+}
+
+.cmc-service-main :is(.bg-light-pattern, .areas-served-modern)::before { display: none; }
+.cmc-service-main :is(.service-card-modern, .marketplace-support-card, .areas-category-card) {
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--cmc-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: none;
+  transform: none;
+}
+
+.cmc-service-main :is(.service-card-modern, .marketplace-support-card, .areas-category-card):hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.cmc-service-main .service-card-modern::before { display: none; }
+.cmc-service-main .service-card-modern > .d-flex:has(> .rounded-circle) {
+  gap: 10px;
+  margin-bottom: 12px !important;
+}
+
+.cmc-service-main .service-card-modern > .d-flex > .rounded-circle {
+  flex: 0 0 36px;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  background: #eaf0f7 !important;
+}
+
+.cmc-service-main .service-card-modern > .d-flex > .rounded-circle i { font-size: 1.1rem !important; }
+.cmc-service-main .service-card-modern > :is(h3, h4, h5) { margin-bottom: 8px !important; }
+
+.cmc-service-overview-heading { margin-bottom: var(--cmc-card-gap); }
+.cmc-service-overview-heading h2 { margin: 0 0 10px; }
+.cmc-service-overview-heading p { margin: 0; }
+.cmc-service-overview-grid {
+  display: grid;
+  align-items: start;
+  gap: clamp(18px, 3vw, 44px);
+}
+
+.cmc-service-overview-copy > p { max-width: 68ch; }
+.cmc-service-overview-media {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e8edf1;
+}
+
+.cmc-service-overview-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+:is(.office-page, .ffe-page) .cmc-service-overview-image { object-position: center 38%; }
+.cmc-service-overview .about-feature-item {
+  gap: 12px;
+  align-items: start;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--cmc-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cmc-service-overview .about-feature-item:last-of-type,
+.cmc-service-overview .about-feature-item:has(+ .mt-4) {
+  border-bottom: 1px solid var(--cmc-line);
+}
+
+.cmc-service-overview .about-feature-item:hover { transform: none; }
+.cmc-service-overview .about-feature-text h3 { margin: 0 0 4px; }
+.cmc-service-overview .about-feature-text p { margin: 0; }
+.cmc-service-overview-copy > .mt-4 { margin-top: 16px !important; }
+
+.cmc-service-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 1.6vw, 20px);
+}
+
+.cmc-service-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e8edf1;
+}
+
+.cmc-service-main :is(.rounded-4, .rounded-5):is(.bg-white, .bg-light, .card) {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.cmc-service-main .about-feature-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: #eaf0f7;
+}
+
+.cmc-service-main .areas-served-modern .row { align-items: start !important; }
+.cmc-service-main .area-tag {
+  border-radius: 4px;
+  background: #eeefed;
+}
+
+.cmc-service-main .area-tag:is(a) { text-decoration: underline; text-underline-offset: .16em; }
+.cmc-service-main .area-tag:is(a):hover { background: #e4ebf3; color: var(--brand-blue); }
+
+.cmc-service-main > section:not(.cmc-service-hero) .btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font: 700 .9375rem / 1.4 "CMC Body", sans-serif !important;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+}
+
+.cmc-service-main > section .btn-secondary-action,
+.cmc-service-main > section .btn-secondary-action:hover { color: #081522 !important; }
+.cmc-service-main > section .btn-secondary-action:hover { background: #ffa363 !important; }
+
+.cmc-service-reviews-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  margin-bottom: var(--cmc-card-gap);
+}
+
+.cmc-service-reviews-heading h2 { margin: 0; }
+.cmc-service-main > section.cmc-service-reviews { background: #f0f2f4; }
+.cmc-service-review-grid,
+.cmc-service-catalog-grid {
+  display: grid;
+  gap: var(--cmc-card-gap);
+}
+
+.cmc-service-text-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5em;
+  width: fit-content;
+  color: var(--brand-blue);
+  font-size: .9375rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.cmc-service-text-link:hover { color: #245e9a; }
+.cmc-service-reviews .cmc-service-text-link { margin-top: var(--cmc-card-gap); }
+
+.cmc-service .cmc-service-main > section:has(.cmc-service-questions) { background: #edf1f5 !important; }
+.cmc-service-questions { border-top: 1px solid #cbd7e4; }
+.cmc-service-question { border-bottom: 1px solid #cbd7e4; }
+.cmc-service-question-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 50px;
+  padding: 14px 4px;
+  color: var(--cmc-ink);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cmc-service-question-label::-webkit-details-marker { display: none; }
+.cmc-service-question-label:hover { color: #245e9a; }
+.cmc-service-question-label::after {
+  content: "";
+  flex: 0 0 8px;
+  height: 8px;
+  margin-right: 4px;
+  border: solid var(--brand-blue);
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
+.cmc-service-question[open] > summary::after { transform: rotate(225deg); }
+.cmc-service-answer {
+  max-width: 65ch;
+  padding: 0 22px 16px 4px;
+  color: var(--cmc-muted);
+  line-height: 1.6;
+}
+
+.cmc-service-main > section.cmc-service-end { border-top: 0 !important; }
+.cmc-service-main > .cmc-service-end > .container {
+  padding: var(--cmc-panel-space) !important;
+  border-radius: 8px;
+  background: #081522;
+  color: #fff;
+}
+
+.cmc-service-main > section.cmc-service-end h2 { margin-bottom: 10px !important; color: #fff; }
+.cmc-service-main > section.cmc-service-end :is(p, .lead) {
+  max-width: 65ch;
+  margin-inline: 0 !important;
+  margin-bottom: 20px !important;
+  color: #e2e9f1 !important;
+  opacity: 1 !important;
+}
+
+.cmc-service-end .justify-content-center { justify-content: flex-start !important; }
+.cmc-service-end a[href="#quoteForm"] { background: var(--brand-orange); color: #081522 !important; }
+.cmc-service-end a[href="#quoteForm"]:hover { background: #ffa363; }
+.cmc-service-end a[href^="tel:"] { background: transparent !important; border: 1px solid #8491a0; color: #fff !important; }
+.cmc-service-end a[href^="tel:"]:hover { background: #fff !important; color: var(--cmc-ink) !important; }
+.cmc-service-end a:focus-visible { outline-color: #ffad75; }
+
+.cmc-service-directory-hero { padding-bottom: clamp(28px, 4vw, 54px); }
+.cmc-service-directory-hero .hero-overlay-new {
+  background-image: url("/Images/Chicago-Moving-Company-Crew-Loading-Boxes-hero.webp");
+}
+
+.cmc-service-directory-panel ul { margin: 0; padding: 0; list-style: none; }
+.cmc-service-directory-panel li { padding-block: 10px; border-top: 1px solid var(--cmc-line); }
+.cmc-service-directory-panel li:last-child { padding-bottom: 0; }
+.cmc-service-catalog-grid { gap: 0; border: solid var(--cmc-line); border-width: 1px 0 0 1px; }
+.cmc-service-catalog-grid > article {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 9px;
+  padding: clamp(16px, 2vw, 24px);
+  border: solid var(--cmc-line);
+  border-width: 0 1px 1px 0;
+  background: #fff;
+}
+
+.cmc-service-catalog-grid > article :is(h3, p) { margin: 0; }
+.cmc-service-catalog-grid > article > .cmc-service-text-link { margin-top: auto; padding-top: 4px; }
+
+.cmc-service-price-grid {
+  display: grid;
+  gap: var(--cmc-card-gap);
+  margin-bottom: var(--cmc-card-gap);
+}
+
+.cmc-service-price-grid article {
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--cmc-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cmc-service-price-grid dl { margin: 12px 0 0; }
+.cmc-service-price-grid dd { margin: 3px 0 12px; color: var(--cmc-muted); }
+.cmc-service-price-grid dd:last-child { margin-bottom: 0; }
+
+@media (min-width: 640px) {
+  :is(.cmc-service-review-grid, .cmc-service-catalog-grid, .cmc-service-price-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .cmc-service-overview-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .66fr); }
+}
+
+@media (min-width: 960px) {
+  .cmc-service-catalog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cmc-service-review-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cmc-service-review-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cmc-service-review-grid.cmc-service-reviews-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmc-service-main > section:has(.cmc-service-questions) > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+    gap: var(--cmc-card-gap);
+  }
+
+  .cmc-service-main section:has(.cmc-service-questions) :is(.row, [class^="col-"]):has(.cmc-service-questions) {
+    display: contents;
+  }
+
+  .cmc-service-questions { grid-column: 2; }
+
+  .cmc-service-main > .cmc-service-end > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    column-gap: var(--cmc-card-gap);
+  }
+
+  .cmc-service-main > section.cmc-service-end p { margin-bottom: 0 !important; }
+  .cmc-service-end > .container > .d-flex {
+    grid-area: 1 / 2 / span 2;
+    align-self: center;
+    justify-content: flex-end !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .cmc-service .cmc-header-inner { min-height: 68px; }
+  .cmc-service-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .cmc-service-hero .cmc-service-proof { margin-top: 0; }
+  .cmc-service-intro h1 { text-wrap: pretty; }
+  .cmc-service-directory-hero .hero-overlay-new {
+    background-image: url("/Images/Chicago-Moving-Company-Crew-Loading-Boxes-mobile.webp");
+  }
+
+  .cmc-service-review-grid { gap: 12px; }
+}
+
+@media (max-width: 575px) {
+  .cmc-service-proof dt { font-size: .75rem; }
+  .cmc-service-main > section :is(.btn, .cmc-service-text-link) { max-width: 100%; }
+}

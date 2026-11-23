@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bar = form.querySelector("[data-quote-bar]");
     const label = form.querySelector("[data-quote-step-label]");
     const submit = form.querySelector('button[type="submit"]');
+    const contactSubmit = form.querySelector("[data-quote-contact-submit]");
     let current = 0;
 
     form.noValidate = true;
@@ -17,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showStep(index, focusHeading = true) {
       current = index;
+      contactSubmit.type = index === 0 ? "submit" : "button";
+      submit.type = index === panels.length - 1 ? "submit" : "button";
       panels.forEach((panel, step) => { panel.inert = step !== index; });
       bar.value = index + 1;
       label.textContent = `Step ${index + 1} of ${panels.length}`;
@@ -35,14 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const { name, validity } = control;
       const value = control.value.trim();
       if (name === "name" || name === "fullName") return value ? "" : "Enter your name.";
+      if (name === "email" && !value && !form.elements.namedItem("phone")?.value.trim()) {
+        return "Enter your email address or phone number.";
+      }
       if (name === "phone") {
-        if (!value) return "Enter your phone number.";
+        if (!value) return "";
         const digits = value.replace(/\D/g, "").length;
         return /^\+?[\d().\s-]+$/.test(value) && digits >= 7 && digits <= 15
           ? ""
           : "Enter a valid phone number.";
       }
-      if (name === "email" && validity.valueMissing) return "Enter your email address.";
       if (name === "email" && validity.typeMismatch) return "Enter a valid email address.";
       if (name === "referralSource" && validity.valueMissing) return "Choose how you heard about us.";
       return validity.valid ? "" : control.validationMessage;
@@ -60,9 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return message;
     }
 
-    function firstInvalid(panel) {
+    function firstInvalid(panel, contactOnly = false) {
       let first;
       for (const control of panel.querySelectorAll("input, select, textarea")) {
+        if (contactOnly && (control.name === "services" || control.name === "serviceNeeded")) continue;
         if (validateField(control) && !first) first = control;
       }
       return first;
@@ -84,31 +90,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("input", (event) => {
       if (event.target.hasAttribute("aria-invalid")) validateField(event.target);
+      if (event.target.name === "phone") {
+        const email = form.elements.namedItem("email");
+        if (email?.hasAttribute("aria-invalid")) validateField(email);
+      }
     });
     form.addEventListener("click", (event) => {
-      if (submit.disabled) return;
+      if (form.hasAttribute("data-quote-submitting")) return;
       if (event.target.closest("[data-quote-next]")) advance();
       if (event.target.closest("[data-quote-back]")) showStep(current - 1);
     });
-    // The page's existing form handler gets only the final, validated submission.
     form.addEventListener("submit", (event) => {
-      if (current === panels.length - 1 && !submit.disabled) {
+      const stopSubmit = () => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      };
+      if (form.hasAttribute("data-quote-submitting")) {
+        stopSubmit();
+        return;
+      }
+      if (current === 0) {
+        stopSubmit();
+        const invalid = firstInvalid(panels[0], true);
+        if (invalid) {
+          focusInvalid(invalid);
+          return;
+        }
+        form.dispatchEvent(new Event("quote:contact-continue"));
+        showStep(1);
+        return;
+      }
+      if (current === panels.length - 1) {
         for (const [index, panel] of panels.entries()) {
           const invalid = firstInvalid(panel);
           if (!invalid) continue;
-          event.preventDefault();
-          event.stopImmediatePropagation();
+          stopSubmit();
           showStep(index);
           focusInvalid(invalid);
           return;
         }
         return;
       }
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      if (!submit.disabled) advance();
+      stopSubmit();
+      advance();
     }, true);
 
-    showStep(0, false);
+    const resumeIndex = panels.findIndex((panel) => panel.dataset.quotePanel === form.dataset.quoteResume);
+    showStep(Math.max(resumeIndex, 0), false);
   }
-})();
+});

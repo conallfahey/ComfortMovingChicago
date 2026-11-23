@@ -25,6 +25,18 @@
   font-family: "CMC Body", system-ui, sans-serif;
 }
 
+:is(.cmc-home, .cmc-service) {
+  --cmc-content-width: 1180px;
+  --cmc-content-inset: clamp(20px, 5.5vw, 80px);
+  --cmc-section-space: clamp(40px, 4.8vw, 68px);
+  --cmc-card-gap: clamp(16px, 2.2vw, 28px);
+  --cmc-panel-space: clamp(22px, 3.5vw, 48px);
+}
+
+@media (max-width: 767px) {
+  :is(.cmc-home, .cmc-service) { --cmc-content-inset: 20px; }
+}
+
 .cmc-site .cmc-page :is(main, section):is(.bg-white, .bg-light, .bg-light-gray, .bg-light-pattern, .bg-soft, .final-cta-section) {
   background-color: var(--cmc-surface) !important;
 }
@@ -164,6 +176,13 @@
 .cmc-site :is(#quoteForm, #areas-served, #about, .cmc-page [id]) { scroll-margin-top: 96px; }
 .cmc-footer .footer-section { border-top-width: 2px; }
 .cmc-footer .footer-section :is(h2, strong) { font-family: "CMC Body", system-ui, sans-serif; }
+.cmc-thank-you {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.cmc-thank-you .cmc-page { flex: 1; }
 
 /* The original articles and service copy still render inside the shared layout. */
 .cmc-site .cmc-page :is(.service-card-modern, .marketplace-support-card, .step-card, .feat-card) {
@@ -246,65 +265,6 @@
 }
 
 .cmc-home .quote-card .sub { margin: 6px 0 14px; color: var(--cmc-muted); }
-.cmc-home .section { padding-block: clamp(48px, 7vw, 92px); }
-.cmc-home .section-head { max-width: none; margin: 0 0 clamp(24px, 4vw, 42px); text-align: left; }
-.cmc-home .section-head h2 { letter-spacing: -.018em; text-wrap: balance; }
-.cmc-home .section-head p { max-width: 52ch; margin-bottom: 0; }
-.cmc-home .section-head .eyebrow { justify-self: start; }
-.cmc-home .reveal { opacity: 1; transform: none; }
-
-.cmc-home .cmc-process .step-card {
-  height: 100%;
-  padding: 18px 0 0;
-  border-top: 1px solid var(--cmc-line);
-  border-radius: 0;
-  text-align: left;
-}
-
-.cmc-home .cmc-process .step-num {
-  width: 42px;
-  height: 42px;
-  margin: 0 0 14px;
-  border-radius: 8px;
-  box-shadow: none;
-}
-
-.cmc-home #services .svc-card {
-  padding: clamp(18px, 2.5vw, 28px);
-  border-radius: var(--cmc-radius);
-  box-shadow: none;
-}
-
-.cmc-home #services .svc-card:hover,
-.cmc-home #services .svc-card:focus-within {
-  border-color: var(--brand-blue);
-  transform: none;
-}
-
-.cmc-home #services .svc-card::before { display: none; }
-.cmc-home #services .svc-icon { margin-bottom: 14px; }
-.cmc-home :is(.rev-card, .area-card) { border-radius: var(--cmc-radius); box-shadow: none; }
-.cmc-home .cmc-faq .faq-item { margin: 0; border: 0; border-bottom: 1px solid var(--cmc-line); border-radius: 0; }
-.cmc-home .cmc-faq .faq-item:first-child { border-top: 1px solid var(--cmc-line); }
-
-@media (min-width: 992px) {
-  .cmc-home .section > .container > .section-head:has(> p) {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    column-gap: clamp(24px, 5vw, 70px);
-    align-items: end;
-  }
-  .cmc-home .section > .container > .section-head > .eyebrow { grid-column: 1 / -1; }
-  .cmc-home .section > .container > .section-head > h2 { margin-bottom: 0; }
-  .cmc-home .cmc-faq-layout {
-    display: grid;
-    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-    column-gap: clamp(32px, 6vw, 84px);
-    width: 100%;
-  }
-  .cmc-home .cmc-faq-layout > :last-child { grid-column: 2; text-align: left !important; }
-}
-
 .cmc-quote-form {
   color: var(--cmc-ink);
   font: 400 .96rem / 1.45 "CMC Body", system-ui, sans-serif;
@@ -380,12 +340,6 @@
 }
 
 .cmc-quote-form textarea.cmc-quote-input { min-height: 66px; resize: vertical; }
-.cmc-quote-form .cmc-contact-hint {
-  margin: 8px 0 0;
-  color: var(--cmc-muted);
-  font-size: .8rem;
-  text-align: center;
-}
 
 /* Size the card to its tallest slide without pushing the buttons away from the fields. */
 [data-quote-ready] .cmc-quote-panels { display: grid; }
@@ -442,7 +396,7 @@
 @media (max-width: 840px) {
   .cmc-header-inner { flex-wrap: wrap; gap: 0 12px; padding-block: 9px; min-height: 64px; }
   .cmc-header-actions { order: 1; }
-  .cmc-menu-ready .cmc-menu-toggle {
+  .cmc-js .cmc-menu-toggle {
     order: 2;
     display: inline-flex;
     align-items: center;
@@ -462,7 +416,7 @@
     padding-top: 6px;
   }
   .cmc-navigation > :is(a, details) { padding-block: 10px; }
-  .cmc-menu-ready .cmc-navigation:not(.cmc-nav-open) { display: none; }
+  .cmc-js .cmc-navigation:not(.cmc-nav-open) { display: none; }
   .cmc-services-panel { position: static; margin-top: 10px; }
 }
 

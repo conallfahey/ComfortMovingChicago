@@ -14,6 +14,6 @@ function htmlFiles(directory = "") {
 }
 
 export const pages = [
-  ...htmlFiles().filter((page) => page !== "index-new.html"),
+  ...htmlFiles(),
   ...contentDirectories.flatMap(htmlFiles),
 ];

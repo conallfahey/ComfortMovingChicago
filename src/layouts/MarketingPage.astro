@@ -2,6 +2,7 @@
 import { readFileSync } from "node:fs";
 import SiteHeader from "../components/SiteHeader.astro";
 import QuotePlanner from "../components/QuotePlanner.astro";
+import ServiceDetail from "../components/ServiceDetail.astro";
 import { loadPage } from "../lib/page-content.mjs";
 
 const { filename } = Astro.props;
@@ -10,22 +11,41 @@ const path = filename.endsWith("index.html") ? `/${filename.slice(0, -"index.htm
 const quoteHref = page.quote ? "#quoteForm" : "/#quoteForm";
 const footer = readFileSync("partials/footer.html", "utf8");
 const { class: bodyClass, ...bodyAttrs } = page.body;
+const servicePage = page.service || page.serviceDirectory;
+const mainId = page.mainId || "main-content";
 ---
 <!doctype html>
 <html lang={page.lang}>
   <head>
     <Fragment set:html={page.head} />
+    <script is:inline>document.documentElement.classList.add("cmc-js");</script>
+    <script is:inline defer src="/assets/js/website-attribution.js"></script>
     <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
+    {page.homepage && <link rel="stylesheet" href="/assets/css/homepage.css" />}
+    {servicePage && (
+      <>
+        <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.min.css" />
+        <link rel="stylesheet" href="/assets/css/service-pages.css" />
+      </>
+    )}
+    {(page.homepage || page.service) && <link rel="stylesheet" href="/assets/css/marketing-reviews.css" />}
   </head>
-  <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home"]}>
-    <SiteHeader path={path} mainId={page.mainId || "main-content"} quoteHref={quoteHref} />
-    <div class="cmc-page" id={page.mainId ? undefined : "main-content"}>
-      <Fragment set:html={page.beforeQuote} />
-      {page.quote && <QuotePlanner config={page.quote} />}
-      {page.afterQuote && <Fragment set:html={page.afterQuote} />}
+  <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home", servicePage && "cmc-service"]}>
+    <SiteHeader path={path} mainId={mainId} quoteHref={quoteHref} />
+    <div class="cmc-page" id={page.mainId || page.service ? undefined : mainId}>
+      {page.service
+        ? <ServiceDetail service={page.service} quote={page.quote} mainId={mainId} />
+        : (
+          <>
+            <Fragment set:html={page.beforeQuote} />
+            {page.quote && <QuotePlanner config={page.quote} />}
+            {page.afterQuote && <Fragment set:html={page.afterQuote} />}
+          </>
+        )}
     </div>
     <div class="cmc-footer" set:html={footer} />
     <script is:inline defer src="/assets/js/site-refresh.js"></script>
+    {(page.service || page.quote?.marketplace) && <script is:inline defer src="/assets/js/quote-form-crm.js"></script>}
     {page.quote && <script is:inline defer src="/assets/js/quote-steps.js"></script>}
   </body>
 </html>

@@ -13,7 +13,6 @@
     observer.observe(quote);
   }
 
-  toggle.closest(".cmc-header").classList.add("cmc-menu-ready");
   const setMenu = (open) => {
     toggle.setAttribute("aria-expanded", String(open));
     nav.classList.toggle("cmc-nav-open", open);

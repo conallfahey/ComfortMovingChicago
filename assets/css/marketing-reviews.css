@@ -1,0 +1,42 @@
+.cmc-site .rev-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cmc-muted);
+  font-size: .875rem;
+  line-height: 1.45;
+}
+
+.cmc-site :is(.rev-stars, .rev-stars-sm) {
+  display: flex;
+  gap: 3px;
+  color: var(--brand-orange);
+  font-size: .8125rem;
+}
+
+.cmc-site .rev-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--cmc-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cmc-site .rev-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--review-avatar-color, var(--brand-blue));
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.cmc-site .rev-name { color: var(--cmc-ink); font-weight: 700; }
+.cmc-site .rev-date { color: var(--cmc-muted); font-size: .875rem; }
+.cmc-site .rev-card .rev-text { margin: 0; color: var(--cmc-muted); line-height: 1.6; }
