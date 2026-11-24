@@ -1,5 +1,7 @@
 ---
 import { readFileSync } from "node:fs";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import MetaPixel from "../components/MetaPixel.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import QuotePlanner from "../components/QuotePlanner.astro";
 import ServiceDetail from "../components/ServiceDetail.astro";
@@ -18,6 +20,7 @@ const mainId = page.mainId || "main-content";
 <html lang={page.lang}>
   <head>
     <Fragment set:html={page.head} />
+    <GoogleAnalytics />
     <script is:inline>document.documentElement.classList.add("cmc-js");</script>
     <script is:inline defer src="/assets/js/website-attribution.js"></script>
     <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
@@ -31,6 +34,7 @@ const mainId = page.mainId || "main-content";
     {(page.homepage || page.service) && <link rel="stylesheet" href="/assets/css/marketing-reviews.css" />}
   </head>
   <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home", servicePage && "cmc-service"]}>
+    <MetaPixel />
     <SiteHeader path={path} mainId={mainId} quoteHref={quoteHref} />
     <div class="cmc-page" id={page.mainId || page.service ? undefined : mainId}>
       {page.service

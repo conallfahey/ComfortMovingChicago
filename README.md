@@ -15,6 +15,10 @@ npm run deploy -- --dry-run
 
 Restart `npm run dev` after editing site files. Existing HTML files remain the source for individual page content, metadata, and structured data. Astro supplies the shared site shell and quote planner. The build preserves the published `.html` URLs, extensionless aliases, and custom 404. Raw review exports and owner reports stay in the repository.
 
+## Google Analytics
+
+The public site uses GA4 Measurement ID `G-YN1JXWB920`. The tag loads on `comfortmovingchicago.com` and `www.comfortmovingchicago.com`. To test Analytics on another hostname, set `PUBLIC_GA_MEASUREMENT_ID` to a separate test web stream ID when building. The site sends `generate_lead` after the CRM accepts a completed moving quote.
+
 ## Releasing to Cloudflare
 
 Run `npm exec -- wrangler login` to authenticate locally. Run `npm run deploy:preview` for the separate Astro preview Worker. Its responses ask search engines to exclude it from indexing. Test the quote flow using an intercepted CRM response so test leads stay out of the live CRM.

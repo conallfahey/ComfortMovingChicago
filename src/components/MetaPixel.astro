@@ -1,0 +1,31 @@
+---
+const pixelId = "2180313066031257";
+const fallbackUrl = `https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`;
+---
+<script is:inline define:vars={{ pixelId }}>
+  if (!window.fbq) {
+    const pixel = function () {
+      if (pixel.callMethod) pixel.callMethod.apply(pixel, arguments);
+      else pixel.queue.push(arguments);
+    };
+    pixel.queue = [];
+    pixel.push = pixel;
+    pixel.loaded = true;
+    pixel.version = "2.0";
+    window.fbq = pixel;
+    window._fbq = pixel;
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://connect.facebook.net/en_US/fbevents.js";
+    document.head.appendChild(script);
+  }
+
+  window.fbq("set", "autoConfig", false, pixelId);
+  window.fbq("init", pixelId);
+  window.fbq("trackSingle", pixelId, "PageView");
+  window.addEventListener("cmc:quote-completed", (event) => {
+    window.fbq("trackSingle", pixelId, "Lead", {}, { eventID: event.detail.submissionId });
+  });
+</script>
+<noscript><img src={fallbackUrl} width="1" height="1" alt="" style="display:none" /></noscript>
