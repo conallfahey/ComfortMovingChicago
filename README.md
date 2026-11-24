@@ -27,6 +27,10 @@ npm run check:seo
 node scripts/check-seo-release.mjs neighborhoods/berwyn-movers.html index.html neighborhoods/oak-park-movers.html services/residential-moving-chicago.html
 ```
 
+## Google Analytics
+
+The public site uses GA4 Measurement ID `G-YN1JXWB920`. The tag loads on `comfortmovingchicago.com` and `www.comfortmovingchicago.com`. To test Analytics on another hostname, set `PUBLIC_GA_MEASUREMENT_ID` to a separate test web stream ID when building. The site sends `generate_lead` after the CRM accepts a completed moving quote.
+
 ## Releasing to Cloudflare
 
 Run `npm exec -- wrangler login` to authenticate locally. Run `npm run deploy:preview` for the separate Astro preview Worker. Its responses ask search engines to exclude it from indexing. Test the quote flow using an intercepted CRM response so test leads stay out of the live CRM.

@@ -334,6 +334,11 @@
           }
           clearDraft();
           setStatus(form, 'success', "Thanks! We got your request and we'll reach out shortly.");
+          if (isPlanner && payload.serviceType !== 'employment') {
+            window.dispatchEvent(new CustomEvent('cmc:quote-completed', {
+              detail: { submissionId: payload.submissionId }
+            }));
+          }
           isRedirecting = true;
           window.location.assign(form.getAttribute('data-success-url') || '/thank-you.html');
         } catch (error) {

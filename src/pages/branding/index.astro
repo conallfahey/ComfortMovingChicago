@@ -1,4 +1,6 @@
 ---
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import MetaPixel from "../../components/MetaPixel.astro";
 import "./branding.css";
 
 const palette = [
@@ -44,6 +46,7 @@ const assets = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <GoogleAnalytics />
     <title>Branding Guide | Comfort Moving Chicago</title>
     <meta name="description" content="The website colors, typography, logos, and components used by Comfort Moving Chicago." />
     <meta name="robots" content="noindex" />
@@ -52,6 +55,7 @@ const assets = [
     <link rel="stylesheet" href="/assets/css/marketing-reviews.css" />
   </head>
   <body class="cmc-site cmc-brand-guide">
+    <MetaPixel />
     <a class="cmc-skip" href="#main">Skip to main content</a>
     <header id="top" class="guide-header">
       <div class="guide-width guide-header-inner">

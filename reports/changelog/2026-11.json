@@ -572,5 +572,51 @@
     "includeInReport": false,
     "customerVisible": false,
     "ownerNote": "Prepared for review in the local preview."
+  },
+  {
+    "id": "chicago-winter-moving-landing-page",
+    "area": "marketing",
+    "type": "feature",
+    "title": "Built a Chicago winter moving landing page",
+    "summary": "Added a winter moving page with a free quote form, weather and building access guidance, and website campaign attribution.",
+    "impact": "Gives winter ads a dedicated destination and identifies winter quote requests in the CRM.",
+    "shippedAt": "2026-11-24",
+    "shippedBy": "Codex",
+    "source": "code",
+    "relatedFiles": ["services/winter-movers-chicago.html", "services.html", "sitemap.xml"],
+    "tags": ["winter-moving", "quote-form", "paid-social"],
+    "includeInReport": true,
+    "customerVisible": true,
+    "ownerNote": "Prepared for the next website release."
+  },
+  {
+    "id": "sitewide-meta-pixel-quote-tracking",
+    "area": "marketing",
+    "type": "analytics",
+    "title": "Added Meta Pixel and moving quote conversion tracking",
+    "summary": "Added Meta page-view tracking across the site and configured the Lead event to fire when the CRM accepts a completed moving quote. Updated the privacy policy to describe the tracking.",
+    "impact": "Lets Meta measure ad traffic and optimize campaigns for completed moving quotes.",
+    "shippedAt": "2026-11-24",
+    "shippedBy": "Codex",
+    "source": "code",
+    "relatedFiles": ["src/components/MetaPixel.astro", "src/layouts/MarketingPage.astro", "src/pages/branding/index.astro", "assets/js/quote-form-crm.js", "privacy-policy.html"],
+    "tags": ["meta", "paid-social", "quote-form"],
+    "includeInReport": true,
+    "ownerNote": "Prepared for the next website release."
+  },
+  {
+    "id": "google-analytics-quote-tracking",
+    "area": "marketing",
+    "type": "analytics",
+    "title": "Configured Google Analytics and moving quote tracking",
+    "summary": "Configured the production GA4 web stream and added sitewide page views and a completed moving quote event.",
+    "impact": "Shows how people reach the site and which channels and landing pages produce completed moving quotes.",
+    "shippedAt": "2026-11-24",
+    "shippedBy": "Codex",
+    "source": "code",
+    "relatedFiles": ["src/components/GoogleAnalytics.astro", "src/layouts/MarketingPage.astro", "src/pages/branding/index.astro", "privacy-policy.html"],
+    "tags": ["google-analytics", "attribution", "quote-form"],
+    "includeInReport": true,
+    "ownerNote": "Configured for the next website release."
   }
 ]

@@ -1,0 +1,31 @@
+---
+const overrideId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
+const measurementId = overrideId || "G-YN1JXWB920";
+const allowNonProduction = Boolean(overrideId);
+if (!/^G-[A-Z0-9]+$/.test(measurementId)) {
+  throw new Error("PUBLIC_GA_MEASUREMENT_ID must be a GA4 web stream ID starting with G-.");
+}
+---
+<script is:inline define:vars={{ measurementId, allowNonProduction }}>
+  const productionHosts = ["comfortmovingchicago.com", "www.comfortmovingchicago.com"];
+  if (!allowNonProduction && !productionHosts.includes(window.location.hostname)) return;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", measurementId, {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+  window.addEventListener("cmc:quote-completed", () => {
+    gtag("event", "generate_lead", { send_to: measurementId });
+  });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
+</script>
