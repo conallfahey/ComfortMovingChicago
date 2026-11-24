@@ -3,10 +3,11 @@ import { readFileSync } from "node:fs";
 import SiteHeader from "../components/SiteHeader.astro";
 import QuotePlanner from "../components/QuotePlanner.astro";
 import ServiceDetail from "../components/ServiceDetail.astro";
+import EditorialPage from "../components/EditorialPage.astro";
 import { loadPage } from "../lib/page-content.mjs";
 
-const { filename } = Astro.props;
-const page = loadPage(filename);
+const { filename, editorial } = Astro.props;
+const page = loadPage(filename, { editorial });
 const path = filename.endsWith("index.html") ? `/${filename.slice(0, -"index.html".length)}` : `/${filename}`;
 const quoteHref = page.quote ? "#quoteForm" : "/#quoteForm";
 const footer = readFileSync("partials/footer.html", "utf8");
@@ -22,18 +23,21 @@ const mainId = page.mainId || "main-content";
     <script is:inline defer src="/assets/js/website-attribution.js"></script>
     <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
     {page.homepage && <link rel="stylesheet" href="/assets/css/homepage.css" />}
-    {servicePage && (
+    {(servicePage || page.editorial) && (
       <>
         <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.min.css" />
         <link rel="stylesheet" href="/assets/css/service-pages.css" />
       </>
     )}
+    {page.editorial && <link rel="stylesheet" href="/assets/css/editorial-pages.css" />}
     {(page.homepage || page.service) && <link rel="stylesheet" href="/assets/css/marketing-reviews.css" />}
   </head>
-  <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home", servicePage && "cmc-service"]}>
+  <body {...bodyAttrs} class:list={[bodyClass, "cmc-site", page.homepage && "cmc-home", servicePage && "cmc-service", page.editorial && "cmc-editorial"]}>
     <SiteHeader path={path} mainId={mainId} quoteHref={quoteHref} />
-    <div class="cmc-page" id={page.mainId || page.service ? undefined : mainId}>
-      {page.service
+    <div class="cmc-page" id={page.mainId || page.service || page.editorial ? undefined : mainId}>
+      {page.editorial
+        ? <EditorialPage editorial={page.editorial} quote={page.quote} mainId={mainId} isArticle={filename.startsWith("blog/")} />
+        : page.service
         ? <ServiceDetail service={page.service} quote={page.quote} mainId={mainId} />
         : (
           <>
@@ -45,7 +49,7 @@ const mainId = page.mainId || "main-content";
     </div>
     <div class="cmc-footer" set:html={footer} />
     <script is:inline defer src="/assets/js/site-refresh.js"></script>
-    {(page.service || page.quote?.marketplace) && <script is:inline defer src="/assets/js/quote-form-crm.js"></script>}
+    {(page.service || page.quote?.marketplace || (page.editorial && page.quote)) && <script is:inline defer src="/assets/js/quote-form-crm.js"></script>}
     {page.quote && <script is:inline defer src="/assets/js/quote-steps.js"></script>}
   </body>
 </html>

@@ -15,6 +15,16 @@ npm run deploy -- --dry-run
 
 Restart `npm run dev` after editing site files. Existing HTML files remain the source for individual page content, metadata, and structured data. Astro supplies the shared site shell and quote planner. The build preserves the published `.html` URLs, extensionless aliases, and custom 404. Raw review exports and owner reports stay in the repository.
 
+## Checking a new SEO page
+
+After building an approved page and adding its links to the existing site, pass the new source file and the pages that should link to it.
+
+```sh
+npm run build
+npm run check:seo
+node scripts/check-seo-release.mjs neighborhoods/berwyn-movers.html index.html neighborhoods/oak-park-movers.html services/residential-moving-chicago.html
+```
+
 ## Releasing to Cloudflare
 
 Run `npm exec -- wrangler login` to authenticate locally. Run `npm run deploy:preview` for the separate Astro preview Worker. Its responses ask search engines to exclude it from indexing. Test the quote flow using an intercepted CRM response so test leads stay out of the live CRM.

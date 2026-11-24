@@ -25,7 +25,7 @@
   font-family: "CMC Body", system-ui, sans-serif;
 }
 
-:is(.cmc-home, .cmc-service) {
+:is(.cmc-home, .cmc-service, .cmc-editorial) {
   --cmc-content-width: 1180px;
   --cmc-content-inset: clamp(20px, 5.5vw, 80px);
   --cmc-section-space: clamp(40px, 4.8vw, 68px);
@@ -34,7 +34,7 @@
 }
 
 @media (max-width: 767px) {
-  :is(.cmc-home, .cmc-service) { --cmc-content-inset: 20px; }
+  :is(.cmc-home, .cmc-service, .cmc-editorial) { --cmc-content-inset: 20px; }
 }
 
 .cmc-site .cmc-page :is(main, section):is(.bg-white, .bg-light, .bg-light-gray, .bg-light-pattern, .bg-soft, .final-cta-section) {
@@ -131,9 +131,23 @@
 .cmc-navigation summary:hover,
 .cmc-header-phone:hover { color: #9d3b07; }
 .cmc-services-menu { position: relative; }
-.cmc-services-menu summary { cursor: pointer; list-style: none; }
+.cmc-services-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+}
 .cmc-services-menu summary::-webkit-details-marker { display: none; }
-.cmc-services-menu summary::after { content: "⌄"; margin-left: 6px; }
+.cmc-services-menu summary::after {
+  content: "";
+  flex: 0 0 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+.cmc-services-menu[open] summary::after { transform: translateY(2px) rotate(225deg); }
 .cmc-services-panel {
   position: absolute;
   top: calc(100% + 18px);

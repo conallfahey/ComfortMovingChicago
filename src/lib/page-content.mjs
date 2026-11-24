@@ -234,7 +234,73 @@ function quoteData(form) {
   };
 }
 
-export function loadPage(filename) {
+function editorialData(body, main, quote) {
+  const nodes = [...walk(body)];
+  const hero = nodes.find(node => hasClass(node, "hero-section-new") || hasClass(node, "berwyn-hero")) ??
+    (main ?? body).childNodes.find(node => node.tagName && [...walk(node)].some(child => child.tagName === "h1")) ??
+    body.childNodes.find(node => node.tagName && [...walk(node)].some(child => child.tagName === "h1"));
+  if (!hero) throw new Error("Missing editorial hero");
+  const heroNodes = [...walk(hero)];
+  const title = heroNodes.find(node => node.tagName === "h1");
+  const subtitle = heroNodes.find(node => node.tagName === "h2");
+  const lead = heroNodes.find(node => node.tagName === "p");
+  const photo = heroNodes.find(node => node.tagName === "img");
+  const byline = heroNodes.filter(node => hasClass(node, "bi-calendar") || hasClass(node, "bi-person"))
+    .map(node => text(node.parentNode).trim()).filter(Boolean);
+  const actions = heroNodes.find(node => hasClass(node, "hero-buttons-container"));
+  const review = heroNodes.find(node => hasClass(node, "hero-reviews-card"));
+  const form = heroNodes.find(node => attribute(node, "id") === "quoteForm");
+  const quoteHeading = form && [...walk(form)].find(node => ["h2", "h3"].includes(node.tagName));
+  const root = main ?? body;
+  const contentsNav = root.childNodes.find(node => attribute(node, "aria-label") === "On this page");
+  const content = root.childNodes.filter(node => node.tagName && node !== hero && node !== contentsNav && !hasClass(node, "cta-banner") &&
+    !["script", "link", "style"].includes(node.tagName));
+  const usedIds = new Set(nodes.map(node => attribute(node, "id")).filter(Boolean));
+  const links = contentsNav ? [...walk(contentsNav)].filter(node => node.tagName === "a" &&
+    attribute(node, "href")?.startsWith("#"))
+    .map(node => ({ id: attribute(node, "href").slice(1), label: text(node).trim() })) : [];
+  const headings = main && ![...walk(main)].includes(hero)
+    ? content.flatMap(node => [...walk(node)].filter(child => child.tagName === "h2").map(heading => [heading, heading]))
+    : content.map(section => [section, [...walk(section)].find(node => node.tagName === "h2")]);
+  for (const [section, heading] of headings) {
+    if (!heading || hasClass(section, "final-cta") || contentsNav) continue;
+    const faq = /\b(?:faq|(?:moving|asked) questions)\b/i.test(text(heading));
+    if (links.length >= 5 && !faq) continue;
+    const base = text(heading).trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section";
+    let id = attribute(section, "id") || attribute(heading, "id");
+    if (!id) {
+      id = base;
+      for (let suffix = 2; usedIds.has(id); suffix++) id = `${base}-${suffix}`;
+      usedIds.add(id);
+      section.attrs.push({ name: "id", value: id });
+    }
+    if (faq && links.length === 5) links.pop();
+    links.push({ id, label: text(heading).trim() });
+  }
+
+  return {
+    title: serialize(title).replace(/\b(Movers|Moving)\b/i, '<span class="cmc-editorial-accent">$1</span>'),
+    subtitle: subtitle && text(subtitle).trim(),
+    lead: lead && serialize(lead),
+    byline,
+    overlay: heroNodes.some(node => hasClass(node, "hero-overlay-new")),
+    image: photo && attributes(photo),
+    actions: [...walk(actions ?? hero)].filter(node => node.tagName === "a" &&
+      /^(?:#quoteForm|\/#quoteForm|tel:)/.test(attribute(node, "href") ?? ""))
+      .map(node => ({ href: attribute(node, "href"), label: text(node).trim() })),
+    quoteHeading: quote && (text(quoteHeading).trim() || "Get a moving quote"),
+    stats: heroNodes.filter(node => hasClass(node, "hero-stat-card"))
+      .map(stat => stat.childNodes.filter(node => node.tagName).map(node => text(node).trim())),
+    review: review && serialize(review),
+    links,
+    content: renderServiceSections(content),
+    scripts: [...new Set([...body.childNodes, ...root.childNodes])].filter(node => node.tagName === "script" &&
+      !/\/(?:quote-form-crm|quote-steps|site-refresh|website-attribution)\.js\b/.test(attribute(node, "src") ?? ""))
+      .map(node => serializeOuter(node)).join("\n"),
+  };
+}
+
+export function loadPage(filename, { editorial = filename.startsWith("neighborhoods/") } = {}) {
   const document = parse(readFileSync(filename, "utf8"));
   const html = document.childNodes.find((node) => node.tagName === "html");
   const head = html.childNodes.find((node) => node.tagName === "head");
@@ -251,7 +317,7 @@ export function loadPage(filename) {
     const classes = (attribute(node, "class") ?? "").split(/\s+/);
     const source = attribute(node, "src");
     const href = attribute(node, "href") ?? "";
-    if ((serviceDetail || serviceDirectory) && node.tagName === "link" &&
+    if ((serviceDetail || serviceDirectory || editorial) && node.tagName === "link" &&
         /^(?:https:\/\/fonts\.(?:googleapis|gstatic)\.com|https:\/\/cdn\.jsdelivr\.net)/.test(href)) {
       remove(node);
     }
@@ -276,7 +342,7 @@ export function loadPage(filename) {
   const main = body.childNodes.find((node) => node.tagName === "main");
   if (serviceDetail && !quote) throw new Error(`Missing quote form on ${filename}`);
   const service = serviceDetail ? serviceData(main ?? body, filename) : undefined;
-  const [beforeQuote, afterQuote] = service ? [] : serialize(body).split(marker);
+  const [beforeQuote, afterQuote] = service || editorial ? [] : serialize(body).split(marker);
   return {
     lang: attribute(html, "lang") || "en",
     body: attributes(body),
@@ -286,6 +352,7 @@ export function loadPage(filename) {
     homepage,
     serviceDirectory,
     service,
+    editorial: editorial ? editorialData(body, main, quote) : undefined,
     mainId,
     quote,
   };
