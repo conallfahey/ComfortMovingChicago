@@ -4,6 +4,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 import QuotePlanner from "../components/QuotePlanner.astro";
 import ServiceDetail from "../components/ServiceDetail.astro";
 import EditorialPage from "../components/EditorialPage.astro";
+import ServiceAreaContent from "../components/ServiceAreaContent.astro";
 import { loadPage } from "../lib/page-content.mjs";
 
 const { filename, editorial } = Astro.props;
@@ -36,14 +37,14 @@ const mainId = page.mainId || "main-content";
     <SiteHeader path={path} mainId={mainId} quoteHref={quoteHref} />
     <div class="cmc-page" id={page.mainId || page.service || page.editorial ? undefined : mainId}>
       {page.editorial
-        ? <EditorialPage editorial={page.editorial} quote={page.quote} mainId={mainId} isArticle={filename.startsWith("blog/")} />
+        ? <EditorialPage editorial={page.editorial} quote={page.quote} mainId={mainId} areaLists={page.areaLists} isArticle={filename.startsWith("blog/")} />
         : page.service
-        ? <ServiceDetail service={page.service} quote={page.quote} mainId={mainId} />
+        ? <ServiceDetail service={page.service} quote={page.quote} mainId={mainId} areaLists={page.areaLists} />
         : (
           <>
-            <Fragment set:html={page.beforeQuote} />
+            <ServiceAreaContent html={page.beforeQuote} areaLists={page.areaLists} />
             {page.quote && <QuotePlanner config={page.quote} />}
-            {page.afterQuote && <Fragment set:html={page.afterQuote} />}
+            {page.afterQuote && <ServiceAreaContent html={page.afterQuote} areaLists={page.areaLists} />}
           </>
         )}
     </div>

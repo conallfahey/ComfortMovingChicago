@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { parse, serialize, serializeOuter } from "parse5";
+import { pages } from "../../scripts/site-files.mjs";
 
 export function* walk(node) {
   yield node;
@@ -18,6 +19,65 @@ function remove(node) {
 }
 
 const hasClass = (node, name) => (attribute(node, "class") ?? "").split(/\s+/).includes(name);
+
+const areaSlug = (label) => label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const neighborhoodGuides = new Map(pages.filter((page) => /^neighborhoods\/.+-movers\.html$/.test(page))
+  .map((page) => [page.slice("neighborhoods/".length, -"-movers.html".length), `/${page}`]));
+const neighborhoodGuideUrls = new Set(neighborhoodGuides.values());
+const areaTag = (node) => ["a", "span"].includes(node.tagName) && hasClass(node, "area-tag");
+
+function areaListsIn(root) {
+  const lists = new Set([...walk(root)].filter(areaTag)
+    .map((node) => node.parentNode.tagName === "li" ? node.parentNode.parentNode : node.parentNode));
+  return [...lists].map((list) => {
+    const siblings = list.parentNode.childNodes;
+    const previous = siblings.slice(0, siblings.indexOf(list)).findLast((node) => node.tagName);
+    const heading = text(previous).trim().toLowerCase();
+    const region = heading.includes("western") ? "west"
+      : heading.includes("north shore") ? "north"
+      : heading.includes("suburb") ? "suburbs"
+      : heading.includes("neighborhood") ? "chicago"
+      : undefined;
+    return { list, region, tags: [...walk(list)].filter(areaTag) };
+  });
+}
+
+const coverageRegions = new Map(areaListsIn(parse(readFileSync("index.html", "utf8")))
+  .map(({ region, tags }) => [region, tags.map((node) => text(node).trim())]));
+const catalogSlugs = new Set([...coverageRegions.values()].flat().map(areaSlug));
+
+function areaEntry(label, href) {
+  const normalized = areaSlug(label);
+  const slug = normalized === "loop" ? "the-loop" : normalized;
+  const existingHref = href?.startsWith("/services/") || neighborhoodGuideUrls.has(href) ? href : undefined;
+  return {
+    label,
+    slug,
+    href: neighborhoodGuides.get(slug) ?? existingHref,
+  };
+}
+
+function prepareAreaLists(body) {
+  const lists = areaListsIn(body);
+  const listedSlugs = new Set(lists.flatMap(({ tags }) => tags.map((tag) => areaEntry(text(tag).trim()).slug)));
+  return lists.map(({ list, region, tags }, index) => {
+    const labels = region === "suburbs" ? [...coverageRegions.get("north"), ...coverageRegions.get("west")]
+      : coverageRegions.get(region) ?? [];
+    const entries = tags.map((tag) => areaEntry(text(tag).trim(), attribute(tag, "href")));
+    const existing = new Set(entries.map(({ slug }) => slug));
+    entries.push(...labels.map((label) => areaEntry(label)).filter(({ href, slug }) => href && !existing.has(slug)));
+    const additional = region === "west" || region === "suburbs"
+      ? [...neighborhoodGuides].filter(([slug]) => !catalogSlugs.has(slug) && !listedSlugs.has(slug))
+        .map(([slug, href]) => ({
+          href,
+          label: slug.split("-").filter(Boolean).map((word) => word[0].toUpperCase() + word.slice(1)).join(" "),
+        }))
+      : [];
+    const parent = list.parentNode;
+    parent.childNodes[parent.childNodes.indexOf(list)] = { nodeName: "#comment", data: `cmc-area-links:${index}`, parentNode: parent };
+    return { tag: list.tagName, attrs: attributes(list), region, entries, additional };
+  });
+}
 
 function renderServiceSections(content) {
   const usedIds = new Set();
@@ -340,12 +400,14 @@ export function loadPage(filename, { editorial = filename.startsWith("neighborho
     }
   }
   const main = body.childNodes.find((node) => node.tagName === "main");
+  const areaLists = prepareAreaLists(body);
   if (serviceDetail && !quote) throw new Error(`Missing quote form on ${filename}`);
   const service = serviceDetail ? serviceData(main ?? body, filename) : undefined;
   const [beforeQuote, afterQuote] = service || editorial ? [] : serialize(body).split(marker);
   return {
     lang: attribute(html, "lang") || "en",
     body: attributes(body),
+    areaLists,
     head: serialize(head),
     beforeQuote,
     afterQuote,

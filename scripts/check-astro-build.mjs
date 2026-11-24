@@ -24,6 +24,7 @@ function searchMarkup(html) {
 const redirects = new Set(emitted("_redirects").trim().split("\n"));
 const servicePages = pages.filter((page) => page.startsWith("services/"));
 const neighborhoodPages = pages.filter((page) => page.startsWith("neighborhoods/"));
+const neighborhoodGuidePaths = neighborhoodPages.filter((page) => page.endsWith("-movers.html")).map((page) => `/${page}`);
 const hasClass = (node, name) => (attribute(node, "class") ?? "").split(/\s+/).includes(name);
 const fieldNames = (form) => [...walk(form)]
   .filter((node) => ["input", "select", "textarea"].includes(node.tagName))
@@ -43,6 +44,18 @@ for (const page of pages) {
   const html = emitted(page);
   assert.deepEqual(searchMarkup(html), searchMarkup(readFileSync(page, "utf8")), page);
   const nodes = [...walk(parse(html))];
+  const areaLists = nodes.filter((node) => attribute(node, "data-service-area-links") !== undefined);
+  if (page === "index.html") assert.ok(areaLists.length, "Missing the homepage service-area component");
+  const areaLinks = areaLists.flatMap((list) => [...walk(list)])
+    .filter((node) => node.tagName === "a").map((node) => attribute(node, "href"));
+  for (const href of areaLinks.filter((path) => path?.startsWith("/neighborhoods/"))) {
+    assert.ok(neighborhoodGuidePaths.includes(href), `Broken service-area link from ${page} to ${href}`);
+  }
+  if (areaLists.some((node) => ["west", "suburbs"].includes(attribute(node, "data-service-area-links")))) {
+    for (const href of neighborhoodGuidePaths) {
+      assert.ok(areaLinks.includes(href), `Missing service-area link from ${page} to ${href}`);
+    }
+  }
   const scripts = nodes.filter((node) => node.tagName === "script").map((node) => attribute(node, "src"));
   const attribution = scripts.indexOf("/assets/js/website-attribution.js");
   const quote = scripts.indexOf("/assets/js/quote-form-crm.js");

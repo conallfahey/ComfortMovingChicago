@@ -17,6 +17,8 @@ Restart `npm run dev` after editing site files. Existing HTML files remain the s
 
 ## Checking a new SEO page
 
+Save publishable neighborhood guides as `neighborhoods/<area-slug>-movers.html`, for example `neighborhoods/berwyn-movers.html`. The Astro build picks up the route and links it from the shared service-area lists. Areas already listed on the homepage keep their regional grouping. Guides for other areas appear under “More moving guides.”
+
 After building an approved page and adding its links to the existing site, pass the new source file and the pages that should link to it.
 
 ```sh

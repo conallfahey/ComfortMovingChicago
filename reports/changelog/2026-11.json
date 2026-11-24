@@ -524,5 +524,53 @@
     "includeInReport": false,
     "customerVisible": false,
     "ownerNote": "Prepared for review in the local preview."
+  },
+  {
+    "id": "consistent-marketing-header-size",
+    "area": "website",
+    "type": "fix",
+    "title": "Matched header sizing across website pages",
+    "summary": "Moved the homepage header dimensions into the shared navigation stylesheet.",
+    "impact": "The navigation keeps the same height and alignment as visitors move between pages.",
+    "shippedAt": "2026-11-23",
+    "shippedBy": "codex",
+    "source": "code",
+    "relatedFiles": ["assets/css/astro-refresh.css", "assets/css/homepage.css", "assets/css/service-pages.css", "assets/css/editorial-pages.css"],
+    "tags": ["design", "navigation"],
+    "includeInReport": false,
+    "customerVisible": false,
+    "ownerNote": "Prepared for review in the local preview."
+  },
+  {
+    "id": "rebalance-neighborhood-overview-sections",
+    "area": "website",
+    "type": "fix",
+    "title": "Rebalanced neighborhood overview sections",
+    "summary": "Paired the intro with the photo and moved the feature cards into a full-width row below.",
+    "impact": "The layout uses both columns and makes local moving tips easier to scan.",
+    "shippedAt": "2026-11-23",
+    "shippedBy": "codex",
+    "source": "code",
+    "relatedFiles": ["neighborhoods/evanston-movers.html", "assets/css/editorial-pages.css"],
+    "tags": ["design", "service-areas"],
+    "includeInReport": false,
+    "customerVisible": false,
+    "ownerNote": "Prepared for review in the local preview."
+  },
+  {
+    "id": "share-service-area-links",
+    "area": "website",
+    "type": "feature",
+    "title": "Connected service-area lists to neighborhood guides",
+    "summary": "Used a shared component to link service-area listings to neighborhood pages at build time.",
+    "impact": "New neighborhood guides receive internal links from existing service-area sections when the website is built.",
+    "shippedAt": "2026-11-23",
+    "shippedBy": "codex",
+    "source": "code",
+    "relatedFiles": ["src/components/ServiceAreaContent.astro", "src/lib/page-content.mjs"],
+    "tags": ["seo", "navigation", "service-areas"],
+    "includeInReport": false,
+    "customerVisible": false,
+    "ownerNote": "Prepared for review in the local preview."
   }
 ]
