@@ -24,6 +24,7 @@ const mainId = page.mainId || "main-content";
     <script is:inline>document.documentElement.classList.add("cmc-js");</script>
     <script is:inline defer src="/assets/js/website-attribution.js"></script>
     <link rel="stylesheet" href="/assets/css/astro-refresh.css" />
+    {!page.homepage && <link rel="stylesheet" href="/assets/css/footer.css" />}
     {page.homepage && <link rel="stylesheet" href="/assets/css/homepage.css" />}
     {servicePage && (
       <>

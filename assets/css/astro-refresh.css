@@ -174,8 +174,6 @@
 .cmc-site .cmc-button:hover { background: #ffab73; color: #161d28; }
 .cmc-site .cmc-button:disabled { cursor: wait; opacity: .68; }
 .cmc-site :is(#quoteForm, #areas-served, #about, .cmc-page [id]) { scroll-margin-top: 96px; }
-.cmc-footer .footer-section { border-top-width: 2px; }
-.cmc-footer .footer-section :is(h2, strong) { font-family: "CMC Body", system-ui, sans-serif; }
 .cmc-thank-you {
   min-height: 100vh;
   min-height: 100dvh;

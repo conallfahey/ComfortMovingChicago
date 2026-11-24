@@ -42,6 +42,8 @@ for (const page of pages) {
   const html = emitted(page);
   assert.deepEqual(searchMarkup(html), searchMarkup(readFileSync(page, "utf8")), page);
   const nodes = [...walk(parse(html))];
+  assert.equal(nodes.filter((node) => node.tagName === "link" &&
+    attribute(node, "href") === "/assets/css/footer.css").length, 1, `Missing shared footer stylesheet on ${page}`);
   const scripts = nodes.filter((node) => node.tagName === "script").map((node) => attribute(node, "src"));
   const attribution = scripts.indexOf("/assets/js/website-attribution.js");
   const quote = scripts.indexOf("/assets/js/quote-form-crm.js");

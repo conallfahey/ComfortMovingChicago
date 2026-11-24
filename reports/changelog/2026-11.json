@@ -490,5 +490,20 @@
     "tags": ["google-analytics", "attribution", "quote-form"],
     "includeInReport": true,
     "ownerNote": "Configured for the next website release."
+  },
+  {
+    "id": "restore-shared-footer-styles",
+    "area": "website",
+    "type": "fix",
+    "title": "Fixed the footer on moving landing pages",
+    "summary": "Moved the footer styles into a shared stylesheet so apartment, winter, and other marketing pages render the same responsive footer.",
+    "impact": "Keeps contact information, quote buttons, and navigation readable on desktop and mobile landing pages.",
+    "shippedAt": "2026-11-24",
+    "shippedBy": "Codex",
+    "source": "code",
+    "relatedFiles": ["assets/css/footer.css", "assets/css/content.css", "src/layouts/MarketingPage.astro", "index.html"],
+    "tags": ["footer", "landing-pages", "mobile"],
+    "includeInReport": true,
+    "customerVisible": true
   }
 ]
