@@ -1,0 +1,26 @@
+---
+const { html, areaLists } = Astro.props;
+const fragments = (html ?? "").split(/<!--cmc-area-links:(\d+)-->/);
+---
+{fragments.map((fragment, index) => {
+  if (index % 2 === 0) return <Fragment set:html={fragment} />;
+  const { tag: List, attrs, region, entries, additional } = areaLists[Number(fragment)];
+  return (
+    <>
+      <List {...attrs} data-service-area-links={region ?? "nearby"}>
+        {entries.map(({ label, href }) => {
+          const link = href ? <a class="area-tag" href={href}>{label}</a> : <span class="area-tag">{label}</span>;
+          return List === "ul" ? <li>{link}</li> : link;
+        })}
+      </List>
+      {additional.length > 0 && (
+        <div class="mt-4">
+          <h3 class="h5">More moving guides</h3>
+          <div class="d-flex flex-wrap gap-2" data-service-area-links>
+            {additional.map(({ label, href }) => <a class="area-tag" href={href}>{label}</a>)}
+          </div>
+        </div>
+      )}
+    </>
+  );
+})}

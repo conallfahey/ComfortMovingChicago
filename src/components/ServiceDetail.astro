@@ -1,7 +1,8 @@
 ---
 import QuotePlanner from "./QuotePlanner.astro";
+import ServiceAreaContent from "./ServiceAreaContent.astro";
 
-const { service, quote, mainId } = Astro.props;
+const { service, quote, mainId, areaLists } = Astro.props;
 const { overview } = service;
 const avatarColors = ["#137357", "#185abc", "#6f42b5", "#a42665", "#006b78", "#ac4c0f"];
 const mobilePhotos = {
@@ -105,5 +106,5 @@ const photoSizes = "(min-width: 1320px) 450px, (min-width: 768px) 34vw, (min-wid
     </section>
   )}
 
-  <Fragment set:html={service.content} />
+  <ServiceAreaContent html={service.content} areaLists={areaLists} />
 </main>
