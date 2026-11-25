@@ -136,6 +136,65 @@
 .cmc-service-proof dd { margin: 0; font: 650 1.15rem / 1.2 "CMC Display", sans-serif; }
 .cmc-service-proof dt { color: #dfe7ef; font-size: .8125rem; font-weight: 600; }
 
+.apartment-movers-page .cmc-service-hero {
+  background: #071626;
+}
+
+.apartment-movers-page .cmc-service-hero .hero-overlay-new {
+  position: absolute;
+  inset: 0 40% 0 0;
+  background: url("/Images/Comfort-Moving-Chicago-Crew-by-Truck.webp") center 44% / cover no-repeat;
+}
+
+.apartment-movers-page .cmc-service-hero .hero-overlay-new::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 76%, #071626),
+    linear-gradient(180deg, rgb(7 22 38 / 96%), rgb(7 22 38 / 86%) 29%, rgb(7 22 38 / 30%) 65%, rgb(7 22 38 / 12%) 78%, #071626);
+}
+
+.apartment-movers-page .cmc-service-hero-grid { align-items: start; }
+.apartment-movers-page .cmc-service-intro { padding-bottom: clamp(92px, 12vw, 170px); }
+.apartment-movers-page .cmc-service-accent { color: var(--cmc-orange); }
+.apartment-movers-page .cmc-service-lead { max-width: 42ch; }
+.apartment-movers-page .cmc-service-benefits li { display: flex; align-items: baseline; gap: 9px; }
+.apartment-movers-page .cmc-service-benefits li::before {
+  flex: 0 0 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cmc-orange);
+  content: "";
+}
+
+.apartment-movers-page .cmc-service-quote {
+  align-self: start;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 20px 52px rgb(0 0 0 / 30%);
+}
+
+.apartment-movers-page .cmc-service-hero .cmc-button { border-radius: 7px; }
+.apartment-movers-page .cmc-service-proof { background: rgb(7 22 38 / 72%); }
+
+@media (max-width: 767px) {
+  .apartment-movers-page .cmc-service-hero .hero-overlay-new {
+    inset: 0 0 auto;
+    height: 450px;
+    background-image: url("/Images/Comfort-Moving-Chicago-Crew-by-Truck-mobile.webp");
+    background-position: center 20%;
+  }
+
+  .apartment-movers-page .cmc-service-hero .hero-overlay-new::before {
+    background: linear-gradient(180deg, rgb(7 22 38 / 96%), rgb(7 22 38 / 84%) 42%, rgb(7 22 38 / 25%) 78%, #071626);
+  }
+
+  .apartment-movers-page .cmc-service-intro { min-height: 370px; padding-bottom: 56px; }
+  .apartment-movers-page .cmc-service-actions { gap: 8px; }
+  .apartment-movers-page .cmc-service-actions .cmc-button { padding-inline: 11px; }
+}
+
 .cmc-service-main > section:not(.cmc-service-hero, .cmc-editorial-hero) {
   padding-block: var(--service-section-space) !important;
   border: 0 !important;

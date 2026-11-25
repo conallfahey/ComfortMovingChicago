@@ -42,6 +42,14 @@
 }
 
 .cmc-site [hidden] { display: none !important; }
+.cmc-site .cmc-crew-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 66%;
+}
 .cmc-site :is(a, button, summary, input, select, textarea):focus-visible {
   outline: 3px solid #2163a9;
   outline-offset: 3px;

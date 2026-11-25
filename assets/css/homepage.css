@@ -258,6 +258,7 @@
 }
 
 .cmc-home .cmc-home-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cmc-home .cmc-home-gallery .cmc-home-crew-image { aspect-ratio: 3 / 2; }
 .cmc-home .cmc-home-gallery figcaption {
   margin-top: 6px;
   color: var(--cmc-muted);

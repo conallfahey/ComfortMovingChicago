@@ -633,5 +633,20 @@
     "tags": ["footer", "landing-pages", "mobile"],
     "includeInReport": true,
     "customerVisible": true
+  },
+  {
+    "id": "apartment-hero-and-crew-photography",
+    "area": "website",
+    "type": "content",
+    "title": "Refreshed the apartment landing page and added crew photography",
+    "summary": "Added a crew photo behind the apartment hero, simplified the introductory copy, and refreshed the quote card. Added the same photo to the homepage, residential moving, and careers pages.",
+    "impact": "Shows customers the local moving crew and keeps the apartment quote easy to find on desktop and mobile.",
+    "shippedAt": "2026-11-24",
+    "shippedBy": "Codex",
+    "source": "code",
+    "relatedFiles": ["services/apartment-movers-chicago.html", "assets/css/service-pages.css", "index.html", "careers.html", "services/residential-moving-chicago.html"],
+    "tags": ["apartment-moving", "photography", "landing-page"],
+    "includeInReport": true,
+    "customerVisible": true
   }
 ]
