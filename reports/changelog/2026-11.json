@@ -639,7 +639,7 @@
     "area": "website",
     "type": "content",
     "title": "Refreshed the apartment landing page and added crew photography",
-    "summary": "Added a crew photo behind the apartment hero, simplified the introductory copy, and refreshed the quote card. Gave the call button a solid blue background for readability over the photo. Added the same photo to the homepage, residential moving, and careers pages.",
+    "summary": "Added a crew photo behind the apartment hero, simplified the introductory copy, and refreshed the quote card. Used the site's dark brand blue for the call button over the photo. Added the same photo to the homepage, residential moving, and careers pages.",
     "impact": "Shows customers the local moving crew and keeps the apartment quote easy to find on desktop and mobile.",
     "shippedAt": "2026-11-24",
     "shippedBy": "Codex",

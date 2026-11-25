@@ -178,12 +178,13 @@
 .apartment-movers-page .cmc-service-hero .cmc-button { border-radius: 7px; }
 .apartment-movers-page .cmc-service-hero .cmc-service-button-ghost {
   border-color: rgb(255 255 255 / 38%);
-  background: #032662;
+  background: var(--brand-blue, #032662);
   color: #fff;
 }
 
 .apartment-movers-page .cmc-service-hero .cmc-service-button-ghost:hover {
-  background: #123c7d;
+  border-color: #fff;
+  background: var(--brand-blue, #032662);
   color: #fff;
 }
 
